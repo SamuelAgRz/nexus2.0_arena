@@ -73,8 +73,11 @@ class AdomdConnector:
 # --- EJECUCIÓN PRINCIPAL ---
 
 if __name__ == "__main__":
-    # Configuración de rutas y conexión 
-    PATH_DLL = r'C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.AnalysisServices.AdomdClient\v4.0_15.0.0.0__89845dcd8080cc91\Microsoft.AnalysisServices.AdomdClient.dll'
+    # Obtener la ruta absoluta de la carpeta donde está este script
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    
+    # Construir la ruta a la DLL dentro de la carpeta /lib
+    PATH_DLL = os.path.join(BASE_DIR, 'lib', 'Microsoft.AnalysisServices.AdomdClient.dll')
     
     STR_CONN = (
         "Provider=MSOLAP;"
@@ -83,12 +86,13 @@ if __name__ == "__main__":
         "Integrated Security=ClaimsToken;"
     )
 
-    # Instanciar clase (se debe configurar el PATH antes de importar pyadomd)
+    # Instanciar clase
     nsr_conn = AdomdConnector(PATH_DLL, STR_CONN)
 
     # Consulta DAX
     query = "EVALUATE VALUES('Reporting View')"
     
+    print(f"Buscando DLL en: {PATH_DLL}")
     print("Ejecutando consulta...")
     df = nsr_conn.ejecutar_query(query)
 
