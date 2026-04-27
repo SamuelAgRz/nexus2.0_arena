@@ -1,4 +1,4 @@
-from prompts.dax_developer import DAX_DEVELOPER_TEMPLATE
+from src.prompts.dax_developer import DAX_DEVELOPER_TEMPLATE
 
 
 class DaxQueryDeveloperAgent:
@@ -13,7 +13,7 @@ class DaxQueryDeveloperAgent:
             .replace("{general_syn}", self.general_syn)
             .replace("{dav}", self.dav)
         )
-    
+
         return self.llm.chat(
             system_prompt=system_prompt,
             user_prompt=instruction
