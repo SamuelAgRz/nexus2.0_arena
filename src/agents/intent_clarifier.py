@@ -50,12 +50,13 @@ class IntentClarifierAgent:
 
     def _validate_payload(self, payload: Dict[str, Any]) -> Dict[str, Any]:
         allowed_intents = {
-            "semantic_query",
-            "general_chat",
-            "visualization_only",
-            "summarization_only",
-            "unsupported",
-        }
+                "semantic_query",
+                "general_chat",
+                "visualization_only",
+                "summarization_only",
+                "unsupported",
+                "clarification",
+                }
         allowed_agent_names = {"FHB_dataset", "VisualizationAgent", "Summarizer"}
         allowed_output_formats = {"table", "chart", "text"}
         allowed_languages = {"es", "en"}
@@ -113,12 +114,31 @@ class IntentClarifierAgent:
         return payload
 
     def run(self, user_query: str) -> Dict[str, Any]:
-        system_prompt = self._build_system_prompt()
-        raw = self.llm.chat(
-            system_prompt=system_prompt,
-            user_prompt=user_query,
-        )
+            system_prompt = self._build_system_prompt()
 
-        payload = self._safe_parse_json(raw)
-        payload = self._validate_payload(payload)
-        return payload
+            raw = self.llm.chat(
+                system_prompt=system_prompt,
+                user_prompt=user_query,
+            )
+
+            try:
+                payload = self._safe_parse_json(raw)
+                payload = self._validate_payload(payload)
+                return payload
+
+            except Exception:
+                return {
+                    "intent": "clarification",
+                    "agents": [
+                        {
+                            "name": "Summarizer",
+                            "instruction": raw.strip()
+                        }
+                    ],
+                    "needs_visualization": False,
+                    "output_format": "text",
+                    "business_question": user_query,
+                    "user_language": "en",
+                    "confidence": 0.3,
+                    "reason": "Model returned a conversational clarification instead of JSON."
+                }

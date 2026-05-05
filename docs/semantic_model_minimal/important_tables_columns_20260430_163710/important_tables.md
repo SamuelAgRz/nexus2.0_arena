@@ -1,0 +1,38 @@
+# NSR LATAM Cube - Important Tables
+
+Important tables extracted from INFO.TABLES(). This is the first minimal metadata layer for Nexus.
+
+Total rows: 30
+
+|   [ID] | [Name]                              | [Description]   | [IsHidden]   | [ModifiedTime]      | [StructureModifiedTime]   | [SystemManaged]   |
+|-------:|:------------------------------------|:----------------|:-------------|:--------------------|:--------------------------|:------------------|
+|     10 | Channel                             |                 | False        | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     91 | Concept Classification              |                 | True         | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     46 | CurrencyRate                        |                 | True         | 2026-02-26 06:36:26 | 2026-01-09 01:17:07       | False             |
+|     94 | Discount Concept                    |                 | True         | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     43 | Metrics                             |                 | False        | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     58 | Metrics-Actuals-Rev                 |                 | True         | 2026-02-26 06:36:26 | 2026-03-03 15:19:36       | False             |
+|     37 | Metrics-Actuals-Vol                 |                 | True         | 2026-02-26 06:36:26 | 2026-03-10 18:39:32       | False             |
+|     49 | Metrics-BP                          |                 | True         | 2026-02-26 06:36:26 | 2026-01-09 21:18:18       | False             |
+|     61 | Metrics-Bulk-Discount               |                 | True         | 2026-02-26 06:36:26 | 2026-02-27 21:15:17       | False             |
+|     40 | Metrics-Day Count                   |                 | True         | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     64 | Metrics-Inv-Discount                |                 | True         | 2026-02-26 06:36:26 | 2026-02-27 21:15:17       | False             |
+|     52 | Metrics-Local Population            |                 | True         | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     85 | Metrics-Other-Discount              |                 | True         | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     55 | Metrics-RE                          |                 | True         | 2026-02-26 06:36:26 | 2026-01-10 01:38:23       | False             |
+|     67 | Metrics-Std-Discount                |                 | True         | 2026-02-26 06:36:26 | 2026-03-03 15:41:01       | False             |
+|     82 | Metrics-WE                          |                 | True         | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     70 | Off Discount                        |                 | False        | 2026-02-26 06:36:26 | 2026-02-02 21:20:20       | False             |
+|     73 | On Bulk Discount                    |                 | False        | 2026-02-26 06:36:26 | 2026-02-02 21:41:15       | False             |
+|     76 | On Standard Discount                |                 | False        | 2026-02-26 06:36:26 | 2026-02-02 18:16:22       | False             |
+|     79 | On Standard Discount Classification |                 | False        | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     88 | Other Discount                      |                 | True         | 2026-02-26 06:36:26 | 2026-02-02 22:57:31       | False             |
+|     13 | Package                             |                 | False        | 2026-02-26 06:36:26 | 2025-12-04 18:17:35       | False             |
+|     97 | Period                              |                 | False        | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     16 | Product                             |                 | False        | 2026-02-26 06:36:26 | 2026-02-13 20:28:47       | False             |
+|     28 | Record Type                         |                 | True         | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     31 | Reporting View                      |                 | False        | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     19 | Sales Type                          |                 | False        | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|    100 | Security Ship From                  |                 | True         | 2026-02-26 06:36:26 | 2025-12-02 10:00:02       | False             |
+|     22 | Ship From                           |                 | False        | 2026-02-26 06:36:26 | 2026-02-27 14:03:00       | False             |
+|     25 | Ship To                             |                 | False        | 2026-02-26 06:36:26 | 2025-12-04 18:09:09       | False             |

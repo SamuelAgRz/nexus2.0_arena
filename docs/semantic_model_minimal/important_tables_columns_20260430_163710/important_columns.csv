@@ -1,0 +1,733 @@
+﻿[TableName],[TableID],[ColumnName],[Description],[DataType],[IsHidden],[IsKey],[IsUnique],[IsNullable],[SummarizeBy],[SourceColumn],[DisplayFolder],[IsInternalRowNumber],[ModifiedTime],[RefreshedTime]
+Channel,10,BU Channel Code,,2,False,False,False,True,1,bu_chnl_cd,ISSCOM Channel,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Channel,10,Consumer Activity Cluster,,2,False,False,False,True,1,cons_clst_nm,ISSCOM Channel,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Channel,10,LT1.0 - Sub Trade Channel,,2,False,False,False,True,1,lcl_hier_4_l1_desc,LATAM Channel,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Channel,10,LT1.1 - Trade Channel,,2,False,False,False,True,1,lcl_hier_4_l2_desc,LATAM Channel,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Channel,10,LT1.2 - Channel Group,,2,False,False,False,True,1,lcl_hier_4_l3_desc,LATAM Channel,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Channel,10,LT1.3 - Channel Macro Group,,2,False,False,False,True,1,lcl_hier_4_l4_desc,LATAM Channel,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Channel,10,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Channel,10,Source Channel Code,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 17:59:53
+Channel,10,Sub Trade Channel,,2,False,False,False,True,1,sub_trd_chnl_nm,ISSCOM Channel,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Channel,10,Sub Trade Channel Code,,2,False,False,False,True,1,sub_trd_chnl_cd,ISSCOM Channel,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Channel,10,Trade Channel,,2,False,False,False,True,1,trd_chnl_nm,ISSCOM Channel,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Channel,10,chnl_id,,2,True,False,False,True,1,chnl_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Channel,10,src_sub_chnl_cd,,2,True,False,False,True,1,src_sub_chnl_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Channel,10,src_sys_id,,6,True,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Concept Classification,91,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Concept Classification,91,dscnt_catg_cd,,2,False,False,False,True,1,dscnt_catg_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Concept Classification,91,dscnt_cd,,2,False,False,False,True,1,dscnt_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Concept Classification,91,dscnt_concept_id,,6,False,False,False,True,1,dscnt_concept_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Concept Classification,91,src_grp_id,,6,False,False,False,True,1,src_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Concept Classification,91,src_sys_id,,6,False,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,ACBP_USD,,8,False,False,False,True,1,ACBP_USD,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,ACRE_USD,,8,False,False,False,True,1,ACRE_USD,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,ACWE_USD,,8,False,False,False,True,1,ACWE_USD,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,Concat_Curr_key,,2,False,False,False,True,1,Concat_Curr_key,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+CurrencyRate,46,USD,,8,False,False,False,True,1,USD,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,USD_445_2PY,,8,False,False,False,True,1,USD_445_2PY,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,USD_445_3PY,,8,False,False,False,True,1,USD_445_3PY,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,USD_445_4PY,,8,False,False,False,True,1,USD_445_4PY,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,USD_445_5PY,,8,False,False,False,True,1,USD_445_5PY,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,USD_445_PY,,8,False,False,False,True,1,USD_445_PY,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,USD_GREG_2PY,,8,False,False,False,True,1,USD_GREG_2PY,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,USD_GREG_3PY,,8,False,False,False,True,1,USD_GREG_3PY,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,USD_GREG_4PY,,8,False,False,False,True,1,USD_GREG_4PY,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,USD_GREG_5PY,,8,False,False,False,True,1,USD_GREG_5PY,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,USD_GREG_PY,,8,False,False,False,True,1,USD_GREG_PY,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,acbp_eur,,10,False,False,False,True,1,acbp_eur,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,acre_eur,,10,False,False,False,True,1,acre_eur,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,acwe_eur,,10,False,False,False,True,1,acwe_eur,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_acbp_eur,,10,False,False,False,True,1,btlr_acbp_eur,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_acbp_usd,,10,False,False,False,True,1,btlr_acbp_usd,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_acre_eur,,10,False,False,False,True,1,btlr_acre_eur,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_acre_usd,,10,False,False,False,True,1,btlr_acre_usd,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_acwe_eur,,10,False,False,False,True,1,btlr_acwe_eur,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_acwe_usd,,10,False,False,False,True,1,btlr_acwe_usd,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_eur,,10,False,False,False,True,1,btlr_eur,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_eur_445_2py,,10,False,False,False,True,1,btlr_eur_445_2py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_eur_445_3py,,10,False,False,False,True,1,btlr_eur_445_3py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_eur_445_4py,,10,False,False,False,True,1,btlr_eur_445_4py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_eur_445_5py,,10,False,False,False,True,1,btlr_eur_445_5py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_eur_445_py,,10,False,False,False,True,1,btlr_eur_445_py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_eur_greg_2py,,10,False,False,False,True,1,btlr_eur_greg_2py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_eur_greg_3py,,10,False,False,False,True,1,btlr_eur_greg_3py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_eur_greg_4py,,10,False,False,False,True,1,btlr_eur_greg_4py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_eur_greg_5py,,10,False,False,False,True,1,btlr_eur_greg_5py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_eur_greg_py,,10,False,False,False,True,1,btlr_eur_greg_py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_usd,,10,False,False,False,True,1,btlr_usd,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_usd_445_2py,,10,False,False,False,True,1,btlr_usd_445_2py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_usd_445_3py,,10,False,False,False,True,1,btlr_usd_445_3py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_usd_445_4py,,10,False,False,False,True,1,btlr_usd_445_4py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_usd_445_5py,,10,False,False,False,True,1,btlr_usd_445_5py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_usd_445_py,,10,False,False,False,True,1,btlr_usd_445_py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_usd_greg_2py,,10,False,False,False,True,1,btlr_usd_greg_2py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_usd_greg_3py,,10,False,False,False,True,1,btlr_usd_greg_3py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_usd_greg_4py,,10,False,False,False,True,1,btlr_usd_greg_4py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_usd_greg_5py,,10,False,False,False,True,1,btlr_usd_greg_5py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,btlr_usd_greg_py,,10,False,False,False,True,1,btlr_usd_greg_py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,c445_mth_cd,,6,False,False,False,True,1,c445_mth_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,c445_week_cd,,6,False,False,False,True,1,c445_week_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,day_dt,,9,False,False,False,True,1,day_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,day_id,,6,False,False,False,True,1,day_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,eur,,10,False,False,False,True,1,eur,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,eur_445_2py,,10,False,False,False,True,1,eur_445_2py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,eur_445_3py,,10,False,False,False,True,1,eur_445_3py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,eur_445_4py,,10,False,False,False,True,1,eur_445_4py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,eur_445_5py,,10,False,False,False,True,1,eur_445_5py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,eur_445_py,,10,False,False,False,True,1,eur_445_py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,eur_greg_2py,,10,False,False,False,True,1,eur_greg_2py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,eur_greg_3py,,10,False,False,False,True,1,eur_greg_3py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,eur_greg_4py,,10,False,False,False,True,1,eur_greg_4py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,eur_greg_5py,,10,False,False,False,True,1,eur_greg_5py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,eur_greg_py,,10,False,False,False,True,1,eur_greg_py,,False,2026-01-09 01:17:07,1699-12-31 00:00:00
+CurrencyRate,46,from_curr_cd,,2,False,False,False,True,1,from_curr_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+CurrencyRate,46,vrsn_type_cd,,2,False,False,False,True,1,vrsn_type_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Discount Concept,94,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Discount Concept,94,dscnt_concept_description,,2,False,False,False,True,1,dscnt_concept_description,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Discount Concept,94,dscnt_concept_id,,6,False,False,False,True,1,dscnt_concept_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Discount Concept,94,src_grp_id,,6,False,False,False,True,1,src_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics,43,Calculated Column 1,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Calculated Column 10,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Calculated Column 11,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Calculated Column 12,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Calculated Column 13,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Calculated Column 2,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Calculated Column 3,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Calculated Column 4,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Calculated Column 5,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Calculated Column 6,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Calculated Column 7,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Calculated Column 8,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Calculated Column 9,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Date,,1,True,False,False,True,1,[Date],,False,2026-03-10 18:39:51,1699-12-31 00:00:00
+Metrics,43,Date1,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Date2,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Date3,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Date4,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Date5,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,Date6,,1,True,False,False,True,1,,,False,2026-03-10 18:39:51,2026-03-10 18:39:51
+Metrics,43,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,Concat_Curr_key,,2,False,False,False,True,1,Concat_Curr_key,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,btlr_gross_rev_amt,,8,False,False,False,True,1,btlr_gross_rev_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,btlr_net_sls_rev_amt,,8,False,False,False,True,1,btlr_net_sls_rev_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,btlr_wholesale_price,,8,False,False,False,True,1,btlr_wholesale_price,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,chnl_id,,2,False,False,False,True,1,chnl_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,curr_cd,,2,False,False,False,True,1,curr_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,day_id,,2,False,False,False,True,1,day_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,prod_id,,2,False,False,False,True,1,prod_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,rpt_view_cd,,2,False,False,False,True,1,rpt_view_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,ship_from_loc_id,,2,False,False,False,True,1,ship_from_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,ship_to_loc_id,,2,False,False,False,True,1,ship_to_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,sls_type_id,,2,False,False,False,True,1,sls_type_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,src_day_cd,,2,False,False,False,True,1,src_day_cd,,False,2025-12-03 13:44:19,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,src_sys_id,,2,False,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,trx_dt,,2,False,False,False,True,1,trx_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Rev,58,trx_type_cd,,2,False,False,False,True,1,trx_type_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,btlr_unit_case_amt,,10,False,False,False,True,1,btlr_unit_case_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,chnl_id,,2,False,False,False,True,1,chnl_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,day_id,,2,False,False,False,True,1,day_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,indv_unit_amt,,10,False,False,False,True,1,indv_unit_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,liter_amt,,10,False,False,False,True,1,liter_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,phys_case_amt,,10,False,False,False,True,1,phys_case_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,prod_id,,2,False,False,False,True,1,prod_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,purch_trx_amt,,10,False,False,False,True,1,purch_trx_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,rpt_view_cd,,2,False,False,False,True,1,rpt_view_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,ship_from_loc_id,,2,False,False,False,True,1,ship_from_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,ship_to_loc_id,,2,False,False,False,True,1,ship_to_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,sls_type_id,,2,False,False,False,True,1,sls_type_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,src_sys_id,,2,False,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,trx_dt,,2,False,False,False,True,1,trx_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,trx_type_cd,,2,False,False,False,True,1,trx_type_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Actuals-Vol,37,unit_case_amt,,10,False,False,False,True,1,unit_case_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Metrics-BP,49,btlr_gross_rev_amt,,8,False,False,False,True,1,btlr_gross_rev_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,btlr_net_sls_rev_amt,,8,False,False,False,True,1,btlr_net_sls_rev_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,btlr_whsle_price_amt,,8,False,False,False,True,1,btlr_whsle_price_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,c445_1py_day_dt,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-23 14:57:50
+Metrics-BP,49,c445_2py_day_dt,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-23 14:57:50
+Metrics-BP,49,c445_month_cd,,2,False,False,False,True,1,c445_month_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,chnl_cd,,2,False,False,False,True,1,chnl_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,conc_base_rev_amt,,8,False,False,False,True,1,conc_base_rev_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,curr_cd,,2,False,False,False,True,1,curr_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,day_dt,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-23 14:57:47
+Metrics-BP,49,day_id,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-23 14:57:48
+Metrics-BP,49,dw_daily_weight,,8,False,False,False,True,1,dw_daily_weight,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,dw_day_cd,,2,False,False,False,True,1,dw_day_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,fk_chnl,,2,False,False,False,True,1,fk_chnl,,False,2026-01-09 21:18:18,1699-12-31 00:00:00
+Metrics-BP,49,fk_pack,,2,False,False,False,True,1,fk_pack,,False,2026-01-09 21:18:18,1699-12-31 00:00:00
+Metrics-BP,49,fk_prod,,2,False,False,False,True,1,fk_prod,,False,2026-01-09 21:18:18,1699-12-31 00:00:00
+Metrics-BP,49,fk_ship_from,,2,False,False,False,True,1,fk_ship_from,,False,2026-01-09 21:18:18,1699-12-31 00:00:00
+Metrics-BP,49,fk_ship_to,,2,False,False,False,True,1,fk_ship_to,,False,2026-01-09 21:18:18,1699-12-31 00:00:00
+Metrics-BP,49,id,,2,False,False,False,True,1,id,,False,2026-01-09 21:18:18,1699-12-31 00:00:00
+Metrics-BP,49,indv_unit_amt,,8,False,False,False,True,1,indv_unit_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,load_dt,,2,False,False,False,True,1,load_dt,,False,2026-01-09 21:18:18,1699-12-31 00:00:00
+Metrics-BP,49,load_dttm,,2,False,False,False,True,1,load_dttm,,False,2026-01-09 21:18:18,1699-12-31 00:00:00
+Metrics-BP,49,pkg_cd,,2,False,False,False,True,1,pkg_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,pkg_id,,2,False,False,False,True,1,pkg_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,prod_cd,,2,False,False,False,True,1,prod_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,prod_id,,2,False,False,False,True,1,prod_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,purch_trx_amt,,8,False,False,False,True,1,purch_trx_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,sec_ship_from_loc_cd,,2,False,False,False,True,1,sec_ship_from_loc_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,ship_from_cd,,2,False,False,False,True,1,ship_from_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,ship_from_loc_id,,2,False,False,False,True,1,ship_from_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,ship_to_cd,,2,False,False,False,True,1,ship_to_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,total_dscnt_amt,,8,False,False,False,True,1,total_dscnt_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,total_tax_amt,,8,False,False,False,True,1,total_tax_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,unit_case_amt,,8,False,False,False,True,1,unit_case_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,vrsn,,2,False,False,False,True,1,vrsn,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,vrsn_cd,,2,False,False,False,True,1,vrsn_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-BP,49,year_cd,,2,False,False,False,True,1,year_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,Concat_Curr_key,,2,False,False,False,True,1,Concat_Curr_key,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,chnl_id,,2,False,False,False,True,1,chnl_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,curr_cd,,2,False,False,False,True,1,curr_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,day_id,,2,False,False,False,True,1,day_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,dscnt_amt,,8,False,False,False,True,1,dscnt_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,dscnt_cd,,2,True,False,False,True,1,dscnt_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,entry_type_cd,,6,False,False,False,True,1,entry_type_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,file_id,,2,False,False,False,True,1,file_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,load_date,,2,False,False,False,True,1,load_date,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,load_dttm,,2,False,False,False,True,1,load_dttm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,on_inv_blk_dscnt_id,,2,False,False,False,True,1,on_inv_blk_dscnt_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,prod_id,,2,False,False,False,True,1,prod_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,rpt_view_cd,,2,False,False,False,True,1,rpt_view_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,ship_from_loc_id,,2,False,False,False,True,1,ship_from_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,ship_to_loc_id,,2,False,False,False,True,1,ship_to_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,sls_type_id,,2,False,False,False,True,1,sls_type_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,src_sys_id,,2,False,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Bulk-Discount,61,trx_dt,,2,False,False,False,True,1,trx_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Day Count,40,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Metrics-Day Count,40,consmp_day_ind,,6,False,False,False,True,1,consmp_day_ind,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Day Count,40,day_id,,6,False,False,False,True,1,day_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Day Count,40,file_id,,2,True,False,False,True,1,file_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Day Count,40,ship_from_loc_id,,2,False,False,False,True,1,ship_from_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Day Count,40,wrk_day_ind,,6,False,False,False,True,1,wrk_day_ind,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,Concat_Curr_key,,2,False,False,False,True,1,Concat_Curr_key,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,chnl_id,,2,False,False,False,True,1,chnl_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,curr_cd,,2,False,False,False,True,1,curr_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,day_id,,2,False,False,False,True,1,day_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,dscnt_amt,,8,False,False,False,True,1,dscnt_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,entry_type_cd,,6,False,False,False,True,1,entry_type_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,file_id,,2,False,False,False,True,1,file_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,load_date,,2,False,False,False,True,1,load_date,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,load_dttm,,2,False,False,False,True,1,load_dttm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,off_inv_dscnt_id,,2,False,False,False,True,1,off_inv_dscnt_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,prod_id,,2,False,False,False,True,1,prod_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,rpt_view_cd,,2,False,False,False,True,1,rpt_view_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,ship_from_loc_id,,2,False,False,False,True,1,ship_from_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,ship_to_loc_id,,2,False,False,False,True,1,ship_to_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,sls_type_id,,2,False,False,False,True,1,sls_type_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,src_sys_id,,2,False,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Inv-Discount,64,trx_dt,,2,False,False,False,True,1,trx_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Local Population,52,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Metrics-Local Population,52,day_id,,6,False,False,False,True,1,day_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Local Population,52,lcl_pop_cnt,,8,False,False,False,True,1,lcl_pop_cnt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Local Population,52,ship_from_cd,,2,False,False,False,True,1,ship_from_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Local Population,52,ship_from_loc_id,,2,False,False,False,True,1,ship_from_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Local Population,52,year_cd,,6,False,False,False,True,1,year_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,Concat_Curr_key,,2,False,False,False,True,1,Concat_Curr_key,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Metrics-Other-Discount,85,chnl_id,,2,False,False,False,True,1,chnl_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,curr_cd,,2,False,False,False,True,1,curr_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,day_id,,2,False,False,False,True,1,day_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,dscnt_amt,,8,False,False,False,True,1,dscnt_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,entry_type_cd,,6,False,False,False,True,1,entry_type_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,file_id,,2,False,False,False,True,1,file_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,load_date,,2,False,False,False,True,1,load_date,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,load_dttm,,2,False,False,False,True,1,load_dttm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,other_dscnt_id,,2,False,False,False,True,1,other_dscnt_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,prod_id,,2,False,False,False,True,1,prod_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,rpt_view_cd,,2,False,False,False,True,1,rpt_view_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,ship_from_loc_id,,2,False,False,False,True,1,ship_from_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,ship_to_loc_id,,2,False,False,False,True,1,ship_to_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,sls_type_id,,2,False,False,False,True,1,sls_type_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,src_sys_id,,2,False,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Other-Discount,85,trx_dt,,2,False,False,False,True,1,trx_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Metrics-RE,55,btlr_gross_rev_amt,,8,False,False,False,True,1,btlr_gross_rev_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,btlr_net_sls_rev_amt,,8,False,False,False,True,1,btlr_net_sls_rev_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,btlr_whsle_price_amt,,8,False,False,False,True,1,btlr_whsle_price_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,c445_month_cd,,2,False,False,False,True,1,c445_month_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,chnl_cd,,2,False,False,False,True,1,chnl_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,conc_base_rev_amt,,8,False,False,False,True,1,conc_base_rev_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,curr_cd,,2,False,False,False,True,1,curr_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,day_dt,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:19
+Metrics-RE,55,day_id,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:21
+Metrics-RE,55,dw_daily_weight,,8,False,False,False,True,1,dw_daily_weight,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,dw_day_cd,,2,False,False,False,True,1,dw_day_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,file_id,,2,False,False,False,True,1,file_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,fk_chnl,,2,False,False,False,True,1,fk_chnl,,False,2026-01-10 01:38:23,1699-12-31 00:00:00
+Metrics-RE,55,fk_pack,,2,False,False,False,True,1,fk_pack,,False,2026-01-10 01:38:23,1699-12-31 00:00:00
+Metrics-RE,55,fk_prod,,2,False,False,False,True,1,fk_prod,,False,2026-01-10 01:38:23,1699-12-31 00:00:00
+Metrics-RE,55,fk_ship_from,,2,False,False,False,True,1,fk_ship_from,,False,2026-01-10 01:38:23,1699-12-31 00:00:00
+Metrics-RE,55,fk_ship_to,,2,False,False,False,True,1,fk_ship_to,,False,2026-01-10 01:38:23,1699-12-31 00:00:00
+Metrics-RE,55,id,,2,False,False,False,True,1,id,,False,2026-01-10 01:38:23,1699-12-31 00:00:00
+Metrics-RE,55,indv_unit_amt,,8,False,False,False,True,1,indv_unit_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,load_dt,,2,False,False,False,True,1,load_dt,,False,2026-01-10 01:38:23,1699-12-31 00:00:00
+Metrics-RE,55,load_dttm,,2,False,False,False,True,1,load_dttm,,False,2026-01-10 01:38:23,1699-12-31 00:00:00
+Metrics-RE,55,month_cd,,2,False,False,False,True,1,month_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,pkg_cd,,2,False,False,False,True,1,pkg_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,pkg_id,,2,False,False,False,True,1,pkg_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,prod_cd,,2,False,False,False,True,1,prod_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,prod_id,,2,False,False,False,True,1,prod_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,purch_trx_amt,,8,False,False,False,True,1,purch_trx_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,sec_ship_from_loc_cd,,2,False,False,False,True,1,sec_ship_from_loc_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,ship_from_cd,,2,False,False,False,True,1,ship_from_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,ship_from_loc_id,,2,False,False,False,True,1,ship_from_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,ship_to_cd,,2,False,False,False,True,1,ship_to_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,total_dscnt_amt,,8,False,False,False,True,1,total_dscnt_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,total_tax_amt,,8,False,False,False,True,1,total_tax_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,unit_case_amt,,8,False,False,False,True,1,unit_case_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,vrsn,,2,False,False,False,True,1,vrsn,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,vrsn_cd,,2,False,False,False,True,1,vrsn_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-RE,55,year_cd,,6,False,False,False,True,1,year_cd,,False,2026-01-10 01:38:23,1699-12-31 00:00:00
+Metrics-Std-Discount,67,Concat_Curr_key,,2,False,False,False,True,1,Concat_Curr_key,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,Concat_Std_key,,2,False,False,False,True,1,Concat_Std_key,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Metrics-Std-Discount,67,chnl_id,,2,False,False,False,True,1,chnl_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,curr_cd,,2,False,False,False,True,1,curr_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,day_id,,2,False,False,False,True,1,day_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,dscnt_amt,,10,False,False,False,True,1,dscnt_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,dscnt_catg_cd,,2,False,False,False,True,1,dscnt_catg_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,dscnt_cd,,2,False,False,False,True,1,dscnt_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,on_inv_std_dscnt_id,,2,False,False,False,True,1,on_inv_std_dscnt_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,prod_id,,2,False,False,False,True,1,prod_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,rpt_view_cd,,2,False,False,False,True,1,rpt_view_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,ship_from_loc_id,,2,False,False,False,True,1,ship_from_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,ship_to_loc_id,,2,False,False,False,True,1,ship_to_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,sls_type_id,,2,False,False,False,True,1,sls_type_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,src_sys_id,,2,False,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,trx_dt,,2,False,False,False,True,1,trx_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-Std-Discount,67,trx_type_cd,,2,False,False,False,True,1,trx_type_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-WE,82,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Metrics-WE,82,btlr_gross_rev_amt,,8,False,False,False,True,1,btlr_gross_rev_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-WE,82,btlr_net_sls_rev_amt,,8,False,False,False,True,1,btlr_net_sls_rev_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-WE,82,c445_1py_day_dt,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Metrics-WE,82,c445_2py_day_dt,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Metrics-WE,82,c445_week_cd,,2,False,False,False,True,1,c445_week_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-WE,82,curr_cd,,2,False,False,False,True,1,curr_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-WE,82,day_dt,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Metrics-WE,82,day_id,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Metrics-WE,82,file_id,,2,False,False,False,True,1,file_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-WE,82,sec_ship_from_cd,,2,False,False,False,True,1,sec_ship_from_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-WE,82,ship_from_cd,,2,False,False,False,True,1,ship_from_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-WE,82,ship_from_loc_id,,2,False,False,False,True,1,ship_from_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-WE,82,unit_case_amt,,8,False,False,False,True,1,unit_case_amt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-WE,82,vrsn,,2,False,False,False,True,1,vrsn,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Metrics-WE,82,vrsn_cd,,2,False,False,False,True,1,vrsn_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Off Discount,70,Off Discount Category,,2,False,False,False,True,1,dscnt_catg_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Off Discount,70,Off Discount Code,,2,False,False,False,True,1,dscnt_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Off Discount,70,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Off Discount,70,dscnt_catg_cd,,2,True,False,False,True,1,dscnt_catg_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Off Discount,70,dscnt_cd,,2,True,False,False,True,1,dscnt_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Off Discount,70,dscnt_grp_id,,6,True,False,False,True,1,dscnt_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Off Discount,70,off_inv_dscnt_id,,2,True,False,False,True,1,off_inv_dscnt_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Off Discount,70,src_grp_id,,6,True,False,False,True,1,src_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Off Discount,70,src_ship_from_loc_cd,,2,True,False,False,True,1,src_ship_from_loc_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Off Discount,70,src_sys_id,,6,True,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Bulk Discount,73,On Bulk Discount Category,,2,False,False,False,True,1,dscnt_catg_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Bulk Discount,73,On Bulk Discount Code,,2,False,False,False,True,1,dscnt_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Bulk Discount,73,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+On Bulk Discount,73,dscnt_catg_cd,,2,True,False,False,True,1,dscnt_catg_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Bulk Discount,73,dscnt_cd,,2,True,False,False,True,1,dscnt_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Bulk Discount,73,dscnt_grp_id,,6,True,False,False,True,1,dscnt_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Bulk Discount,73,on_inv_blk_dscnt_id,,2,True,False,False,True,1,on_inv_blk_dscnt_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Bulk Discount,73,src_grp_id,,6,True,False,False,True,1,src_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Bulk Discount,73,src_ship_from_loc_cd,,2,True,False,False,True,1,src_ship_from_loc_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Bulk Discount,73,src_sys_id,,6,True,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount,76,On Standard Discount Category,,2,False,False,False,True,1,dscnt_catg_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount,76,On Standard Discount Code,,2,False,False,False,True,1,dscnt_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount,76,On Standard Discount Concept,,2,False,False,False,True,1,nsr_mart_mx dm_dim_dscnt_concept/Partition.dscnt_concept_description,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount,76,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+On Standard Discount,76,dscnt_catg_cd,,2,True,False,False,True,1,dscnt_catg_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount,76,dscnt_cd,,2,True,False,False,True,1,dscnt_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount,76,dscnt_concept_id,,6,True,False,False,True,1,dm_dim_concept_classification/Partition.dscnt_concept_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount,76,dscnt_grp_id,,6,True,False,False,True,1,dscnt_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount,76,dscnt_id,,2,True,False,False,True,1,dscnt_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount,76,on_inv_std_dscnt_id,,2,True,False,False,True,1,on_inv_std_dscnt_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount,76,src_grp_id,,6,True,False,False,True,1,src_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount,76,src_ship_from_loc_cd,,2,True,False,False,True,1,src_ship_from_loc_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount,76,src_sys_id,,6,True,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount Classification,79,Concat_Std_key,,2,True,False,False,True,1,Concat_Std_key,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount Classification,79,Discount Applied Flag,,2,False,False,False,True,1,dscnt_applied_flg,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount Classification,79,Discount Group,,2,False,False,False,True,1,dscnt_grp_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount Classification,79,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+On Standard Discount Classification,79,Sales Group,,2,False,False,False,True,1,sales_grp_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount Classification,79,chnl_id,,2,True,False,False,True,1,chnl_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount Classification,79,dscnt_catg_cd,,2,True,False,False,True,1,dscnt_catg_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount Classification,79,dscnt_cd,,2,True,False,False,True,1,dscnt_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount Classification,79,dscnt_grp_id,,2,True,False,False,True,1,dscnt_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount Classification,79,dscnt_id,,2,True,False,False,True,1,dscnt_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount Classification,79,sales_grp_id,,2,True,False,False,True,1,sales_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+On Standard Discount Classification,79,src_sys_id,,2,True,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Other Discount,88,Other Discount Category,,2,False,False,False,True,1,dscnt_catg_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Other Discount,88,Other Discount Code,,2,False,False,False,True,1,dscnt_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Other Discount,88,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Other Discount,88,dscnt_catg_cd,,2,True,False,False,True,1,dscnt_catg_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Other Discount,88,dscnt_cd,,2,True,False,False,True,1,dscnt_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Other Discount,88,dscnt_grp_id,,6,True,False,False,True,1,dscnt_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Other Discount,88,other_dscnt_id,,2,True,False,False,True,1,other_dscnt_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Other Discount,88,src_grp_id,,6,True,False,False,True,1,src_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Other Discount,88,src_ship_from_loc_cd,,2,True,False,False,True,1,src_ship_from_loc_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Other Discount,88,src_sys_id,,6,True,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,BPP,,2,False,False,False,True,1,bpp_nm,ISSCOM Package by Container Type;ISSCOM Package;ISSCOM Primary Container;ISSCOM Secondary Package,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,Container Type,,2,False,False,False,True,1,ctnr_type_nm,ISSCOM Package by Container Type;ISSCOM Package;ISSCOM Primary Container,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,LT1.1 - Package,,2,False,False,False,True,1,lcl_hier_4_l1_desc,LATAM Package,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,LT1.2 - Package Type,,2,False,False,False,True,1,lcl_hier_4_l2_desc,LATAM Package,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,LT1.3 - Container,,2,False,False,False,True,1,lcl_hier_4_l3_desc,LATAM Package,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,LT1.4 - Refillability,,2,False,False,False,True,1,lcl_hier_4_l4_desc,LATAM Package,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,LT1.5 - MS-SS,,2,False,False,False,True,1,lcl_hier_4_l5_desc,LATAM Package,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,LT1.6 - RTD-NRTD,,2,False,False,False,True,1,lcl_hier_4_l6_desc,LATAM Package,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,Package,,2,False,False,False,True,1,pkg_nm,ISSCOM Package by Container Type;ISSCOM Package,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,Primary Container,,2,False,False,False,True,1,prim_ctnr_nm,ISSCOM Primary Container;ISSCOM Package,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Package,13,Secondary Package,,2,False,False,False,True,1,scnd_pkg_nm,ISSCOM Package;ISSCOM Secondary Package,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,Source Product Code,,2,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Package,13,prod_id,,2,True,False,False,True,1,prod_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,src_prod_cd,,2,True,False,False,True,1,src_prod_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Package,13,src_sys_id,,6,True,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,2 PY Date,,1,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:17
+Period,97,Day 445,,2,False,False,False,True,1,day_desc,Calendar 445,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Day 445 Code,,2,False,False,False,True,1,,Calendar 445,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Day 445 Code Sort,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Day Cal,,1,False,False,False,True,1,,Calendar Gregorian,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Day Cal Code,,2,False,False,False,True,1,,Calendar Gregorian,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Day Cal Code Sort,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Day of Week,,1,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:17
+Period,97,Day_#,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Half 445,,2,False,False,False,True,1,c445_semester_desc,Calendar 445,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Half 445 Code,,2,False,False,False,True,1,c445_semester_cd,Calendar 445,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Half 445 Code Sort,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Half 445 Name,,2,False,False,False,True,1,c445_semester_nm,Period Attributes,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Half Cal,,1,False,False,False,True,1,,Calendar Gregorian,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Half Cal Code,,2,False,False,False,True,1,greg_semester_cd,Calendar Gregorian,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Half Cal Code Sort,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Half Cal Name,,1,False,False,False,True,1,,Period Attributes,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Latest Day 445,,2,True,False,False,True,1,Latest_Day445,Period Attributes,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Latest Month 445,,2,True,False,False,True,1,Latest_Month445,Period Attributes,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Latest Quarter 445,,2,True,False,False,True,1,Latest_Quarter445,Period Attributes,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Latest Week 445,,2,True,False,False,True,1,Latest_Week445,Period Attributes,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Month 445,,2,False,False,False,True,1,c445_month_desc,Calendar 445,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Month 445 #,,6,False,False,False,True,1,c445_month_nbr,Period Attributes,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Month 445 Begin – End,,2,False,False,False,True,1,c445_month_date_range,Period Attributes,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Month 445 Code,,2,False,False,False,True,1,c445_month_cd,Calendar 445,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Month 445 Code Sort,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Month 445 Name,,2,False,False,False,True,1,c445_month_nm,Period Attributes,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Month Cal,,2,False,False,False,True,1,greg_month_desc,Calendar Gregorian,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Month Cal Code,,2,False,False,False,True,1,greg_month_cd,Calendar Gregorian,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Month Cal Code Sort,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Month Cal Name,,1,False,False,False,True,1,,Period Attributes,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Month_445#_sort_order,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,PY Dt,,1,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:17
+Period,97,Quarter 445,,2,False,False,False,True,1,c445_quarter_desc,Calendar 445,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Quarter 445 #,,1,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Quarter 445 Code,,2,False,False,False,True,1,c445_quarter_cd,Calendar 445,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Quarter 445 Code Sort,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Quarter 445 Name,,2,False,False,False,True,1,c445_quarter_nm,Period Attributes,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Quarter Cal,,2,False,False,False,True,1,greg_quarter_desc,Calendar Gregorian,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Quarter Cal Code,,2,False,False,False,True,1,greg_quarter_cd,Calendar Gregorian,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Quarter Cal Code Sort,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Quarter Cal Name,,1,False,False,False,True,1,,Period Attributes,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Period,97,Week 445,,2,False,False,False,True,1,c445_week_desc,Calendar 445,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Week 445 #,,6,False,False,False,True,1,c445_week_nbr,Period Attributes,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Week 445 Begin – End,,2,False,False,False,True,1,c445_week_date_range,Period Attributes,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Week 445 Code,,6,False,False,False,True,1,c445_week_cd,Calendar 445,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Week 445 Code Sort,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Week_445#_sort_order,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Year 445,,2,False,False,False,True,1,c445_year_desc,Calendar 445,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Year 445 Code,,2,False,False,False,True,1,c445_year_cd,Calendar 445,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Year 445 Code Sort,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Year Cal,,1,False,False,False,True,1,,Calendar Gregorian,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,Year Cal Code,,2,False,False,False,True,1,greg_year_cd,Calendar Gregorian,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,Year Cal Code Sort,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,c445_1py_day_dt,,9,True,False,False,True,1,c445_1py_day_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,c445_2py_day_dt,,9,True,False,False,True,1,c445_2py_day_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,c445_3py_day_dt,,9,True,False,False,True,1,c445_3py_day_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,c445_4py_day_dt,,9,True,False,False,True,1,c445_4py_day_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,c445_5py_day_dt,,9,True,False,False,True,1,c445_5py_day_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,c445_MonthWeek#,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,c445_month_end_dt,,9,True,False,False,True,1,c445_month_end_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,c445_month_start_dt,,9,True,False,False,True,1,c445_month_start_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,c445_quarter_date_range,,2,True,False,False,True,1,c445_quarter_date_range,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,c445_quarter_end_dt,,9,True,False,False,True,1,c445_quarter_end_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,c445_quarter_start_dt,,9,True,False,False,True,1,c445_quarter_start_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,c445_week_end_dt,,9,True,False,False,True,1,c445_week_end_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,c445_week_start_dt,,9,True,False,False,True,1,c445_week_start_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,day_dt,,9,True,False,False,True,1,day_dt,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,day_id,,6,True,False,False,True,1,day_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,day_id_dateFormat,,1,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,greg_day_desc,,2,True,False,False,True,1,greg_day_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,greg_month_day_nbr,,6,True,False,False,True,1,greg_month_day_nbr,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,greg_month_nbr,,6,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,greg_month_nm,,2,True,False,False,True,1,greg_month_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,greg_quarter_day_nbr,,6,True,False,False,True,1,greg_quarter_day_nbr,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,greg_quarter_nbr,,1,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Period,97,greg_quarter_nm,,2,True,False,False,True,1,greg_quarter_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,greg_semester_desc,,2,True,False,False,True,1,greg_semester_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,greg_semester_nm,,2,True,False,False,True,1,greg_semester_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Period,97,greg_year_desc,,2,True,False,False,True,1,greg_year_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,BPP,,2,False,False,False,True,1,bpp_nm,ISSCOM Product by Category;ISSCOM Product by Flavor;ISSCOM Product by Trademark,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,BPP Code,,2,False,False,False,True,1,bpp_cd,ISSCOM Product by Category;ISSCOM Product by Flavor;ISSCOM Product by Trademark,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,BU Product,,2,False,False,False,True,1,bu_prod_desc,LATAM Product,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,BU Product Code,,2,False,False,False,True,1,bu_prod_cd,ISSCOM Product by Category;ISSCOM Product by Flavor;ISSCOM Product by Trademark,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,Beverage Category,,2,False,False,False,True,1,bev_cat_nm,ISSCOM Product by Category,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,Beverage State,,2,False,False,False,True,1,bev_stte_nm,ISSCOM Product by Category,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,Beverage Sub Category,,2,False,False,False,True,1,bev_sub_cat_nm,ISSCOM Product by Category,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,Beverage Type,,2,False,False,False,True,1,bev_type_nm,ISSCOM Product by Category,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,LT1.1 - Beverage Product,,2,False,False,False,True,1,lcl_hier_4_l1_desc,LATAM Product,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,LT1.2 - Brand Group,,2,False,False,False,True,1,lcl_hier_4_l2_desc,LATAM Product,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,LT1.3 - Trademark Category,,2,False,False,False,True,1,lcl_hier_4_l3_desc,LATAM Product,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,LT1.4 - Sub-Category,,2,False,False,False,True,1,lcl_hier_4_l4_desc,LATAM Product,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,LT1.5 - Category,,2,False,False,False,True,1,lcl_hier_4_l5_desc,LATAM Product,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,LT1.6 - Category Group,,2,False,False,False,True,1,lcl_hier_4_l6_desc,LATAM Product,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,LT1.7 - Segment,,2,False,False,False,True,1,lcl_hier_4_l7_desc,LATAM Product,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,LT1.8 - Industry,,2,False,False,False,True,1,lcl_hier_4_l8_desc,LATAM Product,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,LT1.9 - Total,,2,False,False,False,True,1,lcl_hier_4_l9_desc,LATAM Product,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,Non-KO Product,,2,False,False,False,True,1,bu_attr_15,Other Product Attributes,False,2026-02-13 20:28:47,1699-12-31 00:00:00
+Product,16,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Product,16,Source Product Code,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Product,16,bpp_rcg,,1,True,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:18
+Product,16,prod_id,,2,True,False,False,True,1,prod_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,src_prod_cd,,2,True,False,False,True,1,src_prod_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Product,16,src_sys_id,,2,True,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Record Type,28,Record Type,,2,False,False,False,True,1,entry_type_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Record Type,28,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Record Type,28,entry_type_cd,,2,True,False,False,True,1,entry_type_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Reporting View,31,Reporting View,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 17:59:52
+Reporting View,31,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Reporting View,31,rpt_view_cd,,2,False,False,False,True,1,rpt_view_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Reporting View,31,rpt_view_desc,,2,True,False,False,True,1,rpt_view_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Sales Type,19,BU Sales Type,,2,False,False,False,True,1,bu_sls_type_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Sales Type,19,BU Sales Type Code,,2,False,False,False,True,1,bu_sls_type_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Sales Type,19,Primary Sales Indicator,,2,False,False,False,True,1,bu_primary_ind,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Sales Type,19,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Sales Type,19,Source Sales Type,,2,False,False,False,True,1,src_sls_type_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Sales Type,19,Source Sales Type Code,,2,False,False,False,True,1,src_sls_type_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Sales Type,19,sls_type_id,,2,True,False,False,True,1,sls_type_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Sales Type,19,src_grp_id,,6,True,False,False,True,1,src_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Sales Type,19,src_sys_id,,6,True,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Security Ship From,100,btlr_loc_cd,,2,False,False,False,True,1,btlr_loc_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,btlr_loc_desc,,2,False,False,False,True,1,btlr_loc_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,bu_cd,,2,False,False,False,True,1,bu_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,bu_long_nm,,2,False,False,False,True,1,bu_long_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,bu_nm,,2,False,False,False,True,1,bu_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,bu_ship_from_loc_cd,,2,False,False,False,True,1,bu_ship_from_loc_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,bu_ship_from_loc_desc,,2,False,False,False,True,1,bu_ship_from_loc_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,ctry_cd,,2,False,False,False,True,1,ctry_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,ctry_long_nm,,2,False,False,False,True,1,ctry_long_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,ctry_nm,,2,False,False,False,True,1,ctry_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,grp_cd,,2,False,False,False,True,1,grp_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,grp_long_nm,,2,False,False,False,True,1,grp_long_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,grp_nm,,2,False,False,False,True,1,grp_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l10_cd,,2,False,False,False,True,1,lcl_hier_1_l10_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l10_desc,,2,False,False,False,True,1,lcl_hier_1_l10_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l10_sort_order,,2,False,False,False,True,1,lcl_hier_1_l10_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l11_cd,,2,False,False,False,True,1,lcl_hier_1_l11_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l11_desc,,2,False,False,False,True,1,lcl_hier_1_l11_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l11_sort_order,,2,False,False,False,True,1,lcl_hier_1_l11_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l12_cd,,2,False,False,False,True,1,lcl_hier_1_l12_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l12_desc,,2,False,False,False,True,1,lcl_hier_1_l12_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l12_sort_order,,2,False,False,False,True,1,lcl_hier_1_l12_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l13_cd,,2,False,False,False,True,1,lcl_hier_1_l13_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l13_desc,,2,False,False,False,True,1,lcl_hier_1_l13_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l13_sort_order,,2,False,False,False,True,1,lcl_hier_1_l13_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l14_cd,,2,False,False,False,True,1,lcl_hier_1_l14_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l14_desc,,2,False,False,False,True,1,lcl_hier_1_l14_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l14_sort_order,,2,False,False,False,True,1,lcl_hier_1_l14_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l15_cd,,2,False,False,False,True,1,lcl_hier_1_l15_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l15_desc,,2,False,False,False,True,1,lcl_hier_1_l15_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l15_sort_order,,2,False,False,False,True,1,lcl_hier_1_l15_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l1_cd,,2,False,False,False,True,1,lcl_hier_1_l1_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l1_desc,,2,False,False,False,True,1,lcl_hier_1_l1_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l1_sort_order,,2,False,False,False,True,1,lcl_hier_1_l1_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l2_cd,,2,False,False,False,True,1,lcl_hier_1_l2_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l2_desc,,2,False,False,False,True,1,lcl_hier_1_l2_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l2_sort_order,,2,False,False,False,True,1,lcl_hier_1_l2_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l3_cd,,2,False,False,False,True,1,lcl_hier_1_l3_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l3_desc,,2,False,False,False,True,1,lcl_hier_1_l3_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l3_sort_order,,2,False,False,False,True,1,lcl_hier_1_l3_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l4_cd,,2,False,False,False,True,1,lcl_hier_1_l4_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l4_desc,,2,False,False,False,True,1,lcl_hier_1_l4_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l4_sort_order,,2,False,False,False,True,1,lcl_hier_1_l4_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l5_cd,,2,False,False,False,True,1,lcl_hier_1_l5_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l5_desc,,2,False,False,False,True,1,lcl_hier_1_l5_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l5_sort_order,,2,False,False,False,True,1,lcl_hier_1_l5_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l6_cd,,2,False,False,False,True,1,lcl_hier_1_l6_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l6_desc,,2,False,False,False,True,1,lcl_hier_1_l6_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l6_sort_order,,2,False,False,False,True,1,lcl_hier_1_l6_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l7_cd,,2,False,False,False,True,1,lcl_hier_1_l7_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l7_desc,,2,False,False,False,True,1,lcl_hier_1_l7_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l7_sort_order,,2,False,False,False,True,1,lcl_hier_1_l7_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l8_cd,,2,False,False,False,True,1,lcl_hier_1_l8_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l8_desc,,2,False,False,False,True,1,lcl_hier_1_l8_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l8_sort_order,,2,False,False,False,True,1,lcl_hier_1_l8_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l9_cd,,2,False,False,False,True,1,lcl_hier_1_l9_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l9_desc,,2,False,False,False,True,1,lcl_hier_1_l9_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_1_l9_sort_order,,2,False,False,False,True,1,lcl_hier_1_l9_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l10_cd,,2,False,False,False,True,1,lcl_hier_2_l10_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l10_desc,,2,False,False,False,True,1,lcl_hier_2_l10_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l10_sort_order,,2,False,False,False,True,1,lcl_hier_2_l10_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l11_cd,,2,False,False,False,True,1,lcl_hier_2_l11_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l11_desc,,2,False,False,False,True,1,lcl_hier_2_l11_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l11_sort_order,,2,False,False,False,True,1,lcl_hier_2_l11_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l12_cd,,2,False,False,False,True,1,lcl_hier_2_l12_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l12_desc,,2,False,False,False,True,1,lcl_hier_2_l12_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l12_sort_order,,2,False,False,False,True,1,lcl_hier_2_l12_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l13_cd,,2,False,False,False,True,1,lcl_hier_2_l13_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l13_desc,,2,False,False,False,True,1,lcl_hier_2_l13_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l13_sort_order,,2,False,False,False,True,1,lcl_hier_2_l13_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l14_cd,,2,False,False,False,True,1,lcl_hier_2_l14_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l14_desc,,2,False,False,False,True,1,lcl_hier_2_l14_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l14_sort_order,,2,False,False,False,True,1,lcl_hier_2_l14_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l15_cd,,2,False,False,False,True,1,lcl_hier_2_l15_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l15_desc,,2,False,False,False,True,1,lcl_hier_2_l15_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l15_sort_order,,2,False,False,False,True,1,lcl_hier_2_l15_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l1_cd,,2,False,False,False,True,1,lcl_hier_2_l1_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l1_desc,,2,False,False,False,True,1,lcl_hier_2_l1_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l1_sort_order,,2,False,False,False,True,1,lcl_hier_2_l1_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l2_cd,,2,False,False,False,True,1,lcl_hier_2_l2_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l2_desc,,2,False,False,False,True,1,lcl_hier_2_l2_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l2_sort_order,,2,False,False,False,True,1,lcl_hier_2_l2_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l3_cd,,2,False,False,False,True,1,lcl_hier_2_l3_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l3_desc,,2,False,False,False,True,1,lcl_hier_2_l3_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l3_sort_order,,2,False,False,False,True,1,lcl_hier_2_l3_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l4_cd,,2,False,False,False,True,1,lcl_hier_2_l4_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l4_desc,,2,False,False,False,True,1,lcl_hier_2_l4_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l4_sort_order,,2,False,False,False,True,1,lcl_hier_2_l4_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l5_cd,,2,False,False,False,True,1,lcl_hier_2_l5_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l5_desc,,2,False,False,False,True,1,lcl_hier_2_l5_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l5_sort_order,,2,False,False,False,True,1,lcl_hier_2_l5_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l6_cd,,2,False,False,False,True,1,lcl_hier_2_l6_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l6_desc,,2,False,False,False,True,1,lcl_hier_2_l6_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l6_sort_order,,2,False,False,False,True,1,lcl_hier_2_l6_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l7_cd,,2,False,False,False,True,1,lcl_hier_2_l7_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l7_desc,,2,False,False,False,True,1,lcl_hier_2_l7_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l7_sort_order,,2,False,False,False,True,1,lcl_hier_2_l7_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l8_cd,,2,False,False,False,True,1,lcl_hier_2_l8_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l8_desc,,2,False,False,False,True,1,lcl_hier_2_l8_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l8_sort_order,,2,False,False,False,True,1,lcl_hier_2_l8_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l9_cd,,2,False,False,False,True,1,lcl_hier_2_l9_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l9_desc,,2,False,False,False,True,1,lcl_hier_2_l9_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_2_l9_sort_order,,2,False,False,False,True,1,lcl_hier_2_l9_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l10_cd,,2,False,False,False,True,1,lcl_hier_3_l10_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l10_desc,,2,False,False,False,True,1,lcl_hier_3_l10_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l10_sort_order,,2,False,False,False,True,1,lcl_hier_3_l10_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l11_cd,,2,False,False,False,True,1,lcl_hier_3_l11_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l11_desc,,2,False,False,False,True,1,lcl_hier_3_l11_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l11_sort_order,,2,False,False,False,True,1,lcl_hier_3_l11_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l12_cd,,2,False,False,False,True,1,lcl_hier_3_l12_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l12_desc,,2,False,False,False,True,1,lcl_hier_3_l12_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l12_sort_order,,2,False,False,False,True,1,lcl_hier_3_l12_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l13_cd,,2,False,False,False,True,1,lcl_hier_3_l13_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l13_desc,,2,False,False,False,True,1,lcl_hier_3_l13_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l13_sort_order,,2,False,False,False,True,1,lcl_hier_3_l13_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l14_cd,,2,False,False,False,True,1,lcl_hier_3_l14_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l14_desc,,2,False,False,False,True,1,lcl_hier_3_l14_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l14_sort_order,,2,False,False,False,True,1,lcl_hier_3_l14_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l15_cd,,2,False,False,False,True,1,lcl_hier_3_l15_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l15_desc,,2,False,False,False,True,1,lcl_hier_3_l15_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l15_sort_order,,2,False,False,False,True,1,lcl_hier_3_l15_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l1_cd,,2,False,False,False,True,1,lcl_hier_3_l1_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l1_desc,,2,False,False,False,True,1,lcl_hier_3_l1_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l1_sort_order,,2,False,False,False,True,1,lcl_hier_3_l1_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l2_cd,,2,False,False,False,True,1,lcl_hier_3_l2_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l2_desc,,2,False,False,False,True,1,lcl_hier_3_l2_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l2_sort_order,,2,False,False,False,True,1,lcl_hier_3_l2_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l3_cd,,2,False,False,False,True,1,lcl_hier_3_l3_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l3_desc,,2,False,False,False,True,1,lcl_hier_3_l3_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l3_sort_order,,2,False,False,False,True,1,lcl_hier_3_l3_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l4_cd,,2,False,False,False,True,1,lcl_hier_3_l4_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l4_desc,,2,False,False,False,True,1,lcl_hier_3_l4_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l4_sort_order,,2,False,False,False,True,1,lcl_hier_3_l4_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l5_cd,,2,False,False,False,True,1,lcl_hier_3_l5_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l5_desc,,2,False,False,False,True,1,lcl_hier_3_l5_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l5_sort_order,,2,False,False,False,True,1,lcl_hier_3_l5_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l6_cd,,2,False,False,False,True,1,lcl_hier_3_l6_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l6_desc,,2,False,False,False,True,1,lcl_hier_3_l6_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l6_sort_order,,2,False,False,False,True,1,lcl_hier_3_l6_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l7_cd,,2,False,False,False,True,1,lcl_hier_3_l7_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l7_desc,,2,False,False,False,True,1,lcl_hier_3_l7_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l7_sort_order,,2,False,False,False,True,1,lcl_hier_3_l7_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l8_cd,,2,False,False,False,True,1,lcl_hier_3_l8_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l8_desc,,2,False,False,False,True,1,lcl_hier_3_l8_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l8_sort_order,,2,False,False,False,True,1,lcl_hier_3_l8_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l9_cd,,2,False,False,False,True,1,lcl_hier_3_l9_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l9_desc,,2,False,False,False,True,1,lcl_hier_3_l9_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,lcl_hier_3_l9_sort_order,,2,False,False,False,True,1,lcl_hier_3_l9_sort_order,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,nsr_calc_ind,,2,False,False,False,True,1,nsr_calc_ind,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,rgn_cd,,2,False,False,False,True,1,rgn_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,rgn_long_nm,,2,False,False,False,True,1,rgn_long_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,rgn_nm,,2,False,False,False,True,1,rgn_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,sgrp_cd,,2,False,False,False,True,1,sgrp_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,sgrp_long_nm,,2,False,False,False,True,1,sgrp_long_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,sgrp_nm,,2,False,False,False,True,1,sgrp_nm,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,ship_from_loc_id,,2,False,False,False,True,1,ship_from_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,src_grp_id,,2,False,False,False,True,1,src_grp_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,src_ship_from_loc_cd,,2,False,False,False,True,1,src_ship_from_loc_cd,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,src_ship_from_loc_desc,,2,False,False,False,True,1,src_ship_from_loc_desc,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Security Ship From,100,src_sys_id,,2,False,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship From,22,BU Ship From,,2,False,False,False,True,1,bu_ship_from_loc_desc,ISSCOM Ship From,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship From,22,BU Ship From Code,,2,True,False,False,True,1,bu_ship_from_loc_cd,ISSCOM Ship From,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship From,22,Business Unit,,2,False,False,False,True,1,bu_nm,ISSCOM Ship From,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship From,22,Calculated_Join_ID,,2,True,False,False,True,1,Calculated_Join_ID,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,Country,,2,False,False,False,True,1,ctry_nm,ISSCOM Ship From,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship From,22,Country Code,,2,False,False,False,True,1,ctry_cd,ISSCOM Ship From,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship From,22,Franchise Area Code,,2,True,False,False,True,1,Franchise Area Code,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,L1.0 - Bottler Franchise or CEDI,,2,False,False,False,True,1,desc_new_st,LATAM Ship From,False,2026-02-26 20:29:29,1699-12-31 00:00:00
+Ship From,22,L1.1 - Bottler SubZone,,2,False,False,False,True,1,desc_new_fa,LATAM Ship From,False,2026-02-26 20:29:29,1699-12-31 00:00:00
+Ship From,22,L1.10 - Operating Unit,,2,False,False,False,True,1,desc_ou,LATAM Ship From,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,L1.2 - Bottler Zone,,2,False,False,False,True,1,desc_ft,LATAM Ship From,False,2026-02-26 20:29:29,1699-12-31 00:00:00
+Ship From,22,L1.3 - Bottler,,2,False,False,False,True,1,desc_new_cb,LATAM Ship From,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,L1.4 - Field Unit,,2,False,False,False,True,1,desc_new_it,LATAM Ship From,False,2026-02-26 20:29:29,1699-12-31 00:00:00
+Ship From,22,L1.5 - Country,,2,False,False,False,True,1,desc_c,LATAM Ship From,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,L1.6 - Franchise Sub Region,,2,False,False,False,True,1,desc_new_rc,LATAM Ship From,False,2026-02-26 20:29:29,1699-12-31 00:00:00
+Ship From,22,L1.7 - Franchise Region,,2,False,False,False,True,1,desc_cg,LATAM Ship From,False,2026-02-26 20:29:29,1699-12-31 00:00:00
+Ship From,22,L1.8 - Franchise Unit Operations,,2,False,False,False,True,1,desc_r,LATAM Ship From,False,2026-02-26 20:29:29,1699-12-31 00:00:00
+Ship From,22,L1.9 - Zone Operations,,2,False,False,False,True,1,desc_new_bu,LATAM Ship From,False,2026-02-26 20:29:29,1699-12-31 00:00:00
+Ship From,22,Operating Group,,2,False,False,False,True,1,grp_nm,ISSCOM Ship From,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship From,22,Region,,2,False,False,False,True,1,rgn_nm,ISSCOM Ship From,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship From,22,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Ship From,22,Segmented Territory Code,,2,True,False,False,True,1,Segmented Territory Code,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,Source Ship From Code,,1,False,False,False,True,1,,,False,2026-02-26 06:36:26,2026-03-16 18:00:17
+Ship From,22,bu_ship_from_loc_desc,,2,True,False,False,True,1,bu_ship_from_loc_desc,,False,2026-01-08 18:44:54,1699-12-31 00:00:00
+Ship From,22,cd_bu,,6,True,False,False,True,1,cd_bu,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_new_c,,6,True,False,False,True,1,cd_new_c,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_new_cb,,6,True,False,False,True,1,cd_new_cb,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_new_cg,,6,True,False,False,True,1,cd_new_cg,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_new_fa,,6,True,False,False,True,1,cd_new_fa,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_new_ft,,6,True,False,False,True,1,cd_new_ft,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_new_it,,6,True,False,False,True,1,cd_new_it,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_new_r,,6,True,False,False,True,1,cd_new_r,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_new_rc,,6,True,False,False,True,1,cd_new_rc,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_new_st,,6,True,False,False,True,1,cd_new_st,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_nsr_c,,6,True,False,False,True,1,cd_nsr_c,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_nsr_cb,,2,True,False,False,True,1,cd_nsr_cb,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_nsr_cg,,6,True,False,False,True,1,cd_nsr_cg,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_nsr_fa,,2,True,False,False,True,1,cd_nsr_fa,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_nsr_ft,,2,True,False,False,True,1,cd_nsr_ft,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_nsr_it,,2,True,False,False,True,1,cd_nsr_it,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_nsr_r,,2,True,False,False,True,1,cd_nsr_r,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_nsr_rc,,6,True,False,False,True,1,cd_nsr_rc,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_nsr_st,,2,True,False,False,True,1,cd_nsr_st,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,cd_ou,,6,True,False,False,True,1,cd_ou,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,desc_country_cd,,2,True,False,False,True,1,desc_country_cd,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,nsr_calc_ind,,2,True,False,False,True,1,nsr_calc_ind,,False,2025-12-04 17:23:08,1699-12-31 00:00:00
+Ship From,22,ship_from_hier_cd,,2,True,False,False,True,1,ship_from_hier_cd ,,False,2026-01-29 14:19:37,1699-12-31 00:00:00
+Ship From,22,ship_from_loc_id,,2,True,False,False,True,1,ship_from_loc_id,,False,2025-12-04 17:23:08,1699-12-31 00:00:00
+Ship From,22,src_ship_from_loc_cd,,2,True,False,False,True,1,src_ship_from_loc_cd,,False,2025-12-04 17:23:08,1699-12-31 00:00:00
+Ship From,22,src_sys_id,,2,True,False,False,True,1,src_sys_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship To,25,LT1.1 - Tradename,,2,False,False,False,True,1,lcl_hier_4_l1_desc,LATAM Customer,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship To,25,LT1.2 - Customer,,2,False,False,False,True,1,lcl_hier_4_l2_desc,LATAM Customer,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship To,25,LT1.3 - Business Sub Type,,2,False,False,False,True,1,lcl_hier_4_l3_desc,LATAM Customer,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship To,25,LT1.4 - Business Type,,2,False,False,False,True,1,lcl_hier_4_l4_desc,LATAM Customer,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship To,25,LT1.5 - Consumption Type,,2,False,False,False,True,1,lcl_hier_4_l5_desc,LATAM Customer,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship To,25,LT1.6 - Customer Leadership,,2,False,False,False,True,1,lcl_hier_4_l6_desc,LATAM Customer,False,2026-02-26 06:36:26,1699-12-31 00:00:00
+Ship To,25,RowNumber-2662979B-1795-4F74-8F37-6A1BA8059B61,,6,True,True,True,False,1,,,True,2025-12-02 10:00:02,1699-12-31 00:00:00
+Ship To,25,Source Ship To Code,,2,True,False,False,True,1,src_ship_to_loc_cd,,False,2026-03-19 17:46:03,1699-12-31 00:00:00
+Ship To,25,ship_to_loc_id,,2,True,False,False,True,1,ship_to_loc_id,,False,2026-02-26 06:36:26,1699-12-31 00:00:00
