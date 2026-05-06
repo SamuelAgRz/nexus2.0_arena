@@ -1,0 +1,43 @@
+Dax Developer
+```json
+{
+  "intent_type": "Breakdown",
+  "business_question": "Show NSR YTD by Trade Channel for Colombia market using latest available YTD",
+  "metric": {
+    "name": "NSR YTD",
+    "family": "Metrics-Actuals-Rev"
+  },
+  "scenario": "Actuals",
+  "time": {
+    "year": "latest",
+    "period": "latest available YTD",
+    "grain": "YTD"
+  },
+  "geography": {
+    "type": "Ship To",
+    "value": "Colombia market",
+    "note": "The target model does not expose a 'Ship To' country column. Validator must flag the missing geography object or a valid geography column must be provided."
+  },
+  "breakdown": [
+    "Channel[Trade Channel]"
+  ],
+  "filters": [
+    {
+      "type": "Ship To",
+      "column": "Ship To.[Country] (not available in model)",
+      "operator": "equals",
+      "value": "Colombia market",
+      "note": "No country/geography column available in the provided model objects. DAX should be generated without this filter and the missing geography object must be flagged by the validator, or user must supply a valid Ship To geography column."
+    }
+  ],
+  "comparison": {
+    "type": null,
+    "against": null
+  },
+  "ranking": {
+    "type": null,
+    "top_n": null
+  },
+  "visualization_required": false
+}
+```

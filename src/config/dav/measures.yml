@@ -1,0 +1,63 @@
+measures:
+  actuals_revenue:
+    table: "Metrics-Actuals-Rev"
+    measures:
+      - name: "Net Sales Revenue"
+        aliases: ["NSR", "Net Sales Revenue", "Sell-In Revenue"]
+        scenario: "Actuals"
+        metric_type: "Revenue"
+        currency: "LC"
+        time_scope: "Base"
+
+      - name: "Net Sales Revenue YTD"
+        aliases: ["NSR YTD", "YTD NSR"]
+        scenario: "Actuals"
+        metric_type: "Revenue"
+        currency: "LC"
+        time_scope: "YTD"
+
+      - name: "Net Sales Revenue PY"
+        aliases: ["NSR PY", "NSR Prior Year"]
+        scenario: "Actuals"
+        metric_type: "Revenue"
+        currency: "LC"
+        time_scope: "PY"
+
+      - name: "Net Sales Revenue % vs PY"
+        aliases: ["NSR YoY %", "NSR Growth %"]
+        scenario: "Actuals"
+        metric_type: "Revenue"
+        comparison: "YoY"
+        value_type: "Percentage"
+
+  actuals_volume:
+    table: "Metrics-Actuals-Vol"
+    measures:
+      - name: "Unit Cases"
+        aliases: ["Volume", "UC", "Unit Cases"]
+        scenario: "Actuals"
+        metric_type: "Volume"
+        unit: "UC"
+
+      - name: "Unit Cases YTD"
+        aliases: ["Volume YTD", "UC YTD"]
+        scenario: "Actuals"
+        metric_type: "Volume"
+        unit: "UC"
+        time_scope: "YTD"
+
+  business_plan:
+    table: "Metrics-BP"
+    measures:
+      - name: "Net Sales Revenue BP"
+        aliases: ["NSR BP", "BP NSR"]
+        scenario: "BP"
+        metric_type: "Revenue"
+
+  rolling_estimate:
+    table: "Metrics-RE"
+    measures:
+      - name: "Net Sales Revenue RE"
+        aliases: ["NSR RE", "RE NSR"]
+        scenario: "RE"
+        metric_type: "Revenue"

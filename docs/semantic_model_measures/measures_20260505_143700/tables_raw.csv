@@ -1,0 +1,32 @@
+﻿[ID],[ModelID],[Name],[DataCategory],[Description],[IsHidden],[TableStorageID],[ModifiedTime],[StructureModifiedTime],[SystemFlags],[ShowAsVariationsOnly],[IsPrivate],[DefaultDetailRowsDefinitionID],[AlternateSourcePrecedence],[RefreshPolicyID],[CalculationGroupID],[ExcludeFromModelRefresh],[LineageTag],[SourceLineageTag],[SystemManaged],[ExcludeFromAutomaticAggregations]
+10,1,Channel,,,False,6697,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,230f9d56-cb34-40d0-9698-acbf777c5be7,,False,False
+13,1,Package,,,False,6699,2026-02-26 06:36:26,2025-12-04 18:17:35,0,False,False,,0,,,False,d0a350e0-0240-4b94-8092-279557c68fb6,,False,False
+16,1,Product,,,False,6701,2026-02-26 06:36:26,2026-02-13 20:28:47,0,False,False,,0,,,False,eede4418-061e-4f10-99fa-a42833f244d6,,False,False
+19,1,Sales Type,,,False,6703,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,43906b3c-c118-4129-a345-e026600fc2b7,,False,False
+22,1,Ship From,,,False,6705,2026-02-26 06:36:26,2026-02-27 14:03:00,0,False,False,,0,,,False,b7497650-7048-41f8-972a-f2ab9b83bd6c,,False,False
+25,1,Ship To,,,False,6707,2026-02-26 06:36:26,2025-12-04 18:09:09,0,False,False,,0,,,False,ca94ca9c-c3e6-4f43-abd5-9983bbdca4fe,,False,False
+28,1,Record Type,,,True,6709,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,ca55c317-9de6-4ac9-a9d6-6f7834170375,,False,False
+31,1,Reporting View,,,False,6711,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,d46cc6b6-03bf-4058-b848-f3fb9040936d,,False,False
+34,1,Transaction Type,,,False,6713,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,9d2dbe6e-8ccd-46ff-9ffa-dcc47af922b6,,False,False
+37,1,Metrics-Actuals-Vol,,,True,6715,2026-02-26 06:36:26,2026-03-10 18:39:32,0,False,False,,0,,,False,1e5cf35e-1dd3-41b2-9b72-87a0ee3a2f66,,False,False
+40,1,Metrics-Day Count,,,True,6717,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,dc172857-34f4-43c5-877f-293b6763e794,,False,False
+43,1,Metrics,,,False,6719,2026-02-26 06:36:26,2025-12-02 10:00:02,2,False,False,,0,,,False,ba4edd71-2868-4772-8421-ac41e0753e39,,False,False
+46,1,CurrencyRate,,,True,6721,2026-02-26 06:36:26,2026-01-09 01:17:07,0,False,False,,0,,,False,063bfb37-4fc9-44c2-92af-1df2cfcd84d1,,False,False
+49,1,Metrics-BP,,,True,6723,2026-02-26 06:36:26,2026-01-09 21:18:18,0,False,False,,0,,,False,f93dc013-9dcb-4507-b961-d5c2644be21a,,False,False
+52,1,Metrics-Local Population,,,True,6725,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,c993b0c0-5a2f-43d8-be30-822c78b6fdef,,False,False
+55,1,Metrics-RE,,,True,6727,2026-02-26 06:36:26,2026-01-10 01:38:23,0,False,False,,0,,,False,a0c14095-a7b5-4211-87c2-93c3f930f3ce,,False,False
+58,1,Metrics-Actuals-Rev,,,True,6729,2026-02-26 06:36:26,2026-03-03 15:19:36,0,False,False,,0,,,False,7b9373f8-0bfc-4d9f-8f7c-1127ce2718c9,,False,False
+61,1,Metrics-Bulk-Discount,,,True,6731,2026-02-26 06:36:26,2026-02-27 21:15:17,0,False,False,,0,,,False,aeed4ff6-1661-45d0-b942-3e4c7c385fed,,False,False
+64,1,Metrics-Inv-Discount,,,True,6733,2026-02-26 06:36:26,2026-02-27 21:15:17,0,False,False,,0,,,False,a53f5d7c-5201-43bf-bfd9-1b873cda46bb,,False,False
+67,1,Metrics-Std-Discount,,,True,6735,2026-02-26 06:36:26,2026-03-03 15:41:01,0,False,False,,0,,,False,d0333ea3-e3c1-411f-85ba-4cf272e060be,,False,False
+70,1,Off Discount,,,False,6737,2026-02-26 06:36:26,2026-02-02 21:20:20,0,False,False,,0,,,False,8893e834-6962-4429-8f8b-bba44846a79e,,False,False
+73,1,On Bulk Discount,,,False,6739,2026-02-26 06:36:26,2026-02-02 21:41:15,0,False,False,,0,,,False,194cd6ce-9e8b-455f-b2e0-48d9f6819d27,,False,False
+76,1,On Standard Discount,,,False,6741,2026-02-26 06:36:26,2026-02-02 18:16:22,0,False,False,,0,,,False,dd3254f2-5ec8-42e4-8404-a4c67cca5cb5,,False,False
+79,1,On Standard Discount Classification,,,False,6743,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,57734fd7-bd0d-48ac-bef0-3c73d65a0a7c,,False,False
+82,1,Metrics-WE,,,True,6745,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,bf62694a-3595-4abc-8b51-9893c86eb138,,False,False
+85,1,Metrics-Other-Discount,,,True,6747,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,dae1f468-2228-4090-8f0b-32e92188f19f,,False,False
+88,1,Other Discount,,,True,6749,2026-02-26 06:36:26,2026-02-02 22:57:31,0,False,False,,0,,,False,10c27204-e42a-4dca-9436-fb397a751694,,False,False
+91,1,Concept Classification,,,True,6751,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,51d8ce75-b14c-4053-8b1f-1df68e849c2b,,False,False
+94,1,Discount Concept,,,True,6753,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,e0e6cbac-a5bd-451f-a324-f2a5f823b6fe,,False,False
+97,1,Period,,,False,6755,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,10a34d6e-a05e-4ef4-9db7-8601ec121320,,False,False
+100,1,Security Ship From,,,True,6757,2026-02-26 06:36:26,2025-12-02 10:00:02,0,False,False,,0,,,False,83b886e8-8986-4a06-836e-0438a95a1978,,False,False

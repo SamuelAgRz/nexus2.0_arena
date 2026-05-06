@@ -1,0 +1,16 @@
+KPIs:
+  NSR: [NSR, revenue, sales, ingresos]
+
+Time:
+  YTD: [YTD, year to date]
+  CURRENT_YEAR: [2025, current year]
+
+Channel:
+  CHANNEL: [channel, canal]
+  TRADITIONAL: [traditional]
+
+Geography:
+  NATIONAL: [Colombia, country]
+
+Comparison:
+  YOY: [growth, YoY, vs last year]

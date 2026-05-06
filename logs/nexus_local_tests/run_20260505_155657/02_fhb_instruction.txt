@@ -1,0 +1,6 @@
+Dear User,
+
+To answer your question accurately, please clarify:
+
+1. Time: which year should "YTD" refer to? (e.g., 2026 YTD, 2025 YTD, or "latest available YTD")
+2. Channel granularity: do you want the breakdown by 'Trade Channel' or by 'Sub Trade Channel'?

@@ -1,0 +1,12 @@
+{
+  "status": "NOT_APPROVED",
+  "errors": [
+    {
+      "type": "INVALID_TABLE",
+      "severity": "CRITICAL",
+      "message": "Data availability (semantic model) not provided. Cannot confirm existence of tables/objects referenced by the query: 'Channel' (and 'Channel'[Trade Channel]), 'Period' (and 'Period'[Year]) or the measure [NSR YTD].",
+      "fix": "Provide the Data Availability (semantic model) listing tables, columns and measures. Ensure the model includes 'Channel'[Trade Channel], 'Period'[Year], and the semantic measure [NSR YTD] before re-validating."
+    }
+  ],
+  "instructions": "Fix ONLY listed issues. Do not modify intent."
+}

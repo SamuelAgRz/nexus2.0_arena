@@ -1,0 +1,10 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Channel'[Trade Channel],
+    FILTER(
+        ALL('Period'),
+        'Period'[Year] = MAXX(ALL('Period'), 'Period'[Year])
+    ),
+    "Net Sales Revenue", [NSR YTD]
+)
+ORDER BY [Net Sales Revenue] DESC

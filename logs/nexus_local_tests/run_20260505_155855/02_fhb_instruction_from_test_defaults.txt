@@ -1,0 +1,16 @@
+
+Business question:
+Show NSR YTD by Trade Channel for Colombia using latest available YTD
+
+Resolved assumptions for local smoke test:
+- Metric: NSR YTD.
+- Scenario: Actuals.
+- Channel granularity: 'Channel'[Trade Channel].
+- Time: latest available YTD.
+- Geography: Colombia only if a valid Colombia/market/geography column is explicitly available in semantic context.
+- If no valid Colombia column is available, do not invent one.
+
+DAX generation task:
+Generate an executable DAX query using SUMMARIZECOLUMNS that returns NSR YTD by 'Channel'[Trade Channel].
+Use the exposed measure [NSR YTD].
+Return only executable DAX.

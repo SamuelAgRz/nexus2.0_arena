@@ -1,0 +1,32 @@
+﻿[ID],[Name],[Description],[IsHidden],[SystemManaged],[ModifiedTime],[StructureModifiedTime]
+10,Channel,,False,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+91,Concept Classification,,True,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+46,CurrencyRate,,True,False,2026-02-26 06:36:26,2026-01-09 01:17:07
+94,Discount Concept,,True,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+43,Metrics,,False,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+58,Metrics-Actuals-Rev,,True,False,2026-02-26 06:36:26,2026-03-03 15:19:36
+37,Metrics-Actuals-Vol,,True,False,2026-02-26 06:36:26,2026-03-10 18:39:32
+49,Metrics-BP,,True,False,2026-02-26 06:36:26,2026-01-09 21:18:18
+61,Metrics-Bulk-Discount,,True,False,2026-02-26 06:36:26,2026-02-27 21:15:17
+40,Metrics-Day Count,,True,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+64,Metrics-Inv-Discount,,True,False,2026-02-26 06:36:26,2026-02-27 21:15:17
+52,Metrics-Local Population,,True,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+85,Metrics-Other-Discount,,True,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+55,Metrics-RE,,True,False,2026-02-26 06:36:26,2026-01-10 01:38:23
+67,Metrics-Std-Discount,,True,False,2026-02-26 06:36:26,2026-03-03 15:41:01
+82,Metrics-WE,,True,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+70,Off Discount,,False,False,2026-02-26 06:36:26,2026-02-02 21:20:20
+73,On Bulk Discount,,False,False,2026-02-26 06:36:26,2026-02-02 21:41:15
+76,On Standard Discount,,False,False,2026-02-26 06:36:26,2026-02-02 18:16:22
+79,On Standard Discount Classification,,False,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+88,Other Discount,,True,False,2026-02-26 06:36:26,2026-02-02 22:57:31
+13,Package,,False,False,2026-02-26 06:36:26,2025-12-04 18:17:35
+97,Period,,False,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+16,Product,,False,False,2026-02-26 06:36:26,2026-02-13 20:28:47
+28,Record Type,,True,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+31,Reporting View,,False,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+19,Sales Type,,False,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+100,Security Ship From,,True,False,2026-02-26 06:36:26,2025-12-02 10:00:02
+22,Ship From,,False,False,2026-02-26 06:36:26,2026-02-27 14:03:00
+25,Ship To,,False,False,2026-02-26 06:36:26,2025-12-04 18:09:09
+34,Transaction Type,,False,False,2026-02-26 06:36:26,2025-12-02 10:00:02

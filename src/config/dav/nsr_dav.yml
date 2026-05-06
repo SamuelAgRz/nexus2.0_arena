@@ -1,0 +1,77 @@
+model:
+  name: "NSR LATAM Cube UAT"
+  type: "Power BI Semantic Model"
+  calendar_default: "445"
+  geography_default: "Ship To"
+  nsr_definition: "Net Sales Revenue Sell-In"
+
+latest_available_period:
+  year_445: 2025
+  month_445: "Nov"
+  month_445_number: 11
+  week_445: null
+  data_status: "partial_or_complete"
+
+tables:
+  Period:
+    columns:
+      - "Year 445"
+      - "Year 445 Code"
+      - "Quarter 445"
+      - "Month 445"
+      - "Month 445 #"
+      - "Month 445 Code"
+      - "Week 445"
+      - "Week 445 #"
+      - "Day 445"
+
+  Channel:
+    columns:
+      - "LT1.3 - Channel Macro Group"
+      - "LT1.2 - Channel Group"
+      - "LT1.1 - Trade Channel"
+      - "LT1.0 - Sub Trade Channel"
+      - "Trade Channel"
+      - "Sub Trade Channel"
+
+  Product:
+    columns:
+      - "LT1.5 - Category"
+      - "LT1.4 - Sub-Category"
+      - "LT1.2 - Brand Group"
+      - "LT1.1 - Beverage Product"
+      - "Beverage Category"
+      - "Beverage Sub Category"
+
+  Package:
+    columns:
+      - "LT1.1 - Package"
+      - "LT1.3 - Container"
+      - "LT1.4 - Refillability"
+      - "LT1.5 - MS-SS"
+      - "LT1.6 - RTD-NRTD"
+
+  Ship To:
+    columns:
+      - "Country"
+      - "Country Code"
+      - "Business Unit"
+      - "BU Ship To"
+
+  Ship From:
+    columns:
+      - "Country"
+      - "Country Code"
+      - "Business Unit"
+      - "BU Ship From"
+
+  Reporting View:
+    columns:
+      - "Reporting View"
+      - "rpt_view_cd"
+
+  Sales Type:
+    columns:
+      - "BU Sales Type"
+      - "Primary Sales Indicator"
+      - "Source Sales Type"

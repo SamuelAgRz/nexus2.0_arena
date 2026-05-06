@@ -7,7 +7,13 @@ from src.agents.dax_executor import DaxExecutorAgent
 from src.agents.dax_result_summarizer import DaxResultSummarizerAgent
 from src.agents.visualization_agent import VisualizationAgent
 from src.agents.final_summarizer import FinalSummarizerAgent
+
 from src.utils.logger import get_logger
+from src.utils.config_loader import load_yaml
+from src.utils.synonym_selector import (
+    select_relevant_synonyms,
+    format_synonyms_for_prompt,
+)
 
 
 class NexusNotebookOrchestrator:
@@ -15,15 +21,22 @@ class NexusNotebookOrchestrator:
     Nexus-like orchestrator.
 
     Flow:
-    User Query
-      -> Intent Clarifier
-      -> DAX Query Developer
-      -> DAX Validator
-          - APPROVED -> DAX Executor
-          - NOT APPROVED -> feedback back to DAX Query Developer
-      -> DAX Result Summarizer
-      -> VisualizationAgent if needed
-      -> Final Summarizer
+        User Query
+          -> Runtime synonym selection
+          -> Intent Clarifier
+          -> DAX Query Developer
+          -> DAX Validator
+              - APPROVED -> DAX Executor
+              - NOT APPROVED -> feedback back to DAX Query Developer
+          -> DAX Result Summarizer
+          -> VisualizationAgent if needed
+          -> Final Summarizer
+
+    Important architecture rules:
+        - Intent Clarifier is the only agent that uses general_syn.
+        - DAX Developer receives structured intent/instruction + dav, but no general_syn.
+        - DAX Developer must not ask clarification questions.
+        - Validator validates query against semantic context/model rules.
     """
 
     def __init__(
@@ -31,23 +44,45 @@ class NexusNotebookOrchestrator:
         llm_client,
         pbi_client,
         semantic_context: str,
-        general_syn: str = "",
         dav: str = "",
+        synonyms_path: str = "src/config/synonyms/general_syn_full.yml",
         log_level: str = "INFO",
         max_validation_iterations: int = 3,
+        max_synonym_keys: int = 40,
     ):
         self.logger = get_logger(self.__class__.__name__, log_level)
         self.max_validation_iterations = max_validation_iterations
+        self.max_synonym_keys = max_synonym_keys
+        self.dav = dav
+        self.semantic_context = semantic_context
 
+        # Load the full synonym dictionary once.
+        # Runtime query-specific subset is selected inside run().
+        try:
+            self.full_synonyms = load_yaml(synonyms_path)
+        except FileNotFoundError:
+            self.logger.warning(
+                "Synonym file not found. Continuing with empty synonyms.",
+                extra={
+                    "extra_payload": {
+                        "stage": "init",
+                        "synonyms_path": synonyms_path,
+                    }
+                },
+            )
+            self.full_synonyms = {}
+
+        # Intent Clarifier receives dav at init.
+        # Runtime general_syn is passed during run().
         self.intent_agent = IntentClarifierAgent(
             llm_client,
-            general_syn=general_syn,
             dav=dav,
         )
 
+        # DAX Developer should NOT use general_syn.
+        # It should compile valid intent/instruction into executable DAX.
         self.developer_agent = DaxQueryDeveloperAgent(
             llm_client,
-            general_syn=general_syn,
             dav=dav,
         )
 
@@ -60,6 +95,32 @@ class NexusNotebookOrchestrator:
         self.result_summarizer = DaxResultSummarizerAgent(llm_client)
         self.visualizer = VisualizationAgent()
         self.final_summarizer = FinalSummarizerAgent(llm_client)
+
+    def _build_runtime_synonyms(self, user_query: str) -> str:
+        """
+        Select only relevant synonyms for the current user query.
+        This avoids injecting the full synonym dictionary into the prompt.
+        """
+        selected_synonyms = select_relevant_synonyms(
+            user_query=user_query,
+            raw_synonyms=self.full_synonyms,
+            max_keys=self.max_synonym_keys,
+        )
+
+        runtime_synonyms = format_synonyms_for_prompt(selected_synonyms)
+
+        self.logger.info(
+            "Runtime synonyms selected",
+            extra={
+                "extra_payload": {
+                    "stage": "synonym_selector",
+                    "selected_keys": list(selected_synonyms.keys()),
+                    "selected_count": len(selected_synonyms),
+                }
+            },
+        )
+
+        return runtime_synonyms
 
     def _has_agent(self, intent: Dict[str, Any], agent_name: str) -> bool:
         return any(agent.get("name") == agent_name for agent in intent.get("agents", []))
@@ -74,7 +135,11 @@ class NexusNotebookOrchestrator:
         return validation_result.strip().upper() == "APPROVED"
 
     def _is_not_approved(self, validation_result: str) -> bool:
-        return validation_result.strip().upper().startswith("NOT APPROVED")
+        normalized = validation_result.strip().upper()
+        return normalized.startswith("NOT APPROVED") or '"STATUS": "NOT_APPROVED"' in normalized
+
+    def _is_intent_invalid(self, dax_query: str) -> bool:
+        return dax_query.strip().upper() == "INTENT_INVALID"
 
     def _build_revision_instruction(
         self,
@@ -101,6 +166,7 @@ Rules:
 - Preserve the original business intent.
 - Do NOT introduce new filters, columns, measures, or business logic unless required by the validator.
 - Return ONLY the corrected DAX query.
+- If the intent is not executable, return exactly: INTENT_INVALID
 """.strip()
 
     def _generate_validated_dax(self, instruction: str) -> Dict[str, Any]:
@@ -112,7 +178,12 @@ Rules:
         for iteration in range(1, self.max_validation_iterations + 1):
             self.logger.info(
                 "Generating DAX",
-                extra={"extra_payload": {"stage": "dax_developer", "iteration": iteration}},
+                extra={
+                    "extra_payload": {
+                        "stage": "dax_developer",
+                        "iteration": iteration,
+                    }
+                },
             )
 
             dax_query = self.developer_agent.run(current_instruction)
@@ -127,6 +198,28 @@ Rules:
                     }
                 },
             )
+
+            if self._is_intent_invalid(dax_query):
+                validation_result = (
+                    "INTENT_INVALID returned by DAX Developer. "
+                    "The structured intent/instruction was incomplete, ambiguous, "
+                    "or not executable against the provided semantic model context."
+                )
+
+                attempts.append(
+                    {
+                        "iteration": iteration,
+                        "dax_query": dax_query,
+                        "validation_result": validation_result,
+                    }
+                )
+
+                return {
+                    "approved": False,
+                    "dax_query": dax_query,
+                    "validation_result": validation_result,
+                    "attempts": attempts,
+                }
 
             validation_result = self.validator_agent.run(
                 business_question=instruction,
@@ -188,10 +281,16 @@ Rules:
     def run(self, user_query: str) -> Dict[str, Any]:
         self.logger.info(
             "Starting orchestration",
-            extra={"extra_payload": {"stage": "start"}},
+            extra={"extra_payload": {"stage": "start", "user_query": user_query}},
         )
 
-        intent = self.intent_agent.run(user_query)
+        general_syn_runtime = self._build_runtime_synonyms(user_query)
+
+        # Intent Clarifier is the only agent that receives general_syn.
+        intent = self.intent_agent.run(
+            user_query=user_query,
+            general_syn=general_syn_runtime,
+        )
 
         self.logger.info(
             "Intent classified",
@@ -215,6 +314,7 @@ Rules:
 
             return {
                 "intent": intent,
+                "runtime_synonyms": general_syn_runtime,
                 "dax_query": None,
                 "dax_result": None,
                 "dataframe": None,
@@ -222,8 +322,16 @@ Rules:
                 "final_answer": final_answer,
             }
 
-        if self._has_agent(intent, "FHB_dataset"):
-            fhb_instruction = self._get_instruction(intent, "FHB_dataset") or user_query
+        # Backward compatibility with your current routing name.
+        # If you rename the agent to "Dax Developer", add it here too.
+        has_dax_agent = self._has_agent(intent, "FHB_dataset") or self._has_agent(intent, "Dax Developer")
+
+        if has_dax_agent:
+            fhb_instruction = (
+                self._get_instruction(intent, "FHB_dataset")
+                or self._get_instruction(intent, "Dax Developer")
+                or user_query
+            )
 
             validation_payload = self._generate_validated_dax(fhb_instruction)
 
@@ -235,6 +343,7 @@ Rules:
 
                 return {
                     "intent": intent,
+                    "runtime_synonyms": general_syn_runtime,
                     "dax_query": validation_payload.get("dax_query"),
                     "dax_result": None,
                     "dataframe": None,
@@ -304,6 +413,7 @@ Rules:
 
         return {
             "intent": intent,
+            "runtime_synonyms": general_syn_runtime,
             "dax_query": dax_query,
             "dax_result": dax_result,
             "dataframe": df,
