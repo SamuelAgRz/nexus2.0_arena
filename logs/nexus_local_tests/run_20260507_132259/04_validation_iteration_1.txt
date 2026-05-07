@@ -1,0 +1,12 @@
+{
+  "status": "NOT_APPROVED",
+  "errors": [
+    {
+      "type": "INTENT_MISMATCH",
+      "severity": "CRITICAL",
+      "message": "LatestYear is computed across all countries (no geography filter). The resolved intent requires the 'latest non null year' to be evaluated for Colombia (the query filters results to Colombia).",
+      "fix": "Apply the Colombia filter when computing LatestYear. Constrain the MAXX/FILTER that finds the latest year with a non-blank SUM('Metrics-Actuals-Rev'[btlr_net_sls_rev_amt]) by including 'Ship From'[Country] = \"Colombia\" (for example via CALCULATE with that filter or TREATAS for 'Ship From'[Country])."
+    }
+  ],
+  "instructions": "Fix ONLY listed issues. Do not modify intent."
+}

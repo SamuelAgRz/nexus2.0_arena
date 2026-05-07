@@ -9,7 +9,7 @@ from src.connections.nsr_conn import AdomdConnector
 # 1. Paths
 # ============================================================
 
-BASE_DIR = r"C:\Users\SamuelAguilarRamirez\nexus2.0"
+BASE_DIR =  r"c:\\Users\\AdrianLandaverde\\Documents\\nexus2.0_arena"
 
 PATH_DLL = os.path.join(
     BASE_DIR,

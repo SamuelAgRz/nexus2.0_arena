@@ -44,7 +44,7 @@ import pandas as pd
 # Project path
 # =============================================================================
 
-PROJECT_ROOT = Path(r"C:\Users\SamuelAguilarRamirez\nexus2.0")
+PROJECT_ROOT = Path(r"c:\\Users\\AdrianLandaverde\\Documents\\nexus2.0_arena")
 sys.path.insert(0, str(PROJECT_ROOT))
 
 

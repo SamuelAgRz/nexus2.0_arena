@@ -1,0 +1,12 @@
+Dear User,
+
+To answer your question accurately, please clarify:
+
+1. Time period — which period should I use for NSR? Options: latest available YTD (recommended default, 445 calendar), a specific year (full year), YTD for a specific year, MTD (specific month), QTD, or a specific month/week.  
+2. Geography dimension — do you mean Colombia as Ship From (bottler / 'Ship From'[Country]) or Colombia as market (Ship To)? Note: the model supports country filtering on 'Ship From'[Country] but does not have a 'Ship To'[Country] column. Please confirm which to use.  
+3. Product category level — by "categories" do you mean 'Product'[Beverage Category] (recommended) or 'Product'[BPP] or another Product hierarchy level?  
+4. Channel level — by "all channels" do you want 'Channel'[Trade Channel] (default) or a more granular channel level (e.g., 'Channel'[Sub Trade Channel] or a specific Channel LT level)?  
+5. Scenario — use Actuals (default) or do you want BP / RE / WE?  
+6. Output format — would you like a table or a visualization (chart)? If a chart, which type (bar, line, stacked, etc.)?
+
+Once you confirm these, I will prepare the request for the DAX Developer (and VisualizationAgent if you want charts).

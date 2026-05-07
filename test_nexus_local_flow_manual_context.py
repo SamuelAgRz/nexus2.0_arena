@@ -381,7 +381,7 @@ Resolved assumptions for local smoke test:
 
 - Scenario: Actuals.
 - Channel granularity: 'Channel'[Trade Channel].
-- Time: Latest year
+- Time: Latest non null year
 - Geography: Colombia only if a valid Colombia/market/geography column is explicitly available in semantic context.
 - If no valid Colombia column is available, do not invent one.
 

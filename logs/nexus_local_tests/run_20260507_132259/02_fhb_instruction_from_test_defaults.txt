@@ -1,0 +1,16 @@
+
+Business question:
+Show NSR including all channels and categories for Colombia
+
+Resolved assumptions for local smoke test:
+
+- Scenario: Actuals.
+- Channel granularity: 'Channel'[Trade Channel].
+- Time: Latest non null year
+- Geography: Colombia only if a valid Colombia/market/geography column is explicitly available in semantic context.
+- If no valid Colombia column is available, do not invent one.
+
+DAX generation task:
+Generate an executable DAX query using SUMMARIZECOLUMNS that returns NSR by 'Channel'[Trade Channel].
+NSR = SUM('Metrics-Actuals-Rev'[btlr_net_sls_rev_amt]). Do NOT use any measure like [NSR] — no measures exist in this model.
+Return only executable DAX.

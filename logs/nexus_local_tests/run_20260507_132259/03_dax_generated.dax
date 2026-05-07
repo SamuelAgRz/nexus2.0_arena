@@ -1,0 +1,17 @@
+EVALUATE
+VAR LatestYear =
+    MAXX(
+        FILTER(
+            VALUES('Period'[Year 445]),
+            CALCULATE(SUM('Metrics-Actuals-Rev'[btlr_net_sls_rev_amt])) <> BLANK()
+        ),
+        'Period'[Year 445]
+    )
+RETURN
+SUMMARIZECOLUMNS(
+    'Channel'[Trade Channel],
+    TREATAS({LatestYear}, 'Period'[Year 445]),
+    TREATAS({"Colombia"}, 'Ship From'[Country]),
+    "Net Sales Revenue", SUM('Metrics-Actuals-Rev'[btlr_net_sls_rev_amt])
+)
+ORDER BY [Net Sales Revenue] DESC
