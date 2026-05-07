@@ -9,6 +9,7 @@ class DaxValidatorAgent:
         system_prompt = (
             DAX_VALIDATOR_PROMPT
             .replace("{semantic_context}", self.semantic_context)
+            .replace("{dav}", self.semantic_context)
         )
 
         user_prompt = f"""
