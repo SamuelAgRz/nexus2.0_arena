@@ -90,7 +90,20 @@ if __name__ == "__main__":
     nsr_conn = AdomdConnector(PATH_DLL, STR_CONN)
 
     # Consulta DAX
-    query = "EVALUATE VALUES('Reporting View')"
+    #query = "EVALUATE VALUES('Reporting View')"
+    #query = "EVALUATE VALUES('Ship From'[Country])"
+    query = """
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.1 - Beverage Product],
+        FILTER('Product', 'Product'[LT1.5 - Category] = "Colas"),
+        FILTER('Period', YEAR('Period'[Day 445]) = 2025),
+        FILTER('Reporting View', 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER('Ship From', 'Ship From'[Country] = "Colombia"),
+        "Total Volumen", SUM('Metrics-Actuals-Vol'[btlr_unit_case_amt])
+    )
+    """
+
     
     print(f"Buscando DLL en: {PATH_DLL}")
     print("Ejecutando consulta...")
