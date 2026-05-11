@@ -1,0 +1,19 @@
+EVALUATE
+SUMMARIZECOLUMNS(
+    'Channel'[Trade Channel],
+    TREATAS({"Colombia"}, 'Ship From'[Country]),
+    TREATAS(
+        {
+            MAXX(
+                FILTER(
+                    ALL('Period'[Year 445]),
+                    NOT ISBLANK(CALCULATE([Unit Cases AC]))
+                ),
+                'Period'[Year 445]
+            )
+        },
+        'Period'[Year 445]
+    ),
+    "Unit Cases", [Unit Cases AC]
+)
+ORDER BY [Unit Cases] DESC

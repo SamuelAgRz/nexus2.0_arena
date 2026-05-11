@@ -1,0 +1,12 @@
+{
+  "status": "NOT_APPROVED",
+  "errors": [
+    {
+      "type": "INVALID_FUNCTION_USAGE",
+      "severity": "CRITICAL",
+      "message": "MAXX(FILTER(ALL('Period'[Year 445]), NOT ISBLANK(CALCULATE([Unit Cases AC]))), 'Period'[Year 445]) is used directly inside a table constructor within TREATAS, which is not valid executable DAX in this form.",
+      "fix": "Compute the latest non-null year outside the table constructor using a variable, then pass the resulting scalar into TREATAS."
+    }
+  ],
+  "instructions": "Fix ONLY listed issues. Do not modify intent."
+}

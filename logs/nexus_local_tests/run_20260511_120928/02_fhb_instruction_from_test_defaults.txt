@@ -1,0 +1,15 @@
+
+Business question:
+Show volume including all channels and categories for Colombia
+
+Resolved assumptions for local smoke test:
+
+- Scenario: Actuals volume.
+- Channel granularity: 'Channel'[Trade Channel].
+- Time: Latest non null year
+- Geography: Colombia only if a valid Colombia/market/geography column is explicitly available in semantic context.
+- If no valid Colombia column is available, do not invent one.
+
+DAX generation task:
+Generate an executable DAX query using SUMMARIZECOLUMNS that returns volume by 'Channel'[Trade Channel]..
+Return only executable DAX.

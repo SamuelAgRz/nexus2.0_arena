@@ -9,7 +9,7 @@ load_dotenv()
 class Settings:
     foundry_endpoint: str = os.getenv("AZURE_AI_FOUNDRY_ENDPOINT", "")
     foundry_api_key: str = os.getenv("AZURE_AI_FOUNDRY_API_KEY", "")
-    foundry_model: str = os.getenv("AZURE_AI_FOUNDRY_DEPLOYMENT", "gpt-5-mini")
+    foundry_model: str = os.getenv("AZURE_AI_FOUNDRY_DEPLOYMENT", "gpt-5.4")
     foundry_api_version: str = os.getenv("AZURE_AI_FOUNDRY_API_VERSION", "2024-12-01-preview")
 
     pbi_tenant_id: str = os.getenv("PBI_TENANT_ID", "")

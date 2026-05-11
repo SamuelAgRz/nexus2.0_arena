@@ -14,7 +14,7 @@ class AzureAIFoundry:
         *,
         endpoint: str | None = None,
         api_key: str | None = None,
-        deployment: str = "gpt-5-mini",
+        deployment: str = "gpt-5.4",
         api_version: str = "2024-12-01-preview",
         system_prompt: str = "You are a helpful assistant.",
         load_environment: bool = True,

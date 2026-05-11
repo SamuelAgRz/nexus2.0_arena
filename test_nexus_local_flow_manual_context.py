@@ -58,7 +58,7 @@ STR_CONN = (
 OUTPUT_DIR = PROJECT_ROOT / "logs" / "nexus_local_tests"
 
 # For local testing, make the user query explicit to avoid clarification loop.
-USER_QUERY = "Show NSR including all channels and categories for Colombia"
+USER_QUERY = "Show volume including all channels and categories for Colombia"
 
 MAX_VALIDATION_ITERATIONS = 3
 EXECUTE_DAX = True
@@ -257,6 +257,29 @@ Target model: NSR LATAM Cube / NSR LATAM Semantic Model (Power BI).
 - 'Metrics-Inv-Discount'[dscnt_amt]
 - 'Metrics-Other-Discount'[dscnt_amt]
 
+## Measures Available
+- [Bottler Gross Revenue AC (LC)]
+- [Bottler Gross Revenue AC (LC) YTD]
+- [Bottler Gross Revenue Current RE (LC)]
+- [Bottler Gross Revenue Current RE (LC) YTD]
+- [Bottler Gross Revenue Current RE (LC) YTG]
+- [Unit Cases AC]
+- [Unit Cases AC YTD]
+- [Unit Cases Current RE]
+- [Unit Cases Current RE YTD]
+- [Unit Cases Current RE YTG]
+- [Bottler Gross Price per UC AC (LC)]
+- [Bottler Gross Price per UC AC (LC) YTD]
+- [Bottler Net Revenue AC (LC)_Y]
+- [Bottler Net Revenue AC (LC)_N]
+- [Bottler Net Revenue AC (LC)]
+- [Bottler Net Revenue AC (LC) YTD]
+- [Bottler Net Revenue Current RE (LC)]
+- [Bottler Net Revenue Current RE (LC) YTD]
+- [Bottler Net Revenue Current RE (LC) YTG]
+
+
+
 # Business Rules
 
 - NSR means Net Sales Revenue. It is SELL-IN / bottler revenue, not sell-out / retail sales.
@@ -268,7 +291,7 @@ Target model: NSR LATAM Cube / NSR LATAM Semantic Model (Power BI).
 - For product breakdown, prefer 'Product'[Beverage Category] or 'Product'[BPP] unless the user specifies a hierarchy level.
 - Use only tables and columns listed in this context.
 - Do not invent tables, columns, or measures.
-- IMPORTANT: This model has NO semantic measures. Do NOT use bracket measure syntax like [NSR], [NSR YTD], or any [Measure Name]. Always use raw column aggregations (e.g. SUM('Metrics-Actuals-Rev'[btlr_net_sls_rev_amt])).
+- If a metric already has a measure defined in the model, use that measure instead of summing the raw column.
 - Return executable DAX only.
 
 # Local Test Defaults
@@ -379,15 +402,14 @@ Business question:
 
 Resolved assumptions for local smoke test:
 
-- Scenario: Actuals.
+- Scenario: Actuals volume.
 - Channel granularity: 'Channel'[Trade Channel].
 - Time: Latest non null year
 - Geography: Colombia only if a valid Colombia/market/geography column is explicitly available in semantic context.
 - If no valid Colombia column is available, do not invent one.
 
 DAX generation task:
-Generate an executable DAX query using SUMMARIZECOLUMNS that returns NSR by 'Channel'[Trade Channel].
-NSR = SUM('Metrics-Actuals-Rev'[btlr_net_sls_rev_amt]). Do NOT use any measure like [NSR] — no measures exist in this model.
+Generate an executable DAX query using SUMMARIZECOLUMNS that returns volume by 'Channel'[Trade Channel]..
 Return only executable DAX.
 """
 
