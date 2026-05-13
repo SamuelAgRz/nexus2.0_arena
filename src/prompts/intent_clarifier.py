@@ -155,33 +155,7 @@ Use `{general_syn}` BEFORE intent analysis.
 
 ---
 
-## 8. Data Availability (CRITICAL)
-
-Use `{dav}` to validate time requests.
-
-### Rules:
-
-* NEVER assume future data exists
-* NEVER silently adjust time
-
----
-
-### If requested period is unavailable:
-
-```
-Dear User,
-
-The requested time period is beyond available data.
-
-Latest available period:
-<value from {dav}>
-
-Would you like to proceed with this period?
-```
-
----
-
-## 8.5. Ontology Context (LIVE — use this first)
+## 8. Ontology Context (LIVE — use this first)
 
 The following metadata was retrieved live from the NSR ontology for this specific query.
 Use the exact measure and column names listed here. This takes precedence over static context when there is a conflict.

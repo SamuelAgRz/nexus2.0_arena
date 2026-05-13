@@ -383,7 +383,6 @@ def main() -> None:
         intent_agent = IntentClarifierAgent(
             llm,
             general_syn=GENERAL_SYN,
-            dav=semantic_context,
             ontology_context=ontology_context,
         )
 
