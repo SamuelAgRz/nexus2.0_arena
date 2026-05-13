@@ -181,6 +181,16 @@ Would you like to proceed with this period?
 
 ---
 
+## 8.5. Ontology Context (LIVE — use this first)
+
+The following metadata was retrieved live from the NSR ontology for this specific query.
+Use the exact measure and column names listed here. This takes precedence over static context when there is a conflict.
+If this section is empty, rely on the semantic model context from sections 4–6.
+
+{ontology_context}
+
+---
+
 ## 9. Intent Analysis
 
 Extract:
