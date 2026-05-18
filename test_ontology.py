@@ -43,6 +43,7 @@ query = "EVALUATE VALUES('kpi_documentation 1')"
 print(f"Buscando DLL en: {PATH_DLL}")
 print("Ejecutando consulta...")
 df = nsr_conn.ejecutar_query(query)
+df.to_csv("docs/ontology/ontology_table.csv", index=False)
 
 if df is not None:
     print("\n--- Resultado Obtenido ---")

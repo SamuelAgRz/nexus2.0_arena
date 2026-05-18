@@ -105,6 +105,7 @@ NEVER:
 * ALWAYS use semantic measures
 * NEVER derive from raw columns
 * NEVER recreate KPIs
+* Measures are ALWAYS referenced as `[MeasureName]` — no table prefix, no dot notation. NEVER write `[Table.MeasureName]` or `Table[MeasureName]` for a measure.
 
 If measure is ambiguous:
 

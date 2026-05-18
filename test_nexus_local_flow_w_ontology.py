@@ -68,32 +68,29 @@ from src.connections.ontology import AdomdConnector as OntologyConnector
 
 PATH_DLL = PROJECT_ROOT / "lib" / "Microsoft.AnalysisServices.AdomdClient.dll"
 
+# Account 1 — NSR LATAM workspace (e.g. your @arena-analytics.com or client account)
 STR_CONN = (
     "Provider=MSOLAP;"
     "Data Source=powerbi://api.powerbi.com/v1.0/myorg/NSR LATAM [Test];"
     "Initial Catalog=NSR LATAM Cube;"
     "Integrated Security=ClaimsToken;"
     "Persist Security Info=True;"
+    "User ID=alandaverdenava@coca-cola.com;"  # Uncomment and set to force a specific account
 )
 
+# Account 2 — Ontology workspace (mf-pocai-eastus2-dev-01, likely a different tenant/account)
 STR_CONN_ONTOLOGY = (
     "Provider=MSOLAP;"
     "Data Source=powerbi://api.powerbi.com/v1.0/myorg/mf-pocai-eastus2-dev-01;"
     "Initial Catalog=ontology_nsr;"
     "Integrated Security=ClaimsToken;"
+    "User ID=adrian@arena-analytics.com;"  # Uncomment and set to force a specific account
 )
 
 OUTPUT_DIR = PROJECT_ROOT / "logs" / "nexus_local_tests"
 
-SEMANTIC_MEASURES_CONTEXT_PATH = (
-    PROJECT_ROOT / "docs" / "semantic_model_measures" / "measures_nexus_context_latest.md"
-)
 
-SEMANTIC_COLUMNS_CONTEXT_PATH = (
-    PROJECT_ROOT / "docs" / "semantic_model_minimal" / "minimal_nexus_context_latest.md"
-)
-
-USER_QUERY = "Show NSR YTD by channel for Colombia"
+USER_QUERY = "What was the actual volume of unit cases in Colombia in year 2025, for all categories. Group by channel"
 
 MAX_VALIDATION_ITERATIONS = 3
 MAX_CLARIFICATION_ROUNDS = 3
@@ -124,46 +121,148 @@ Colombia = Colombia market
 """
 
 
-FALLBACK_SEMANTIC_CONTEXT = """
+COLUMNS_CONTEXT = """
 # Target Model
 
-Target model: NSR LATAM Cube UAT / NSR LATAM semantic model.
+Target model: NSR LATAM Cube / NSR LATAM Semantic Model (Power BI).
 
-# Tables and columns available
+# Tables and Columns Available
 
 ## Channel
 - 'Channel'[Trade Channel]
 - 'Channel'[Sub Trade Channel]
+- 'Channel'[Sub Trade Channel Code]
+- 'Channel'[BU Channel Code]
+- 'Channel'[Consumer Activity Cluster]
+- 'Channel'[LT1.0 - Sub Trade Channel]
+- 'Channel'[LT1.1 - Trade Channel]
+- 'Channel'[LT1.2 - Channel Group]
+- 'Channel'[LT1.3 - Channel Macro Group]
 
-## Ship To
-- 'Ship To'[Source Ship To Code]
+## Product
+- 'Product'[Beverage Category]
+- 'Product'[Beverage Sub Category]
+- 'Product'[Beverage Type]
+- 'Product'[Beverage State]
+- 'Product'[BPP]
+- 'Product'[BPP Code]
+- 'Product'[BU Product]
+- 'Product'[BU Product Code]
+- 'Product'[LT1.1 - Beverage Product]
+- 'Product'[LT1.2 - Brand Group]
+- 'Product'[LT1.3 - Trademark Category]
+- 'Product'[LT1.4 - Sub-Category]
+- 'Product'[LT1.5 - Category]
+- 'Product'[LT1.6 - Category Group]
+- 'Product'[LT1.7 - Segment]
+- 'Product'[LT1.8 - Industry]
+- 'Product'[Non-KO Product]
+
+## Package
+- 'Package'[Package]
+- 'Package'[Container Type]
+- 'Package'[Primary Container]
+- 'Package'[Secondary Package]
+- 'Package'[BPP]
+- 'Package'[LT1.1 - Package]
+- 'Package'[LT1.2 - Package Type]
+- 'Package'[LT1.3 - Container]
+- 'Package'[LT1.4 - Refillability]
+- 'Package'[LT1.5 - MS-SS]
+- 'Package'[LT1.6 - RTD-NRTD]
+
+## Ship From (Bottler / Geography)
+- 'Ship From'[Country]
+- 'Ship From'[Country Code]
+- 'Ship From'[Business Unit]
+- 'Ship From'[Region]
+- 'Ship From'[Operating Group]
+- 'Ship From'[BU Ship From]
+- 'Ship From'[L1.0 - Bottler Franchise or CEDI]
+- 'Ship From'[L1.1 - Bottler SubZone]
+- 'Ship From'[L1.2 - Bottler Zone]
+- 'Ship From'[L1.3 - Bottler]
+- 'Ship From'[L1.4 - Field Unit]
+- 'Ship From'[L1.5 - Country]
+- 'Ship From'[L1.6 - Franchise Sub Region]
+- 'Ship From'[L1.7 - Franchise Region]
+- 'Ship From'[L1.8 - Franchise Unit Operations]
+- 'Ship From'[L1.9 - Zone Operations]
+- 'Ship From'[L1.10 - Operating Unit]
+
+## Ship To (Customer)
 - 'Ship To'[LT1.1 - Tradename]
 - 'Ship To'[LT1.2 - Customer]
+- 'Ship To'[LT1.3 - Business Sub Type]
+- 'Ship To'[LT1.4 - Business Type]
+- 'Ship To'[LT1.5 - Consumption Type]
+- 'Ship To'[LT1.6 - Customer Leadership]
 
 ## Period
-- 'Period'[Date]
-- 'Period'[Year]
-- 'Period'[Month]
-- 'Period'[Week]
+- 'Period'[Day 445]
+- 'Period'[Day 445 Code]
+- 'Period'[Day Cal]
+- 'Period'[Day Cal Code]
+- 'Period'[Week 445]
+- 'Period'[Week 445 Code]
+- 'Period'[Week 445 #]
+- 'Period'[Week 445 Begin – End]
+- 'Period'[Month 445]
+- 'Period'[Month 445 Code]
+- 'Period'[Month 445 #]
+- 'Period'[Month 445 Name]
+- 'Period'[Month 445 Begin – End]
+- 'Period'[Month Cal]
+- 'Period'[Month Cal Code]
+- 'Period'[Quarter 445]
+- 'Period'[Quarter 445 Code]
+- 'Period'[Quarter 445 Name]
+- 'Period'[Quarter Cal]
+- 'Period'[Quarter Cal Code]
+- 'Period'[Half 445]
+- 'Period'[Half 445 Code]
+- 'Period'[Half 445 Name]
+- 'Period'[Half Cal]
+- 'Period'[Half Cal Code]
+- 'Period'[Year 445]
+- 'Period'[Year 445 Code]
+- 'Period'[Year Cal]
+- 'Period'[Year Cal Code]
 
-# Measures available
+## Sales Type
+- 'Sales Type'[BU Sales Type]
+- 'Sales Type'[BU Sales Type Code]
+- 'Sales Type'[Primary Sales Indicator]
+- 'Sales Type'[Source Sales Type]
 
-- [NSR]
-- [NSR YTD]
+## Reporting View
+- 'Reporting View'[Reporting View]
+
+## Record Type
+- 'Record Type'[Record Type]
+
+## Discount Dimensions
+- 'On Standard Discount'[On Standard Discount Category]
+- 'On Standard Discount'[On Standard Discount Code]
+- 'On Standard Discount'[On Standard Discount Concept]
+- 'On Standard Discount Classification'[Discount Group]
+- 'On Standard Discount Classification'[Sales Group]
+- 'On Standard Discount Classification'[Discount Applied Flag]
+- 'On Bulk Discount'[On Bulk Discount Category]
+- 'On Bulk Discount'[On Bulk Discount Code]
+- 'Off Discount'[Off Discount Category]
+- 'Off Discount'[Off Discount Code]
+- 'Other Discount'[Other Discount Category]
+- 'Other Discount'[Other Discount Code]
 
 # Business Rules
 
-- NSR means Net Sales Revenue.
-- NSR is SELL-IN / bottler revenue, not sell-out / retail sales.
-- Use only tables, columns, and measures listed in this context.
-- Do not invent columns.
-- Do not invent measures.
-- For channel breakdown, use 'Channel'[Trade Channel].
-- Never use 'Channel'[Channel] unless it appears explicitly in the semantic context.
-- Never use 'Ship To'[Country] unless it appears explicitly in the semantic context.
-- Prefer exposed model measures over raw metric columns.
-- If a metric exists as a measure, use the measure.
-- Return executable DAX only.
+- For country/geography filtering, use 'Ship From'[Country] or 'Ship From'[L1.5 - Country]. Do NOT use 'Ship To'[Country] — it does not exist in this model.
+- For channel breakdown, prefer 'Channel'[Trade Channel] unless the user specifies a more granular level.
+- For product breakdown, prefer 'Product'[Beverage Category] or 'Product'[BPP] unless the user specifies a hierarchy level.
+- The model uses two calendar systems: 445 calendar and Gregorian calendar. Default to 445 unless the user specifies Gregorian.
+- Use only tables and columns listed in this context.
+- Do not invent tables or columns.
 """
 
 
@@ -186,58 +285,21 @@ def save_text(path: Path, content: str) -> None:
     print(f"Saved: {path}")
 
 
-def load_optional_file(path: Path) -> str:
-    if path.exists():
-        print(f"Loaded semantic context file: {path}")
-        return path.read_text(encoding="utf-8")
-    print(f"Context file not found, skipping: {path}")
-    return ""
+def build_columns_context() -> str:
+    return COLUMNS_CONTEXT
 
 
-def build_semantic_context() -> str:
+def build_combined_context(ontology_ctx: str, columns_ctx: str) -> str:
     """
-    Build semantic context from latest generated metadata files.
-
-    Priority:
-    1. Measures context from INFO.MEASURES()
-    2. Tables/columns context from INFO.TABLES() and INFO.COLUMNS()
-    3. Fallback context
+    Merges metric context from the OntologicAgent with filter/dimension column context.
+    Used by DaxQueryDeveloper and DaxValidator so they have the full picture.
     """
-    measures_context = load_optional_file(SEMANTIC_MEASURES_CONTEXT_PATH)
-    columns_context = load_optional_file(SEMANTIC_COLUMNS_CONTEXT_PATH)
-
     parts = []
-
-    if measures_context:
-        parts.append("# Measures Context From Semantic Model\n")
-        parts.append(measures_context)
-
-    if columns_context:
-        parts.append("\n# Tables And Columns Context From Semantic Model\n")
-        parts.append(columns_context)
-
-    if not parts:
-        print("Using fallback semantic context.")
-        parts.append(FALLBACK_SEMANTIC_CONTEXT)
-
-    parts.append(
-        """
-# Mandatory Nexus DAX Rules
-
-- The DAX query must be executable against the NSR LATAM Power BI semantic model.
-- Use only exact table, column, and measure names from the semantic context.
-- Do not create calculated measures inside the query unless explicitly required.
-- Prefer SUMMARIZECOLUMNS for grouped analytical queries.
-- Do not use SQL syntax.
-- Do not use SELECT *.
-- Do not use unavailable tables such as 'Scenario' unless they exist in the context.
-- Do not use unavailable columns such as 'Channel'[Channel] unless they exist in the context.
-- If filtering Colombia, only use a geography column that exists in the context.
-- If a required geography column does not exist in the context, the agent should ask for clarification instead of inventing a column.
-"""
-    )
-
-    return "\n\n".join(parts)
+    if ontology_ctx:
+        parts.append("# Metric Context (from Ontology)\n\n" + ontology_ctx)
+    if columns_ctx:
+        parts.append("# Available Filter and Dimension Columns\n\n" + columns_ctx)
+    return "\n\n---\n\n".join(parts)
 
 
 def print_section(title: str) -> None:
@@ -312,17 +374,9 @@ def is_not_approved(validation_result: str) -> bool:
     return validation_result.strip().upper().startswith("NOT APPROVED")
 
 
-def run_basic_connection_test() -> None:
+def run_basic_connection_test(nsr_conn) -> None:
     print_section("BASIC CONNECTION TEST")
-    print("DLL:", PATH_DLL)
-    print("DLL exists:", PATH_DLL.exists())
-
-    if not PATH_DLL.exists():
-        raise FileNotFoundError(f"ADOMD DLL not found: {PATH_DLL}")
-
-    nsr_conn = AdomdConnector(str(PATH_DLL), STR_CONN)
     executor = DaxExecutorAgent(nsr_conn)
-
     test_query = """
 EVALUATE
 ROW("ConnectionTest", 1)
@@ -344,14 +398,18 @@ def main() -> None:
     print("Output run dir:", run_dir)
     print("User query:", USER_QUERY)
 
-    semantic_context = build_semantic_context()
+    columns_context = build_columns_context()
 
-    save_text(run_dir / "semantic_context_used.md", semantic_context)
+    save_text(run_dir / "columns_context_used.md", columns_context)
     save_text(run_dir / "general_syn_used.md", GENERAL_SYN)
     save_text(run_dir / "user_query.txt", USER_QUERY)
 
-    # Optional quick connection test before spending LLM calls.
-    run_basic_connection_test()
+    if not PATH_DLL.exists():
+        raise FileNotFoundError(f"ADOMD DLL not found: {PATH_DLL}")
+
+    print(">>> [LOGIN 1/2] Connecting to NSR LATAM [Test] — use your NSR LATAM account")
+    nsr_conn = AdomdConnector(str(PATH_DLL), STR_CONN)
+    run_basic_connection_test(nsr_conn)
 
     # -------------------------------------------------------------------------
     # 1. LLM Client
@@ -365,6 +423,7 @@ def main() -> None:
     # -------------------------------------------------------------------------
     print_section("2. INITIALIZING ONTOLOGIC AGENT")
 
+    print(">>> [LOGIN 2/2] Connecting to mf-pocai-eastus2-dev-01 (ontology) — use your ontology account")
     ontology_conn = OntologyConnector(str(PATH_DLL), STR_CONN_ONTOLOGY)
     ontologic_agent = OntologicAgent(llm, ontology_conn)
 
@@ -415,6 +474,11 @@ def main() -> None:
         user_response = input("\nYour response: ").strip()
         combined_query = f"{USER_QUERY}\n\nUser clarification: {user_response}"
 
+    # Capture the ontology context from the last loop iteration for downstream agents.
+    final_ontology_ctx = ontology_context
+    combined_context = build_combined_context(final_ontology_ctx, columns_context)
+    save_text(run_dir / "combined_context_used.md", combined_context)
+
     fhb_instruction = extract_fhb_instruction(intent)
 
     if not fhb_instruction:
@@ -435,7 +499,7 @@ def main() -> None:
     developer = DaxQueryDeveloperAgent(
         llm,
         general_syn=GENERAL_SYN,
-        dav=semantic_context,
+        dav=combined_context,
     )
 
     dax_query = developer.run(fhb_instruction)
@@ -457,7 +521,7 @@ def main() -> None:
 
     validator = DaxValidatorAgent(
         llm_client=llm,
-        semantic_context=semantic_context,
+        semantic_context=combined_context,
     )
 
     validation_result = None
@@ -496,7 +560,7 @@ Validator feedback:
 {validation_result}
 
 Semantic context:
-{semantic_context}
+{combined_context}
 
 Revision rules:
 - Fix ONLY the issues identified by the validator.
@@ -540,7 +604,6 @@ Revision rules:
 
     print_section("5. EXECUTING APPROVED DAX")
 
-    nsr_conn = AdomdConnector(str(PATH_DLL), STR_CONN)
     executor = DaxExecutorAgent(nsr_conn)
 
     df_result = executor.run(dax_query)

@@ -8,7 +8,7 @@ class OntologicAgent:
     live context before each pass.
     """
 
-    _DAX_QUERY = "EVALUATE 'kpi_documentation 1'"
+    _DAX_QUERY = "EVALUATE VALUES('kpi_documentation 1')"
 
     def __init__(self, llm_client, ontology_conn):
         self.llm = llm_client

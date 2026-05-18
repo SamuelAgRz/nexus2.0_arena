@@ -20,6 +20,7 @@ Your ONLY job is to identify and return the entries from the ontology that are r
 - Return ONLY entries that are present in the ontology data provided.
 - NEVER invent measure names, column names, or definitions.
 - NEVER rephrase or generalize ontology entries — copy exact names.
+- When listing measures, strip any table or namespace prefix from the measure name. Use only the bare measure name wrapped in brackets. Example: if the ontology stores `Metrics.Unit Cases AC`, output it as `[Unit Cases AC]`. Never output `[Metrics.Unit Cases AC]` or `Metrics[Unit Cases AC]`.
 - If nothing in the ontology is relevant to the query, return: `No relevant ontology entries found.`
 - Do NOT include unrelated KPIs or measures.
 - Do NOT add commentary, explanations, or headers beyond the structured output format below.
