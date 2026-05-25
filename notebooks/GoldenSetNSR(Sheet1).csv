@@ -1,0 +1,1314 @@
+Question,Query
+What was the sales volume today?,"EVALUATE ROW( ""Unit Cases"", CALCULATE( [Unit Cases AC], KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026""), KEEPFILTERS('Ship From'[Country] = ""Colombia"") ) )"
+What was the sales volume yesterday?,"EVALUATE ROW( ""Unit Cases"", CALCULATE( [Unit Cases AC], KEEPFILTERS('Period'[Day 445] = ""Jan 30 2026""), KEEPFILTERS('Ship From'[Country] = ""Colombia"") ) )"
+What was the sales volume this week?,"EVALUATE ROW( ""Unit Cases WTD"", CALCULATE( [Unit Cases AC WTD], KEEPFILTERS('Ship From'[Country] = ""Colombia""), KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"") ) )"
+What was the sales volume last week?,"EVALUATE ROW( ""Unit Cases WTD"", CALCULATE( [Unit Cases AC WTD], KEEPFILTERS('Ship From'[Country] = ""Colombia""), KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"") ) )"
+What was the sales volume month to date (MTD)?,"EVALUATE
+ROW(
+    ""Unit Cases MTD"",
+        CALCULATE(
+            [Unit Cases AC MTD],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+        )
+)"
+What was the sales volume last month?,"EVALUATE
+ROW(
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+        )
+)"
+What was the sales volume year to date (YTD)?,"EVALUATE
+ROW(
+    ""Unit Cases YTD"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Period'[Year 445] = ""2026""),
+            KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+        )
+)"
+What was the sales volume last year?,"EVALUATE
+ROW(
+    ""Unit Cases Last Year"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Period'[Year 445] = ""2025""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+        )
+)"
+Top 10 brands by sales volume year to date (YTD).,"EVALUATE
+TOPN(
+    10,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.2 - Brand Group],
+        ""Unit Cases YTD"",
+            CALCULATE(
+                [Unit Cases AC YTD],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+            )
+    ),
+    [Unit Cases YTD], DESC
+)
+ORDER BY [Unit Cases YTD] DESC"
+Top 10 brands with the most sales year to date (YTD).,"EVALUATE
+TOPN(
+    10,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.2 - Brand Group],
+        ""Net Sales Revenue YTD"",
+            CALCULATE(
+                [Bottler Net Revenue AC YTD (LC)],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+            )
+    ),
+    [Net Sales Revenue YTD], DESC
+)
+ORDER BY [Net Sales Revenue YTD] DESC"
+Top 10 brands with the least sales year to date (YTD).,"EVALUATE
+TOPN(
+    10,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.2 - Brand Group],
+        ""Net Sales Revenue YTD"",
+            CALCULATE(
+                [Bottler Net Revenue AC YTD (LC)],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+            )
+    ),
+    [Net Sales Revenue YTD], ASC
+)
+ORDER BY [Net Sales Revenue YTD] ASC"
+How does the sales volume of the Quatro brand last month compare with the prior year?,"EVALUATE
+ROW(
+    ""Brand Group"", ""Quatro"",
+    ""Period"", ""2025 Dec"",
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Quatro"")
+        ),
+    ""Unit Cases PY"",
+        CALCULATE(
+            [Unit Cases AC PY],
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Quatro"")
+        ),
+    ""Unit Cases % vs PY"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Quatro"")
+        )
+)"
+What was the total sales YoY% in the last month in the Quatro brand?,"EVALUATE
+ROW(
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Quatro""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+        )
+)"
+Top 5 categories by net sales in the last year.,"EVALUATE
+TOPN(
+    5,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.5 - Category],
+        ""Net Sales Revenue"",
+            CALCULATE(
+                [Bottler Net Revenue AC (LC)],
+                KEEPFILTERS('Period'[Year 445] = ""2025""),
+                KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+            )
+    ),
+    [Net Sales Revenue], DESC
+)
+ORDER BY [Net Sales Revenue] DESC"
+How does the sales volume of the Quatro brand compare over the last two months?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Quatro""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+Top 10 subcategories by volume in each quarter year to date (YTD).,"EVALUATE
+GENERATE(
+    VALUES('Period'[Quarter 445]),
+    TOPN(
+        10,
+        SUMMARIZECOLUMNS(
+            'Product'[LT1.4 - Sub-Category],
+            ""Unit Cases YTD"",
+                CALCULATE(
+                    [Unit Cases AC YTD],
+                    KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                    KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+                )
+        ),
+        [Unit Cases YTD], DESC
+    )
+)
+ORDER BY
+    'Period'[Quarter 445] ASC,
+    [Unit Cases YTD] DESC"
+What was the total sales volume yesterday?,"EVALUATE
+ROW(
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Day 445] = ""Jan 30 2026"")
+        )
+)"
+Which channel has the highest sales week to date (WTD)?,"EVALUATE
+TOPN(
+    1,
+    SUMMARIZECOLUMNS(
+        'Channel'[LT1.3 - Channel Macro Group],
+        ""Net Sales Revenue WTD"",
+            CALCULATE(
+                [Bottler Net Revenue AC WTD (LC)],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+            )
+    ),
+    [Net Sales Revenue WTD], DESC
+)
+ORDER BY [Net Sales Revenue WTD] DESC"
+How does the sales volume of the Quatro brand compare over the last two months?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Quatro""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+What is the share (% units) of the Flavors category in the last month?,"EVALUATE
+ROW(
+    ""% Unit Cases Share"",
+        DIVIDE(
+            CALCULATE(
+                [Unit Cases AC],
+                KEEPFILTERS('Product'[LT1.5 - Category] = ""Flavors""),
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+            ),
+            CALCULATE(
+                [Unit Cases AC],
+                REMOVEFILTERS('Product'[LT1.5 - Category]),
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+            )
+        )
+)"
+Which are the Top 3 brands with the best performance in the modern trade channel in the last quarter?,"EVALUATE
+TOPN(
+    3,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.2 - Brand Group],
+        ""Unit Cases QTD"",
+            CALCULATE(
+                [Unit Cases AC QTD],
+                KEEPFILTERS('Channel'[LT1.3 - Channel Macro Group] = ""Modern Trade""),
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Quarter 445] = ""2025 Q4""),
+                KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+            )
+    ),
+    [Unit Cases QTD], DESC
+)
+ORDER BY [Unit Cases QTD] DESC"
+Top 3 categories by volume quarter to date (QTD).,"EVALUATE
+TOPN(
+    3,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.5 - Category],
+        ""Unit Cases QTD"",
+            CALCULATE(
+                [Unit Cases AC QTD],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+            )
+    ),
+    [Unit Cases QTD], DESC
+)
+ORDER BY [Unit Cases QTD] DESC"
+Top 5 brands by revenue in the previous year.,"EVALUATE
+TOPN(
+    5,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.2 - Brand Group],
+        ""Net Sales Revenue"",
+            CALCULATE(
+                [Bottler Net Revenue AC (LC)],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Year 445] = ""2025"")
+            )
+    ),
+    [Net Sales Revenue], DESC
+)
+ORDER BY [Net Sales Revenue] DESC"
+Top 3 brands by volume within each category in the last year.,"EVALUATE
+GENERATE(
+    VALUES('Product'[LT1.5 - Category]),
+    TOPN(
+        3,
+        SUMMARIZECOLUMNS(
+            'Product'[LT1.2 - Brand Group],
+            ""Unit Cases"",
+                CALCULATE(
+                    [Unit Cases AC],
+                    KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                    KEEPFILTERS('Period'[Year 445] = ""2025"")
+                )
+        ),
+        [Unit Cases], DESC
+    )
+)
+ORDER BY
+    'Product'[LT1.5 - Category] ASC,
+    [Unit Cases] DESC"
+Volume by package type in the past week.,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Package'[Package Type],
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Week 445] = ""2026 W04"")
+        )
+)
+ORDER BY [Unit Cases] DESC"
+What was the YoY% in september of the volume of the Colas category?,"EVALUATE
+ROW(
+    ""Unit Cases YoY %"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Colas""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Sep"")
+        )
+)"
+What is the revenue by channel in the last month?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Channel'[LT1.3 - Channel Macro Group],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+        )
+)
+ORDER BY [Net Sales Revenue] DESC"
+What is the Top 5 of leading brands by channel in the last month?,"EVALUATE
+GENERATE(
+    VALUES('Channel'[LT1.3 - Channel Macro Group]),
+    TOPN(
+        5,
+        SUMMARIZECOLUMNS(
+            'Product'[LT1.2 - Brand Group],
+            ""Net Sales Revenue"",
+                CALCULATE(
+                    [Bottler Net Revenue AC (LC)],
+                    KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                    KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+                )
+        ),
+        [Net Sales Revenue], DESC
+    )
+)
+ORDER BY
+    'Channel'[LT1.3 - Channel Macro Group] ASC,
+    [Net Sales Revenue] DESC"
+How did the YoY volume of the Brisa brand vary in the traditional channel two months ago?,"EVALUATE
+ROW(
+    ""Unit Cases YoY %"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Channel'[LT1.3 - Channel Macro Group] = ""Traditional""),
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Brisa""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Nov"")
+        )
+)"
+What is the unit mix in Cali within the Flavors category year to date (YTD) in 2025?,"EVALUATE
+ROW(
+    ""Unit Mix %"",
+        DIVIDE(
+            CALCULATE(
+                [Unit Cases AC YTD],
+                KEEPFILTERS('Ship To'[City] = ""Cali""),
+                KEEPFILTERS('Product'[LT1.5 - Category] = ""Flavors""),
+                KEEPFILTERS('Period'[Year 445] = ""2025""),
+                KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+            ),
+            CALCULATE(
+                [Unit Cases AC YTD],
+                KEEPFILTERS('Ship To'[City] = ""Cali""),
+                KEEPFILTERS('Period'[Year 445] = ""2025""),
+                KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+            )
+        )
+)"
+Sales comparison for this week versus previous weeks.,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Week 445],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Week 445] IN {
+                    ""2026 W02"",
+                    ""2026 W03"",
+                    ""2026 W04""
+                }
+            )
+        ),
+    ""Net Sales Revenue % vs PY"",
+        CALCULATE(
+            [Bottler Net Revenue AC % vs PY (LC)],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Week 445] IN {
+                    ""2026 W02"",
+                    ""2026 W03"",
+                    ""2026 W04""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Week 445] ASC"
+"What was the highest sales volume ever for this COCA-COLA, and when did it occur?","EVALUATE
+TOPN(
+    1,
+    SUMMARIZECOLUMNS(
+        'Period'[Month 445],
+        ""Unit Cases"",
+            CALCULATE(
+                [Unit Cases AC],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""COCA-COLA"")
+            )
+    ),
+    [Unit Cases], DESC
+)
+ORDER BY [Unit Cases] DESC"
+What is the revenue by channel in the last month vs. the same month of the prior year?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Channel'[LT1.3 - Channel Macro Group],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+        ),
+    ""Net Sales Revenue PY"",
+        CALCULATE(
+            [Bottler Net Revenue AC PY (LC)],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+        ),
+    ""Net Sales Revenue % vs PY"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+        )
+)
+ORDER BY [Net Sales Revenue] DESC"
+"Which customer is underdeveloped versus my national Flavors mix? (For example: if 25% of my nationwide sales are Flavors, but the customer Ol�mpica is only 13%.)","EVALUATE
+FILTER(
+    ADDCOLUMNS(
+        SUMMARIZECOLUMNS(
+            'Ship To'[LT1.2 - Customer],
+            ""Customer Flavors Mix %"",
+                DIVIDE(
+                    CALCULATE(
+                        [Unit Cases AC],
+                        KEEPFILTERS('Product'[LT1.5 - Category] = ""Flavors""),
+                        KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+                    ),
+                    CALCULATE(
+                        [Unit Cases AC],
+                        KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+                    )
+                ),
+            ""National Flavors Mix %"",
+                DIVIDE(
+                    CALCULATE(
+                        [Unit Cases AC],
+                        REMOVEFILTERS('Ship To'[LT1.2 - Customer]),
+                        KEEPFILTERS('Product'[LT1.5 - Category] = ""Flavors""),
+                        KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+                    ),
+                    CALCULATE(
+                        [Unit Cases AC],
+                        REMOVEFILTERS('Ship To'[LT1.2 - Customer]),
+                        KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+                    )
+                )
+        ),
+        ""Mix Gap %"",
+            [Customer Flavors Mix %] - [National Flavors Mix %]
+    ),
+    [Customer Flavors Mix %] < [National Flavors Mix %]
+)
+ORDER BY [Mix Gap %] ASC"
+What was the year-over-year change in total NSR for the previous month?,"EVALUATE
+ROW(
+    ""Net Sales Revenue % vs PY"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+        )
+)"
+Which channel showed the highest YoY growth in NSR in the previous month?,"EVALUATE
+TOPN(
+    1,
+    SUMMARIZECOLUMNS(
+        'Channel'[LT1.3 - Channel Macro Group],
+        ""Net Sales Revenue YoY %"",
+            CALCULATE(
+                [Bottler Net Revenue AC (LC) % vs PY],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+            )
+    ),
+    [Net Sales Revenue YoY %], DESC
+)
+ORDER BY [Net Sales Revenue YoY %] DESC"
+What was the YoY growth of NSR in Cali two months ago?,"EVALUATE
+ROW(
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Ship To'[City] = ""Cali""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Nov"")
+        )
+)"
+Which subcategories experienced a year-over-year decline in volume?,"EVALUATE
+FILTER(
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.4 - Sub-Category],
+        ""Unit Cases YoY %"",
+            CALCULATE(
+                [Unit Cases AC % vs PY],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Year 445] = ""2025"")
+            )
+    ),
+    [Unit Cases YoY %] < 0
+)
+ORDER BY [Unit Cases YoY %] ASC"
+Top 5 brands with the highest YoY growth in NSR in the previous month,"EVALUATE
+TOPN(
+    5,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.2 - Brand Group],
+        ""Net Sales Revenue YoY %"",
+            CALCULATE(
+                [Bottler Net Revenue AC (LC) % vs PY],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+            )
+    ),
+    [Net Sales Revenue YoY %], DESC
+)
+ORDER BY [Net Sales Revenue YoY %] DESC"
+How�s Coke performing lately?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""COCA-COLA""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""COCA-COLA""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+What�s happening with Quatro this year?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Quatro""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Quatro""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Quatro""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases YoY %"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Quatro""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+Anything new with Del Valle recently?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Del Valle""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Del Valle""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Del Valle""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases YoY %"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""Del Valle""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+How strong is COKE REDUCED SUGAR this quarter?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""COKE REDUCED SUGAR""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""COKE REDUCED SUGAR""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases QTD"",
+        CALCULATE(
+            [Unit Cases AC QTD],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""COKE REDUCED SUGAR""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+        ),
+    ""Unit Cases QTD YoY %"",
+        CALCULATE(
+            [Unit Cases AC QTD % vs PY],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""COKE REDUCED SUGAR""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+Is the Cola portfolio holding up?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Colas""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Colas""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Colas""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases YoY %"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Colas""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+Are we seeing any lift for FUZE TEA-KO lately?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""FUZE TEA-KO""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""FUZE TEA-KO""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""FUZE TEA-KO""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases YoY %"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS('Product'[LT1.2 - Brand Group] = ""FUZE TEA-KO""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+How�s the flavors category trending?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Flavors""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Flavors""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Flavors""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases YoY %"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Flavors""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+What�s up with the Stills category?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Stills""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Stills""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Stills""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases YoY %"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Stills""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+Is the Juice category back on track?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Juice""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Juice""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Juice""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases YoY %"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS('Product'[LT1.5 - Category] = ""Juice""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+Which category is leading volume this quarter?,"EVALUATE
+TOPN(
+    1,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.5 - Category],
+        ""Unit Cases QTD"",
+            CALCULATE(
+                [Unit Cases AC QTD],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+            )
+    ),
+    [Unit Cases QTD], DESC
+)
+ORDER BY [Unit Cases QTD] DESC"
+Which segment is underperforming the most?,"EVALUATE
+TOPN(
+    1,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.7 - Segment],
+        ""Net Sales Revenue YoY %"",
+            CALCULATE(
+                [Bottler Net Revenue AC (LC) % vs PY],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+            )
+    ),
+    [Net Sales Revenue YoY %], ASC
+)
+ORDER BY [Net Sales Revenue YoY %] ASC"
+How�s Modern Trade behaving lately?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Channel'[LT1.3 - Channel Macro Group] = ""Modern Trade""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Channel'[LT1.3 - Channel Macro Group] = ""Modern Trade""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Channel'[LT1.3 - Channel Macro Group] = ""Modern Trade""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases YoY %"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS('Channel'[LT1.3 - Channel Macro Group] = ""Modern Trade""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+Is Traditional Trade facing any slowdown?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Period'[Month 445],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS('Channel'[LT1.3 - Channel Macro Group] = ""Traditional Trade""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS('Channel'[LT1.3 - Channel Macro Group] = ""Traditional Trade""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS('Channel'[LT1.3 - Channel Macro Group] = ""Traditional Trade""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        ),
+    ""Unit Cases YoY %"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS('Channel'[LT1.3 - Channel Macro Group] = ""Traditional Trade""),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS(
+                'Period'[Month 445] IN {
+                    ""2025 Nov"",
+                    ""2025 Dec"",
+                    ""2026 Jan""
+                }
+            )
+        )
+)
+ORDER BY 'Period'[Month 445] ASC"
+Who�s leading growth across channels?,"EVALUATE
+TOPN(
+    5,
+    SUMMARIZECOLUMNS(
+        'Channel'[LT1.3 - Channel Macro Group],
+        ""Net Sales Revenue YoY %"",
+            CALCULATE(
+                [Bottler Net Revenue AC (LC) % vs PY],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+            )
+    ),
+    [Net Sales Revenue YoY %], DESC
+)
+ORDER BY [Net Sales Revenue YoY %] DESC"
+Is Modern Trade outperforming Traditional Trade?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Channel'[LT1.3 - Channel Macro Group],
+    ""Net Sales Revenue"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS(
+                'Channel'[LT1.3 - Channel Macro Group] IN {
+                    ""Modern Trade"",
+                    ""Traditional Trade""
+                }
+            ),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+        ),
+    ""Net Sales Revenue YoY %"",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS(
+                'Channel'[LT1.3 - Channel Macro Group] IN {
+                    ""Modern Trade"",
+                    ""Traditional Trade""
+                }
+            ),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+        ),
+    ""Unit Cases"",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS(
+                'Channel'[LT1.3 - Channel Macro Group] IN {
+                    ""Modern Trade"",
+                    ""Traditional Trade""
+                }
+            ),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+        ),
+    ""Unit Cases YoY %"",
+        CALCULATE(
+            [Unit Cases AC % vs PY],
+            KEEPFILTERS(
+                'Channel'[LT1.3 - Channel Macro Group] IN {
+                    ""Modern Trade"",
+                    ""Traditional Trade""
+                }
+            ),
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+        )
+)
+ORDER BY [Net Sales Revenue YoY %] DESC"
+Which regions are trending up?,"EVALUATE
+FILTER(
+    SUMMARIZECOLUMNS(
+        'Ship To'[Region],
+        ""Net Sales Revenue YoY %"",
+            CALCULATE(
+                [Bottler Net Revenue AC (LC) % vs PY],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+            )
+    ),
+    [Net Sales Revenue YoY %] > 0
+)
+ORDER BY [Net Sales Revenue YoY %] DESC"
+Where are we growing the fastest?,"EVALUATE
+TOPN(
+    10,
+    SUMMARIZECOLUMNS(
+        'Ship To'[Region],
+        ""Net Sales Revenue YoY %"",
+            CALCULATE(
+                [Bottler Net Revenue AC (LC) % vs PY],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+            ),
+        ""Unit Cases YoY %"",
+            CALCULATE(
+                [Unit Cases AC % vs PY],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Month 445] = ""2025 Dec"")
+            )
+    ),
+    [Net Sales Revenue YoY %], DESC
+)
+ORDER BY [Net Sales Revenue YoY %] DESC"
+Which city sold the most UCs last quarter?,"EVALUATE
+TOPN(
+    1,
+    SUMMARIZECOLUMNS(
+        'Ship From'[BU Ship From],
+        ""Unit Cases QTD"",
+            CALCULATE(
+                [Unit Cases AC QTD],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+            )
+    ),
+    [Unit Cases QTD], DESC
+)
+ORDER BY [Unit Cases QTD] DESC"
+What was the total UC per trademark in the last quarter?,"EVALUATE
+SUMMARIZECOLUMNS(
+    'Product'[LT1.3 - Trademark Category],
+    ""Unit Cases QTD"",
+        CALCULATE(
+            [Unit Cases AC QTD],
+            KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+            KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+        )
+)
+ORDER BY [Unit Cases QTD] DESC"
+Which category has sold the most UC this year?,"EVALUATE
+TOPN(
+    1,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.5 - Category],
+        ""Unit Cases YTD"",
+            CALCULATE(
+                [Unit Cases AC YTD],
+                KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+                KEEPFILTERS('Period'[Day 445] = ""Jan 31 2026"")
+            )
+    ),
+    [Unit Cases YTD], DESC
+)
+ORDER BY [Unit Cases YTD] DESC"
