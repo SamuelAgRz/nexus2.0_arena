@@ -90,7 +90,7 @@ STR_CONN_ONTOLOGY = (
 OUTPUT_DIR = PROJECT_ROOT / "logs" / "nexus_local_tests"
 
 
-USER_QUERY = "What was the actual volume of unit cases in Colombia in year 2025, for all categories. Group by channel"
+USER_QUERY = "What was the actual volume of unit cases in Colombia last year, for all categories. Group by channel"
 
 MAX_VALIDATION_ITERATIONS = 3
 MAX_CLARIFICATION_ROUNDS = 3
