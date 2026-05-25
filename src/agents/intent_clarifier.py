@@ -14,17 +14,17 @@ class IntentClarifierAgent:
     - Return a structured JSON payload
     """
 
-    def __init__(self, llm_client, general_syn: str = "", dav: str = ""):
+    def __init__(self, llm_client, general_syn: str = "", ontology_context: str = ""):
         self.llm = llm_client
         self.general_syn = general_syn
-        self.dav = dav
+        self.ontology_context = ontology_context
 
     def _build_system_prompt(self) -> str:
         return (
-        INTENT_SYSTEM_PROMPT
-        .replace("{general_syn}", self.general_syn)
-        .replace("{dav}", self.dav)
-    )
+            INTENT_SYSTEM_PROMPT
+            .replace("{general_syn}", self.general_syn)
+            .replace("{ontology_context}", self.ontology_context)
+        )
 
     def _safe_parse_json(self, raw: str) -> Dict[str, Any]:
         raw = raw.strip()
