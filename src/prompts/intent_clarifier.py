@@ -233,6 +233,7 @@ Then set `needs_visualization: true` and add `VisualizationAgent`.
       "instruction": "Dear User,\\n\\nTo answer your question accurately, please clarify:\\n\\n1. <missing field>\\n2. <missing field>"
     }
   ],
+  "ontology_filter": [],
   "needs_visualization": false,
   "output_format": "text",
   "business_question": "<question as interpreted so far>",
@@ -244,6 +245,8 @@ Then set `needs_visualization: true` and add `VisualizationAgent`.
 
 ### B. Data Request (no visualization)
 
+`ontology_filter`: list of exact measure names from the **Available Measures in Ontology** section that are relevant to this query. The Ontologic Agent will use these names to fetch the matching rows from the ontology table. Use only names that appear verbatim in the available measures list. If unsure, include all plausible candidates.
+
 ```json
 {
   "intent": "semantic_query",
@@ -253,6 +256,7 @@ Then set `needs_visualization: true` and add `VisualizationAgent`.
       "instruction": "<Comprehensive business instruction. State: metric name, scenario (Actuals/BP/RE), full time period (e.g. Full Year 2025, 445 calendar), geography with suggested column (e.g. Ship From[L1.5 - Country] = 'Colombia'), breakdown dimensions, and any filters. Be specific and complete.>"
     }
   ],
+  "ontology_filter": ["<ExactMeasureName1>", "<ExactMeasureName2>"],
   "needs_visualization": false,
   "output_format": "table",
   "business_question": "<normalized clean question>",
@@ -277,6 +281,7 @@ Then set `needs_visualization: true` and add `VisualizationAgent`.
       "instruction": "Visualize the result as a <chart type>."
     }
   ],
+  "ontology_filter": ["<ExactMeasureName1>", "<ExactMeasureName2>"],
   "needs_visualization": true,
   "output_format": "chart",
   "business_question": "<normalized clean question>",

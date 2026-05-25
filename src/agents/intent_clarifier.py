@@ -111,6 +111,11 @@ class IntentClarifierAgent:
         confidence = max(0.0, min(1.0, confidence))
         payload["confidence"] = confidence
 
+        ontology_filter = payload.get("ontology_filter", [])
+        if not isinstance(ontology_filter, list):
+            ontology_filter = []
+        payload["ontology_filter"] = ontology_filter
+
         return payload
 
     def run(self, user_query: str) -> Dict[str, Any]:

@@ -266,6 +266,27 @@ Target model: NSR LATAM Cube / NSR LATAM Semantic Model (Power BI).
 """
 
 
+# Lightweight measure catalog passed to the Intent Clarifier.
+# IC uses this to identify which measures the user is asking about (ontology_filter output).
+# TODO: replace with a dynamic fetch from the ontology once the hierarchy column is defined.
+ONTOLOGY_MEASURE_LIST = """
+# Available Measures in Ontology
+
+Use the exact names below in the ontology_filter output field.
+
+- Unit Cases AC
+- Unit Cases AC YTD
+- Unit Cases Current RE
+- Unit Cases Current RE YTD
+- Bottler Net Revenue AC (LC)
+- Bottler Net Revenue AC (LC) YTD
+- Bottler Gross Revenue AC (LC)
+- Bottler Gross Revenue AC (LC) YTD
+- Bottler Gross Revenue Current RE (LC)
+- Bottler Gross Revenue Current RE (LC) YTD
+"""
+
+
 # =============================================================================
 # Helpers
 # =============================================================================
@@ -419,7 +440,7 @@ def main() -> None:
     print("LLM client initialized.")
 
     # -------------------------------------------------------------------------
-    # 2. Ontologic Agent + Intent Clarifier loop
+    # 2. Intent Clarifier loop  (IC only — no OA yet)
     # -------------------------------------------------------------------------
     print_section("2. INITIALIZING ONTOLOGIC AGENT")
 
@@ -427,23 +448,19 @@ def main() -> None:
     ontology_conn = OntologyConnector(str(PATH_DLL), STR_CONN_ONTOLOGY)
     ontologic_agent = OntologicAgent(llm, ontology_conn)
 
-    print_section("2. ONTOLOGIC AGENT + INTENT CLARIFIER LOOP")
+    print_section("2. INTENT CLARIFIER LOOP")
+
+    intent_agent = IntentClarifierAgent(
+        llm,
+        general_syn=GENERAL_SYN,
+        ontology_context=ONTOLOGY_MEASURE_LIST,  # lightweight catalog — just measure names
+    )
 
     combined_query = USER_QUERY
     intent = None
 
     for round_n in range(MAX_CLARIFICATION_ROUNDS):
-        print_section(f"OA → IC ROUND {round_n + 1}")
-
-        ontology_context = ontologic_agent.run(combined_query)
-        save_text(run_dir / f"ontology_context_round_{round_n + 1}.md", ontology_context)
-        print(f"Ontology context (round {round_n + 1}):\n{ontology_context or '(empty)'}")
-
-        intent_agent = IntentClarifierAgent(
-            llm,
-            general_syn=GENERAL_SYN,
-            ontology_context=ontology_context,
-        )
+        print_section(f"IC ROUND {round_n + 1}")
 
         intent = intent_agent.run(combined_query)
         save_text(run_dir / f"01_intent_round_{round_n + 1}.txt", str(intent))
@@ -474,11 +491,24 @@ def main() -> None:
         user_response = input("\nYour response: ").strip()
         combined_query = f"{USER_QUERY}\n\nUser clarification: {user_response}"
 
-    # Capture the ontology context from the last loop iteration for downstream agents.
-    final_ontology_ctx = ontology_context
-    combined_context = build_combined_context(final_ontology_ctx, columns_context)
+    # -------------------------------------------------------------------------
+    # 3. Ontologic Agent — runs once with IC's filter output
+    # -------------------------------------------------------------------------
+    print_section("3. ONTOLOGIC AGENT")
+
+    ontology_filter = intent.get("ontology_filter", [])
+    print(f"Ontology filter from IC: {ontology_filter}")
+
+    ontology_context = ontologic_agent.run(ontology_filter)
+    save_text(run_dir / "ontology_context.md", ontology_context)
+    print(f"Ontology context:\n{ontology_context or '(empty)'}")
+
+    combined_context = build_combined_context(ontology_context, columns_context)
     save_text(run_dir / "combined_context_used.md", combined_context)
 
+    # -------------------------------------------------------------------------
+    # 4. Extract DAX instruction from intent
+    # -------------------------------------------------------------------------
     fhb_instruction = extract_fhb_instruction(intent)
 
     if not fhb_instruction:
@@ -492,9 +522,9 @@ def main() -> None:
     save_text(run_dir / "02_fhb_instruction.txt", fhb_instruction)
 
     # -------------------------------------------------------------------------
-    # 3. DAX Developer
+    # 5. DAX Developer
     # -------------------------------------------------------------------------
-    print_section("3. DAX QUERY DEVELOPER")
+    print_section("5. DAX QUERY DEVELOPER")
 
     developer = DaxQueryDeveloperAgent(
         llm,
@@ -515,9 +545,9 @@ def main() -> None:
         )
 
     # -------------------------------------------------------------------------
-    # 4. DAX Validator with revision loop
+    # 6. DAX Validator with revision loop
     # -------------------------------------------------------------------------
-    print_section("4. DAX VALIDATOR LOOP")
+    print_section("6. DAX VALIDATOR LOOP")
 
     validator = DaxValidatorAgent(
         llm_client=llm,
@@ -595,7 +625,7 @@ Revision rules:
     save_text(run_dir / "06_dax_approved.dax", dax_query)
 
     # -------------------------------------------------------------------------
-    # 5. DAX Executor
+    # 7. DAX Executor
     # -------------------------------------------------------------------------
     if not EXECUTE_DAX:
         print_section("5. EXECUTION SKIPPED")
