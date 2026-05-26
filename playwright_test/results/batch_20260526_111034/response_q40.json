@@ -1,0 +1,14 @@
+{
+  "question": "How’s Coke performing lately?",
+  "timing": {
+    "total_runtime_seconds": 43.69,
+    "chatbot_wait_seconds": 25.69
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:39:07 a.m.\n\nResponse Time: 26/05/2026, 11:39:08 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nHow’s Coke performing lately?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:39:08 a.m.\n\nResponse Time: 26/05/2026, 11:39:08 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:39:08 a.m.\n\nResponse Time: 26/05/2026, 11:39:27 a.m.\n\nCompletion Tokens: 1499\n\nPrompt Tokens: 7774\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo get you the right view of “Coke” performance, could you please clarify:\n\n- Metric: Do you want Net Revenue (NSR) or Volume (Unit Cases), or both?\n- Time frame: What does “lately” mean for you?\n  - Latest completed month (Jan 2026)\n  - Latest completed week\n  - Year-to-date through Jan 31 2026\n  - Another specific period (please specify)\n- Product scope: By “Coke,” do you mean the Coca‑Cola Trademark portfolio (e.g., Coca‑Cola, Coca‑Cola Zero Sugar, Diet Coke) at the Trademark Category level, or a specific Brand Group?\n- Comparison: Do you want a comparison vs prior year, BP, or RE?\n- Breakdown: Do you want it aggregated or broken down (e.g., by Channel Macro Group, Package, Product)?\n\nNote: This deployment only supports Colombia data. Once you confirm the above, I’ll proceed to retrieve the results.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo get you the right view of “Coke” performance, could you please clarify:\n\n- Metric: Do you want Net Revenue (NSR) or Volume (Unit Cases), or both?\n- Time frame: What does “lately” mean for you?\n  - Latest completed month (Jan 2026)\n  - Latest completed week\n  - Year-to-date through Jan 31 2026\n  - Another specific period (please specify)\n- Product scope: By “Coke,” do you mean the Coca‑Cola Trademark portfolio (e.g., Coca‑Cola, Coca‑Cola Zero Sugar, Diet Coke) at the Trademark Category level, or a specific Brand Group?\n- Comparison: Do you want a comparison vs prior year, BP, or RE?\n- Breakdown: Do you want it aggregated or broken down (e.g., by Channel Macro Group, Package, Product)?\n\nNote: This deployment only supports Colombia data. Once you confirm the above, I’ll proceed to retrieve the results.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

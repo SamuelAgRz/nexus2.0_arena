@@ -1,0 +1,14 @@
+{
+  "question": "Which channel showed the highest YoY growth in NSR in the previous month?",
+  "timing": {
+    "total_runtime_seconds": 65.01,
+    "chatbot_wait_seconds": 45.41
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:37:41 a.m.\n\nResponse Time: 26/05/2026, 11:37:42 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhich channel showed the highest YoY growth in NSR in the previous month?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:37:42 a.m.\n\nResponse Time: 26/05/2026, 11:37:42 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:37:42 a.m.\n\nResponse Time: 26/05/2026, 11:38:21 a.m.\n\nCompletion Tokens: 3067\n\nPrompt Tokens: 7784\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo build an accurate query, please confirm a few details:\n\n1) Channel level: Which level should we use for “channel”?\n- Channel Macro Group (e.g., Modern vs. Traditional)\n- Trade Channel\n- Sub Trade Channel\n\n2) YoY growth metric: Do you want the ranking based on:\n- % vs PY (percentage YoY growth), or\n- Absolute variance vs PY (value difference vs PY)?\n\n3) Time reference: By “previous month,” should we use the latest completed fiscal month relative to the model’s latest available data?\n- Latest available date in the model is Jan 31 2026 (445 calendar). “Previous month” would therefore be Dec 2025 (445 calendar). Is this correct, or do you have a different month in mind?\n\nNote: Results will be filtered to Colombia only per deployment governance.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo build an accurate query, please confirm a few details:\n\n1) Channel level: Which level should we use for “channel”?\n- Channel Macro Group (e.g., Modern vs. Traditional)\n- Trade Channel\n- Sub Trade Channel\n\n2) YoY growth metric: Do you want the ranking based on:\n- % vs PY (percentage YoY growth), or\n- Absolute variance vs PY (value difference vs PY)?\n\n3) Time reference: By “previous month,” should we use the latest completed fiscal month relative to the model’s latest available data?\n- Latest available date in the model is Jan 31 2026 (445 calendar). “Previous month” would therefore be Dec 2025 (445 calendar). Is this correct, or do you have a different month in mind?\n\nNote: Results will be filtered to Colombia only per deployment governance.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

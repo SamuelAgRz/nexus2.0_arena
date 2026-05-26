@@ -1,0 +1,8 @@
+{
+  "question": "Top 3 categories by volume quarter to date (QTD).",
+  "timing": {
+    "total_runtime_seconds": 622.05,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

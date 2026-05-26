@@ -1,0 +1,14 @@
+{
+  "question": "Who’s leading growth across channels?",
+  "timing": {
+    "total_runtime_seconds": 37.4,
+    "chatbot_wait_seconds": 19.63
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:50:16 a.m.\n\nResponse Time: 26/05/2026, 11:50:17 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWho’s leading growth across channels?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:50:17 a.m.\n\nResponse Time: 26/05/2026, 11:50:17 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:50:17 a.m.\n\nResponse Time: 26/05/2026, 11:50:30 a.m.\n\nCompletion Tokens: 863\n\nPrompt Tokens: 7775\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo identify who is leading growth across channels, could you please clarify:\n- Metric: Net Revenue (NSR) or Volume (Unit Cases)?\n- Comparison baseline: vs Prior Year, vs Budget (BP), or vs Rolling Estimate (RE)?\n- Time period: latest completed month, YTD as of the latest available date (Jan 31 2026), or a specific fiscal period?\n- Channel granularity: Channel Macro Group (e.g., Modern vs Traditional), Trade Channel, or Sub Trade Channel?\n- Ranking/output: Top 1 only, or Top N? Do you want absolute variance, percent variance, or both?\n\nOnce confirmed, I’ll retrieve the governed results for Colombia and report the leading channel(s).\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo identify who is leading growth across channels, could you please clarify:\n- Metric: Net Revenue (NSR) or Volume (Unit Cases)?\n- Comparison baseline: vs Prior Year, vs Budget (BP), or vs Rolling Estimate (RE)?\n- Time period: latest completed month, YTD as of the latest available date (Jan 31 2026), or a specific fiscal period?\n- Channel granularity: Channel Macro Group (e.g., Modern vs Traditional), Trade Channel, or Sub Trade Channel?\n- Ranking/output: Top 1 only, or Top N? Do you want absolute variance, percent variance, or both?\n\nOnce confirmed, I’ll retrieve the governed results for Colombia and report the leading channel(s).",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

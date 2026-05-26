@@ -1,0 +1,14 @@
+{
+  "question": "What was the YoY% in september of the volume of the Colas category?",
+  "timing": {
+    "total_runtime_seconds": 61.56,
+    "chatbot_wait_seconds": 40.15
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:26:50 a.m.\n\nResponse Time: 26/05/2026, 11:26:51 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the YoY% in september of the volume of the Colas category?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:26:51 a.m.\n\nResponse Time: 26/05/2026, 11:26:51 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:26:51 a.m.\n\nResponse Time: 26/05/2026, 11:27:24 a.m.\n\nCompletion Tokens: 2601\n\nPrompt Tokens: 7785\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed accurately, please confirm:\n\n- Year: Do you mean September 2025 (the latest available September in our data), or a different year?\n- Calendar: Should we use the 445 fiscal September (default) or the natural/Gregorian September?\n- Scope: Do you want a single overall YoY% for the Colas category in Colombia with no breakdowns? (Default is yes.)\n\nOnce confirmed, I’ll generate the query accordingly.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed accurately, please confirm:\n\n- Year: Do you mean September 2025 (the latest available September in our data), or a different year?\n- Calendar: Should we use the 445 fiscal September (default) or the natural/Gregorian September?\n- Scope: Do you want a single overall YoY% for the Colas category in Colombia with no breakdowns? (Default is yes.)\n\nOnce confirmed, I’ll generate the query accordingly.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

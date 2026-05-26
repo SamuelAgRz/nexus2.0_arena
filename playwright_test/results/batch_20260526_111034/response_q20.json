@@ -1,0 +1,14 @@
+{
+  "question": "What is the share (% units) of the Flavors category in the last month?",
+  "timing": {
+    "total_runtime_seconds": 74.34,
+    "chatbot_wait_seconds": 51.31
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:15:53 a.m.\n\nResponse Time: 26/05/2026, 11:15:54 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat is the share (% units) of the Flavors category in the last month?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:15:54 a.m.\n\nResponse Time: 26/05/2026, 11:15:54 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:15:54 a.m.\n\nResponse Time: 26/05/2026, 11:16:39 a.m.\n\nCompletion Tokens: 3559\n\nPrompt Tokens: 7785\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, please confirm:\n1) By “share (% units)” do you want Flavors Unit Cases as a percentage of total Unit Cases across all product categories (Colombia, all channels/customers)?\n2) The latest available completed 445 month in the model is Jan 2026. Should I use Jan 2026 as “last month”?\n\nIf you prefer a different universe (e.g., a specific channel or customer), please specify.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, please confirm:\n1) By “share (% units)” do you want Flavors Unit Cases as a percentage of total Unit Cases across all product categories (Colombia, all channels/customers)?\n2) The latest available completed 445 month in the model is Jan 2026. Should I use Jan 2026 as “last month”?\n\nIf you prefer a different universe (e.g., a specific channel or customer), please specify.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

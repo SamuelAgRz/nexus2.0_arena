@@ -1,0 +1,14 @@
+{
+  "question": "Which subcategories experienced a year-over-year decline in volume?",
+  "timing": {
+    "total_runtime_seconds": 51.77,
+    "chatbot_wait_seconds": 33.78
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:38:46 a.m.\n\nResponse Time: 26/05/2026, 11:38:47 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhich subcategories experienced a year-over-year decline in volume?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:38:47 a.m.\n\nResponse Time: 26/05/2026, 11:38:47 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:38:47 a.m.\n\nResponse Time: 26/05/2026, 11:39:14 a.m.\n\nCompletion Tokens: 2061\n\nPrompt Tokens: 7780\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo identify subcategories with a year‑over‑year decline in volume, could you please confirm the time basis and any filters?\n\n1) Period basis (choose one):\n- Latest completed month vs the same month last year\n- Current YTD vs PY YTD (anchored to the latest available fiscal day: Jan 31 2026)\n- Latest completed quarter vs the same quarter last year\n- Full fiscal year 2025 vs 2024\n\n2) Any additional filters?\n- For example: Channel (macro/group/sub), Package (type/container), Customer, etc. If none, we’ll use all Colombia.\n\n3) Output details:\n- Do you want both absolute variance (Unit Cases) and percent variance vs PY?\n- Show only subcategories with negative YoY, correct?\n\n4) Sorting/limit:\n- Return all declines or only the top N declines?\n\nOnce you confirm these, I’ll proceed to prepare the query intent.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo identify subcategories with a year‑over‑year decline in volume, could you please confirm the time basis and any filters?\n\n1) Period basis (choose one):\n- Latest completed month vs the same month last year\n- Current YTD vs PY YTD (anchored to the latest available fiscal day: Jan 31 2026)\n- Latest completed quarter vs the same quarter last year\n- Full fiscal year 2025 vs 2024\n\n2) Any additional filters?\n- For example: Channel (macro/group/sub), Package (type/container), Customer, etc. If none, we’ll use all Colombia.\n\n3) Output details:\n- Do you want both absolute variance (Unit Cases) and percent variance vs PY?\n- Show only subcategories with negative YoY, correct?\n\n4) Sorting/limit:\n- Return all declines or only the top N declines?\n\nOnce you confirm these, I’ll proceed to prepare the query intent.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

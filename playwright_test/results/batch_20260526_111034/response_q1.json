@@ -1,0 +1,14 @@
+{
+  "question": "What was the sales volume today?",
+  "timing": {
+    "total_runtime_seconds": 48.86,
+    "chatbot_wait_seconds": 20.95
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:11:03 a.m.\n\nResponse Time: 26/05/2026, 11:11:04 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the sales volume today?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:11:04 a.m.\n\nResponse Time: 26/05/2026, 11:11:04 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:11:04 a.m.\n\nResponse Time: 26/05/2026, 11:11:20 a.m.\n\nCompletion Tokens: 1043\n\nPrompt Tokens: 7775\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nThe requested period exceeds available data. The latest available day in the model (445 calendar) is Jan 31 2026. Would you like me to return the sales volume (Unit Cases) for Jan 31 2026 for Colombia? If yes, do you want the total only or a breakdown (e.g., by channel or product)?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nThe requested period exceeds available data. The latest available day in the model (445 calendar) is Jan 31 2026. Would you like me to return the sales volume (Unit Cases) for Jan 31 2026 for Colombia? If yes, do you want the total only or a breakdown (e.g., by channel or product)?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

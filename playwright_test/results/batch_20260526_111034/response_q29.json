@@ -1,0 +1,14 @@
+{
+  "question": "How did the YoY volume of the Brisa brand vary in the traditional channel two months ago?",
+  "timing": {
+    "total_runtime_seconds": 52.85,
+    "chatbot_wait_seconds": 34.99
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:28:03 a.m.\n\nResponse Time: 26/05/2026, 11:28:03 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nHow did the YoY volume of the Brisa brand vary in the traditional channel two months ago?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:28:03 a.m.\n\nResponse Time: 26/05/2026, 11:28:03 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:28:03 a.m.\n\nResponse Time: 26/05/2026, 11:28:31 a.m.\n\nCompletion Tokens: 1937\n\nPrompt Tokens: 7788\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n- Data availability: The model only has data through Jan 31 2026. “Two months ago” relative to today (May 2026) would be March 2026, which is unavailable. Would you like me to use November 2025 (two months before the latest available month, January 2026) as the target month, or specify a month?\n- YoY format: Do you want the YoY as absolute variance in Unit Cases (current minus prior year) or as percentage change vs prior year?\n- Scope confirmation: Apply filters Brand = Brisa, Channel Macro Group = Traditional, Country = Colombia. Any other filters?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n- Data availability: The model only has data through Jan 31 2026. “Two months ago” relative to today (May 2026) would be March 2026, which is unavailable. Would you like me to use November 2025 (two months before the latest available month, January 2026) as the target month, or specify a month?\n- YoY format: Do you want the YoY as absolute variance in Unit Cases (current minus prior year) or as percentage change vs prior year?\n- Scope confirmation: Apply filters Brand = Brisa, Channel Macro Group = Traditional, Country = Colombia. Any other filters?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

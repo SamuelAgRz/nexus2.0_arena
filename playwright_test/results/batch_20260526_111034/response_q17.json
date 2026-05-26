@@ -1,0 +1,14 @@
+{
+  "question": "What was the total sales volume yesterday?",
+  "timing": {
+    "total_runtime_seconds": 46.99,
+    "chatbot_wait_seconds": 31.06
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:14:57 a.m.\n\nResponse Time: 26/05/2026, 11:14:57 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the total sales volume yesterday?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:14:57 a.m.\n\nResponse Time: 26/05/2026, 11:14:57 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:14:57 a.m.\n\nResponse Time: 26/05/2026, 11:15:24 a.m.\n\nCompletion Tokens: 1923\n\nPrompt Tokens: 7776\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo run this, I need to resolve “yesterday” to an exact fiscal day in the model. The latest available actuals date in our dataset is Jan 31 2026. Using the literal calendar “yesterday” (relative to today) would exceed available data.\n\nWould you like me to:\n- Use Jan 30 2026 as “yesterday” (the day before the latest available date), or\n- Use a specific date you provide (YYYY-MM-DD)?\n\nOnce confirmed, I will return the total sales volume (Unit Cases) for Colombia for that day.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo run this, I need to resolve “yesterday” to an exact fiscal day in the model. The latest available actuals date in our dataset is Jan 31 2026. Using the literal calendar “yesterday” (relative to today) would exceed available data.\n\nWould you like me to:\n- Use Jan 30 2026 as “yesterday” (the day before the latest available date), or\n- Use a specific date you provide (YYYY-MM-DD)?\n\nOnce confirmed, I will return the total sales volume (Unit Cases) for Colombia for that day.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

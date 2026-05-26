@@ -1,0 +1,8 @@
+{
+  "question": "What was the year-over-year change in total NSR for the previous month?",
+  "timing": {
+    "total_runtime_seconds": 615.99,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

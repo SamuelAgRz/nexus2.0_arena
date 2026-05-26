@@ -1,0 +1,14 @@
+{
+  "question": "Top 10 brands with the most sales year to date (YTD).",
+  "timing": {
+    "total_runtime_seconds": 39.23,
+    "chatbot_wait_seconds": 23.31
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:12:41 a.m.\n\nResponse Time: 26/05/2026, 11:12:42 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nTop 10 brands with the most sales year to date (YTD).\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:12:42 a.m.\n\nResponse Time: 26/05/2026, 11:12:42 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:12:42 a.m.\n\nResponse Time: 26/05/2026, 11:13:00 a.m.\n\nCompletion Tokens: 1330\n\nPrompt Tokens: 7783\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo make sure I use the correct metric and fiscal cutoff, please confirm:\n\n- By “sales,” do you want Net Revenue (NSR) or Volume (Unit Cases)?\n- For YTD, should I anchor to the latest available fiscal day in the model (Jan 31 2026)?\n- Is “brand” at the Brand Group level acceptable?\n\nNote: The analysis will be for Colombia only per the deployment’s governance. Once confirmed, I’ll return the top 10 brands YTD.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo make sure I use the correct metric and fiscal cutoff, please confirm:\n\n- By “sales,” do you want Net Revenue (NSR) or Volume (Unit Cases)?\n- For YTD, should I anchor to the latest available fiscal day in the model (Jan 31 2026)?\n- Is “brand” at the Brand Group level acceptable?\n\nNote: The analysis will be for Colombia only per the deployment’s governance. Once confirmed, I’ll return the top 10 brands YTD.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

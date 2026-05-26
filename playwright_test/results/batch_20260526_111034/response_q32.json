@@ -1,0 +1,14 @@
+{
+  "question": "What was the highest sales volume ever for this COCA-COLA",
+  "timing": {
+    "total_runtime_seconds": 45.03,
+    "chatbot_wait_seconds": 24.62
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:35:52 a.m.\n\nResponse Time: 26/05/2026, 11:35:53 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the highest sales volume ever for this COCA-COLA\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:35:53 a.m.\n\nResponse Time: 26/05/2026, 11:35:53 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:35:53 a.m.\n\nResponse Time: 26/05/2026, 11:36:10 a.m.\n\nCompletion Tokens: 1339\n\nPrompt Tokens: 7781\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, I need a couple of clarifications:\n- When you say “COCA-COLA”, which product level do you mean?\n  • Brand Group (Product[LT1.2 - Brand Group])  \n  • Trademark (Product[LT1.3 - Trademark Category])  \n  • A specific product/SKU (please specify)\n- On which period basis should we evaluate the “highest ever” sales volume (Unit Cases)?\n  • Single day  \n  • 445 week  \n  • 445 month  \n  • 445 quarter  \n  • Fiscal year\n- Should we search across the full available Actuals window (Apr 01 2023 to Jan 31 2026), or a different timeframe?\n- Do you want just the top period (with its date/label and value), or top N periods in case of ties?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, I need a couple of clarifications:\n- When you say “COCA-COLA”, which product level do you mean?\n  • Brand Group (Product[LT1.2 - Brand Group])  \n  • Trademark (Product[LT1.3 - Trademark Category])  \n  • A specific product/SKU (please specify)\n- On which period basis should we evaluate the “highest ever” sales volume (Unit Cases)?\n  • Single day  \n  • 445 week  \n  • 445 month  \n  • 445 quarter  \n  • Fiscal year\n- Should we search across the full available Actuals window (Apr 01 2023 to Jan 31 2026), or a different timeframe?\n- Do you want just the top period (with its date/label and value), or top N periods in case of ties?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

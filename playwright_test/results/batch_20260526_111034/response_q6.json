@@ -1,0 +1,14 @@
+{
+  "question": "What was the sales volume last month?",
+  "timing": {
+    "total_runtime_seconds": 43.33,
+    "chatbot_wait_seconds": 27.73
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:11:34 a.m.\n\nResponse Time: 26/05/2026, 11:11:34 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the sales volume last month?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:11:34 a.m.\n\nResponse Time: 26/05/2026, 11:11:34 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:11:34 a.m.\n\nResponse Time: 26/05/2026, 11:11:58 a.m.\n\nCompletion Tokens: 1750\n\nPrompt Tokens: 7776\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo confirm your intent:\n- When you say “last month,” do you mean the previous completed 445 fiscal month relative to today (which would be April 2026)? Our Actuals data is currently available only through Jan 31 2026, so April 2026 is not available.\n- Would you like me to proceed using the latest available completed month in the dataset, January 2026? Alternatively, please specify a month within the available range (e.g., December 2025).\n\nAlso, do you want the total for Colombia (no breakdown), or should I break it down by a dimension (e.g., Channel Macro Group, Trade Channel, Product Category)?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo confirm your intent:\n- When you say “last month,” do you mean the previous completed 445 fiscal month relative to today (which would be April 2026)? Our Actuals data is currently available only through Jan 31 2026, so April 2026 is not available.\n- Would you like me to proceed using the latest available completed month in the dataset, January 2026? Alternatively, please specify a month within the available range (e.g., December 2025).\n\nAlso, do you want the total for Colombia (no breakdown), or should I break it down by a dimension (e.g., Channel Macro Group, Trade Channel, Product Category)?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

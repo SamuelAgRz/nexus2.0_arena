@@ -1,0 +1,14 @@
+{
+  "question": "How’s the flavors category trending?",
+  "timing": {
+    "total_runtime_seconds": 41.51,
+    "chatbot_wait_seconds": 23.24
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:41:01 a.m.\n\nResponse Time: 26/05/2026, 11:41:02 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nHow’s the flavors category trending?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:41:02 a.m.\n\nResponse Time: 26/05/2026, 11:41:02 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:41:02 a.m.\n\nResponse Time: 26/05/2026, 11:41:19 a.m.\n\nCompletion Tokens: 1236\n\nPrompt Tokens: 7775\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo analyze how the Flavors product category is trending in Colombia, I need a bit more detail:\n\n- Metric: Do you want Net Revenue (NSR) or Unit Cases (volume)? If you’d like both, I can prepare two series.\n- Timeframe: Which period should we trend?\n  - Last 12 completed fiscal months\n  - Current fiscal YTD by month\n  - A custom start and end period\n- Time grain: Monthly or weekly?\n- Comparison: Include year-over-year (% vs PY) or show absolute trend only?\n- Confirmation: By “Flavors,” do you mean the Product Category “Flavors” in the product hierarchy?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo analyze how the Flavors product category is trending in Colombia, I need a bit more detail:\n\n- Metric: Do you want Net Revenue (NSR) or Unit Cases (volume)? If you’d like both, I can prepare two series.\n- Timeframe: Which period should we trend?\n  - Last 12 completed fiscal months\n  - Current fiscal YTD by month\n  - A custom start and end period\n- Time grain: Monthly or weekly?\n- Comparison: Include year-over-year (% vs PY) or show absolute trend only?\n- Confirmation: By “Flavors,” do you mean the Product Category “Flavors” in the product hierarchy?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

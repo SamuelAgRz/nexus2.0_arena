@@ -1,0 +1,14 @@
+{
+  "question": "Are we seeing any lift for FUZE TEA-KO lately?",
+  "timing": {
+    "total_runtime_seconds": 42.29,
+    "chatbot_wait_seconds": 24.72
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:40:22 a.m.\n\nResponse Time: 26/05/2026, 11:40:23 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nAre we seeing any lift for FUZE TEA-KO lately?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:40:23 a.m.\n\nResponse Time: 26/05/2026, 11:40:23 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:40:23 a.m.\n\nResponse Time: 26/05/2026, 11:40:43 a.m.\n\nCompletion Tokens: 1297\n\nPrompt Tokens: 7782\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n“Lift” is ambiguous. To proceed, please confirm:\n\n- KPI: Net Revenue (NSR) or Volume (Unit Cases)?\n- Timeframe: latest completed month, latest completed week, or YTD through the latest available date (Jan 31 2026)?\n- Comparison baseline: vs prior period (MoM/WoW), vs same period last year (YoY), or both?\n- Product grain: does “FUZE TEA-KO” refer to the Product Brand Group?\n- Any breakdown needed (e.g., by Channel Macro Group) or overall total?\n\nOnce you confirm, I’ll fetch the governed results for Colombia accordingly.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n“Lift” is ambiguous. To proceed, please confirm:\n\n- KPI: Net Revenue (NSR) or Volume (Unit Cases)?\n- Timeframe: latest completed month, latest completed week, or YTD through the latest available date (Jan 31 2026)?\n- Comparison baseline: vs prior period (MoM/WoW), vs same period last year (YoY), or both?\n- Product grain: does “FUZE TEA-KO” refer to the Product Brand Group?\n- Any breakdown needed (e.g., by Channel Macro Group) or overall total?\n\nOnce you confirm, I’ll fetch the governed results for Colombia accordingly.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

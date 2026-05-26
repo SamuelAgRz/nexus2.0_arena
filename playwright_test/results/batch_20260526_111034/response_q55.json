@@ -1,0 +1,14 @@
+{
+  "question": "Which regions are trending up?",
+  "timing": {
+    "total_runtime_seconds": 39.14,
+    "chatbot_wait_seconds": 22.05
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:51:58 a.m.\n\nResponse Time: 26/05/2026, 11:51:59 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhich regions are trending up?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:51:59 a.m.\n\nResponse Time: 26/05/2026, 11:51:59 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:51:59 a.m.\n\nResponse Time: 26/05/2026, 11:52:14 a.m.\n\nCompletion Tokens: 1207\n\nPrompt Tokens: 7774\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo answer “Which regions are trending up?” I need a bit more detail:\n\n1) KPI: Should we analyze Net Revenue (NSR) or Sales Volume (Unit Cases)?\n2) Time grain and window: Do you want to see trends by month (e.g., last 12 months), by week (e.g., last 8 weeks), or YTD by month?\n3) “Trending up” definition: Compare vs the immediately prior period (MoM/WoW) or vs the same period last year (YoY)?\n4) “Regions” level: Which geographic field should we use in the model (e.g., department, city, or another internal region attribute), and should it be based on Ship To (customer location) or Ship From (origin location)?\n\nOnce I have these, I’ll retrieve the data accordingly.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo answer “Which regions are trending up?” I need a bit more detail:\n\n1) KPI: Should we analyze Net Revenue (NSR) or Sales Volume (Unit Cases)?\n2) Time grain and window: Do you want to see trends by month (e.g., last 12 months), by week (e.g., last 8 weeks), or YTD by month?\n3) “Trending up” definition: Compare vs the immediately prior period (MoM/WoW) or vs the same period last year (YoY)?\n4) “Regions” level: Which geographic field should we use in the model (e.g., department, city, or another internal region attribute), and should it be based on Ship To (customer location) or Ship From (origin location)?\n\nOnce I have these, I’ll retrieve the data accordingly.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "question": "What was the YoY growth of NSR in Cali two months ago?",
+  "timing": {
+    "total_runtime_seconds": 51.53,
+    "chatbot_wait_seconds": 28.95
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:38:07 a.m.\n\nResponse Time: 26/05/2026, 11:38:07 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the YoY growth of NSR in Cali two months ago?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:38:07 a.m.\n\nResponse Time: 26/05/2026, 11:38:07 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:38:07 a.m.\n\nResponse Time: 26/05/2026, 11:38:32 a.m.\n\nCompletion Tokens: 1965\n\nPrompt Tokens: 7783\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, I need a couple of clarifications to ensure precise results:\n- Time period: “two months ago” from today points to March 2026, which is outside the available data. The latest available date is Jan 31 2026, and Actuals are available from Apr 01 2023 to Jan 31 2026. Would you like to use January 2026, or specify a month within Apr 2023–Jan 2026?\n- Location grain: When you say “Cali,” should the filter be applied to the Ship To city (customer destination) or the Ship From city (origin/warehouse)? Please specify which one.\n- Comparison format: Do you want YoY growth as a percentage vs PY or as an absolute variance vs PY?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, I need a couple of clarifications to ensure precise results:\n- Time period: “two months ago” from today points to March 2026, which is outside the available data. The latest available date is Jan 31 2026, and Actuals are available from Apr 01 2023 to Jan 31 2026. Would you like to use January 2026, or specify a month within Apr 2023–Jan 2026?\n- Location grain: When you say “Cali,” should the filter be applied to the Ship To city (customer destination) or the Ship From city (origin/warehouse)? Please specify which one.\n- Comparison format: Do you want YoY growth as a percentage vs PY or as an absolute variance vs PY?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

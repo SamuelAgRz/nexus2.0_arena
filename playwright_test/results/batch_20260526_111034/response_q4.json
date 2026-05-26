@@ -1,0 +1,14 @@
+{
+  "question": "What was the sales volume last week?",
+  "timing": {
+    "total_runtime_seconds": 54.99,
+    "chatbot_wait_seconds": 33.38
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:10:56 a.m.\n\nResponse Time: 26/05/2026, 11:10:57 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the sales volume last week?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:10:57 a.m.\n\nResponse Time: 26/05/2026, 11:10:57 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:10:57 a.m.\n\nResponse Time: 26/05/2026, 11:11:26 a.m.\n\nCompletion Tokens: 2134\n\nPrompt Tokens: 7776\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\n“Last week” is ambiguous in our 445 fiscal calendar, and the dataset’s latest available date is Jan 31 2026 (country scope: Colombia only). Please confirm one of the following so I can generate the query correctly:\n\n- Use the latest completed fiscal (445) week available in the dataset (ending on or up to Jan 31 2026).\n- Specify a particular fiscal week (Year 445 and Week 445).\n- Provide an absolute date within Apr 01 2023–Jan 31 2026 to anchor the week.\n\nAlso, do you want a single total or a breakdown (e.g., by channel, product, or customer)?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\n“Last week” is ambiguous in our 445 fiscal calendar, and the dataset’s latest available date is Jan 31 2026 (country scope: Colombia only). Please confirm one of the following so I can generate the query correctly:\n\n- Use the latest completed fiscal (445) week available in the dataset (ending on or up to Jan 31 2026).\n- Specify a particular fiscal week (Year 445 and Week 445).\n- Provide an absolute date within Apr 01 2023–Jan 31 2026 to anchor the week.\n\nAlso, do you want a single total or a breakdown (e.g., by channel, product, or customer)?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

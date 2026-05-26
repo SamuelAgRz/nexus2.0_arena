@@ -1,0 +1,14 @@
+{
+  "question": "What’s up with the Stills category?",
+  "timing": {
+    "total_runtime_seconds": 37.25,
+    "chatbot_wait_seconds": 21.68
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 11:41:02 a.m.\n\nResponse Time: 26/05/2026, 11:41:03 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat’s up with the Stills category?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 11:41:03 a.m.\n\nResponse Time: 26/05/2026, 11:41:03 a.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 11:41:03 a.m.\n\nResponse Time: 26/05/2026, 11:41:20 a.m.\n\nCompletion Tokens: 1295\n\nPrompt Tokens: 7777\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo help with “what’s up with the Stills category,” could you please clarify a few points so I can pull the right view?\n\n- Metric: Net Revenue (NSR) or Unit Cases (volume)? (Or both)\n- Time period: latest available month (Jan 2026), YTD 2026, a specific month/week/day, or a rolling window?\n- Breakdown: overall total or split by something like Channel Macro Group, Trade Channel, Package, or Subcategory/Brand?\n- Comparison: do you want a comparison vs prior year (YoY), Budget (BP), or Rolling Estimate (RE)?\n- Output: table only, or would you also like a chart?\n\nNote: This deployment covers Colombia only. If you’re okay with a quick starting point, I can fetch Jan 2026 NSR and Unit Cases for Stills by Channel Macro Group with a vs PY comparison—just say “yes” and I’ll proceed.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo help with “what’s up with the Stills category,” could you please clarify a few points so I can pull the right view?\n\n- Metric: Net Revenue (NSR) or Unit Cases (volume)? (Or both)\n- Time period: latest available month (Jan 2026), YTD 2026, a specific month/week/day, or a rolling window?\n- Breakdown: overall total or split by something like Channel Macro Group, Trade Channel, Package, or Subcategory/Brand?\n- Comparison: do you want a comparison vs prior year (YoY), Budget (BP), or Rolling Estimate (RE)?\n- Output: table only, or would you also like a chart?\n\nNote: This deployment covers Colombia only. If you’re okay with a quick starting point, I can fetch Jan 2026 NSR and Unit Cases for Stills by Channel Macro Group with a vs PY comparison—just say “yes” and I’ll proceed.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

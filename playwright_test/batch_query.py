@@ -1,7 +1,7 @@
 """
 Run a batch of questions from a CSV file in parallel against the chatbot.
 Each question gets its own browser context. Results are saved as individual
-JSON files inside a shared batch subfolder in results/.
+JSON files inside a shared batch subfolder in results/, plus a summary CSV.
 
 Usage:
     .venv\Scripts\python.exe playwright_test/batch_query.py
@@ -32,7 +32,14 @@ INPUT_SELECTOR = "textarea[placeholder='Ask me anything...']"
 AGENT_BTN_SELECTOR = "button:has-text('Agent Interaction')"
 RESPONSE_TIMEOUT_MS = 600_000  # 10 minutes
 
-CONCURRENCY = 3  # max simultaneous browser contexts — increase carefully
+CONCURRENCY = 5  # max simultaneous browser contexts — increase carefully
+
+CSV_COLUMNS = [
+    "index", "question",
+    "total_runtime_seconds", "chatbot_wait_seconds",
+    "intent_clarifier", "dax_query", "dax_executor_result", "summarizer",
+    "error",
+]
 
 
 def read_questions(csv_path: Path) -> list[str]:
@@ -41,13 +48,18 @@ def read_questions(csv_path: Path) -> list[str]:
         return [row["question"].strip() for row in reader if row["question"].strip()]
 
 
+def elapsed(batch_start: float) -> str:
+    return f"{round(time.time() - batch_start, 1)}s"
+
+
 async def run_question(
     browser: Browser,
     question: str,
     index: int,
     semaphore: asyncio.Semaphore,
     batch_dir: Path,
-) -> None:
+    batch_start: float,
+) -> dict:
     label = f"[Q{index}]"
 
     async with semaphore:
@@ -56,7 +68,7 @@ async def run_question(
         page = await context.new_page()
 
         try:
-            print(f"{label} Navigating to chatbot...")
+            print(f"{label} [{elapsed(batch_start)}] Navigating to chatbot...")
             await page.goto(CHATBOT_URL)
             await page.wait_for_load_state("networkidle", timeout=30_000)
 
@@ -69,13 +81,13 @@ async def run_question(
 
             send_time = time.time()
             await chat_input.press("Enter")
-            print(f"{label} Sent: \"{question[:80]}{'...' if len(question) > 80 else ''}\"")
+            print(f"{label} [{elapsed(batch_start)}] Sent: \"{question[:80]}{'...' if len(question) > 80 else ''}\"")
 
             agent_btn = page.locator(AGENT_BTN_SELECTOR).last
             await agent_btn.wait_for(state="visible", timeout=RESPONSE_TIMEOUT_MS)
             response_time = time.time()
             chatbot_wait = round(response_time - send_time, 2)
-            print(f"{label} Response ready ({chatbot_wait}s wait)")
+            print(f"{label} [{elapsed(batch_start)}] Response ready ({chatbot_wait}s wait)")
 
             await agent_btn.click()
             await page.wait_for_load_state("networkidle", timeout=15_000)
@@ -85,6 +97,7 @@ async def run_question(
             response_text = response_text.strip()
 
             total_runtime = round(time.time() - start_time, 2)
+            parsed = parse_response(response_text)
 
             output = {
                 "question": question,
@@ -92,15 +105,37 @@ async def run_question(
                     "total_runtime_seconds": total_runtime,
                     "chatbot_wait_seconds": chatbot_wait,
                 },
-                "response": parse_response(response_text),
+                "response": parsed,
+            }
+            row = {
+                "index": index,
+                "question": question,
+                "total_runtime_seconds": total_runtime,
+                "chatbot_wait_seconds": chatbot_wait,
+                "intent_clarifier": parsed.get("intent_clarifier"),
+                "dax_query": parsed.get("dax_query"),
+                "dax_executor_result": parsed.get("dax_executor_result"),
+                "summarizer": parsed.get("summarizer"),
+                "error": None,
             }
 
         except Exception as exc:
             total_runtime = round(time.time() - start_time, 2)
-            print(f"{label} ERROR: {exc}")
+            print(f"{label} [{elapsed(batch_start)}] ERROR: {exc}")
             output = {
                 "question": question,
                 "timing": {"total_runtime_seconds": total_runtime, "chatbot_wait_seconds": None},
+                "error": str(exc),
+            }
+            row = {
+                "index": index,
+                "question": question,
+                "total_runtime_seconds": total_runtime,
+                "chatbot_wait_seconds": None,
+                "intent_clarifier": None,
+                "dax_query": None,
+                "dax_executor_result": None,
+                "summarizer": None,
                 "error": str(exc),
             }
 
@@ -110,7 +145,19 @@ async def run_question(
         output_file = batch_dir / f"response_q{index}.json"
         with open(output_file, "w", encoding="utf-8") as f:
             json.dump(output, f, ensure_ascii=False, indent=2)
-        print(f"{label} Saved to {output_file.relative_to(Path(__file__).parent)}")
+        print(f"{label} [{elapsed(batch_start)}] Saved to {output_file.relative_to(Path(__file__).parent)}")
+
+        return row
+
+
+def write_summary_csv(batch_dir: Path, rows: list[dict]) -> None:
+    rows_sorted = sorted(rows, key=lambda r: r["index"])
+    summary_file = batch_dir / "summary.csv"
+    with open(summary_file, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=CSV_COLUMNS)
+        writer.writeheader()
+        writer.writerows(rows_sorted)
+    print(f"Summary CSV → {summary_file.relative_to(Path(__file__).parent)}")
 
 
 async def main() -> None:
@@ -123,6 +170,7 @@ async def main() -> None:
         print(f"ERROR: No questions found in {CSV_FILE}")
         return
 
+    batch_start = time.time()
     batch_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     batch_dir = RESULTS_DIR / f"batch_{batch_timestamp}"
     batch_dir.mkdir(parents=True, exist_ok=True)
@@ -135,16 +183,17 @@ async def main() -> None:
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=False)
 
-        await asyncio.gather(
+        rows = await asyncio.gather(
             *[
-                run_question(browser, q, i + 1, semaphore, batch_dir)
+                run_question(browser, q, i + 1, semaphore, batch_dir, batch_start)
                 for i, q in enumerate(questions)
             ]
         )
 
         await browser.close()
 
-    print(f"\nBatch complete. {len(questions)} file(s) in {batch_dir.relative_to(Path(__file__).parent)}")
+    write_summary_csv(batch_dir, list(rows))
+    print(f"\nBatch complete in {elapsed(batch_start)}. {len(questions)} question(s) processed.")
 
 
 if __name__ == "__main__":
