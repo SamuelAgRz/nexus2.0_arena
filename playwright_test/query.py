@@ -45,6 +45,7 @@ def parse_response(text: str) -> dict:
         "intent_clarifier": _extract_source_content(text, "IntentClarifier"),
         "dax_query": _extract_source_content(text, "DaxQuery_Developer"),
         "dax_executor_result": _extract_dax_executor_result(text),
+        "summarizer": _extract_source_content(text, "SummarizerAgent"),
     }
 
 
