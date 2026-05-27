@@ -1,0 +1,14 @@
+{
+  "question": "Which channel has the highest sales week to date (WTD)?",
+  "timing": {
+    "total_runtime_seconds": 47.79,
+    "chatbot_wait_seconds": 23.52
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:37:59 p.m.\n\nResponse Time: 26/05/2026, 1:38:00 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhich channel has the highest sales week to date (WTD)?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:38:00 p.m.\n\nResponse Time: 26/05/2026, 1:38:00 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:38:00 p.m.\n\nResponse Time: 26/05/2026, 1:38:19 p.m.\n\nCompletion Tokens: 1304\n\nPrompt Tokens: 7746\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, please confirm:\n- By “sales,” do you mean Net Revenue (NSR) or Volume (Unit Cases)?\n- Which channel level should we use: Channel Macro Group, Trade Channel, or Sub Trade Channel?\n- Should WTD be anchored to the latest available date (May 26 2026), or do you have a different date in mind?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, please confirm:\n- By “sales,” do you mean Net Revenue (NSR) or Volume (Unit Cases)?\n- Which channel level should we use: Channel Macro Group, Trade Channel, or Sub Trade Channel?\n- Should WTD be anchored to the latest available date (May 26 2026), or do you have a different date in mind?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "question": "What is the Top 5 of leading brands by channel in the last month?",
+  "timing": {
+    "total_runtime_seconds": 52.39,
+    "chatbot_wait_seconds": 29.73
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:42:17 p.m.\n\nResponse Time: 26/05/2026, 1:42:18 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat is the Top 5 of leading brands by channel in the last month?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:42:18 p.m.\n\nResponse Time: 26/05/2026, 1:42:18 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:42:18 p.m.\n\nResponse Time: 26/05/2026, 1:42:43 p.m.\n\nCompletion Tokens: 1695\n\nPrompt Tokens: 7749\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo create the correct query, please confirm the following:\n1) Metric for “leading”: Net Revenue (NSR) or Unit Cases (volume)?\n2) Channel level: Macro Channel (e.g., Modern/Traditional), Trade Channel, or Sub Trade Channel?\n3) Time: By “last month,” do you mean the latest completed fiscal 445 month (not MTD)? If so, we will use the previous completed 445 month relative to the latest available data (e.g., Apr 2026). Is that acceptable?\n4) Ranking scope: Top 5 brands within each channel, or overall Top 5 brands with a channel breakdown?\n\nNote: Results will be for Colombia only per this deployment’s governance.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo create the correct query, please confirm the following:\n1) Metric for “leading”: Net Revenue (NSR) or Unit Cases (volume)?\n2) Channel level: Macro Channel (e.g., Modern/Traditional), Trade Channel, or Sub Trade Channel?\n3) Time: By “last month,” do you mean the latest completed fiscal 445 month (not MTD)? If so, we will use the previous completed 445 month relative to the latest available data (e.g., Apr 2026). Is that acceptable?\n4) Ranking scope: Top 5 brands within each channel, or overall Top 5 brands with a channel breakdown?\n\nNote: Results will be for Colombia only per this deployment’s governance.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

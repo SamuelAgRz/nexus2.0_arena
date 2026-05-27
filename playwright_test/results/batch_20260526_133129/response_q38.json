@@ -1,0 +1,14 @@
+{
+  "question": "Which subcategories experienced a year-over-year (comparing the same month of the prior year) decline in volume?",
+  "timing": {
+    "total_runtime_seconds": 51.39,
+    "chatbot_wait_seconds": 31.58
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:44:45 p.m.\n\nResponse Time: 26/05/2026, 1:44:46 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhich subcategories experienced a year-over-year (comparing the same month of the prior year) decline in volume?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:44:46 p.m.\n\nResponse Time: 26/05/2026, 1:44:46 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:44:46 p.m.\n\nResponse Time: 26/05/2026, 1:45:13 p.m.\n\nCompletion Tokens: 1881\n\nPrompt Tokens: 7756\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, I need to clarify the time period for the year-over-year comparison and your preferred output:\n\n- Which month should we use for “same month vs prior year”?\n  - Latest completed fiscal month (445 calendar)\n  - Current MTD as of the latest available date (May 26 2026)\n  - A specific fiscal month (e.g., 2026 Apr)\n- Do you want only the list of subcategory names that declined, or should we also include current vs PY Unit Cases and the % change?\n- Any additional filters to apply (e.g., specific channel, package type, brand)?\n\nNote: Results will be restricted to Colombia as required by governance.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, I need to clarify the time period for the year-over-year comparison and your preferred output:\n\n- Which month should we use for “same month vs prior year”?\n  - Latest completed fiscal month (445 calendar)\n  - Current MTD as of the latest available date (May 26 2026)\n  - A specific fiscal month (e.g., 2026 Apr)\n- Do you want only the list of subcategory names that declined, or should we also include current vs PY Unit Cases and the % change?\n- Any additional filters to apply (e.g., specific channel, package type, brand)?\n\nNote: Results will be restricted to Colombia as required by governance.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

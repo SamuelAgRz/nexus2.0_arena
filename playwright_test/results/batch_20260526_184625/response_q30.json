@@ -1,0 +1,8 @@
+{
+  "question": "What is the unit mix (percentage of unit cases) in Cali (Ship to City) within the Flavors subcategory year to date (YTD) in 2025?",
+  "timing": {
+    "total_runtime_seconds": 40.95,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://stage.nexusai.coke.com/weekly-ou360\", waiting until \"load\"\n"
+}

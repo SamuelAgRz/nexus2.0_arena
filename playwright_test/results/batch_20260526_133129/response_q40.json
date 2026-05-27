@@ -1,0 +1,14 @@
+{
+  "question": "How’s Coke (Coca-Cola) performing (in volume) lately (each month of current year)?",
+  "timing": {
+    "total_runtime_seconds": 61.65,
+    "chatbot_wait_seconds": 39.23
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:45:01 p.m.\n\nResponse Time: 26/05/2026, 1:45:02 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nHow’s Coke (Coca-Cola) performing (in volume) lately (each month of current year)?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:45:02 p.m.\n\nResponse Time: 26/05/2026, 1:45:02 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:45:02 p.m.\n\nResponse Time: 26/05/2026, 1:45:36 p.m.\n\nCompletion Tokens: 2652\n\nPrompt Tokens: 7754\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, please confirm:\n1) Do you want the full Coca-Cola trademark family (e.g., Coca-Cola, Coca-Cola Zero Sugar, Diet/Light) or only the classic Coca-Cola brand?\n2) Should we return monthly Actuals Unit Cases for the current year-to-date in the 445 fiscal calendar through the latest available date (May 26 2026) for Colombia?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, please confirm:\n1) Do you want the full Coca-Cola trademark family (e.g., Coca-Cola, Coca-Cola Zero Sugar, Diet/Light) or only the classic Coca-Cola brand?\n2) Should we return monthly Actuals Unit Cases for the current year-to-date in the 445 fiscal calendar through the latest available date (May 26 2026) for Colombia?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

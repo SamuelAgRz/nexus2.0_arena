@@ -1,0 +1,14 @@
+{
+  "question": "Top 10 subcategories by volume in each quarter year to date (YTD).",
+  "timing": {
+    "total_runtime_seconds": 49.86,
+    "chatbot_wait_seconds": 34.56
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 5:19:46 p.m.\n\nResponse Time: 26/05/2026, 5:19:47 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nTop 10 subcategories by volume in each quarter year to date (YTD).\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 5:19:47 p.m.\n\nResponse Time: 26/05/2026, 5:19:47 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 5:19:47 p.m.\n\nResponse Time: 26/05/2026, 5:20:17 p.m.\n\nCompletion Tokens: 2306\n\nPrompt Tokens: 7750\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, I need to clarify the time intent because “each quarter” and “YTD” can be interpreted in two different ways:\n\n- Option A (Quarter totals): For each fiscal quarter in the current year-to-date, show the Top 10 subcategories by that quarter’s own volume (i.e., quarterly totals, not cumulative YTD).\n- Option B (YTD snapshots by quarter): For each quarter checkpoint in the current year, show the Top 10 subcategories based on the YTD cumulative volume as of the end of that quarter.\n\nPlease confirm which option you want. Additionally:\n- Should we use the current fiscal year-to-date up to the latest available date (May 26 2026)?\n- Do you want to include the current (partial) quarter if it’s not completed yet?\n- Any additional filters (e.g., channel, customer) or just overall Colombia?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, I need to clarify the time intent because “each quarter” and “YTD” can be interpreted in two different ways:\n\n- Option A (Quarter totals): For each fiscal quarter in the current year-to-date, show the Top 10 subcategories by that quarter’s own volume (i.e., quarterly totals, not cumulative YTD).\n- Option B (YTD snapshots by quarter): For each quarter checkpoint in the current year, show the Top 10 subcategories based on the YTD cumulative volume as of the end of that quarter.\n\nPlease confirm which option you want. Additionally:\n- Should we use the current fiscal year-to-date up to the latest available date (May 26 2026)?\n- Do you want to include the current (partial) quarter if it’s not completed yet?\n- Any additional filters (e.g., channel, customer) or just overall Colombia?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "question": "What was the sales volume the previous (completed) week as of today?",
+  "timing": {
+    "total_runtime_seconds": 61.38,
+    "chatbot_wait_seconds": 35.52
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 9:31:51 p.m.\n\nResponse Time: 26/05/2026, 9:31:52 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the sales volume the previous (completed) week as of today?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 9:31:52 p.m.\n\nResponse Time: 26/05/2026, 9:31:52 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 9:31:52 p.m.\n\nResponse Time: 26/05/2026, 9:32:22 p.m.\n\nCompletion Tokens: 2771\n\nPrompt Tokens: 7748\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo run this correctly on the 445 fiscal calendar, I need two quick confirmations:\n\n- Anchor date: Should “as of today” use the latest available date in the model (May 26 2026) as the reference?\n- Week closure: By “previous (completed) week,” do you mean the latest fully closed 445 week ending on the fiscal week’s last day (commonly Saturday)? If yes, I will anchor the query to that week’s final fiscal day to return the total Unit Cases for that week.\n\nNo breakdown was requested; I will return the Colombia total unless you want a specific breakdown (e.g., channel, product, package).\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo run this correctly on the 445 fiscal calendar, I need two quick confirmations:\n\n- Anchor date: Should “as of today” use the latest available date in the model (May 26 2026) as the reference?\n- Week closure: By “previous (completed) week,” do you mean the latest fully closed 445 week ending on the fiscal week’s last day (commonly Saturday)? If yes, I will anchor the query to that week’s final fiscal day to return the total Unit Cases for that week.\n\nNo breakdown was requested; I will return the Colombia total unless you want a specific breakdown (e.g., channel, product, package).",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

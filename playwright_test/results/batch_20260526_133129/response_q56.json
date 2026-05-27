@@ -1,0 +1,14 @@
+{
+  "question": "Where are we growing the fastest?",
+  "timing": {
+    "total_runtime_seconds": 38.93,
+    "chatbot_wait_seconds": 19.28
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:48:47 p.m.\n\nResponse Time: 26/05/2026, 1:48:48 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhere are we growing the fastest?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:48:48 p.m.\n\nResponse Time: 26/05/2026, 1:48:48 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:48:48 p.m.\n\nResponse Time: 26/05/2026, 1:49:03 p.m.\n\nCompletion Tokens: 1100\n\nPrompt Tokens: 7740\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo answer “Where are we growing the fastest?” I need a bit more detail to remove ambiguity:\n\n1) Metric for growth:\n- Net Revenue (NSR) or\n- Unit Cases (Volume)\n\n2) Comparison baseline:\n- vs Prior Year (PY) [most common]\n- vs Budget (BP)\n- vs Rolling Estimate (RE)\n\n3) Time frame:\n- Latest YTD (through May 26 2026)\n- Latest completed month\n- A specific period (e.g., Jan 2026, Q1 2026, FY2025)\n\n4) “Where” breakdown (choose one to start):\n- Channel Macro Group, Trade Channel, or Sub Trade Channel\n- Product Category, Sub-Category, or Brand Group\n- Package Type or Container\n- Customer\n\n5) Ranking preference:\n- Top 10 by % growth or by absolute growth (value change)?\n\nNote: This deployment only supports Colombia data.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo answer “Where are we growing the fastest?” I need a bit more detail to remove ambiguity:\n\n1) Metric for growth:\n- Net Revenue (NSR) or\n- Unit Cases (Volume)\n\n2) Comparison baseline:\n- vs Prior Year (PY) [most common]\n- vs Budget (BP)\n- vs Rolling Estimate (RE)\n\n3) Time frame:\n- Latest YTD (through May 26 2026)\n- Latest completed month\n- A specific period (e.g., Jan 2026, Q1 2026, FY2025)\n\n4) “Where” breakdown (choose one to start):\n- Channel Macro Group, Trade Channel, or Sub Trade Channel\n- Product Category, Sub-Category, or Brand Group\n- Package Type or Container\n- Customer\n\n5) Ranking preference:\n- Top 10 by % growth or by absolute growth (value change)?\n\nNote: This deployment only supports Colombia data.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

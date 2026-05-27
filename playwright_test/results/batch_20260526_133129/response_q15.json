@@ -1,0 +1,14 @@
+{
+  "question": "How does the sales volume of the Quatro brand compare over the last two months?",
+  "timing": {
+    "total_runtime_seconds": 48.88,
+    "chatbot_wait_seconds": 30.61
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:36:39 p.m.\n\nResponse Time: 26/05/2026, 1:36:40 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nHow does the sales volume of the Quatro brand compare over the last two months?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:36:40 p.m.\n\nResponse Time: 26/05/2026, 1:36:40 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:36:40 p.m.\n\nResponse Time: 26/05/2026, 1:37:06 p.m.\n\nCompletion Tokens: 2032\n\nPrompt Tokens: 7750\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, could you please clarify:\n1) Do you want the latest two completed 445 fiscal months, or the current partial month (through May 26 2026, latest available date) plus the prior completed month?\n2) When you say “Quatro brand,” should we filter by Product → Brand Group = “Quatro” (official ‘Product’[LT1.2 - Brand Group])? If you meant a different level (e.g., Trademark), please specify.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, could you please clarify:\n1) Do you want the latest two completed 445 fiscal months, or the current partial month (through May 26 2026, latest available date) plus the prior completed month?\n2) When you say “Quatro brand,” should we filter by Product → Brand Group = “Quatro” (official ‘Product’[LT1.2 - Brand Group])? If you meant a different level (e.g., Trademark), please specify.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

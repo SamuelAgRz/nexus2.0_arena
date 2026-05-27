@@ -75,12 +75,31 @@ async def run_question(
             if "microsoftonline" in page.url or "login" in page.url.lower():
                 raise RuntimeError("Session expired — re-run auth.py to refresh credentials.")
 
+            # Wait until the textarea is interactive (React may still be mounting)
             chat_input = page.locator(INPUT_SELECTOR)
-            await chat_input.click()
-            await chat_input.fill(question)
+            await chat_input.wait_for(state="visible", timeout=30_000)
+
+            # Try up to 3 times to confirm the message was actually submitted.
+            # After a successful send the textarea is cleared by the app.
+            for attempt in range(1, 4):
+                await chat_input.click()
+                await chat_input.fill(question)
+                await page.wait_for_timeout(500)  # let the app register the value
+                await chat_input.press("Enter")
+
+                # Give the app up to 5 s to clear the input (confirms submission)
+                try:
+                    await page.wait_for_function(
+                        f"document.querySelector({INPUT_SELECTOR!r})?.value === ''",
+                        timeout=5_000,
+                    )
+                    break  # input cleared — message sent successfully
+                except Exception:
+                    if attempt == 3:
+                        raise RuntimeError("Message failed to send after 3 attempts — textarea never cleared")
+                    print(f"{label} [{elapsed(batch_start)}] Send attempt {attempt} failed, retrying...")
 
             send_time = time.time()
-            await chat_input.press("Enter")
             print(f"{label} [{elapsed(batch_start)}] Sent: \"{question[:80]}{'...' if len(question) > 80 else ''}\"")
 
             agent_btn = page.locator(AGENT_BTN_SELECTOR).last

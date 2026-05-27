@@ -1,0 +1,8 @@
+{
+  "question": "Top 5 categories by net sales in the last year (previous completed year).",
+  "timing": {
+    "total_runtime_seconds": 621.45,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

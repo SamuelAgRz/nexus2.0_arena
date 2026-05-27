@@ -1,0 +1,8 @@
+{
+  "question": "How strong is COKE REDUCED SUGAR (subcategory) this quarter (compared to previous year quarter) (in revenue)?",
+  "timing": {
+    "total_runtime_seconds": 620.6,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

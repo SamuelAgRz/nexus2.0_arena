@@ -1,0 +1,14 @@
+{
+  "question": "What was the sales volume today?",
+  "timing": {
+    "total_runtime_seconds": 56.84,
+    "chatbot_wait_seconds": 24.13
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 9:31:57 p.m.\n\nResponse Time: 26/05/2026, 9:31:57 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the sales volume today?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 9:31:57 p.m.\n\nResponse Time: 26/05/2026, 9:31:57 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 9:31:57 p.m.\n\nResponse Time: 26/05/2026, 9:32:17 p.m.\n\nCompletion Tokens: 1285\n\nPrompt Tokens: 7740\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n“Today” exceeds the available data range. The latest available date is May 26 2026. Would you like me to return the sales volume (Unit Cases) for May 26 2026 for Colombia? If you prefer a different specific date, please provide it.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n“Today” exceeds the available data range. The latest available date is May 26 2026. Would you like me to return the sales volume (Unit Cases) for May 26 2026 for Colombia? If you prefer a different specific date, please provide it.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

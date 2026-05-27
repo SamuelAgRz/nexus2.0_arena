@@ -1,0 +1,14 @@
+{
+  "question": "What was the YoY growth of NSR in Cali two months ago?",
+  "timing": {
+    "total_runtime_seconds": 57.76,
+    "chatbot_wait_seconds": 36.5
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:44:38 p.m.\n\nResponse Time: 26/05/2026, 1:44:39 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the YoY growth of NSR in Cali two months ago?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:44:39 p.m.\n\nResponse Time: 26/05/2026, 1:44:39 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:44:39 p.m.\n\nResponse Time: 26/05/2026, 1:45:11 p.m.\n\nCompletion Tokens: 2285\n\nPrompt Tokens: 7748\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo proceed, I need a bit of clarification to ensure the query matches your intent:\n\n1) Geography grain: When you say “in Cali,” should the filter use:\n- Ship To city (destination/customer location), or\n- Ship From city (origin/plant/DC location)?\n\n2) Comparison metric: By “YoY growth,” do you want the percentage vs prior year (using the official [Bottler Net Revenue AC (LC) % vs PY]) or the absolute variance vs prior year?\n\n3) Time period: We will interpret “two months ago” as the fiscal 445 month two months prior to the current month. Given the latest available date is May 26 2026, that corresponds to March 2026 in the 445 calendar. Please confirm this is correct.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo proceed, I need a bit of clarification to ensure the query matches your intent:\n\n1) Geography grain: When you say “in Cali,” should the filter use:\n- Ship To city (destination/customer location), or\n- Ship From city (origin/plant/DC location)?\n\n2) Comparison metric: By “YoY growth,” do you want the percentage vs prior year (using the official [Bottler Net Revenue AC (LC) % vs PY]) or the absolute variance vs prior year?\n\n3) Time period: We will interpret “two months ago” as the fiscal 445 month two months prior to the current month. Given the latest available date is May 26 2026, that corresponds to March 2026 in the 445 calendar. Please confirm this is correct.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

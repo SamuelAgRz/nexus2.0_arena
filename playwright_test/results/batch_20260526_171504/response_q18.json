@@ -1,0 +1,14 @@
+{
+  "question": "Which channel has the highest sales (revenue) week to date (WTD)?",
+  "timing": {
+    "total_runtime_seconds": 47.31,
+    "chatbot_wait_seconds": 30.04
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 5:20:45 p.m.\n\nResponse Time: 26/05/2026, 5:20:46 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhich channel has the highest sales (revenue) week to date (WTD)?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 5:20:46 p.m.\n\nResponse Time: 26/05/2026, 5:20:46 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 5:20:46 p.m.\n\nResponse Time: 26/05/2026, 5:21:12 p.m.\n\nCompletion Tokens: 2082\n\nPrompt Tokens: 7750\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, please confirm which channel granularity you want:\n\n- Channel Macro Group (e.g., Modern vs Traditional)\n- Trade Channel\n- Sub Trade Channel\n\nWe will use Actuals in Local Currency and Week-to-Date as of the latest available date (May 26 2026), restricted to Colombia. Once you confirm the level, I’ll retrieve the top channel (Top 1) by revenue WTD.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, please confirm which channel granularity you want:\n\n- Channel Macro Group (e.g., Modern vs Traditional)\n- Trade Channel\n- Sub Trade Channel\n\nWe will use Actuals in Local Currency and Week-to-Date as of the latest available date (May 26 2026), restricted to Colombia. Once you confirm the level, I’ll retrieve the top channel (Top 1) by revenue WTD.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

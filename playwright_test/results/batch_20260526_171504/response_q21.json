@@ -1,0 +1,8 @@
+{
+  "question": "Which are the Top 3 brands with the best performance (volume) in the modern trade channel (Macro Group) in the last (completed) quarter?",
+  "timing": {
+    "total_runtime_seconds": 618.58,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

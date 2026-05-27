@@ -1,0 +1,14 @@
+{
+  "question": "Is Traditional Trade facing any slowdown (in revenue)?",
+  "timing": {
+    "total_runtime_seconds": 50.54,
+    "chatbot_wait_seconds": 22.96
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:48:05 p.m.\n\nResponse Time: 26/05/2026, 1:48:06 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nIs Traditional Trade facing any slowdown (in revenue)?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:48:06 p.m.\n\nResponse Time: 26/05/2026, 1:48:06 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:48:06 p.m.\n\nResponse Time: 26/05/2026, 1:48:25 p.m.\n\nCompletion Tokens: 1474\n\nPrompt Tokens: 7743\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo determine whether Traditional Trade is facing a slowdown in revenue, I need a bit more specificity so I can query the governed semantic model correctly:\n\n1) Time comparison\n- Latest completed month vs prior month (MoM)\n- Latest completed month vs same month last year (YoY)\n- Year-to-date (YTD) vs prior year\n- Rolling trend (e.g., last 6 or 12 completed 445 months)\n\n2) Channel grain\n- Do you mean the macro channel “Traditional” (Channel Macro Group), or a specific Trade Channel within Traditional?\n\n3) Detail level\n- Do you want an overall view for Traditional only, or a breakdown (e.g., by product category, package)?\n\nNotes:\n- We will use Colombia data only (per deployment scope) and the governed Net Revenue measure in local currency.\nOnce you confirm the above, I’ll proceed with the query.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo determine whether Traditional Trade is facing a slowdown in revenue, I need a bit more specificity so I can query the governed semantic model correctly:\n\n1) Time comparison\n- Latest completed month vs prior month (MoM)\n- Latest completed month vs same month last year (YoY)\n- Year-to-date (YTD) vs prior year\n- Rolling trend (e.g., last 6 or 12 completed 445 months)\n\n2) Channel grain\n- Do you mean the macro channel “Traditional” (Channel Macro Group), or a specific Trade Channel within Traditional?\n\n3) Detail level\n- Do you want an overall view for Traditional only, or a breakdown (e.g., by product category, package)?\n\nNotes:\n- We will use Colombia data only (per deployment scope) and the governed Net Revenue measure in local currency.\nOnce you confirm the above, I’ll proceed with the query.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

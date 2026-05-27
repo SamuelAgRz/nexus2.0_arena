@@ -1,0 +1,859 @@
+index,question,total_runtime_seconds,chatbot_wait_seconds,intent_clarifier,dax_query,dax_executor_result,summarizer,error
+1,What was the sales volume today?,56.84,24.13,"Dear User
+“Today” exceeds the available data range. The latest available date is May 26 2026. Would you like me to return the sales volume (Unit Cases) for May 26 2026 for Colombia? If you prefer a different specific date, please provide it.",,,,
+2,What was the sales volume yesterday?,99.58,72.95,"Dax Developer
+{
+  ""intent_type"": ""DAX_QUERY_REQUIRED"",
+  ""business_question"": ""What was the sales volume on May 26 2026?"",
+  ""metric"": {
+    ""name"": ""Unit Cases"",
+    ""family"": ""Volume"",
+    ""semantic_domain"": ""Metrics-Actuals-Vol"",
+    ""semantic_measure_hint"": ""[Unit Cases AC]"",
+    ""requires_exact_measure_resolution"": true
+  },
+  ""scenario"": {
+    ""value"": ""AC"",
+    ""label"": ""Actuals""
+  },
+  ""time"": {
+    ""semantic_type"": ""ABSOLUTE_DAY"",
+    ""grain"": ""DAY"",
+    ""calendar"": ""445"",
+    ""date_value"": ""May 26 2026"",
+    ""requires_period_table"": true
+  },
+  ""geography"": {
+    ""governance_filter"": {
+      ""table"": ""Ship From"",
+      ""column"": ""Country"",
+      ""operator"": ""="",
+      ""value"": ""Colombia"",
+      ""mandatory"": true
+    }
+  },
+  ""breakdown"": [],
+  ""filters"": [],
+  ""comparison"": {
+    ""type"": ""NONE"",
+    ""against"": """"
+  },
+  ""ranking"": {
+    ""type"": ""NONE"",
+    ""top_n"": null
+  },
+  ""visualization_required"": false,
+  ""instructions"": {
+    ""generate_dax"": true,
+    ""validate_before_execution"": true,
+    ""execute_after_validation"": true,
+    ""do_not_visualize"": true,
+    ""do_not_summarize_before_execution"": true
+  }
+}","EVALUATE
+ROW(
+    ""Unit Cases"",
+    CALCULATE(
+        [Unit Cases AC],
+        KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+        KEEPFILTERS('Period'[Day 445] = ""May 26 2026"")
+    )
+)","[
+  {
+    ""content"": ""[{'[Unit Cases]': 2397952.9668}]"",
+    ""name"": ""run_query"",
+    ""call_id"": ""call_mr9SQI4nOwKw7M08zBwKgBuE"",
+    ""is_error"": false
+  }
+]","Headline Summary
+Unit Cases (Actuals) for Ship From = Colombia on May 26, 2026 totaled 2,397,952.9668 Unit Cases.
+
+Data Presentation
+- Date: May 26, 2026
+- Geography (Ship From): Colombia
+- Metric: Unit Cases (Actuals)
+- Value: 2,397,952.9668 Unit Cases
+
+Analytical Narrative
+- A single actuals value was returned for the requested filters: Unit Cases = 2,397,952.9668 for Colombia on May 26, 2026.  
+- No comparison (YoY / vs PY / vs BP / vs RE) or trend was requested or returned.
+
+Suggested Follow-up
+Would you like to:
+- Break down Unit Cases by Brand or Channel for the same date?
+- Compare May 26, 2026 Unit Cases versus prior year (YoY) or vs PY?
+- Aggregate this date into MTD or YTD Unit Cases?
+- Compare against Budget or Rolling Estimate?",
+3,What was the sales volume this week?,101.62,81.74,"Dax Developer
+{
+  ""intent_type"": ""DAX_QUERY_REQUIRED"",
+  ""business_question"": ""What was the sales volume this week?"",
+  ""metric"": {
+    ""name"": ""Unit Cases"",
+    ""family"": ""Volume"",
+    ""semantic_domain"": ""Metrics-Actuals-Vol"",
+    ""semantic_measure_hint"": ""[Unit Cases AC WTD]"",
+    ""requires_exact_measure_resolution"": true
+  },
+  ""scenario"": {
+    ""value"": ""AC"",
+    ""label"": ""Actuals""
+  },
+  ""time"": {
+    ""semantic_type"": ""WTD"",
+    ""grain"": ""DAY"",
+    ""calendar"": ""445"",
+    ""anchor_date"": ""May 26 2026"",
+    ""requires_period_table"": true
+  },
+  ""geography"": {
+    ""governance_filter"": {
+      ""table"": ""Ship From"",
+      ""column"": ""Country"",
+      ""operator"": ""="",
+      ""value"": ""Colombia"",
+      ""mandatory"": true
+    }
+  },
+  ""breakdown"": [],
+  ""filters"": [],
+  ""comparison"": {
+    ""type"": ""NONE"",
+    ""against"": """"
+  },
+  ""ranking"": {
+    ""type"": ""NONE"",
+    ""top_n"": null
+  },
+  ""visualization_required"": false,
+  ""instructions"": {
+    ""generate_dax"": true,
+    ""validate_before_execution"": true,
+    ""execute_after_validation"": true,
+    ""do_not_visualize"": true,
+    ""do_not_summarize_before_execution"": true
+  }
+}","EVALUATE
+ROW(
+    ""Unit Cases WTD"",
+    CALCULATE(
+        [Unit Cases AC WTD],
+        KEEPFILTERS('Ship From'[Country] = ""Colombia""),
+        KEEPFILTERS('Period'[Day 445] = ""May 26 2026"")
+    )
+)","[
+  {
+    ""content"": ""[{'[Unit Cases WTD]': 7091682.2821}]"",
+    ""name"": ""run_query"",
+    ""call_id"": ""call_96RD5s7ZFq5NJpkCfw1aT4Ja"",
+    ""is_error"": false
+  }
+]","Headline Summary
+Unit Cases WTD for Colombia (WTD anchored May 26, 2026) is 7,091,682.2821 Unit Cases.
+
+Data Presentation
+- Metric: Unit Cases WTD
+- Value: 7,091,682.2821 Unit Cases
+- Scenario: Actuals (AC)
+- Time filter: WTD (anchor date: May 26, 2026)
+- Geography filter: Ship From[Country] = Colombia
+- Source measure: [Unit Cases AC WTD]
+
+Analytical Narrative
+The query returned 7,091,682.2821 Unit Cases for the week-to-date period ending May 26, 2026 for Colombia. No comparisons (YoY, vs PY, vs BP, vs RE) were requested or returned.
+
+Suggested Follow-up
+Would you like to break down Unit Cases by Brand or Channel, view the daily trend across the WTD period, or compare this WTD value against Budget, Rolling Estimate, or prior year?",
+4,What was the sales volume the previous (completed) week as of today?,61.38,35.52,"Dear User
+
+To run this correctly on the 445 fiscal calendar, I need two quick confirmations:
+
+- Anchor date: Should “as of today” use the latest available date in the model (May 26 2026) as the reference?
+- Week closure: By “previous (completed) week,” do you mean the latest fully closed 445 week ending on the fiscal week’s last day (commonly Saturday)? If yes, I will anchor the query to that week’s final fiscal day to return the total Unit Cases for that week.
+
+No breakdown was requested; I will return the Colombia total unless you want a specific breakdown (e.g., channel, product, package).",,,,
+5,What was the sales volume month to date (MTD)?,123.48,102.3,"Dax Developer
+{
+  ""intent_type"": ""DAX_QUERY_REQUIRED"",
+  ""business_question"": ""What is the month-to-date (MTD) sales volume?"",
+  ""metric"": {
+    ""name"": ""Unit Cases"",
+    ""family"": ""Volume"",
+    ""semantic_domain"": ""Metrics-Actuals-Vol"",
+    ""semantic_measure_hint"": ""[Unit Cases AC MTD]"",
+    ""requires_exact_measure_resolution"": true
+  },
+  ""scenario"": {
+    ""value"": ""AC"",
+    ""label"": ""Actuals""
+  },
+  ""time"": {
+    ""semantic_type"": ""MTD"",
+    ""grain"": ""DAY"",
+    ""calendar"": ""445"",
+    ""anchor_date"": ""May 26 2026"",
+    ""period_label"": ""2026 May"",
+    ""requires_period_table"": true
+  },
+  ""geography"": {
+    ""governance_filter"": {
+      ""table"": ""Ship From"",
+      ""column"": ""Country"",
+      ""operator"": ""="",
+      ""value"": ""Colombia"",
+      ""mandatory"": true
+    }
+  },
+  ""breakdown"": [],
+  ""filters"": [],
+  ""comparison"": {
+    ""type"": ""NONE"",
+    ""against"": """"
+  },
+  ""ranking"": {
+    ""type"": ""NONE"",
+    ""top_n"": null
+  },
+  ""visualization_required"": false,
+  ""instructions"": {
+    ""generate_dax"": true,
+    ""validate_before_execution"": true,
+    ""execute_after_validation"": true,
+    ""do_not_visualize"": true,
+    ""do_not_summarize_before_execution"": true
+  }
+}","EVALUATE
+ROW(
+    ""Unit Cases MTD"",
+    CALCULATE(
+        [Unit Cases AC MTD],
+        KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+    )
+)",,"Execution Error: I could not retrieve the Dax Result Summarizer output from NSR_LATAM_Cube_UAT.
+
+Please confirm how you’d like to proceed:
+- Retry execution in NSR_LATAM_Cube_UAT now? (I will re-run the DAX for Unit Cases AC MTD with calendar 445, anchor date May 26 2026, Country = Colombia.)
+- Or would you like me to generate and show the DAX query first for your approval before executing?
+- If retrying, please confirm there are no additional filters or breakdowns to apply.
+
+If you can provide the Dax Result Summarizer output (or any error logs), I will return it exactly as received.",
+6,What was the sales volume the previous month as of today?,122.62,105.15,"Dax Developer
+{
+  ""intent_type"": ""DAX_QUERY_REQUIRED"",
+  ""business_question"": ""What was the sales volume for the previous month as of today?"",
+  ""metric"": {
+    ""name"": ""Unit Cases"",
+    ""family"": ""Volume"",
+    ""semantic_domain"": ""Metrics-Actuals-Vol"",
+    ""semantic_measure_hint"": ""[Unit Cases AC MTD]"",
+    ""requires_exact_measure_resolution"": true
+  },
+  ""scenario"": {
+    ""value"": ""AC"",
+    ""label"": ""Actuals""
+  },
+  ""time"": {
+    ""semantic_type"": ""MTD"",
+    ""grain"": ""DAY"",
+    ""calendar"": ""445"",
+    ""anchor_date"": ""Apr 26 2026"",
+    ""period_label"": ""2026 Apr"",
+    ""requires_period_table"": true
+  },
+  ""geography"": {
+    ""governance_filter"": {
+      ""table"": ""Ship From"",
+      ""column"": ""Country"",
+      ""operator"": ""="",
+      ""value"": ""Colombia"",
+      ""mandatory"": true
+    }
+  },
+  ""breakdown"": [],
+  ""filters"": [],
+  ""comparison"": {
+    ""type"": ""NONE"",
+    ""against"": """"
+  },
+  ""ranking"": {
+    ""type"": ""NONE"",
+    ""top_n"": null
+  },
+  ""visualization_required"": false,
+  ""instructions"": {
+    ""generate_dax"": true,
+    ""validate_before_execution"": true,
+    ""execute_after_validation"": true,
+    ""do_not_visualize"": true,
+    ""do_not_summarize_before_execution"": true
+  }
+}","EVALUATE
+ROW(
+    ""Unit Cases"",
+    CALCULATE(
+        [Unit Cases AC MTD],
+        FILTER(ALL('Period'[Day 445]), 'Period'[Day 445] = ""Mar 26 2026""),
+        KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+    )
+)","[
+  {
+    ""content"": ""[{'[Unit Cases]': 53920487.264}]"",
+    ""name"": ""run_query"",
+    ""call_id"": ""call_kVTTWPxLfaMk8xUlKh7hw5mM"",
+    ""is_error"": false
+  }
+]","Headline Summary
+Unit Cases (Volume) for Ship From = Colombia for the previous month as of Mar 26, 2026 (MTD) were 53,920,487.264.
+
+Data Presentation
+- Metric: Unit Cases
+- Measure used: [Unit Cases AC MTD]
+- Time filter (Period[Day 445]): Mar 26, 2026 (previous month as of anchor Apr 26, 2026)
+- Geography filter: Ship From[Country] = Colombia
+- Value: 53,920,487.264 Unit Cases
+
+Analytical Narrative
+- The returned Unit Cases value for the specified filters (Colombia; previous month MTD as of Mar 26, 2026) is 53,920,487.264.
+- No comparison (YoY / vs PY / vs BP / vs RE) was requested or returned.
+
+Suggested Follow-up
+Would you like to:
+- compare this Unit Cases value versus prior year (vs PY) or versus Budget/Rolling Estimate?
+- break down Unit Cases by Brand, Channel, or Customer?
+- return a month-to-month time series for Unit Cases across recent periods?",
+7,What was the sales volume year to date (YTD)?,96.54,78.04,"Dax Developer
+{
+  ""intent_type"": ""DAX_QUERY_REQUIRED"",
+  ""business_question"": ""What is the year-to-date (YTD) sales volume?"",
+  ""metric"": {
+    ""name"": ""Unit Cases"",
+    ""family"": ""Volume"",
+    ""semantic_domain"": ""Metrics-Actuals-Vol"",
+    ""semantic_measure_hint"": ""[Unit Cases AC YTD]"",
+    ""requires_exact_measure_resolution"": true
+  },
+  ""scenario"": {
+    ""value"": ""AC"",
+    ""label"": ""Actuals""
+  },
+  ""time"": {
+    ""semantic_type"": ""YTD"",
+    ""grain"": ""DAY"",
+    ""calendar"": ""445"",
+    ""anchor_date"": ""May 26 2026"",
+    ""requires_period_table"": true
+  },
+  ""geography"": {
+    ""governance_filter"": {
+      ""table"": ""Ship From"",
+      ""column"": ""Country"",
+      ""operator"": ""="",
+      ""value"": ""Colombia"",
+      ""mandatory"": true
+    }
+  },
+  ""breakdown"": [],
+  ""filters"": [],
+  ""comparison"": {
+    ""type"": ""NONE"",
+    ""against"": """"
+  },
+  ""ranking"": {
+    ""type"": ""NONE"",
+    ""top_n"": null
+  },
+  ""visualization_required"": false,
+  ""instructions"": {
+    ""generate_dax"": true,
+    ""validate_before_execution"": true,
+    ""execute_after_validation"": true,
+    ""do_not_visualize"": true,
+    ""do_not_summarize_before_execution"": true
+  }
+}","EVALUATE
+ROW(
+    ""Unit Cases YTD"",
+    CALCULATE(
+        [Unit Cases AC YTD],
+        KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+    )
+)",,Execution Error,
+8,What was the sales volume last year?,98.55,80.59,"Dax Developer
+{
+  ""intent_type"": ""DAX_QUERY_REQUIRED"",
+  ""business_question"": ""What was the sales volume last year?"",
+  ""metric"": {
+    ""name"": ""Unit Cases"",
+    ""family"": ""Volume"",
+    ""semantic_domain"": ""Metrics-Actuals-Vol"",
+    ""semantic_measure_hint"": ""[Unit Cases AC]"",
+    ""requires_exact_measure_resolution"": true
+  },
+  ""scenario"": {
+    ""value"": ""AC"",
+    ""label"": ""Actuals""
+  },
+  ""time"": {
+    ""semantic_type"": ""ABSOLUTE_YEAR"",
+    ""grain"": ""YEAR"",
+    ""calendar"": ""445"",
+    ""year_value"": ""2025"",
+    ""requires_period_table"": true
+  },
+  ""geography"": {
+    ""governance_filter"": {
+      ""table"": ""Ship From"",
+      ""column"": ""Country"",
+      ""operator"": ""="",
+      ""value"": ""Colombia"",
+      ""mandatory"": true
+    }
+  },
+  ""breakdown"": [],
+  ""filters"": [],
+  ""comparison"": {
+    ""type"": ""NONE"",
+    ""against"": """"
+  },
+  ""ranking"": {
+    ""type"": ""NONE"",
+    ""top_n"": null
+  },
+  ""visualization_required"": false,
+  ""instructions"": {
+    ""generate_dax"": true,
+    ""validate_before_execution"": true,
+    ""execute_after_validation"": true,
+    ""do_not_visualize"": true,
+    ""do_not_summarize_before_execution"": true
+  }
+}","EVALUATE
+ROW(
+    ""Unit Cases Last Year"",
+    CALCULATE(
+        [Unit Cases AC],
+        KEEPFILTERS('Period'[Year 445] = ""2025""),
+        KEEPFILTERS('Ship From'[Country] = ""Colombia"")
+    )
+)","[
+  {
+    ""content"": ""[{'[Unit Cases Last Year]': 697405540.3945}]"",
+    ""name"": ""run_query"",
+    ""call_id"": ""call_6IyTD2Y7Syia0qDVH0aCm1Me"",
+    ""is_error"": false
+  }
+]","Headline Summary
+Unit Cases (Actuals) for Colombia in 2025 totaled 697,405,540.3945 Unit Cases.
+
+Data Presentation
+- Returned measure name: Unit Cases Last Year
+- Metric resolved: Unit Cases (Unit Cases AC)
+- Value: 697,405,540.3945 Unit Cases
+- Time filter: 'Period'[Year 445] = ""2025"" (absolute year)
+- Geography filter: 'Ship From'[Country] = ""Colombia""
+- Comparison: none
+
+Analytical Narrative
+- A single-period actuals value was returned: Unit Cases = 697,405,540.3945 for Colombia in 2025.
+- No comparisons or trend data were requested or returned.
+
+Suggested Follow-up
+Would you like to break down Unit Cases by Brand or Channel, or compare this result against Budget or Rolling Estimate?",
+9,Top 10 brands by sales volume year to date (YTD).,129.96,100.82,"Dax Developer
+{
+  ""intent_type"": ""DAX_QUERY_REQUIRED"",
+  ""business_question"": ""Top 10 brands by sales volume year to date (YTD)."",
+  ""metric"": {
+    ""name"": ""Unit Cases"",
+    ""family"": ""Volume"",
+    ""semantic_domain"": ""Metrics-Actuals-Vol"",
+    ""semantic_measure_hint"": ""[Unit Cases AC YTD]"",
+    ""requires_exact_measure_resolution"": true
+  },
+  ""scenario"": {
+    ""value"": ""AC"",
+    ""label"": ""Actuals""
+  },
+  ""time"": {
+    ""semantic_type"": ""YTD"",
+    ""grain"": ""DAY"",
+    ""calendar"": ""445"",
+    ""anchor_date"": ""May 26 2026"",
+    ""requires_period_table"": true
+  },
+  ""geography"": {
+    ""governance_filter"": {
+      ""table"": ""Ship From"",
+      ""column"": ""Country"",
+      ""operator"": ""="",
+      ""value"": ""Colombia"",
+      ""mandatory"": true
+    }
+  },
+  ""breakdown"": [
+    {
+      ""table"": ""Product"",
+      ""column"": ""LT1.2 - Brand Group"",
+      ""label"": ""Brand Group""
+    }
+  ],
+  ""filters"": [],
+  ""comparison"": {
+    ""type"": ""NONE"",
+    ""against"": """"
+  },
+  ""ranking"": {
+    ""type"": ""TOP_N"",
+    ""top_n"": 10,
+    ""by"": ""[Unit Cases AC YTD]"",
+    ""order"": ""DESC""
+  },
+  ""visualization_required"": false,
+  ""instructions"": {
+    ""generate_dax"": true,
+    ""validate_before_execution"": true,
+    ""execute_after_validation"": true,
+    ""do_not_visualize"": true,
+    ""do_not_summarize_before_execution"": true
+  }
+}","EVALUATE
+TOPN(
+    10,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.2 - Brand Group],
+        FILTER(ALL('Ship From'[Country]), 'Ship From'[Country] = ""Colombia""),
+        FILTER(ALL('Period'[Day 445]), 'Period'[Day 445] = ""May 26 2026""),
+        ""Unit Cases YTD"", [Unit Cases AC YTD]
+    ),
+    [Unit Cases YTD],
+    DESC
+)","[
+  {
+    ""content"": ""[{'Product[LT1.2 - Brand Group]': 'Manantial', '[Unit Cases YTD]': 4414330.8725}, {'Product[LT1.2 - Brand Group]': 'Schweppes', '[Unit Cases YTD]': 5094365.8332}, {'Product[LT1.2 - Brand Group]': 'Sprite', '[Unit Cases YTD]': 5879584.4641}, {'Product[LT1.2 - Brand Group]': 'Brisa (Carb)', '[Unit Cases YTD]': 11481170.333}, {'Product[LT1.2 - Brand Group]': 'Quatro', '[Unit Cases YTD]': 25799343.0298}, {'Product[LT1.2 - Brand Group]': 'Coca-Cola', '[Unit Cases YTD]': 44330294.5286}, {'Product[LT1.2 - Brand Group]': 'Del Valle Fresh', '[Unit Cases YTD]': 17470938.9725}, {'Product[LT1.2 - Brand Group]': 'Coca-Cola Less Sugar', '[Unit Cases YTD]': 119035929.9595}, {'Product[LT1.2 - Brand Group]': 'Coca-Cola Zero', '[Unit Cases YTD]': 16472073.8263}, {'Product[LT1.2 - Brand Group]': 'Brisa', '[Unit Cases YTD]': 28600402.8435}]"",
+    ""name"": ""run_query"",
+    ""call_id"": ""call_xTBDWokZdUBnCXlj8Qb00j65"",
+    ""is_error"": false
+  }
+]","Headline Summary
+Coca-Cola Less Sugar is the highest-ranked Brand Group by Unit Cases AC YTD in Colombia (YTD through May 26, 2026). This output returns the Top 10 Brand Groups by Unit Cases AC YTD for the requested scope.
+
+Data Presentation
+Returned ranking (as provided) — Metric: Unit Cases AC YTD — Geography: Ship From.Country = Colombia — Time: YTD (anchor May 26, 2026)
+1. Brand Group: Manantial — Unit Cases AC YTD: 4414330.8725
+2. Brand Group: Schweppes — Unit Cases AC YTD: 5094365.8332
+3. Brand Group: Sprite — Unit Cases AC YTD: 5879584.4641
+4. Brand Group: Brisa (Carb) — Unit Cases AC YTD: 11481170.333
+5. Brand Group: Quatro — Unit Cases AC YTD: 25799343.0298
+6. Brand Group: Coca-Cola — Unit Cases AC YTD: 44330294.5286
+7. Brand Group: Del Valle Fresh — Unit Cases AC YTD: 17470938.9725
+8. Brand Group: Coca-Cola Less Sugar — Unit Cases AC YTD: 119035929.9595
+9. Brand Group: Coca-Cola Zero — Unit Cases AC YTD: 16472073.8263
+10. Brand Group: Brisa — Unit Cases AC YTD: 28600402.8435
+
+Analytical Narrative
+- Coca-Cola Less Sugar has the largest Unit Cases AC YTD (119,035,929.9595) among the returned Brand Groups.  
+- The returned Top 10 list includes multiple Coca-Cola variants (Coca-Cola, Coca-Cola Less Sugar, Coca-Cola Zero) and two Brisa entries (Brisa and Brisa (Carb)).  
+- The values above are the observed Unit Cases AC YTD amounts for Colombia YTD through May 26, 2026 as returned by the executed query.
+
+Suggested Follow-up
+Would you like to (a) view the same Top 10 by Net Sales Revenue, (b) compare these Unit Cases AC YTD figures against Budget or Rolling Estimate, or (c) break this result down by Channel or Pack Size?",
+10,Top 10 brands with the most sales (revenue) year to date (YTD).,131.19,113.83,"Dax Developer
+{
+  ""intent_type"": ""DAX_QUERY_REQUIRED"",
+  ""business_question"": ""Top 10 brands by Net Revenue (YTD) in Colombia."",
+  ""metric"": {
+    ""name"": ""Net Revenue"",
+    ""family"": ""Revenue"",
+    ""semantic_domain"": ""Metrics-Actuals-Rev"",
+    ""semantic_measure_hint"": ""[Bottler Net Revenue AC (LC) YTD]"",
+    ""requires_exact_measure_resolution"": true
+  },
+  ""scenario"": {
+    ""value"": ""AC"",
+    ""label"": ""Actuals""
+  },
+  ""time"": {
+    ""semantic_type"": ""YTD"",
+    ""grain"": ""DAY"",
+    ""calendar"": ""445"",
+    ""anchor_date"": ""May 26 2026"",
+    ""requires_period_table"": true
+  },
+  ""geography"": {
+    ""governance_filter"": {
+      ""table"": ""Ship From"",
+      ""column"": ""Country"",
+      ""operator"": ""="",
+      ""value"": ""Colombia"",
+      ""mandatory"": true
+    }
+  },
+  ""breakdown"": [
+    {
+      ""table"": ""Product"",
+      ""column"": ""LT1.2 - Brand Group"",
+      ""label"": ""Brand Group""
+    }
+  ],
+  ""filters"": [],
+  ""comparison"": {
+    ""type"": ""NONE"",
+    ""against"": """"
+  },
+  ""ranking"": {
+    ""type"": ""TOP_N"",
+    ""top_n"": 10,
+    ""by_measure"": ""[Bottler Net Revenue AC (LC) YTD]"",
+    ""order"": ""DESC""
+  },
+  ""visualization_required"": false,
+  ""instructions"": {
+    ""generate_dax"": true,
+    ""validate_before_execution"": true,
+    ""execute_after_validation"": true,
+    ""do_not_visualize"": true,
+    ""do_not_summarize_before_execution"": true
+  }
+}","EVALUATE
+TOPN(
+    10,
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.2 - Brand Group],
+        FILTER(ALL('Ship From'[Country]), 'Ship From'[Country] = ""Colombia""),
+        FILTER(ALL('Period'[Day 445]), 'Period'[Day 445] = ""May 26 2026""),
+        ""Net Revenue YTD"", [Bottler Net Revenue AC (LC) YTD]
+    ),
+    [Net Revenue YTD],
+    DESC
+)","[
+  {
+    ""content"": ""[{'Product[LT1.2 - Brand Group]': 'Sprite', '[Net Revenue YTD]': 82875732289.0}, {'Product[LT1.2 - Brand Group]': 'Schweppes', '[Net Revenue YTD]': 89838948921.0}, {'Product[LT1.2 - Brand Group]': 'Manantial', '[Net Revenue YTD]': 84006555595.0}, {'Product[LT1.2 - Brand Group]': 'Brisa (Carb)', '[Net Revenue YTD]': 143216804984.0}, {'Product[LT1.2 - Brand Group]': 'Quatro', '[Net Revenue YTD]': 323591510682.0}, {'Product[LT1.2 - Brand Group]': 'Coca-Cola Zero', '[Net Revenue YTD]': 295716376396.0}, {'Product[LT1.2 - Brand Group]': 'Del Valle Fresh', '[Net Revenue YTD]': 196806579390.0}, {'Product[LT1.2 - Brand Group]': 'Coca-Cola', '[Net Revenue YTD]': 968333461436.0}, {'Product[LT1.2 - Brand Group]': 'Brisa', '[Net Revenue YTD]': 226981403431.0}, {'Product[LT1.2 - Brand Group]': 'Coca-Cola Less Sugar', '[Net Revenue YTD]': 1391630367087.0}]"",
+    ""name"": ""run_query"",
+    ""call_id"": ""call_2bzHP3IWD3KsGWqjHWKi7J3K"",
+    ""is_error"": false
+  }
+]","Headline Summary
+Top 10 Brand Groups by Bottler Net Revenue AC (LC) YTD in Colombia (YTD through May 26, 2026). Coca‑Cola Less Sugar ranks highest by Bottler Net Revenue AC (LC) YTD.
+
+Data Presentation
+Ordered by Bottler Net Revenue AC (LC) YTD (descending):
+1. Coca‑Cola Less Sugar — 1,391,630,367,087  
+2. Coca‑Cola — 968,333,461,436  
+3. Quatro — 323,591,510,682  
+4. Coca‑Cola Zero — 295,716,376,396  
+5. Brisa — 226,981,403,431  
+6. Del Valle Fresh — 196,806,579,390  
+7. Brisa (Carb) — 143,216,804,984  
+8. Schweppes — 89,838,948,921  
+9. Manantial — 84,006,555,595  
+10. Sprite — 82,875,732,289
+
+All values are Bottler Net Revenue AC (LC) YTD for Colombia (period anchored to May 26, 2026).
+
+Analytical Narrative
+- Coca‑Cola Less Sugar has the highest Bottler Net Revenue AC (LC) YTD (1,391,630,367,087) among the returned Brand Groups.  
+- Coca‑Cola is the second highest (968,333,461,436).  
+- Sprite has the lowest Bottler Net Revenue AC (LC) YTD in the returned top 10 (82,875,732,289).  
+- The list above reflects the top 10 Brand Groups by Bottler Net Revenue AC (LC) YTD for Colombia (YTD through May 26, 2026).
+
+Suggested Follow-up
+Would you like to (select one):  
+- view this result broken down by Channel or Pack Size?  
+- compare these Brand Groups against Budget or Rolling Estimate?  
+- show the same ranking in Unit Cases (Volume) for YTD?",
+11,Top 10 brands with the least sales (revenue) year to date (YTD).,614.65,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+12,How does the sales volume of the Quatro brand last month compare with the prior year?,618.07,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+13,What was the total sales YoY% in the last month in the Quatro brand?,618.24,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+14,Top 5 categories by net sales in the last year (previous completed year).,621.45,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+15,How does the sales volume of the Quatro brand compare over the last two (completed) months?,616.67,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+16,Top 10 subcategories by volume in each quarter year to date (YTD).,619.52,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+17,What was the total sales volume yesterday?,620.9,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+18,Which channel has the highest sales (revenue) week to date (WTD)?,618.93,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+19,How does the sales volume of the Quatro brand compare over the last two (completed) months?,619.45,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+20,What is the share (% unit cases) of the Flavors category compared to all other categories in the previous month as of today?,618.11,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+21,Which are the Top 3 brands with the best performance (volume) in the modern trade channel (Macro Group) in the last (completed) quarter?,620.43,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+22,Top 3 categories by volume quarter to date (QTD).,616.75,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+23,Top 5 brands by revenue in the previous year.,617.37,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+24,Top 3 brands by volume within each category in the last year.,618.66,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+25,Volume by package type in the past (completed) week.,618.29,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+26,What was the YoY% in september last year of the volume of the Colas category?,617.42,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+27,What is the revenue by channel (macro group) in the last month?,616.76,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+28,What is the Top 5 of leading (revenue) brands by channel in the last month?,616.84,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+29,How did the YoY volume of the Brisa brand vary in the traditional channel two months ago?,616.31,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+30,What is the unit mix (percentage of unit cases) in Cali (Ship to City) within the Flavors subcategory year to date (YTD) in 2025?,616.65,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+31,Sales (revenue) comparison for this (completed)week versus previous weeks.,616.53,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+32,What was the highest month sales volume ever for this COCA-COLA (brand group) and when did it occur?,616.86,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+33,What is the revenue by channel (macro group)in the last month vs. the same month of the prior year?,616.65,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+34,Which customer (ship to customer) is underdeveloped (by volume) versus my national Flavors category mix (comparing this year ytd)? (For example: if 25% of my nationwide sales are Flavors,616.11,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+35,What was the year-over-year (percentage) change in total NSR for the previous month?,622.42,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+36,Which channel (trade channel) showed the highest YoY growth in NSR in the previous month?,615.35,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+37,What was the YoY growth of NSR in Cali (ship to city) two (completed) months ago?,616.39,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+38,Which subcategories experienced a year-over-year (comparing the same month of the prior year) decline in volume?,616.37,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+39,Top 5 brands with the highest YoY growth in NSR in the previous month,619.45,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+40,How’s Coke (Coca-Cola subcategory) performing (in volume) lately (monthly current year)?,617.49,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+41,What’s happening with Quatro (brand group) this year?,616.91,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+42,Anything new with Del Valle (bottler) (volume) recently (monthly on this year)?,620.64,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+43,How strong is COKE REDUCED SUGAR (subcategory) this quarter (compared to previous year quarter) (in revenue)?,620.6,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+44,Is the Cola (Colas category) portfolio holding up (YTD volume compared to prior-year YTD in volume this year)?,616.46,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+45,Are we seeing any lift (monthly increase) for FUZE TEA-KO (category) lately (last 3 completed months) (in revenue)?,618.84,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+46,How’s the flavors category trending (monthly trend of last 3 months) (in revenue)?,619.98,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+47,What’s up with the Stills category (in volume of last 3 months)?,617.1,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+48,Is the Juice category back on track (in volume of last 3 months)?,616.76,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+49,Which category is leading volume this quarter?,616.66,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+50,Which segment is underperforming the most (in revenue year on year)?,615.56,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+51,How’s Modern Trade behaving lately (unit cases of last 3 months)?,618.12,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+52,Is Traditional Trade facing any slowdown (in revenue)?,616.91,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+53,Who’s leading (revenue year on year of last completed month) growth across channels?,618.24,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+54,Is Modern Trade outperforming Traditional Trade (unit cases year on year of last completed month)?,617.86,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+55,Which regions (ship to region) are trending (in revenue year on year) up?,617.69,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+56,Where are we growing the fastest (ship to revenue and unit cases year on year)?,620.32,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+57,Which city sold the most UCs last quarter (ship from BU in unit cases)?,618.07,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+58,What was the total UC per trademark in the last (completed) quarter?,616.43,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+59,Which category has sold the most UC this year?,616.48,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"

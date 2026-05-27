@@ -1,0 +1,8 @@
+{
+  "question": "What is the unit mix (percentage of unit cases) in Cali (Ship to City) within the Flavors subcategory year to date (YTD) in 2025?",
+  "timing": {
+    "total_runtime_seconds": 615.8,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

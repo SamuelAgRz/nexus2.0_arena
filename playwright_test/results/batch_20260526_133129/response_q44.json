@@ -1,0 +1,14 @@
+{
+  "question": "Is the Cola (category) portfolio holding up (in volume this year)?",
+  "timing": {
+    "total_runtime_seconds": 51.24,
+    "chatbot_wait_seconds": 25.46
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:46:33 p.m.\n\nResponse Time: 26/05/2026, 1:46:34 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nIs the Cola (category) portfolio holding up (in volume this year)?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:46:34 p.m.\n\nResponse Time: 26/05/2026, 1:46:34 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:46:34 p.m.\n\nResponse Time: 26/05/2026, 1:46:55 p.m.\n\nCompletion Tokens: 1525\n\nPrompt Tokens: 7748\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo determine if the Cola category is “holding up,” would you like:\n- YTD volume compared to prior-year YTD (showing absolute and % variance), or\n- just the current YTD volume without comparison?\n\nUnless you specify otherwise, I’ll use the 445 fiscal calendar with the latest available cut-off (May 26 2026) for “this year.”\n\nPlease confirm that “Cola (category)” maps to the Product Category = “Cola.” Note: This deployment reports Colombia only.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo determine if the Cola category is “holding up,” would you like:\n- YTD volume compared to prior-year YTD (showing absolute and % variance), or\n- just the current YTD volume without comparison?\n\nUnless you specify otherwise, I’ll use the 445 fiscal calendar with the latest available cut-off (May 26 2026) for “this year.”\n\nPlease confirm that “Cola (category)” maps to the Product Category = “Cola.” Note: This deployment reports Colombia only.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

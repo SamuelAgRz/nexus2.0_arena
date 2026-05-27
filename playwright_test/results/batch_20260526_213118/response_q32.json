@@ -1,0 +1,8 @@
+{
+  "question": "What was the highest month sales volume ever for this COCA-COLA (brand group) and when did it occur?",
+  "timing": {
+    "total_runtime_seconds": 616.86,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

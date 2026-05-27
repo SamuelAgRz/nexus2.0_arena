@@ -1,0 +1,8 @@
+{
+  "question": "Which are the Top 3 brands with the best performance (volume) in the modern trade channel (Macro Group) in the last (completed) quarter?",
+  "timing": {
+    "total_runtime_seconds": 41.14,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://stage.nexusai.coke.com/weekly-ou360\", waiting until \"load\"\n"
+}

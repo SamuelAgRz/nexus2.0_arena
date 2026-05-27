@@ -1,0 +1,8 @@
+{
+  "question": "Is the Cola (Colas category) portfolio holding up (YTD volume compared to prior-year YTD in volume this year)?",
+  "timing": {
+    "total_runtime_seconds": 616.46,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

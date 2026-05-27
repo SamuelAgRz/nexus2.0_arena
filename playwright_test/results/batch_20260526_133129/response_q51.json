@@ -1,0 +1,14 @@
+{
+  "question": "How’s Modern Trade behaving lately?",
+  "timing": {
+    "total_runtime_seconds": 48.48,
+    "chatbot_wait_seconds": 27.21
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:47:51 p.m.\n\nResponse Time: 26/05/2026, 1:47:52 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nHow’s Modern Trade behaving lately?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:47:52 p.m.\n\nResponse Time: 26/05/2026, 1:47:52 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:47:52 p.m.\n\nResponse Time: 26/05/2026, 1:48:15 p.m.\n\nCompletion Tokens: 1625\n\nPrompt Tokens: 7740\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo clarify “How’s Modern Trade behaving lately?”, please confirm the following so I can prepare the exact query:\n\n1) KPI\n- Net Revenue (NSR)\n- Volume (Unit Cases)\n- Both\n- (Optional) Price per UC\n\n2) Time window for “lately”\n- Latest MTD as of May 26 2026\n- Latest completed 445 week\n- Last 4 completed 445 weeks\n- Current QTD as of May 26 2026\n- YTD as of May 26 2026\n- A specific date range (please specify)\n\n3) Output format\n- Trend over time (choose grain: daily or 445 weekly)\n- Single summary for the selected period\n\n4) Comparison (if any)\n- vs Prior Year\n- vs BP\n- vs RE\n- None\n\nAssumptions once confirmed:\n- Geography: Colombia only (this deployment only supports Colombia data).\n- Channel filter: Modern Trade at the Channel Macro Group level.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo clarify “How’s Modern Trade behaving lately?”, please confirm the following so I can prepare the exact query:\n\n1) KPI\n- Net Revenue (NSR)\n- Volume (Unit Cases)\n- Both\n- (Optional) Price per UC\n\n2) Time window for “lately”\n- Latest MTD as of May 26 2026\n- Latest completed 445 week\n- Last 4 completed 445 weeks\n- Current QTD as of May 26 2026\n- YTD as of May 26 2026\n- A specific date range (please specify)\n\n3) Output format\n- Trend over time (choose grain: daily or 445 weekly)\n- Single summary for the selected period\n\n4) Comparison (if any)\n- vs Prior Year\n- vs BP\n- vs RE\n- None\n\nAssumptions once confirmed:\n- Geography: Colombia only (this deployment only supports Colombia data).\n- Channel filter: Modern Trade at the Channel Macro Group level.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

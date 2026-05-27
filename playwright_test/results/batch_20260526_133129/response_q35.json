@@ -1,0 +1,14 @@
+{
+  "question": "What was the year-over-year change in total NSR for the previous month?",
+  "timing": {
+    "total_runtime_seconds": 51.95,
+    "chatbot_wait_seconds": 32.35
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:43:53 p.m.\n\nResponse Time: 26/05/2026, 1:43:54 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the year-over-year change in total NSR for the previous month?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:43:54 p.m.\n\nResponse Time: 26/05/2026, 1:43:54 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:43:54 p.m.\n\nResponse Time: 26/05/2026, 1:44:22 p.m.\n\nCompletion Tokens: 2187\n\nPrompt Tokens: 7749\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, could you please confirm:\n1) Do you want the year-over-year change as an absolute difference (vs PY) or as a percentage (% vs PY)?\n2) By “previous month,” should we use the latest completed fiscal month in the 445 calendar, which is Apr 2026?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, could you please confirm:\n1) Do you want the year-over-year change as an absolute difference (vs PY) or as a percentage (% vs PY)?\n2) By “previous month,” should we use the latest completed fiscal month in the 445 calendar, which is Apr 2026?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

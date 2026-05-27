@@ -72,14 +72,28 @@ async def main():
             await browser.close()
             return
 
-        # Send the question
+        # Send the question — retry up to 3 times until the textarea clears (confirms submission)
         chat_input = page.locator(INPUT_SELECTOR)
-        await chat_input.click()
-        await chat_input.fill(QUESTION)
+        await chat_input.wait_for(state="visible", timeout=30_000)
         print(f"Question: {QUESTION}")
 
+        for attempt in range(1, 4):
+            await chat_input.click()
+            await chat_input.fill(QUESTION)
+            await page.wait_for_timeout(500)
+            await chat_input.press("Enter")
+            try:
+                await page.wait_for_function(
+                    f"document.querySelector({INPUT_SELECTOR!r})?.value === ''",
+                    timeout=5_000,
+                )
+                break
+            except Exception:
+                if attempt == 3:
+                    raise RuntimeError("Message failed to send after 3 attempts — textarea never cleared")
+                print(f"Send attempt {attempt} failed, retrying...")
+
         send_time = time.time()
-        await chat_input.press("Enter")
         print("Message sent. Waiting for response (up to 10 minutes)...")
 
         # Wait for the "Agent Interaction" button — signals response is complete

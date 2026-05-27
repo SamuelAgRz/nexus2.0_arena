@@ -1,0 +1,14 @@
+{
+  "question": "What was the sales volume the previous week as of today?",
+  "timing": {
+    "total_runtime_seconds": 66.48,
+    "chatbot_wait_seconds": 44.92
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:31:50 p.m.\n\nResponse Time: 26/05/2026, 1:31:51 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the sales volume the previous week as of today?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:31:51 p.m.\n\nResponse Time: 26/05/2026, 1:31:51 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:31:51 p.m.\n\nResponse Time: 26/05/2026, 1:32:32 p.m.\n\nCompletion Tokens: 2655\n\nPrompt Tokens: 7745\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo confirm before I proceed:\n\n- By “previous week as of today,” do you want the latest completed 445 fiscal week (not the current partial week) immediately prior to today, anchored on the latest available date May 26 2026?\n- Do you want just the total sales volume (Unit Cases) for Colombia, or should I include any breakdowns (e.g., by Channel Macro Group)?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo confirm before I proceed:\n\n- By “previous week as of today,” do you want the latest completed 445 fiscal week (not the current partial week) immediately prior to today, anchored on the latest available date May 26 2026?\n- Do you want just the total sales volume (Unit Cases) for Colombia, or should I include any breakdowns (e.g., by Channel Macro Group)?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

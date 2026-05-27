@@ -1,0 +1,14 @@
+{
+  "question": "What is the revenue by channel in the last month?",
+  "timing": {
+    "total_runtime_seconds": 52.01,
+    "chatbot_wait_seconds": 29.35
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:41:29 p.m.\n\nResponse Time: 26/05/2026, 1:41:30 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat is the revenue by channel in the last month?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:41:30 p.m.\n\nResponse Time: 26/05/2026, 1:41:30 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:41:30 p.m.\n\nResponse Time: 26/05/2026, 1:41:55 p.m.\n\nCompletion Tokens: 2064\n\nPrompt Tokens: 7744\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, which channel level would you like the breakdown by?\n- Channel Macro Group (e.g., Modern vs Traditional)\n- Trade Channel\n- Sub Trade Channel\n\nNote: I will use the previous completed 445 fiscal month (April 2026) for “last month” and apply Colombia-only governance unless you specify otherwise.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, which channel level would you like the breakdown by?\n- Channel Macro Group (e.g., Modern vs Traditional)\n- Trade Channel\n- Sub Trade Channel\n\nNote: I will use the previous completed 445 fiscal month (April 2026) for “last month” and apply Colombia-only governance unless you specify otherwise.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "question": "Are we seeing any lift for FUZE TEA-KO (category) lately (in revenue)?",
+  "timing": {
+    "total_runtime_seconds": 55.11,
+    "chatbot_wait_seconds": 27.35
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:46:37 p.m.\n\nResponse Time: 26/05/2026, 1:46:37 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nAre we seeing any lift for FUZE TEA-KO (category) lately (in revenue)?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:46:37 p.m.\n\nResponse Time: 26/05/2026, 1:46:37 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:46:37 p.m.\n\nResponse Time: 26/05/2026, 1:47:01 p.m.\n\nCompletion Tokens: 1826\n\nPrompt Tokens: 7753\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo assess “lift” in revenue for FUZE TEA-KO, I need a bit more detail:\n\n1) What period does “lately” refer to?\n- Latest completed 445 week\n- Current MTD up to the latest available day\n- Latest completed month\n- YTD 2026\n- Or specify exact dates\n\n2) What comparison baseline should define “lift”?\n- Versus prior year (same period)\n- Versus immediately prior period (e.g., week-over-week or month-over-month)\n- Versus BP\n- Versus RE\n\n3) Please confirm the product grain/value:\n- You meant the Category level = “FUZE TEA-KO” (Product[LT1.5 - Category]), correct? If not, please specify the correct level/value (e.g., Brand Group, Trademark).\n\n4) Output preference:\n- Do you want absolute NSR, variance, and % variance, or only one of these?\n\nNote: Analysis will be restricted to Colombia data as per this deployment’s governance.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo assess “lift” in revenue for FUZE TEA-KO, I need a bit more detail:\n\n1) What period does “lately” refer to?\n- Latest completed 445 week\n- Current MTD up to the latest available day\n- Latest completed month\n- YTD 2026\n- Or specify exact dates\n\n2) What comparison baseline should define “lift”?\n- Versus prior year (same period)\n- Versus immediately prior period (e.g., week-over-week or month-over-month)\n- Versus BP\n- Versus RE\n\n3) Please confirm the product grain/value:\n- You meant the Category level = “FUZE TEA-KO” (Product[LT1.5 - Category]), correct? If not, please specify the correct level/value (e.g., Brand Group, Trademark).\n\n4) Output preference:\n- Do you want absolute NSR, variance, and % variance, or only one of these?\n\nNote: Analysis will be restricted to Colombia data as per this deployment’s governance.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

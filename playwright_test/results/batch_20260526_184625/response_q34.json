@@ -1,0 +1,8 @@
+{
+  "question": "Which customer (ship to customer) is underdeveloped (by volume) versus my national Flavors category mix (comparing this year ytd)? (For example: if 25% of my nationwide sales are Flavors",
+  "timing": {
+    "total_runtime_seconds": 32.36,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://stage.nexusai.coke.com/weekly-ou360\", waiting until \"load\"\n"
+}

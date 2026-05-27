@@ -1,0 +1,237 @@
+index,question,total_runtime_seconds,chatbot_wait_seconds,intent_clarifier,dax_query,dax_executor_result,summarizer,error
+1,What was the sales volume today?,32.06,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+2,What was the sales volume yesterday?,32.1,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+3,What was the sales volume this week?,622.09,,,,,,"Locator.wait_for: Timeout 600000ms exceeded.
+Call log:
+  - waiting for locator(""button:has-text('Agent Interaction')"").last to be visible
+"
+4,What was the sales volume the previous (completed) week as of today?,32.33,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+5,What was the sales volume month to date (MTD)?,32.09,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+6,What was the sales volume the previous month as of today?,49.6,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+7,What was the sales volume year to date (YTD)?,50.49,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+8,What was the sales volume last year?,50.94,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+9,Top 10 brands by sales volume year to date (YTD).,48.58,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+10,Top 10 brands with the most sales (revenue) year to date (YTD).,41.72,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+11,Top 10 brands with the least sales (revenue) year to date (YTD).,40.67,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+12,How does the sales volume of the Quatro brand last month compare with the prior year?,40.29,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+13,What was the total sales YoY% in the last month in the Quatro brand?,39.35,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+14,Top 5 categories by net sales in the last year (previous completed year).,41.66,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+15,How does the sales volume of the Quatro brand compare over the last two (completed) months?,41.1,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+16,Top 10 subcategories by volume in each quarter year to date (YTD).,41.15,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+17,What was the total sales volume yesterday?,40.57,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+18,Which channel has the highest sales (revenue) week to date (WTD)?,38.52,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+19,How does the sales volume of the Quatro brand compare over the last two (completed) months?,41.17,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+20,What is the share (% unit cases) of the Flavors category compared to all other categories in the previous month as of today?,41.07,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+21,Which are the Top 3 brands with the best performance (volume) in the modern trade channel (Macro Group) in the last (completed) quarter?,41.14,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+22,Top 3 categories by volume quarter to date (QTD).,39.75,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+23,Top 5 brands by revenue in the previous year.,38.62,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+24,Top 3 brands by volume within each category in the last year.,38.5,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+25,Volume by package type in the past (completed) week.,38.37,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+26,What was the YoY% in september last year of the volume of the Colas category?,41.48,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+27,What is the revenue by channel (macro group) in the last month?,40.87,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+28,What is the Top 5 of leading (revenue) brands by channel in the last month?,42.19,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+29,How did the YoY volume of the Brisa brand vary in the traditional channel two months ago?,42.38,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+30,What is the unit mix (percentage of unit cases) in Cali (Ship to City) within the Flavors subcategory year to date (YTD) in 2025?,44.92,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+31,Sales (revenue) comparison for this (completed)week versus previous weeks.,44.33,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+32,What was the highest month sales volume ever for this COCA-COLA (brand group) and when did it occur?,43.46,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+33,What is the revenue by channel (macro group)in the last month vs. the same month of the prior year?,43.45,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+34,Which customer (ship to customer) is underdeveloped (by volume) versus my national Flavors category mix (comparing this year ytd)? (For example: if 25% of my nationwide sales are Flavors,40.82,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+35,What was the year-over-year (percentage) change in total NSR for the previous month?,41.09,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+36,Which channel (trade channel) showed the highest YoY growth in NSR in the previous month?,42.27,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+37,What was the YoY growth of NSR in Cali (ship to city) two (completed) months ago?,41.99,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+38,Which subcategories experienced a year-over-year (comparing the same month of the prior year) decline in volume?,40.48,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+39,Top 5 brands with the highest YoY growth in NSR in the previous month,39.53,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+40,How’s Coke (Coca-Cola subcategory) performing (in volume) lately (monthly current year)?,37.79,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+41,What’s happening with Quatro (brand group) this year?,38.08,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+42,Anything new with Del Valle (bottler) (volume) recently (monthly on this year)?,43.15,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+43,How strong is COKE REDUCED SUGAR (subcategory) this quarter (compared to previous year quarter) (in revenue)?,44.97,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+44,Is the Cola (Colas category) portfolio holding up (YTD volume compared to prior-year YTD in volume this year)?,44.95,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+45,Are we seeing any lift (monthly increase) for FUZE TEA-KO (category) lately (last 3 completed months) (in revenue)?,43.95,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+46,How’s the flavors category trending (monthly trend of last 3 months) (in revenue)?,33.81,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+47,What’s up with the Stills category (in volume of last 3 months)?,32.71,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+48,Is the Juice category back on track (in volume of last 3 months)?,32.23,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+49,Which category is leading volume this quarter?,32.3,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+50,Which segment is underperforming the most (in revenue year on year)?,40.31,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+51,How’s Modern Trade behaving lately (unit cases of last 3 months)?,40.04,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+52,Is Traditional Trade facing any slowdown (in revenue)?,40.26,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+53,Who’s leading (revenue year on year of last completed month) growth across channels?,40.43,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+54,Is Modern Trade outperforming Traditional Trade (unit cases year on year of last completed month)?,39.99,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+55,Which regions (ship to region) are trending (in revenue year on year) up?,40.06,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+56,Where are we growing the fastest (ship to revenue and unit cases year on year)?,39.2,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+57,Which city sold the most UCs last quarter (ship from BU in unit cases)?,38.34,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+58,What was the total UC per trademark in the last (completed) quarter?,39.87,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"
+59,Which category has sold the most UC this year?,40.33,,,,,,"Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to ""https://stage.nexusai.coke.com/weekly-ou360"", waiting until ""load""
+"

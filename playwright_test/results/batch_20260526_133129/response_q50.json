@@ -1,0 +1,14 @@
+{
+  "question": "Which segment is underperforming the most (in revenue)?",
+  "timing": {
+    "total_runtime_seconds": 40.67,
+    "chatbot_wait_seconds": 22.45
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:47:22 p.m.\n\nResponse Time: 26/05/2026, 1:47:23 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhich segment is underperforming the most (in revenue)?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:47:23 p.m.\n\nResponse Time: 26/05/2026, 1:47:23 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:47:23 p.m.\n\nResponse Time: 26/05/2026, 1:47:41 p.m.\n\nCompletion Tokens: 1334\n\nPrompt Tokens: 7745\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo identify the most underperforming segment in revenue, please confirm:\n- Comparison baseline: vs previous year (PY), vs Budget/Plan (BP), or vs Rolling Estimate (RE)?\n- Time period: which period should we assess (e.g., latest YTD, latest MTD, a specific month/quarter/year)?\n- Variance type: absolute variance in local currency (LC) or percent variance?\n- Any additional filters (e.g., by channel, customer) or should we use all data for Colombia?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo identify the most underperforming segment in revenue, please confirm:\n- Comparison baseline: vs previous year (PY), vs Budget/Plan (BP), or vs Rolling Estimate (RE)?\n- Time period: which period should we assess (e.g., latest YTD, latest MTD, a specific month/quarter/year)?\n- Variance type: absolute variance in local currency (LC) or percent variance?\n- Any additional filters (e.g., by channel, customer) or should we use all data for Colombia?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

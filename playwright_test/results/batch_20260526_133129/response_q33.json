@@ -1,0 +1,14 @@
+{
+  "question": "What is the revenue by channel in the last month vs. the same month of the prior year?",
+  "timing": {
+    "total_runtime_seconds": 61.94,
+    "chatbot_wait_seconds": 39.63
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:43:48 p.m.\n\nResponse Time: 26/05/2026, 1:43:48 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat is the revenue by channel in the last month vs. the same month of the prior year?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:43:48 p.m.\n\nResponse Time: 26/05/2026, 1:43:48 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:43:48 p.m.\n\nResponse Time: 26/05/2026, 1:44:24 p.m.\n\nCompletion Tokens: 2462\n\nPrompt Tokens: 7753\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed with precise results, please confirm:\n1) Which channel level should we use: Channel Macro Group (e.g., Modern vs Traditional), Trade Channel, or Sub Trade Channel?\n2) By “last month,” should we use the latest completed fiscal 445 month (Apr 2026), comparing Apr 2026 vs Apr 2025? If yes, I’ll prepare the query accordingly.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed with precise results, please confirm:\n1) Which channel level should we use: Channel Macro Group (e.g., Modern vs Traditional), Trade Channel, or Sub Trade Channel?\n2) By “last month,” should we use the latest completed fiscal 445 month (Apr 2026), comparing Apr 2026 vs Apr 2025? If yes, I’ll prepare the query accordingly.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

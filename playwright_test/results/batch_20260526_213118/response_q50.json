@@ -1,0 +1,8 @@
+{
+  "question": "Which segment is underperforming the most (in revenue year on year)?",
+  "timing": {
+    "total_runtime_seconds": 615.56,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

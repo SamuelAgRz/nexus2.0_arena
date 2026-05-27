@@ -1,0 +1,8 @@
+{
+  "question": "What was the YoY% in september last year of the volume of the Colas category?",
+  "timing": {
+    "total_runtime_seconds": 54.83,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://stage.nexusai.coke.com/weekly-ou360\", waiting until \"load\"\n"
+}

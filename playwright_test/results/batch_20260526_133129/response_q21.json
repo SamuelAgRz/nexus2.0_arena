@@ -1,0 +1,14 @@
+{
+  "question": "Which are the Top 3 brands with the best performance in the modern trade channel in the last quarter?",
+  "timing": {
+    "total_runtime_seconds": 61.5,
+    "chatbot_wait_seconds": 42.85
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:38:51 p.m.\n\nResponse Time: 26/05/2026, 1:38:51 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhich are the Top 3 brands with the best performance in the modern trade channel in the last quarter?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:38:51 p.m.\n\nResponse Time: 26/05/2026, 1:38:51 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:38:51 p.m.\n\nResponse Time: 26/05/2026, 1:39:29 p.m.\n\nCompletion Tokens: 2420\n\nPrompt Tokens: 7754\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, I need a couple of clarifications to ensure we apply the correct governed semantics:\n\n- Performance metric: Should we rank brands by Net Revenue (NSR), by Volume (Unit Cases), or by % growth vs Prior Year (and if growth, for NSR or for Volume)?\n- Time period: By “last quarter,” do you want the latest completed 445 fiscal quarter as of the latest available date (May 26 2026)? If you prefer a specific quarter label (e.g., 2026 Q1), please specify.\n- Brand level: We will use the Brand Group level for “brands.” Is that acceptable?\n- Channel filter: We will filter to Modern Trade (Channel Macro Group). Please confirm this matches your intent.\n\nNote: Results will be restricted to Colombia per this deployment’s governance.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, I need a couple of clarifications to ensure we apply the correct governed semantics:\n\n- Performance metric: Should we rank brands by Net Revenue (NSR), by Volume (Unit Cases), or by % growth vs Prior Year (and if growth, for NSR or for Volume)?\n- Time period: By “last quarter,” do you want the latest completed 445 fiscal quarter as of the latest available date (May 26 2026)? If you prefer a specific quarter label (e.g., 2026 Q1), please specify.\n- Brand level: We will use the Brand Group level for “brands.” Is that acceptable?\n- Channel filter: We will filter to Modern Trade (Channel Macro Group). Please confirm this matches your intent.\n\nNote: Results will be restricted to Colombia per this deployment’s governance.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "question": "What is the Top 5 of leading (revenue) brands by channel in the last month?",
+  "timing": {
+    "total_runtime_seconds": 616.84,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

@@ -1,0 +1,14 @@
+{
+  "question": "What was the sales volume the previous (completed) week as of today?",
+  "timing": {
+    "total_runtime_seconds": 45.94,
+    "chatbot_wait_seconds": 28.76
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 5:15:30 p.m.\n\nResponse Time: 26/05/2026, 5:15:31 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat was the sales volume the previous (completed) week as of today?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 5:15:31 p.m.\n\nResponse Time: 26/05/2026, 5:15:31 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 5:15:31 p.m.\n\nResponse Time: 26/05/2026, 5:15:54 p.m.\n\nCompletion Tokens: 1831\n\nPrompt Tokens: 7748\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo proceed, please confirm the exact time period:\n\n- Should “previous (completed) week” be interpreted as the latest completed 445 fiscal week that ended before today (May 26 2026) for Colombia?\n- Do you want the total sales volume (Unit Cases) with no breakdown, or would you like it split by a dimension (e.g., channel, product, customer)?\n\nOnce you confirm, I’ll generate the query accordingly.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo proceed, please confirm the exact time period:\n\n- Should “previous (completed) week” be interpreted as the latest completed 445 fiscal week that ended before today (May 26 2026) for Colombia?\n- Do you want the total sales volume (Unit Cases) with no breakdown, or would you like it split by a dimension (e.g., channel, product, customer)?\n\nOnce you confirm, I’ll generate the query accordingly.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

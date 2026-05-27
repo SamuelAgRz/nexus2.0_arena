@@ -1,0 +1,14 @@
+{
+  "question": "What is the unit mix (percentage of unit cases) in Cali (Ship from City) within the Flavors subcategory year to date (YTD) in 2025? (one kpi)",
+  "timing": {
+    "total_runtime_seconds": 74.32,
+    "chatbot_wait_seconds": 52.73
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:42:33 p.m.\n\nResponse Time: 26/05/2026, 1:42:33 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat is the unit mix (percentage of unit cases) in Cali (Ship from City) within the Flavors subcategory year to date (YTD) in 2025?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:42:33 p.m.\n\nResponse Time: 26/05/2026, 1:42:33 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:42:33 p.m.\n\nResponse Time: 26/05/2026, 1:43:22 p.m.\n\nCompletion Tokens: 3623\n\nPrompt Tokens: 7769\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo ensure we calculate the correct metric and time window, could you please confirm:\n\n1) Metric intent: Do you want a single KPI showing the share of Unit Cases for the Flavors subcategory as a percentage of total Unit Cases in Cali (Ship From City) for 2025 YTD? Or would you like a mix breakdown within Flavors by a dimension (e.g., Brand Group, Package Type, Trade Channel)?\n\n2) Time anchor (445 fiscal calendar): Should we anchor “YTD 2025” to the last day of the 445 fiscal year 2025, or do you have a specific cutoff (anchor) date in 2025 to use? If the last day of FY2025 is fine, we will proceed with that.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo ensure we calculate the correct metric and time window, could you please confirm:\n\n1) Metric intent: Do you want a single KPI showing the share of Unit Cases for the Flavors subcategory as a percentage of total Unit Cases in Cali (Ship From City) for 2025 YTD? Or would you like a mix breakdown within Flavors by a dimension (e.g., Brand Group, Package Type, Trade Channel)?\n\n2) Time anchor (445 fiscal calendar): Should we anchor “YTD 2025” to the last day of the 445 fiscal year 2025, or do you have a specific cutoff (anchor) date in 2025 to use? If the last day of FY2025 is fine, we will proceed with that.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

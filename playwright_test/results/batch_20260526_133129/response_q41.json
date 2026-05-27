@@ -1,0 +1,14 @@
+{
+  "question": "What’s happening with Quatro (category) this year?",
+  "timing": {
+    "total_runtime_seconds": 54.63,
+    "chatbot_wait_seconds": 27.34
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:45:42 p.m.\n\nResponse Time: 26/05/2026, 1:45:43 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhat’s happening with Quatro (category) this year?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:45:43 p.m.\n\nResponse Time: 26/05/2026, 1:45:43 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:45:43 p.m.\n\nResponse Time: 26/05/2026, 1:46:06 p.m.\n\nCompletion Tokens: 1458\n\nPrompt Tokens: 7745\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo help me answer precisely, could you please confirm a few details about “Quatro (category)” this year:\n\n- Metric: Do you want Net Revenue (NSR), Unit Cases (volume), or both?\n- Timeframe: Should I use the current fiscal YTD through the latest available date (May 26 2026), or a different period (e.g., MTD, full year, a specific month/quarter)?\n- Comparison: Would you like results vs prior year (absolute and %)?\n- Product mapping: You wrote “Quatro (category)”. Should I filter Product Category = “Quatro” ('Product'[LT1.5 - Category])? Or did you mean the Quatro brand group ('Product'[LT1.2 - Brand Group])?\n- Breakdown: Any split required (e.g., by Channel Macro Group, Package, Sub Trade Channel), or just the total?\n\nIf you’re ok with a default, I can proceed with: both NSR and Unit Cases, 2026 YTD through May 26 2026, including vs PY and % vs PY, total for Colombia.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo help me answer precisely, could you please confirm a few details about “Quatro (category)” this year:\n\n- Metric: Do you want Net Revenue (NSR), Unit Cases (volume), or both?\n- Timeframe: Should I use the current fiscal YTD through the latest available date (May 26 2026), or a different period (e.g., MTD, full year, a specific month/quarter)?\n- Comparison: Would you like results vs prior year (absolute and %)?\n- Product mapping: You wrote “Quatro (category)”. Should I filter Product Category = “Quatro” ('Product'[LT1.5 - Category])? Or did you mean the Quatro brand group ('Product'[LT1.2 - Brand Group])?\n- Breakdown: Any split required (e.g., by Channel Macro Group, Package, Sub Trade Channel), or just the total?\n\nIf you’re ok with a default, I can proceed with: both NSR and Unit Cases, 2026 YTD through May 26 2026, including vs PY and % vs PY, total for Colombia.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

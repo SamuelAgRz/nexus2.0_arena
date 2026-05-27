@@ -1,0 +1,8 @@
+{
+  "question": "How strong is COKE REDUCED SUGAR (subcategory) this quarter (compared to previous year quarter) (in revenue)?",
+  "timing": {
+    "total_runtime_seconds": 44.97,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://stage.nexusai.coke.com/weekly-ou360\", waiting until \"load\"\n"
+}

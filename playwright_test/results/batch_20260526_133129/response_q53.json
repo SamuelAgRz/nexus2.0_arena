@@ -1,0 +1,14 @@
+{
+  "question": "Who’s leading (revenue) growth across channels?",
+  "timing": {
+    "total_runtime_seconds": 46.48,
+    "chatbot_wait_seconds": 25.43
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:48:06 p.m.\n\nResponse Time: 26/05/2026, 1:48:07 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWho’s leading (revenue) growth across channels?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:48:07 p.m.\n\nResponse Time: 26/05/2026, 1:48:07 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:48:07 p.m.\n\nResponse Time: 26/05/2026, 1:48:28 p.m.\n\nCompletion Tokens: 1655\n\nPrompt Tokens: 7744\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo identify who is leading revenue growth across channels, could you please confirm the following so I can generate the correct query:\n\n- Comparison baseline: Should “growth” be vs prior year (YOY), vs Budget/Plan (BP), or vs Rolling Estimate (RE)? Do you want % growth or absolute variance?\n- Time period: Do you want latest YTD, latest MTD, latest completed month/quarter, or a specific fiscal month/quarter/date range?\n- Channel granularity: Should I use Macro Channel Group, Trade Channel, or Sub Trade Channel?\n- Metric confirmation: Is Bottler Net Revenue AC (LC) acceptable for “revenue”?\n- Output: Do you want just the top 1 channel, or a ranked list (e.g., top 3)?\n\nNote: This deployment is restricted to Colombia data only.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo identify who is leading revenue growth across channels, could you please confirm the following so I can generate the correct query:\n\n- Comparison baseline: Should “growth” be vs prior year (YOY), vs Budget/Plan (BP), or vs Rolling Estimate (RE)? Do you want % growth or absolute variance?\n- Time period: Do you want latest YTD, latest MTD, latest completed month/quarter, or a specific fiscal month/quarter/date range?\n- Channel granularity: Should I use Macro Channel Group, Trade Channel, or Sub Trade Channel?\n- Metric confirmation: Is Bottler Net Revenue AC (LC) acceptable for “revenue”?\n- Output: Do you want just the top 1 channel, or a ranked list (e.g., top 3)?\n\nNote: This deployment is restricted to Colombia data only.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

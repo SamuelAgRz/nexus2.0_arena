@@ -1,0 +1,8 @@
+{
+  "question": "Is the Juice category back on track (in volume of last 3 months)?",
+  "timing": {
+    "total_runtime_seconds": 616.76,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

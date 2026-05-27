@@ -1,0 +1,14 @@
+{
+  "question": "How’s the flavors category trending (in revenue)?",
+  "timing": {
+    "total_runtime_seconds": 45.99,
+    "chatbot_wait_seconds": 20.37
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:46:35 p.m.\n\nResponse Time: 26/05/2026, 1:46:36 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nHow’s the flavors category trending (in revenue)?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:46:36 p.m.\n\nResponse Time: 26/05/2026, 1:46:36 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:46:36 p.m.\n\nResponse Time: 26/05/2026, 1:46:52 p.m.\n\nCompletion Tokens: 1282\n\nPrompt Tokens: 7743\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo analyze how the Flavors category is trending in revenue (Colombia only), could you please confirm the following so I can generate the query correctly?\n\n1) Time range:\n- Last 12 completed months\n- Year-to-date to the latest available day\n- Custom start/end dates\n\n2) Time grain:\n- Monthly trend\n- Weekly trend (445 calendar)\n\n3) Comparison:\n- Actuals only\n- Include vs prior year and % vs prior year\n\n4) Product level confirmation:\n- By “Flavors,” do you mean Product Category = “Flavors” (not subcategory or brand)?\n\n5) Currency/measure:\n- Use Bottler Net Revenue AC (LC) in local currency? If you prefer another currency, please specify.\n\n6) Output preference:\n- Data table only\n- Also include a trend chart\n\nOnce you confirm these, I’ll proceed with the query.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo analyze how the Flavors category is trending in revenue (Colombia only), could you please confirm the following so I can generate the query correctly?\n\n1) Time range:\n- Last 12 completed months\n- Year-to-date to the latest available day\n- Custom start/end dates\n\n2) Time grain:\n- Monthly trend\n- Weekly trend (445 calendar)\n\n3) Comparison:\n- Actuals only\n- Include vs prior year and % vs prior year\n\n4) Product level confirmation:\n- By “Flavors,” do you mean Product Category = “Flavors” (not subcategory or brand)?\n\n5) Currency/measure:\n- Use Bottler Net Revenue AC (LC) in local currency? If you prefer another currency, please specify.\n\n6) Output preference:\n- Data table only\n- Also include a trend chart\n\nOnce you confirm these, I’ll proceed with the query.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

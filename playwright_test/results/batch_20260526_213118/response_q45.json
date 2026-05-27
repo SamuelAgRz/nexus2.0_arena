@@ -1,0 +1,8 @@
+{
+  "question": "Are we seeing any lift (monthly increase) for FUZE TEA-KO (category) lately (last 3 completed months) (in revenue)?",
+  "timing": {
+    "total_runtime_seconds": 618.84,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

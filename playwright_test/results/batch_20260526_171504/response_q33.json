@@ -1,0 +1,8 @@
+{
+  "question": "What is the revenue by channel (macro group)in the last month vs. the same month of the prior year?",
+  "timing": {
+    "total_runtime_seconds": 2519.53,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}

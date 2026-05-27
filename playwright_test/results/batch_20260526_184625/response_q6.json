@@ -1,0 +1,8 @@
+{
+  "question": "What was the sales volume the previous month as of today?",
+  "timing": {
+    "total_runtime_seconds": 41.21,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://stage.nexusai.coke.com/weekly-ou360\", waiting until \"load\"\n"
+}

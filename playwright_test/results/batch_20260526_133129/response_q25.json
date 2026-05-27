@@ -1,0 +1,14 @@
+{
+  "question": "Volume by package type in the past week.",
+  "timing": {
+    "total_runtime_seconds": 48.72,
+    "chatbot_wait_seconds": 26.04
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:40:38 p.m.\n\nResponse Time: 26/05/2026, 1:40:39 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nVolume by package type in the past week.\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:40:39 p.m.\n\nResponse Time: 26/05/2026, 1:40:39 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:40:39 p.m.\n\nResponse Time: 26/05/2026, 1:41:01 p.m.\n\nCompletion Tokens: 1754\n\nPrompt Tokens: 7742\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, can you confirm what you mean by “past week”?\n- Latest completed 445 fiscal week (preferred for this model), excluding the current partial week\n- Or the last 7 calendar days up to the latest available date (May 26 2026)\n\nOnce confirmed, I will retrieve Unit Cases ([Unit Cases AC]) broken down by Package Type for Colombia.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, can you confirm what you mean by “past week”?\n- Latest completed 445 fiscal week (preferred for this model), excluding the current partial week\n- Or the last 7 calendar days up to the latest available date (May 26 2026)\n\nOnce confirmed, I will retrieve Unit Cases ([Unit Cases AC]) broken down by Package Type for Colombia.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

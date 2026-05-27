@@ -1,0 +1,14 @@
+{
+  "question": "Is Modern Trade outperforming Traditional Trade?",
+  "timing": {
+    "total_runtime_seconds": 39.52,
+    "chatbot_wait_seconds": 18.86
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:48:17 p.m.\n\nResponse Time: 26/05/2026, 1:48:17 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nIs Modern Trade outperforming Traditional Trade?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:48:17 p.m.\n\nResponse Time: 26/05/2026, 1:48:17 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:48:17 p.m.\n\nResponse Time: 26/05/2026, 1:48:31 p.m.\n\nCompletion Tokens: 1031\n\nPrompt Tokens: 7741\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo assess whether Modern Trade is outperforming Traditional Trade, I need a bit more detail:\n\n- Which KPI should we use? Net Revenue (NSR) or Volume (Unit Cases)?\n- What time frame should we analyze? For example: latest completed month, YTD, or a specific month/quarter/year.\n- Do you want to compare absolute performance within that period, or performance vs prior year (growth vs PY)?\n\nNote: Data is available for Actuals from Apr 01 2023 to May 26 2026. Once you confirm these details, I’ll run the analysis for Colombia.\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo assess whether Modern Trade is outperforming Traditional Trade, I need a bit more detail:\n\n- Which KPI should we use? Net Revenue (NSR) or Volume (Unit Cases)?\n- What time frame should we analyze? For example: latest completed month, YTD, or a specific month/quarter/year.\n- Do you want to compare absolute performance within that period, or performance vs prior year (growth vs PY)?\n\nNote: Data is available for Actuals from Apr 01 2023 to May 26 2026. Once you confirm these details, I’ll run the analysis for Colombia.",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

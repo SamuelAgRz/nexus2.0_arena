@@ -1,0 +1,14 @@
+{
+  "question": "Sales comparison for this week versus previous weeks.",
+  "timing": {
+    "total_runtime_seconds": 46.73,
+    "chatbot_wait_seconds": 24.76
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:43:09 p.m.\n\nResponse Time: 26/05/2026, 1:43:09 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nSales comparison for this week versus previous weeks.\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:43:09 p.m.\n\nResponse Time: 26/05/2026, 1:43:09 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:43:09 p.m.\n\nResponse Time: 26/05/2026, 1:43:30 p.m.\n\nCompletion Tokens: 1623\n\nPrompt Tokens: 7742\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\n\nTo proceed accurately, could you please clarify a few points about “Sales comparison for this week versus previous weeks”:\n\n1) Metric confirmation: By “Sales,” do you mean Net Revenue (Bottler Net Revenue AC (LC)) in local currency?  \n2) “This week” meaning: Do you want the current partial Week-to-Date (WTD) as of the latest available date (May 26 2026), or the latest completed 445 fiscal week?  \n3) Comparison window: Which “previous weeks” should we use?\n- Last 4 completed 445 weeks\n- All completed weeks in the current month\n- All completed weeks in the current quarter\n- Just the immediately prior week\n- Another range (please specify how many weeks)\n4) Detail level: Do you want total Colombia only, or a breakdown (e.g., by Channel Macro Group, Trade Channel, Product Category)?  \n5) Output format: Table only, or would you also like a chart?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\n\nTo proceed accurately, could you please clarify a few points about “Sales comparison for this week versus previous weeks”:\n\n1) Metric confirmation: By “Sales,” do you mean Net Revenue (Bottler Net Revenue AC (LC)) in local currency?  \n2) “This week” meaning: Do you want the current partial Week-to-Date (WTD) as of the latest available date (May 26 2026), or the latest completed 445 fiscal week?  \n3) Comparison window: Which “previous weeks” should we use?\n- Last 4 completed 445 weeks\n- All completed weeks in the current month\n- All completed weeks in the current quarter\n- Just the immediately prior week\n- Another range (please specify how many weeks)\n4) Detail level: Do you want total Colombia only, or a breakdown (e.g., by Channel Macro Group, Trade Channel, Product Category)?  \n5) Output format: Table only, or would you also like a chart?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

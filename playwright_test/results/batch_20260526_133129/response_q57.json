@@ -1,0 +1,14 @@
+{
+  "question": "Which city sold the most UCs last quarter?",
+  "timing": {
+    "total_runtime_seconds": 53.7,
+    "chatbot_wait_seconds": 34.67
+  },
+  "response": {
+    "complete_output": "Source: user\n\nRequest Time: 26/05/2026, 1:48:50 p.m.\n\nResponse Time: 26/05/2026, 1:48:51 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nWhich city sold the most UCs last quarter?\nCopy\n\nSource: SelectorGroupChatManager\n\nRequest Time: 26/05/2026, 1:48:51 p.m.\n\nResponse Time: 26/05/2026, 1:48:51 p.m.\n\nCompletion Tokens:\n\nPrompt Tokens:\n\nTotal Token Consumption:\n\nMessage Type: SelectSpeakerEvent\n\nContent:\n\n[\n  \"IntentClarifier\"\n]\nCopy\n\nSource: IntentClarifier\n\nRequest Time: 26/05/2026, 1:48:51 p.m.\n\nResponse Time: 26/05/2026, 1:49:22 p.m.\n\nCompletion Tokens: 2127\n\nPrompt Tokens: 7743\n\nTotal Token Consumption:\n\nMessage Type: TextMessage\n\nContent:\n\nDear User\nTo proceed, I need two quick clarifications to ensure proper semantic mapping:\n\n1) City grain: Should “city” be based on the delivery/customer location (Ship To City) or the origin location (Ship From City)? Default proposal: Ship To City.\n2) Time period: By “last quarter,” do you mean the latest completed fiscal quarter in the 445 calendar? If not, please specify the exact quarter.\n\nNotes:\n- Results will be restricted to Colombia data per this deployment’s governance.\n- I will return the top 1 city by Unit Cases (Actuals). Do you also want the UC value reported alongside the city name?\nCopy\n\nUser Location: Mexico\n\nClose",
+    "intent_clarifier": "Dear User\nTo proceed, I need two quick clarifications to ensure proper semantic mapping:\n\n1) City grain: Should “city” be based on the delivery/customer location (Ship To City) or the origin location (Ship From City)? Default proposal: Ship To City.\n2) Time period: By “last quarter,” do you mean the latest completed fiscal quarter in the 445 calendar? If not, please specify the exact quarter.\n\nNotes:\n- Results will be restricted to Colombia data per this deployment’s governance.\n- I will return the top 1 city by Unit Cases (Actuals). Do you also want the UC value reported alongside the city name?",
+    "dax_query": null,
+    "dax_executor_result": null,
+    "summarizer": null
+  }
+}

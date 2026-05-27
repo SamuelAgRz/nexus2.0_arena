@@ -1,0 +1,8 @@
+{
+  "question": "What was the YoY growth of NSR in Cali (ship to city) two (completed) months ago?",
+  "timing": {
+    "total_runtime_seconds": 41.99,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://stage.nexusai.coke.com/weekly-ou360\", waiting until \"load\"\n"
+}

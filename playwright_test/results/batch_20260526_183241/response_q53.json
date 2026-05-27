@@ -1,0 +1,8 @@
+{
+  "question": "Who’s leading (revenue year on year of last completed month) growth across channels?",
+  "timing": {
+    "total_runtime_seconds": 40.43,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://stage.nexusai.coke.com/weekly-ou360\", waiting until \"load\"\n"
+}

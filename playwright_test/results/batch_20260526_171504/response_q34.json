@@ -1,0 +1,8 @@
+{
+  "question": "Which customer (ship to customer) is underdeveloped (by volume) versus my national Flavors category mix (comparing this year ytd)? (For example: if 25% of my nationwide sales are Flavors",
+  "timing": {
+    "total_runtime_seconds": 2498.46,
+    "chatbot_wait_seconds": null
+  },
+  "error": "Locator.wait_for: Timeout 600000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Agent Interaction')\").last to be visible\n"
+}
