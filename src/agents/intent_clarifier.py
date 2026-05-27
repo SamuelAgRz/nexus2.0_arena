@@ -111,9 +111,11 @@ class IntentClarifierAgent:
         confidence = max(0.0, min(1.0, confidence))
         payload["confidence"] = confidence
 
-        ontology_filter = payload.get("ontology_filter", [])
-        if not isinstance(ontology_filter, list):
-            ontology_filter = []
+        ontology_filter = payload.get("ontology_filter", {})
+        if not isinstance(ontology_filter, dict):
+            ontology_filter = {}
+        ontology_filter.setdefault("domain", [])
+        ontology_filter.setdefault("unit_of_measure", [])
         payload["ontology_filter"] = ontology_filter
 
         return payload

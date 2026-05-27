@@ -58,7 +58,10 @@ from src.agents.dax_query_developer import DaxQueryDeveloperAgent
 from src.agents.dax_validator import DaxValidatorAgent
 from src.connections.nsr_conn import AdomdConnector
 from src.agents.dax_executor import DaxExecutorAgent
-from src.agents.ontologic_agent import OntologicAgent
+from src.agents.latam_nsr_ontology_developer import LatamNsrOntologyDeveloperAgent
+from src.agents.latam_nsr_ontology_validator import LatamNsrOntologyValidatorAgent
+from src.agents.latam_nsr_ontology_executor import LatamNsrOntologyExecutorAgent
+from src.agents.latam_nsr_ontology_formatter import LatamNsrOntologyFormatterAgent
 from src.connections.ontology import AdomdConnector as OntologyConnector
 
 
@@ -94,6 +97,7 @@ USER_QUERY = "What was the actual volume of unit cases in Colombia last year, fo
 
 MAX_VALIDATION_ITERATIONS = 3
 MAX_CLARIFICATION_ROUNDS = 3
+MAX_ONTOLOGY_ITERATIONS = 3
 EXECUTE_DAX = True
 SAVE_RESULT_CSV = True
 
@@ -266,24 +270,24 @@ Target model: NSR LATAM Cube / NSR LATAM Semantic Model (Power BI).
 """
 
 
-# Lightweight measure catalog passed to the Intent Clarifier.
-# IC uses this to identify which measures the user is asking about (ontology_filter output).
-# TODO: replace with a dynamic fetch from the ontology once the hierarchy column is defined.
-ONTOLOGY_MEASURE_LIST = """
-# Available Measures in Ontology
+# Catalog of available filter values for the NSR ontology table.
+# IC uses these to populate ontology_filter in its output JSON.
+# The ontology pipeline (LATAM_NSR_Ontology) then uses those values to fetch KPI rows.
+ONTOLOGY_CATALOG = """
+# NSR Ontology Filter Catalog
 
-Use the exact names below in the ontology_filter output field.
+Use the values below exactly in the ontology_filter output field.
 
-- Unit Cases AC
-- Unit Cases AC YTD
-- Unit Cases Current RE
-- Unit Cases Current RE YTD
-- Bottler Net Revenue AC (LC)
-- Bottler Net Revenue AC (LC) YTD
-- Bottler Gross Revenue AC (LC)
-- Bottler Gross Revenue AC (LC) YTD
-- Bottler Gross Revenue Current RE (LC)
-- Bottler Gross Revenue Current RE (LC) YTD
+## domain
+- Volumen NSR LATAM
+- Ingresos NSR LATAM
+- Descuentos NSR LATAM
+
+## unit_of_measure
+- UC
+- LC (Moneda Local)
+- unidades
+- %
 """
 
 
@@ -312,7 +316,7 @@ def build_columns_context() -> str:
 
 def build_combined_context(ontology_ctx: str, columns_ctx: str) -> str:
     """
-    Merges metric context from the OntologicAgent with filter/dimension column context.
+    Merges metric context from the ontology formatter with filter/dimension column context.
     Used by DaxQueryDeveloper and DaxValidator so they have the full picture.
     """
     parts = []
@@ -440,30 +444,39 @@ def main() -> None:
     print("LLM client initialized.")
 
     # -------------------------------------------------------------------------
-    # 2. Intent Clarifier loop  (IC only — no OA yet)
+    # 2. Ontology pipeline agents
     # -------------------------------------------------------------------------
-    print_section("2. INITIALIZING ONTOLOGIC AGENT")
+    print_section("2. INITIALIZING ONTOLOGY PIPELINE")
 
     print(">>> [LOGIN 2/2] Connecting to mf-pocai-eastus2-dev-01 (ontology) — use your ontology account")
     ontology_conn = OntologyConnector(str(PATH_DLL), STR_CONN_ONTOLOGY)
-    ontologic_agent = OntologicAgent(llm, ontology_conn)
 
-    print_section("2. INTENT CLARIFIER LOOP")
+    ontology_developer = LatamNsrOntologyDeveloperAgent(llm)
+    ontology_validator = LatamNsrOntologyValidatorAgent(llm)
+    ontology_executor = LatamNsrOntologyExecutorAgent(ontology_conn)
+    ontology_formatter = LatamNsrOntologyFormatterAgent(llm)
 
-    intent_agent = IntentClarifierAgent(
-        llm,
-        general_syn=GENERAL_SYN,
-        ontology_context=ONTOLOGY_MEASURE_LIST,  # lightweight catalog — just measure names
-    )
+    # -------------------------------------------------------------------------
+    # 3. IC + Ontology Pipeline loop
+    # -------------------------------------------------------------------------
+    print_section("3. IC + ONTOLOGY PIPELINE LOOP")
 
     combined_query = USER_QUERY
+    ontology_context = ""
     intent = None
 
     for round_n in range(MAX_CLARIFICATION_ROUNDS):
-        print_section(f"IC ROUND {round_n + 1}")
 
+        # PHASE A: IC runs with current ontology_context (catalog on first pass)
+        print_section(f"ROUND {round_n + 1} — PHASE A: INTENT CLARIFIER")
+
+        intent_agent = IntentClarifierAgent(
+            llm,
+            general_syn=GENERAL_SYN,
+            ontology_context=ontology_context if ontology_context else ONTOLOGY_CATALOG,
+        )
         intent = intent_agent.run(combined_query)
-        save_text(run_dir / f"01_intent_round_{round_n + 1}.txt", str(intent))
+        save_text(run_dir / f"01_intent_round_{round_n + 1}_phase_a.txt", str(intent))
         print(intent)
 
         if not isinstance(intent, dict):
@@ -472,12 +485,78 @@ def main() -> None:
                 "Check your _safe_parse_json implementation or prompt JSON-only rules."
             )
 
-        if intent.get("intent") != "clarification":
-            break
+        if intent.get("intent") == "clarification":
+            if round_n == MAX_CLARIFICATION_ROUNDS - 1:
+                raise RuntimeError(
+                    f"Intent could not be resolved after {MAX_CLARIFICATION_ROUNDS} clarification rounds."
+                )
+            agents = intent.get("agents", [])
+            clarification_msg = (
+                agents[0].get("instruction", "Please clarify your query.")
+                if agents else "Please clarify your query."
+            )
+            print_section("CLARIFICATION NEEDED")
+            print(clarification_msg)
+            user_response = input("\nYour response: ").strip()
+            combined_query = f"{USER_QUERY}\n\nUser clarification: {user_response}"
+            continue
 
+        # PHASE B: Ontology pipeline
+        print_section(f"ROUND {round_n + 1} — PHASE B: ONTOLOGY PIPELINE")
+
+        ontology_filter = intent.get("ontology_filter", {})
+        print(f"Ontology filter from IC: {ontology_filter}")
+
+        ontology_dax = ontology_developer.run(ontology_filter)
+        print(f"Ontology DAX (initial):\n{ontology_dax}")
+        save_text(run_dir / f"ontology_dax_round_{round_n + 1}.dax", ontology_dax)
+
+        for i in range(MAX_ONTOLOGY_ITERATIONS):
+            print_section(f"ONTOLOGY VALIDATION ITERATION {i + 1}")
+            ontology_validation = ontology_validator.run(ontology_dax, ontology_filter)
+            print(f"Ontology validation: {ontology_validation}")
+            save_text(
+                run_dir / f"ontology_validation_round_{round_n + 1}_iter_{i + 1}.txt",
+                ontology_validation,
+            )
+
+            if is_approved(ontology_validation):
+                break
+
+            ontology_dax = ontology_developer.revise(
+                ontology_dax, ontology_validation, ontology_filter
+            )
+            print(f"Revised ontology DAX:\n{ontology_dax}")
+            save_text(
+                run_dir / f"ontology_dax_round_{round_n + 1}_revision_{i + 1}.dax",
+                ontology_dax,
+            )
+
+        df_ontology = ontology_executor.run(ontology_dax)
+        ontology_context = ontology_formatter.run(combined_query, df_ontology)
+        save_text(run_dir / f"ontology_context_round_{round_n + 1}.md", ontology_context)
+        print(f"Ontology context:\n{ontology_context}")
+
+        # PHASE C: IC re-runs with enriched context
+        print_section(f"ROUND {round_n + 1} — PHASE C: INTENT CLARIFIER (enriched)")
+
+        intent_agent_enriched = IntentClarifierAgent(
+            llm,
+            general_syn=GENERAL_SYN,
+            ontology_context=ontology_context,
+        )
+        intent = intent_agent_enriched.run(combined_query)
+        save_text(run_dir / f"01_intent_round_{round_n + 1}_phase_c.txt", str(intent))
+        print(intent)
+
+        if intent.get("intent") != "clarification":
+            save_text(run_dir / "01_intent_final.txt", str(intent))
+            break  # Intent resolved — proceed to DAX agents
+
+        # Still needs user clarification after seeing ontology data
         if round_n == MAX_CLARIFICATION_ROUNDS - 1:
             raise RuntimeError(
-                f"Intent could not be resolved after {MAX_CLARIFICATION_ROUNDS} clarification rounds."
+                f"Intent could not be resolved after {MAX_CLARIFICATION_ROUNDS} rounds."
             )
 
         agents = intent.get("agents", [])
@@ -485,23 +564,10 @@ def main() -> None:
             agents[0].get("instruction", "Please clarify your query.")
             if agents else "Please clarify your query."
         )
-
         print_section("CLARIFICATION NEEDED")
         print(clarification_msg)
         user_response = input("\nYour response: ").strip()
         combined_query = f"{USER_QUERY}\n\nUser clarification: {user_response}"
-
-    # -------------------------------------------------------------------------
-    # 3. Ontologic Agent — runs once with IC's filter output
-    # -------------------------------------------------------------------------
-    print_section("3. ONTOLOGIC AGENT")
-
-    ontology_filter = intent.get("ontology_filter", [])
-    print(f"Ontology filter from IC: {ontology_filter}")
-
-    ontology_context = ontologic_agent.run(ontology_filter)
-    save_text(run_dir / "ontology_context.md", ontology_context)
-    print(f"Ontology context:\n{ontology_context or '(empty)'}")
 
     combined_context = build_combined_context(ontology_context, columns_context)
     save_text(run_dir / "combined_context_used.md", combined_context)
