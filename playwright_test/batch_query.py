@@ -26,7 +26,7 @@ from query import parse_response
 CHATBOT_URL = "https://stage.nexusai.coke.com/weekly-ou360"
 AUTH_STATE_FILE = Path(__file__).parent / "credentials" / "auth_state.json"
 RESULTS_DIR = Path(__file__).parent / "results"
-CSV_FILE = Path(__file__).parent / "questions.csv"
+CSV_FILE = Path(__file__).parent / "questions_ontology.csv"
 
 INPUT_SELECTOR = "textarea[placeholder='Ask me anything...']"
 AGENT_BTN_SELECTOR = "button:has-text('Agent Interaction')"
@@ -37,7 +37,10 @@ CONCURRENCY = 5  # max simultaneous browser contexts — increase carefully
 CSV_COLUMNS = [
     "index", "question",
     "total_runtime_seconds", "chatbot_wait_seconds",
-    "intent_clarifier", "dax_query", "dax_executor_result", "summarizer",
+    "intent_clarifier",
+    "ontology_dax_query", "ontology_dax_executor_result", "ontology_result_summarizer",
+    "main_dax_query", "main_dax_executor_result", "main_result_summarizer",
+    "summarizer",
     "error",
 ]
 
@@ -132,8 +135,12 @@ async def run_question(
                 "total_runtime_seconds": total_runtime,
                 "chatbot_wait_seconds": chatbot_wait,
                 "intent_clarifier": parsed.get("intent_clarifier"),
-                "dax_query": parsed.get("dax_query"),
-                "dax_executor_result": parsed.get("dax_executor_result"),
+                "ontology_dax_query": parsed.get("ontology_dax_query"),
+                "ontology_dax_executor_result": parsed.get("ontology_dax_executor_result"),
+                "ontology_result_summarizer": parsed.get("ontology_result_summarizer"),
+                "main_dax_query": parsed.get("main_dax_query"),
+                "main_dax_executor_result": parsed.get("main_dax_executor_result"),
+                "main_result_summarizer": parsed.get("main_result_summarizer"),
                 "summarizer": parsed.get("summarizer"),
                 "error": None,
             }
@@ -152,8 +159,12 @@ async def run_question(
                 "total_runtime_seconds": total_runtime,
                 "chatbot_wait_seconds": None,
                 "intent_clarifier": None,
-                "dax_query": None,
-                "dax_executor_result": None,
+                "ontology_dax_query": None,
+                "ontology_dax_executor_result": None,
+                "ontology_result_summarizer": None,
+                "main_dax_query": None,
+                "main_dax_executor_result": None,
+                "main_result_summarizer": None,
                 "summarizer": None,
                 "error": str(exc),
             }

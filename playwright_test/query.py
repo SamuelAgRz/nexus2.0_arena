@@ -25,27 +25,55 @@ RESPONSE_TIMEOUT_MS = 600_000  # 10 minutes
 QUESTION = "Give me the sales (volume) data of last year 2025 for Colombia for all categories, groupped by channel"
 
 
-def _extract_source_content(text: str, source_name: str) -> str | None:
-    pattern = rf"Source: {re.escape(source_name)}.*?Content:\n\n(.*?)\nCopy"
+def _split_sections(text: str) -> tuple[str, str]:
+    """Split response into (ontology_section, main_section).
+
+    The ontology loop starts with SelectorGroupChatManager selecting LATAM_NSR_Ontology.
+    The main loop starts with SelectorGroupChatManager selecting NSR_LATAM_Cube_UAT.
+    We split at the moment NSR_LATAM_Cube_UAT is selected.
+    """
+    pattern = (
+        r'Source: SelectorGroupChatManager.*?Message Type: SelectSpeakerEvent'
+        r'.*?Content:\n\n\[\s*"NSR_LATAM_Cube_UAT"\s*\]\s*\nCopy'
+    )
     m = re.search(pattern, text, re.DOTALL)
-    return m.group(1).strip() if m else None
+    if m:
+        return text[:m.start()], text[m.start():]
+    return text, ""
 
 
-def _extract_dax_executor_result(text: str) -> str | None:
+def _last_source_content(section: str, source_name: str) -> str | None:
+    """Extract content from the last occurrence of a source in a section."""
+    pattern = rf"Source: {re.escape(source_name)}.*?Content:\n\n(.*?)\nCopy"
+    matches = re.findall(pattern, section, re.DOTALL)
+    return matches[-1].strip() if matches else None
+
+
+def _last_dax_executor_result(section: str) -> str | None:
+    """Extract content from the last DaxExecutor ToolCallExecutionEvent in a section."""
     pattern = r"Source: DaxExecutor.*?Message Type: ([^\n]+).*?Content:\n\n(.*?)\nCopy"
-    for m in re.finditer(pattern, text, re.DOTALL):
+    result = None
+    for m in re.finditer(pattern, section, re.DOTALL):
         if m.group(1).strip() == "ToolCallExecutionEvent":
-            return m.group(2).strip()
-    return None
+            result = m.group(2).strip()
+    return result
 
 
 def parse_response(text: str) -> dict:
+    ontology_sec, main_sec = _split_sections(text)
     return {
         "complete_output": text,
-        "intent_clarifier": _extract_source_content(text, "IntentClarifier"),
-        "dax_query": _extract_source_content(text, "DaxQuery_Developer"),
-        "dax_executor_result": _extract_dax_executor_result(text),
-        "summarizer": _extract_source_content(text, "SummarizerAgent"),
+        "intent_clarifier": _last_source_content(text, "IntentClarifier"),
+        # Ontology loop — last result within the ontology section
+        "ontology_dax_query":           _last_source_content(ontology_sec, "DaxQuery_Developer"),
+        "ontology_dax_executor_result": _last_dax_executor_result(ontology_sec),
+        "ontology_result_summarizer":   _last_source_content(ontology_sec, "DaxResultSummarizer"),
+        # Main loop — last result within the main section
+        "main_dax_query":               _last_source_content(main_sec, "DaxQuery_Developer"),
+        "main_dax_executor_result":     _last_dax_executor_result(main_sec),
+        "main_result_summarizer":       _last_source_content(main_sec, "DaxResultSummarizer"),
+        # Final summary
+        "summarizer": _last_source_content(text, "SummarizerAgent"),
     }
 
 
