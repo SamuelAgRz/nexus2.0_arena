@@ -92,8 +92,8 @@ async def main():
         page = await context.new_page()
 
         print(f"Navigating to {CHATBOT_URL}...")
-        await page.goto(CHATBOT_URL)
-        await page.wait_for_load_state("networkidle", timeout=30_000)
+        await page.goto(CHATBOT_URL, wait_until="domcontentloaded", timeout=60_000)
+        await page.wait_for_load_state("networkidle", timeout=60_000)
 
         if "microsoftonline" in page.url or "login" in page.url.lower():
             print("ERROR: Session expired. Re-run auth.py to refresh credentials.")
