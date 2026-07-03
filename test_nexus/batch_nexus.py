@@ -34,7 +34,7 @@ THREAD_ID_RE = re.compile(r"threadId:\s*([0-9a-fA-F-]+)")
 SUMMARIZER_RE = re.compile(r"Source: SummarizerAgent.*?Content:\n\n(.*?)\nCopy", re.DOTALL)
 RESPONSE_TIMEOUT_MS = 600_000  # 10 minutes
 
-CONCURRENCY = 10
+CONCURRENCY = 5
 
 CSV_COLUMNS = ["index", "question", "answer", "total_runtime_seconds", "thread_id"]
 
@@ -188,7 +188,7 @@ async def main() -> None:
 
     batch_start = time.time()
     batch_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    batch_dir = RESULTS_DIR / f"batch_simple_{batch_timestamp}"
+    batch_dir = RESULTS_DIR / f"batch_{batch_timestamp}"
     batch_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"Batch: {len(questions)} question(s) | concurrency: {CONCURRENCY}")
