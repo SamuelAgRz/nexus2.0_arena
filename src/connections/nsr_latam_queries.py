@@ -2,6 +2,7 @@ import sys
 import os
 import clr
 import pandas as pd
+import yaml
 
 class AdomdConnector:
     """
@@ -70,7 +71,35 @@ class AdomdConnector:
             return None
 
 
-# --- EJECUCIÓN PRINCIPAL ---
+# --- YAML ---
+class LiteralString(str):
+    pass
+
+def literal_presenter(dumper, data):
+    return dumper.represent_scalar(
+        'tag:yaml.org,2002:str',
+        data,
+        style='|'
+    )
+
+yaml.add_representer(LiteralString, literal_presenter)
+
+def queries_yaml(path_yaml):
+    """Lee el archivo YAML y devuelve la lista de consultas."""
+    with open(path_yaml, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+def save_yaml(path_salida, datos):
+    """Guarda preguntas, DAX y resultados en un YAML."""
+    with open(path_salida, "w", encoding="utf-8") as f:
+        yaml.dump(
+            datos,
+            f,
+            allow_unicode=True,
+            sort_keys=False,
+            default_flow_style=False
+        )
 
 # --- EJECUCIÓN PRINCIPAL ---
 
@@ -96,24 +125,38 @@ if __name__ == "__main__":
 
     # Consulta DAX
     #query = "EVALUATE VALUES('Reporting View')"
-    #query = "EVALUATE VALUES('Ship From'[Country])"
-    query = """
-    EVALUATE
-    SUMMARIZECOLUMNS(
-        'Product'[LT1.1 - Beverage Product],
-        FILTER('Product', 'Product'[LT1.5 - Category] = "Colas"),
-        FILTER('Period', YEAR('Period'[Day 445]) = 2025),
-        FILTER('Reporting View', 'Reporting View'[Reporting View] = "Operational View"),
-        FILTER('Ship From', 'Ship From'[Country] = "Colombia"),
-        "Total Volumen", SUM('Metrics-Actuals-Vol'[btlr_unit_case_amt])
-    )
-    """
+    PATH_YAML = os.path.join(PROJECT_ROOT, 'playwright_test', "queries.yaml") 
+    PATH_OUTPUT = os.path.join(PROJECT_ROOT, 'playwright_test', "queries_answered.yaml")
 
-    
-    print(f"Buscando DLL en: {PATH_DLL}")
-    print("Ejecutando consulta...")
-    df = nsr_conn.ejecutar_query(query)
+    consultas = queries_yaml(PATH_YAML)
 
-    if df is not None:
-        print("\n--- Resultado Obtenido ---")
-        print(df.head())
+    for i, consulta in enumerate(consultas, start=1):
+
+        print(f"Ejecutando {i}/{len(consultas)} - ID {consulta['id']}")
+
+        df = nsr_conn.ejecutar_query(consulta["dax_query"])
+
+        if df is None:
+            consulta["dax_answer"] = {
+                "status": "error",
+                "data": None
+            }
+
+        elif df.empty:
+            consulta["dax_answer"] = {
+                "status": "ok",
+                "data": []
+            }
+
+        else:
+            consulta["dax_answer"] = {
+                "status": "ok",
+                "data": df.to_dict(orient="records")
+            }
+
+    for consulta in consultas:
+        consulta["dax_query"] = LiteralString(consulta["dax_query"])
+        
+    save_yaml(PATH_OUTPUT, consultas)
+
+    print(f"Resultados guardados en {PATH_OUTPUT}")

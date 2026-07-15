@@ -1,0 +1,3460 @@
+- id: 1
+  question: Give me the Unit Cases and Net Sales Revenue for Mexico, Colombia and
+    Brazil in 2026.
+  dax_query: |
+    EVALUATE
+    ADDCOLUMNS(
+        FILTER(
+            ALL('Ship From'[L1.5 - Country]),
+            'Ship From'[L1.5 - Country] IN { "Colombia", "Mexico", "Brazil" }
+        ),
+        "Unit Cases YTD",
+        CALCULATE(
+            [Unit Cases AC YTD],
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026")),
+            KEEPFILTERS(FILTER(ALL('Period'[Month 445]), 'Period'[Month 445] <> "")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        ),
+        "Net Sales Revenue YTD",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) YTD],
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026")),
+            KEEPFILTERS(FILTER(ALL('Period'[Month 445]), 'Period'[Month 445] <> "")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        )
+    )
+    ORDER BY 'Ship From'[L1.5 - Country] ASC
+  dax_answer:
+    status: ok
+    data:
+    - Ship From[L1.5 - Country]: Brazil
+      '[Unit Cases YTD]': 1228878666.6135
+      '[Net Sales Revenue YTD]': 20515406279.272522
+    - Ship From[L1.5 - Country]: Colombia
+      '[Unit Cases YTD]': 196959592.1121
+      '[Net Sales Revenue YTD]': 2762194376497.615
+    - Ship From[L1.5 - Country]: Mexico
+      '[Unit Cases YTD]': 2202660954.4562
+      '[Net Sales Revenue YTD]': 156355117450.85556
+- id: 3
+  question: Give me the Unit Cases and Net Sales Revenue for Mexico by Channel in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Channel'[LT1.2 - Channel Group],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Channel[LT1.2 - Channel Group]: Off Premise
+      '[Unit Cases]': 1782216271.9924
+      '[Net Sales Revenue]': 131328012238.36871
+    - Channel[LT1.2 - Channel Group]: On Premise
+      '[Unit Cases]': 242601850.098
+      '[Net Sales Revenue]': 20967606443.01449
+    - Channel[LT1.2 - Channel Group]: D2C
+      '[Unit Cases]': 177842832.3658
+      '[Net Sales Revenue]': 4059498769.474685
+- id: 4
+  question: Give me the Unit Cases and Net Sales Revenue for Colombia by Channel in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Channel'[LT1.2 - Channel Group],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Colombia"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Channel[LT1.2 - Channel Group]: Off Premise
+      '[Unit Cases]': 152073764.1776
+      '[Net Sales Revenue]': 2048269758646.0
+    - Channel[LT1.2 - Channel Group]: On Premise
+      '[Unit Cases]': 44557084.7001
+      '[Net Sales Revenue]': 710316643279.6154
+    - Channel[LT1.2 - Channel Group]: Others
+      '[Unit Cases]': 287655.0013
+      '[Net Sales Revenue]': 3175004379.0
+    - Channel[LT1.2 - Channel Group]: D2C
+      '[Unit Cases]': 41088.2331
+      '[Net Sales Revenue]': 432970193.0
+- id: 5
+  question: Give me the Unit Cases and Net Sales Revenue for Brasil by Channel in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Channel'[LT1.2 - Channel Group],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Brazil"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Channel[LT1.2 - Channel Group]: Off Premise
+      '[Unit Cases]': 886041792.2184
+      '[Net Sales Revenue]': 14651085059.586132
+    - Channel[LT1.2 - Channel Group]: On Premise
+      '[Unit Cases]': 167081193.0019
+      '[Net Sales Revenue]': 3464475416.5017686
+    - Channel[LT1.2 - Channel Group]: Off Premise - B2B
+      '[Unit Cases]': 175755648.1223
+      '[Net Sales Revenue]': 2399844747.7646093
+    - Channel[LT1.2 - Channel Group]: .nan
+      '[Unit Cases]': 33.2709
+      '[Net Sales Revenue]': 1055.4199999999998
+- id: 6
+  question: Give me the Unit Cases and Net Sales Revenue for Mexico by Client in 2026
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Ship To'[LT1.2 - Customer],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Ship To[LT1.2 - Customer]: All Other Customer
+      '[Unit Cases]': 1709934567.2297
+      '[Net Sales Revenue]': 114671418500.66428
+    - Ship To[LT1.2 - Customer]: Oxxo
+      '[Unit Cases]': 180974213.1471
+      '[Net Sales Revenue]': 12936593761.85773
+    - Ship To[LT1.2 - Customer]: Wal-Mart Inc.
+      '[Unit Cases]': 107180810.7907
+      '[Net Sales Revenue]': 10893798751.121809
+    - Ship To[LT1.2 - Customer]: Soriana
+      '[Unit Cases]': 20665459.2641
+      '[Net Sales Revenue]': 1922888513.0700078
+    - Ship To[LT1.2 - Customer]: Chedraui
+      '[Unit Cases]': 20500079.1086
+      '[Net Sales Revenue]': 1832540634.5631
+    - Ship To[LT1.2 - Customer]: Six
+      '[Unit Cases]': 19128504.1725
+      '[Net Sales Revenue]': 1536225816.448799
+    - Ship To[LT1.2 - Customer]: 7-Eleven, Inc.
+      '[Unit Cases]': 16191834.6504
+      '[Net Sales Revenue]': 1420883455.4688997
+    - Ship To[LT1.2 - Customer]: Farmacias Guadalajara
+      '[Unit Cases]': 12216986.5932
+      '[Net Sales Revenue]': 1208873636.5796597
+    - Ship To[LT1.2 - Customer]: TIENDAS NETO
+      '[Unit Cases]': 13359210.7661
+      '[Net Sales Revenue]': 1122945207.7698803
+    - Ship To[LT1.2 - Customer]: HEB
+      '[Unit Cases]': 7424379.2241
+      '[Net Sales Revenue]': 742601423.804
+    - Ship To[LT1.2 - Customer]: Safeway
+      '[Unit Cases]': 6874515.3442
+      '[Net Sales Revenue]': 602497926.269882
+    - Ship To[LT1.2 - Customer]: Costco Wholesale
+      '[Unit Cases]': 4045528.8579
+      '[Net Sales Revenue]': 600195289.3771999
+    - Ship To[LT1.2 - Customer]: Operadora Futurama
+      '[Unit Cases]': 4995564.1048
+      '[Net Sales Revenue]': 445131867.2099999
+    - Ship To[LT1.2 - Customer]: Cinepolis
+      '[Unit Cases]': 7467852.9174
+      '[Net Sales Revenue]': 432864761.20071995
+    - Ship To[LT1.2 - Customer]: City Club
+      '[Unit Cases]': 3281220.0171
+      '[Net Sales Revenue]': 403526116.88930005
+    - Ship To[LT1.2 - Customer]: Modelorama
+      '[Unit Cases]': 4246330.0224
+      '[Net Sales Revenue]': 384599181.5864097
+    - Ship To[LT1.2 - Customer]: Comercial Mexicana (CCM)
+      '[Unit Cases]': 3780685.1059
+      '[Net Sales Revenue]': 350910152.81498
+    - Ship To[LT1.2 - Customer]: Almacenes Distribuidores de La frontera
+      '[Unit Cases]': 3802871.585
+      '[Net Sales Revenue]': 313290844.32
+    - Ship To[LT1.2 - Customer]: Circle K Corp
+      '[Unit Cases]': 3662762.106
+      '[Net Sales Revenue]': 307158980.18359995
+    - Ship To[LT1.2 - Customer]: Operadora de Cd Juarez
+      '[Unit Cases]': 3544436.4428
+      '[Net Sales Revenue]': 302636856.71
+    - Ship To[LT1.2 - Customer]: SERVICIO COMERCIAL GARIS S.A. DE C.V.
+      '[Unit Cases]': 2359955.295
+      '[Net Sales Revenue]': 210108670.922
+    - Ship To[LT1.2 - Customer]: CKE
+      '[Unit Cases]': 4159823.9614
+      '[Net Sales Revenue]': 201297313.55554008
+    - Ship To[LT1.2 - Customer]: Calimax
+      '[Unit Cases]': 2063289.3484
+      '[Net Sales Revenue]': 200142701.90000004
+    - Ship To[LT1.2 - Customer]: Commercializadora Farmaceutica de Chiapa
+      '[Unit Cases]': 1685610.5681
+      '[Net Sales Revenue]': 168888735.48461998
+    - Ship To[LT1.2 - Customer]: TIENDAS COMERCIAL MEXICANA SA DE CV
+      '[Unit Cases]': 907084.7199
+      '[Net Sales Revenue]': 167096576.03100002
+    - Ship To[LT1.2 - Customer]: Yum! Brands, Inc.
+      '[Unit Cases]': 3167104.367
+      '[Net Sales Revenue]': 165170957.24514008
+    - Ship To[LT1.2 - Customer]: Unassigned
+      '[Unit Cases]': 2284960.5817
+      '[Net Sales Revenue]': 145675379.73620006
+    - Ship To[LT1.2 - Customer]: McDonald's
+      '[Unit Cases]': 3424016.0984
+      '[Net Sales Revenue]': 142776120.2939
+    - Ship To[LT1.2 - Customer]: Cinemex
+      '[Unit Cases]': 2325008.0013
+      '[Net Sales Revenue]': 141363373.54207993
+    - Ship To[LT1.2 - Customer]: Super Gutierrez, SA De C.V.
+      '[Unit Cases]': 1555687.3182
+      '[Net Sales Revenue]': 120868043.43999997
+    - Ship To[LT1.2 - Customer]: Stephen Martin Go
+      '[Unit Cases]': 1645346.014
+      '[Net Sales Revenue]': 119756338.51030001
+    - Ship To[LT1.2 - Customer]: Grupo Bimbo
+      '[Unit Cases]': 914709.936
+      '[Net Sales Revenue]': 116992322.27529998
+    - Ship To[LT1.2 - Customer]: Tiendas de Descuento Arteli Sa de Cv
+      '[Unit Cases]': 1204618.3896
+      '[Net Sales Revenue]': 97201989.06700003
+    - Ship To[LT1.2 - Customer]: Coorporacion El Asturiano S.A.
+      '[Unit Cases]': 1574020.1424
+      '[Net Sales Revenue]': 95309980.51860002
+    - Ship To[LT1.2 - Customer]: Comercializadora Merco
+      '[Unit Cases]': 963187.5042
+      '[Net Sales Revenue]': 85845140.71
+    - Ship To[LT1.2 - Customer]: Farmacias Benavides
+      '[Unit Cases]': 608389.1611
+      '[Net Sales Revenue]': 77433820.74126795
+    - Ship To[LT1.2 - Customer]: Super Q S.A.
+      '[Unit Cases]': 1361997.586
+      '[Net Sales Revenue]': 76874410.04699999
+    - Ship To[LT1.2 - Customer]: Waldo?s Dollar Mart de Mexico S. de R.L.
+      '[Unit Cases]': 636824.8787
+      '[Net Sales Revenue]': 72382865.8225
+    - Ship To[LT1.2 - Customer]: Subway
+      '[Unit Cases]': 953526.0798
+      '[Net Sales Revenue]': 71696847.75339995
+    - Ship To[LT1.2 - Customer]: FEMSA Comercio
+      '[Unit Cases]': 731353.2933
+      '[Net Sales Revenue]': 69838922.60788003
+    - Ship To[LT1.2 - Customer]: Tiendas Grand S.A. de C.V.
+      '[Unit Cases]': 823096.5823
+      '[Net Sales Revenue]': 60587608.940999985
+    - Ship To[LT1.2 - Customer]: SUPER FASTY
+      '[Unit Cases]': 1043211.8015
+      '[Net Sales Revenue]': 58731784.132000014
+    - Ship To[LT1.2 - Customer]: Almacenes Ibarra, S.A. de C.V
+      '[Unit Cases]': 793480.0171
+      '[Net Sales Revenue]': 57623749.83099999
+    - Ship To[LT1.2 - Customer]: Smart & Final Dev Noroeste SA de CV
+      '[Unit Cases]': 400227.1781
+      '[Net Sales Revenue]': 54007671.309999995
+    - Ship To[LT1.2 - Customer]: Tiendas Garces S.A .de C.V.
+      '[Unit Cases]': 640686.5691
+      '[Net Sales Revenue]': 53501650.52099999
+    - Ship To[LT1.2 - Customer]: Amazon Inc
+      '[Unit Cases]': 323871.4787
+      '[Net Sales Revenue]': 52014581.330000006
+    - Ship To[LT1.2 - Customer]: Grupo ADO
+      '[Unit Cases]': 557346.7016
+      '[Net Sales Revenue]': 48811990.42200001
+    - Ship To[LT1.2 - Customer]: Alsea
+      '[Unit Cases]': 395847.023
+      '[Net Sales Revenue]': 43592595.525199994
+    - Ship To[LT1.2 - Customer]: Xcaret
+      '[Unit Cases]': 663291.3169
+      '[Net Sales Revenue]': 42298967.01149997
+    - Ship To[LT1.2 - Customer]: Aeromexico
+      '[Unit Cases]': 621166.4413
+      '[Net Sales Revenue]': 42110692.9626
+    - Ship To[LT1.2 - Customer]: Wendy's
+      '[Unit Cases]': 494967.4901
+      '[Net Sales Revenue]': 37935052.648499995
+    - Ship To[LT1.2 - Customer]: Wingstop
+      '[Unit Cases]': 176695.0576
+      '[Net Sales Revenue]': 32391917.157300007
+    - Ship To[LT1.2 - Customer]: Gastrosur SA de CV
+      '[Unit Cases]': 287072.541
+      '[Net Sales Revenue]': 27972633.436799996
+    - Ship To[LT1.2 - Customer]: Grupo Posadas
+      '[Unit Cases]': 238159.5997
+      '[Net Sales Revenue]': 27674228.70999999
+    - Ship To[LT1.2 - Customer]: Carso
+      '[Unit Cases]': 191072.6284
+      '[Net Sales Revenue]': 26741005.001600012
+    - Ship To[LT1.2 - Customer]: LA ESPERANZA
+      '[Unit Cases]': 312397.1451
+      '[Net Sales Revenue]': 26388164.97299999
+    - Ship To[LT1.2 - Customer]: Areas Group
+      '[Unit Cases]': 236374.5777
+      '[Net Sales Revenue]': 26385057.94162
+    - Ship To[LT1.2 - Customer]: Operadora De Reynosa S.A. De C.V.
+      '[Unit Cases]': 225599.4568
+      '[Net Sales Revenue]': 25773369.80999999
+    - Ship To[LT1.2 - Customer]: The Home Depot
+      '[Unit Cases]': 261706.1552
+      '[Net Sales Revenue]': 25628501.16180001
+    - Ship To[LT1.2 - Customer]: CERVECENTRO
+      '[Unit Cases]': 316068.5442
+      '[Net Sales Revenue]': 24478460.100000005
+    - Ship To[LT1.2 - Customer]: Distribuidora Liverpool, S.A. de C.V.
+      '[Unit Cases]': 129076.2133
+      '[Net Sales Revenue]': 22426068.687999997
+    - Ship To[LT1.2 - Customer]: PriceSmart
+      '[Unit Cases]': 225029.1168
+      '[Net Sales Revenue]': 21196470.713700023
+    - Ship To[LT1.2 - Customer]: PASTES KIKOS
+      '[Unit Cases]': 144320.3271
+      '[Net Sales Revenue]': 20402493.588700004
+    - Ship To[LT1.2 - Customer]: Corp. Mexicana de Restaurantes
+      '[Unit Cases]': 220650.6405
+      '[Net Sales Revenue]': 20260615.92269999
+    - Ship To[LT1.2 - Customer]: Concesionaria Vuela Compania de Aviacion
+      '[Unit Cases]': 175546.4452
+      '[Net Sales Revenue]': 19318655.853
+    - Ship To[LT1.2 - Customer]: FISHER?S
+      '[Unit Cases]': 83241.883
+      '[Net Sales Revenue]': 17151192.80700001
+    - Ship To[LT1.2 - Customer]: Tim Horton's
+      '[Unit Cases]': 136944.2707
+      '[Net Sales Revenue]': 16119601.80389999
+    - Ship To[LT1.2 - Customer]: Compass Group Plc
+      '[Unit Cases]': 109724.1925
+      '[Net Sales Revenue]': 16047845.179000005
+    - Ship To[LT1.2 - Customer]: Krispy Kreme
+      '[Unit Cases]': 117899.4953
+      '[Net Sales Revenue]': 15864883.919599991
+    - Ship To[LT1.2 - Customer]: Hilton Group Plc
+      '[Unit Cases]': 281957.0435
+      '[Net Sales Revenue]': 15518091.812899996
+    - Ship To[LT1.2 - Customer]: SITYF
+      '[Unit Cases]': 165642.254
+      '[Net Sales Revenue]': 13848593.753600003
+    - Ship To[LT1.2 - Customer]: Sodexo
+      '[Unit Cases]': 178113.835
+      '[Net Sales Revenue]': 13248192.616900006
+    - Ship To[LT1.2 - Customer]: Aramark
+      '[Unit Cases]': 86506.6374
+      '[Net Sales Revenue]': 13212598.690000003
+    - Ship To[LT1.2 - Customer]: Eric Kayser
+      '[Unit Cases]': 85533.0339
+      '[Net Sales Revenue]': 12531298.804
+    - Ship To[LT1.2 - Customer]: Hooters
+      '[Unit Cases]': 67975.5929
+      '[Net Sales Revenue]': 11929772.2103
+    - Ship To[LT1.2 - Customer]: AISA Inmuebles S.A. de C.V.
+      '[Unit Cases]': 89611.6465
+      '[Net Sales Revenue]': 11739040.989999998
+    - Ship To[LT1.2 - Customer]: Six Flags, Inc.
+      '[Unit Cases]': 153272.3044
+      '[Net Sales Revenue]': 11695823.398800004
+    - Ship To[LT1.2 - Customer]: REBEL WINGS
+      '[Unit Cases]': 55580.9299
+      '[Net Sales Revenue]': 11345274.621899996
+    - Ship To[LT1.2 - Customer]: Operadora Aeroboutiques SA de CV
+      '[Unit Cases]': 87420.6525
+      '[Net Sales Revenue]': 10554919.761359997
+    - Ship To[LT1.2 - Customer]: Aeroenlaces Nacionales S.A. de C.V.
+      '[Unit Cases]': 91481.0528
+      '[Net Sales Revenue]': 10385679.310000002
+    - Ship To[LT1.2 - Customer]: Brinker International Inc.
+      '[Unit Cases]': 102819.5595
+      '[Net Sales Revenue]': 10207795.888199994
+    - Ship To[LT1.2 - Customer]: Grupo Flecha Amarilla
+      '[Unit Cases]': 75977.1108
+      '[Net Sales Revenue]': 9154381.798000004
+    - Ship To[LT1.2 - Customer]: SONORA
+      '[Unit Cases]': 45086.279
+      '[Net Sales Revenue]': 8873061.9074
+    - Ship To[LT1.2 - Customer]: Accor
+      '[Unit Cases]': 82516.1861
+      '[Net Sales Revenue]': 8761081.167699998
+    - Ship To[LT1.2 - Customer]: Afc Enterprises Inc.
+      '[Unit Cases]': 83793.3551
+      '[Net Sales Revenue]': 8287051.4076
+    - Ship To[LT1.2 - Customer]: Coco Bongo
+      '[Unit Cases]': 112880.0088
+      '[Net Sales Revenue]': 8209300.5755
+    - Ship To[LT1.2 - Customer]: SUPER IBERIA VECINO
+      '[Unit Cases]': 124926.381
+      '[Net Sales Revenue]': 8180209.154000001
+    - Ship To[LT1.2 - Customer]: BATLE GROUP
+      '[Unit Cases]': 225639.4125
+      '[Net Sales Revenue]': 7964682.9957
+    - Ship To[LT1.2 - Customer]: P Tsakiris
+      '[Unit Cases]': 51801.5866
+      '[Net Sales Revenue]': 7289532.427600001
+    - Ship To[LT1.2 - Customer]: Franquicias Maso En Expansion SA DE CV
+      '[Unit Cases]': 34216.3919
+      '[Net Sales Revenue]': 6808492.524770002
+    - Ship To[LT1.2 - Customer]: S?per Oui de San Rafael S.A. de C.V
+      '[Unit Cases]': 106114.45
+      '[Net Sales Revenue]': 6716536.519000002
+    - Ship To[LT1.2 - Customer]: Cheesecake Factory
+      '[Unit Cases]': 62667.0936
+      '[Net Sales Revenue]': 6078652.606
+    - Ship To[LT1.2 - Customer]: FARMACIAS COFAR
+      '[Unit Cases]': 59832.4899
+      '[Net Sales Revenue]': 5896212.857000001
+    - Ship To[LT1.2 - Customer]: GRUPO PRESIDENTE
+      '[Unit Cases]': 23882.7631
+      '[Net Sales Revenue]': 5793910.688999998
+    - Ship To[LT1.2 - Customer]: Franquicias Recorcholis S.A. de C.V.
+      '[Unit Cases]': 47327.9225
+      '[Net Sales Revenue]': 5714349.075400002
+    - Ship To[LT1.2 - Customer]: El Palacio de Hierro SA de CV
+      '[Unit Cases]': 26312.621
+      '[Net Sales Revenue]': 5306255.562000001
+    - Ship To[LT1.2 - Customer]: Peter Piper Pizza
+      '[Unit Cases]': 62056.0982
+      '[Net Sales Revenue]': 5086171.540000005
+    - Ship To[LT1.2 - Customer]: InterContinental Hotels Group
+      '[Unit Cases]': 37188.446
+      '[Net Sales Revenue]': 4357593.874
+    - Ship To[LT1.2 - Customer]: Princess
+      '[Unit Cases]': 167056.038
+      '[Net Sales Revenue]': 4312295.400500003
+    - Ship To[LT1.2 - Customer]: Inmobiliaria Hascor S.A. de C.V.
+      '[Unit Cases]': 30790.6842
+      '[Net Sales Revenue]': 4106975.950000001
+    - Ship To[LT1.2 - Customer]: Applebee's
+      '[Unit Cases]': 27404.2678
+      '[Net Sales Revenue]': 4004897.8200000008
+    - Ship To[LT1.2 - Customer]: FARMACIAS PDC
+      '[Unit Cases]': 25621.446
+      '[Net Sales Revenue]': 3996935.1888000006
+    - Ship To[LT1.2 - Customer]: HOTEL CAMINO REAL
+      '[Unit Cases]': 57333.8528
+      '[Net Sales Revenue]': 3702292.368999999
+    - Ship To[LT1.2 - Customer]: ABARROTES DUNO
+      '[Unit Cases]': 76915.8565
+      '[Net Sales Revenue]': 3623625.897
+    - Ship To[LT1.2 - Customer]: Omni
+      '[Unit Cases]': 93526.7715
+      '[Net Sales Revenue]': 3621357.9847000004
+    - Ship To[LT1.2 - Customer]: GARABATOS
+      '[Unit Cases]': 17665.5456
+      '[Net Sales Revenue]': 3472421.9299999992
+    - Ship To[LT1.2 - Customer]: SIA COMEDORES
+      '[Unit Cases]': 27696.3423
+      '[Net Sales Revenue]': 3460633.9286000007
+    - Ship To[LT1.2 - Customer]: SUPER 2000
+      '[Unit Cases]': 34948.4625
+      '[Net Sales Revenue]': 3423582.024
+    - Ship To[LT1.2 - Customer]: SUPER JOEL
+      '[Unit Cases]': 110933.1739
+      '[Net Sales Revenue]': 3380345.2559999996
+    - Ship To[LT1.2 - Customer]: Hermelinda P?rez Cruz
+      '[Unit Cases]': 41150.0309
+      '[Net Sales Revenue]': 3334722.921
+    - Ship To[LT1.2 - Customer]: Johnny Rockets Group Inc
+      '[Unit Cases]': 24049.6732
+      '[Net Sales Revenue]': 3153034.3877000012
+    - Ship To[LT1.2 - Customer]: CALIFA
+      '[Unit Cases]': 16105.1094
+      '[Net Sales Revenue]': 2996002.289999999
+    - Ship To[LT1.2 - Customer]: MR SUSHI
+      '[Unit Cases]': 17887.023
+      '[Net Sales Revenue]': 2785276.7589
+    - Ship To[LT1.2 - Customer]: Carlson
+      '[Unit Cases]': 21886.6765
+      '[Net Sales Revenue]': 2625974.2989999987
+    - Ship To[LT1.2 - Customer]: Tesco Plc
+      '[Unit Cases]': 28619.5054
+      '[Net Sales Revenue]': 2616179.0520000006
+    - Ship To[LT1.2 - Customer]: Club Med
+      '[Unit Cases]': 101138.8811
+      '[Net Sales Revenue]': 2582187.4375000005
+    - Ship To[LT1.2 - Customer]: Texas Roadhouse
+      '[Unit Cases]': 24489.8962
+      '[Net Sales Revenue]': 2560051.283199999
+    - Ship To[LT1.2 - Customer]: IHOP
+      '[Unit Cases]': 23703.7793
+      '[Net Sales Revenue]': 2513386.3499000007
+    - Ship To[LT1.2 - Customer]: PERROS Y BURROS
+      '[Unit Cases]': 15378.2978
+      '[Net Sales Revenue]': 2451381.6699999995
+    - Ship To[LT1.2 - Customer]: Oriental Wok SA de CV
+      '[Unit Cases]': 15314.0501
+      '[Net Sales Revenue]': 2365017.2200000007
+    - Ship To[LT1.2 - Customer]: LUPILLOS
+      '[Unit Cases]': 37110.6295
+      '[Net Sales Revenue]': 2324013.213
+    - Ship To[LT1.2 - Customer]: FARMACIAS ESQUIVAR
+      '[Unit Cases]': 23122.7332
+      '[Net Sales Revenue]': 2271670.2240000004
+    - Ship To[LT1.2 - Customer]: Nikkori
+      '[Unit Cases]': 13629.749
+      '[Net Sales Revenue]': 2231458.2890000013
+    - Ship To[LT1.2 - Customer]: Paris Baguette Singapore Pte Ltd
+      '[Unit Cases]': 25934.3346
+      '[Net Sales Revenue]': 2156442.8479999993
+    - Ship To[LT1.2 - Customer]: POTZOLLCALLI
+      '[Unit Cases]': 11234.781
+      '[Net Sales Revenue]': 2138099.357
+    - Ship To[LT1.2 - Customer]: NEWREST
+      '[Unit Cases]': 13973.2306
+      '[Net Sales Revenue]': 1983265.0846999993
+    - Ship To[LT1.2 - Customer]: Papa John's Pizza
+      '[Unit Cases]': 17435.7213
+      '[Net Sales Revenue]': 1932361.608
+    - Ship To[LT1.2 - Customer]: Flamingo
+      '[Unit Cases]': 37045.7661
+      '[Net Sales Revenue]': 1877515.3907000003
+    - Ship To[LT1.2 - Customer]: S S Global SA de CV
+      '[Unit Cases]': 11032.7535
+      '[Net Sales Revenue]': 1844315.1800000002
+    - Ship To[LT1.2 - Customer]: Buffalo Wild Wings
+      '[Unit Cases]': 13166.0548
+      '[Net Sales Revenue]': 1747714.0870000003
+    - Ship To[LT1.2 - Customer]: AMOXXO
+      '[Unit Cases]': 44710.9616
+      '[Net Sales Revenue]': 1732375.2943999998
+    - Ship To[LT1.2 - Customer]: AMF Bowling
+      '[Unit Cases]': 12569.5369
+      '[Net Sales Revenue]': 1699344.86
+    - Ship To[LT1.2 - Customer]: MARISCOS VILLA RICA
+      '[Unit Cases]': 10787.9555
+      '[Net Sales Revenue]': 1693833.6530000004
+    - Ship To[LT1.2 - Customer]: FARMACIA YIREH
+      '[Unit Cases]': 15374.4977
+      '[Net Sales Revenue]': 1636281.6970000002
+    - Ship To[LT1.2 - Customer]: El Pollo Loco
+      '[Unit Cases]': 19235.7758
+      '[Net Sales Revenue]': 1613893.334
+    - Ship To[LT1.2 - Customer]: Instituto Tecn de Estd Supr Monterrey AC
+      '[Unit Cases]': 64368.3546
+      '[Net Sales Revenue]': 1593456.1369999996
+    - Ship To[LT1.2 - Customer]: LA EUROPEA
+      '[Unit Cases]': 13725.278
+      '[Net Sales Revenue]': 1511605.4411000002
+    - Ship To[LT1.2 - Customer]: Shell
+      '[Unit Cases]': 14020.7205
+      '[Net Sales Revenue]': 1493215.264
+    - Ship To[LT1.2 - Customer]: FARMACIAS PUREX
+      '[Unit Cases]': 17211.5764
+      '[Net Sales Revenue]': 1434914.6979999999
+    - Ship To[LT1.2 - Customer]: FARMACIA SERVI EXPRESS
+      '[Unit Cases]': 16006.6637
+      '[Net Sales Revenue]': 1409741.1269999996
+    - Ship To[LT1.2 - Customer]: Outback Steakhouse
+      '[Unit Cases]': 10338.8646
+      '[Net Sales Revenue]': 1373435.8499999999
+    - Ship To[LT1.2 - Customer]: Hotel Las Brisas
+      '[Unit Cases]': 8772.1902
+      '[Net Sales Revenue]': 1352379.266
+    - Ship To[LT1.2 - Customer]: Impulsora de Restaurantes el Fogoncito
+      '[Unit Cases]': 6890.1669
+      '[Net Sales Revenue]': 1328907.0707
+    - Ship To[LT1.2 - Customer]: CAIPIRINHA
+      '[Unit Cases]': 7199.7961
+      '[Net Sales Revenue]': 1237092.7599999998
+    - Ship To[LT1.2 - Customer]: FARMACIAS MEDINA
+      '[Unit Cases]': 13592.3625
+      '[Net Sales Revenue]': 1218076.132
+    - Ship To[LT1.2 - Customer]: Hoteles Quinta Real
+      '[Unit Cases]': 13417.416
+      '[Net Sales Revenue]': 1189638.84
+    - Ship To[LT1.2 - Customer]: FLAUTAS DEL ARCE
+      '[Unit Cases]': 7055.5287
+      '[Net Sales Revenue]': 1177828.4519999993
+    - Ship To[LT1.2 - Customer]: HOTEL NYX
+      '[Unit Cases]': 28824.3556
+      '[Net Sales Revenue]': 1162068.5309000001
+    - Ship To[LT1.2 - Customer]: Chazz
+      '[Unit Cases]': 6926.7622
+      '[Net Sales Revenue]': 1148618.9
+    - Ship To[LT1.2 - Customer]: EL PUNTO
+      '[Unit Cases]': 11944.8115
+      '[Net Sales Revenue]': 1139742.7719999999
+    - Ship To[LT1.2 - Customer]: Tony Roma's
+      '[Unit Cases]': 7507.3396
+      '[Net Sales Revenue]': 1120584.5339999998
+    - Ship To[LT1.2 - Customer]: United Airlines
+      '[Unit Cases]': 6495.403
+      '[Net Sales Revenue]': 1052435.5700000003
+    - Ship To[LT1.2 - Customer]: ASADERO CIEN
+      '[Unit Cases]': 8068.391
+      '[Net Sales Revenue]': 1025290.8580000001
+    - Ship To[LT1.2 - Customer]: Multimedios Estrellas de Oro
+      '[Unit Cases]': 5590.5993
+      '[Net Sales Revenue]': 1010599.5300000004
+    - Ship To[LT1.2 - Customer]: GO CINEMA
+      '[Unit Cases]': 9533.3674
+      '[Net Sales Revenue]': 1009204.5399999997
+    - Ship To[LT1.2 - Customer]: Marriott International
+      '[Unit Cases]': 15590.4125
+      '[Net Sales Revenue]': 1002237.2
+    - Ship To[LT1.2 - Customer]: DON MANOLITO
+      '[Unit Cases]': 6640.9936
+      '[Net Sales Revenue]': 973170.6170000003
+    - Ship To[LT1.2 - Customer]: FOODOLOGY
+      '[Unit Cases]': 10176.1137
+      '[Net Sales Revenue]': 963044.6013000002
+    - Ship To[LT1.2 - Customer]: JOY
+      '[Unit Cases]': 12718.3536
+      '[Net Sales Revenue]': 956071.9119999999
+    - Ship To[LT1.2 - Customer]: Grupo Madero
+      '[Unit Cases]': 4339.2634
+      '[Net Sales Revenue]': 951629.07
+    - Ship To[LT1.2 - Customer]: Prohomi SA de CV
+      '[Unit Cases]': 8643.5565
+      '[Net Sales Revenue]': 873169.331
+    - Ship To[LT1.2 - Customer]: Amor por el Cine SA de CV
+      '[Unit Cases]': 6408.209
+      '[Net Sales Revenue]': 847694.528
+    - Ship To[LT1.2 - Customer]: Panaderia y Servicios Tradicionales SA
+      '[Unit Cases]': 4222.951
+      '[Net Sales Revenue]': 821135.5010000002
+    - Ship To[LT1.2 - Customer]: Edeka
+      '[Unit Cases]': 13530.7193
+      '[Net Sales Revenue]': 791039.1199999994
+    - Ship To[LT1.2 - Customer]: Grupo Super Cream S.A. de C.V.
+      '[Unit Cases]': 5059.0818
+      '[Net Sales Revenue]': 741378.3189999998
+    - Ship To[LT1.2 - Customer]: TACOS EL RODEO
+      '[Unit Cases]': 5365.5994
+      '[Net Sales Revenue]': 706677.0709999998
+    - Ship To[LT1.2 - Customer]: Oriental Grill S.A. de C.V.
+      '[Unit Cases]': 3593.5509
+      '[Net Sales Revenue]': 703999.5799999998
+    - Ship To[LT1.2 - Customer]: DE LA MANCHA
+      '[Unit Cases]': 3032.8701
+      '[Net Sales Revenue]': 689533.3500000002
+    - Ship To[LT1.2 - Customer]: Farmacias Gi S.A. de C.V.
+      '[Unit Cases]': 6786.8299
+      '[Net Sales Revenue]': 664075.7649999998
+    - Ship To[LT1.2 - Customer]: Office Depot, Inc
+      '[Unit Cases]': 4711.2781
+      '[Net Sales Revenue]': 639459.6010000001
+    - Ship To[LT1.2 - Customer]: ECE
+      '[Unit Cases]': 7112.0046
+      '[Net Sales Revenue]': 634077.2429
+    - Ship To[LT1.2 - Customer]: BELLINHAUSEN
+      '[Unit Cases]': 2468.9503
+      '[Net Sales Revenue]': 623392.88
+    - Ship To[LT1.2 - Customer]: LA HOJALDRA
+      '[Unit Cases]': 5891.0065
+      '[Net Sales Revenue]': 622031.5380000001
+    - Ship To[LT1.2 - Customer]: Las Alitas
+      '[Unit Cases]': 4619.8929
+      '[Net Sales Revenue]': 611480.0903
+    - Ship To[LT1.2 - Customer]: NH Hotels
+      '[Unit Cases]': 6291.6257
+      '[Net Sales Revenue]': 559451.4565
+    - Ship To[LT1.2 - Customer]: CL?SICO
+      '[Unit Cases]': 2531.6169
+      '[Net Sales Revenue]': 466979.26
+    - Ship To[LT1.2 - Customer]: MANKA FOODS
+      '[Unit Cases]': 3661.2621
+      '[Net Sales Revenue]': 462814.4100000001
+    - Ship To[LT1.2 - Customer]: ADO/GL UNO
+      '[Unit Cases]': 6803.9592
+      '[Net Sales Revenue]': 408470.99999999994
+    - Ship To[LT1.2 - Customer]: ANTOJITOS ANITA
+      '[Unit Cases]': 5462.6463
+      '[Net Sales Revenue]': 386466.014
+    - Ship To[LT1.2 - Customer]: MANANITAS
+      '[Unit Cases]': 2540.238
+      '[Net Sales Revenue]': 348656.07000000007
+    - Ship To[LT1.2 - Customer]: ALTABRISA BOWLING
+      '[Unit Cases]': 3163.3952
+      '[Net Sales Revenue]': 344706.53890000004
+    - Ship To[LT1.2 - Customer]: SPORTWAY
+      '[Unit Cases]': 2558.8814
+      '[Net Sales Revenue]': 333510.318
+    - Ship To[LT1.2 - Customer]: TAQUERIA LA UNICA
+      '[Unit Cases]': 1892.5036
+      '[Net Sales Revenue]': 323855.0760000001
+    - Ship To[LT1.2 - Customer]: Dairy Queen
+      '[Unit Cases]': 11814.3851
+      '[Net Sales Revenue]': 309657.3820000001
+    - Ship To[LT1.2 - Customer]: American Airlines
+      '[Unit Cases]': 2304.5636
+      '[Net Sales Revenue]': 293443.22
+    - Ship To[LT1.2 - Customer]: Eurest Proper Meals de Mexico S.A. de CV
+      '[Unit Cases]': 4822.9153
+      '[Net Sales Revenue]': 291810.99
+    - Ship To[LT1.2 - Customer]: LOS ARBOLITOS DE CAJEME
+      '[Unit Cases]': 1501.2832
+      '[Net Sales Revenue]': 286705.77999999997
+    - Ship To[LT1.2 - Customer]: COLORINES TEPOZTL?N
+      '[Unit Cases]': 2393.1949
+      '[Net Sales Revenue]': 280907.33999999997
+    - Ship To[LT1.2 - Customer]: Taco Inn
+      '[Unit Cases]': 1759.936
+      '[Net Sales Revenue]': 279210.3930000001
+    - Ship To[LT1.2 - Customer]: EL PORTAL DE LA JAIBA
+      '[Unit Cases]': 1241.6329
+      '[Net Sales Revenue]': 279113.24
+    - Ship To[LT1.2 - Customer]: Farmacias El Fenix
+      '[Unit Cases]': 2883.3985
+      '[Net Sales Revenue]': 272797.0899999999
+    - Ship To[LT1.2 - Customer]: WINGS CITY
+      '[Unit Cases]': 1048.682
+      '[Net Sales Revenue]': 219120.69999999992
+    - Ship To[LT1.2 - Customer]: ZOOLOGICO DE ZACANGO
+      '[Unit Cases]': 1834.3739
+      '[Net Sales Revenue]': 182594.05599999995
+    - Ship To[LT1.2 - Customer]: DON GIOVANNI
+      '[Unit Cases]': 1714.9049
+      '[Net Sales Revenue]': 179449.26
+    - Ship To[LT1.2 - Customer]: LAS PARRILLAS
+      '[Unit Cases]': 814.7776
+      '[Net Sales Revenue]': 173473.25999999995
+    - Ship To[LT1.2 - Customer]: Cabo Grill S.A. de C.V.
+      '[Unit Cases]': 723.4848
+      '[Net Sales Revenue]': 155762.67999999996
+    - Ship To[LT1.2 - Customer]: Arrachera House S.A. de C.V.
+      '[Unit Cases]': 1013.1793
+      '[Net Sales Revenue]': 146403.77
+    - Ship To[LT1.2 - Customer]: Bennigans
+      '[Unit Cases]': 683.9438
+      '[Net Sales Revenue]': 132429.30000000002
+    - Ship To[LT1.2 - Customer]: BRASILEIRINHO
+      '[Unit Cases]': 549.0313
+      '[Net Sales Revenue]': 131150.69
+    - Ship To[LT1.2 - Customer]: PIZZAS DE LA LE?A
+      '[Unit Cases]': 893.898
+      '[Net Sales Revenue]': 125008.21
+    - Ship To[LT1.2 - Customer]: Bodegas Alianza
+      '[Unit Cases]': 993.7126
+      '[Net Sales Revenue]': 124092.85940000003
+    - Ship To[LT1.2 - Customer]: POLLOS RIO
+      '[Unit Cases]': 704.7022
+      '[Net Sales Revenue]': 118596.34999999999
+    - Ship To[LT1.2 - Customer]: Wyndham Worldwide
+      '[Unit Cases]': 2124.1263
+      '[Net Sales Revenue]': 110440.84999999998
+    - Ship To[LT1.2 - Customer]: VELERO TIA LICHA
+      '[Unit Cases]': 831.0265
+      '[Net Sales Revenue]': 103267.921
+    - Ship To[LT1.2 - Customer]: MC CARTHY?S IRISH PUB
+      '[Unit Cases]': 578.7434
+      '[Net Sales Revenue]': 103026.08999999998
+    - Ship To[LT1.2 - Customer]: Piccolo
+      '[Unit Cases]': 586.0938
+      '[Net Sales Revenue]': 96127.10999999999
+    - Ship To[LT1.2 - Customer]: RINC?N & GPO GUAVOS
+      '[Unit Cases]': 510.5414
+      '[Net Sales Revenue]': 93540.93000000001
+    - Ship To[LT1.2 - Customer]: Panda Restaurant Group
+      '[Unit Cases]': 768.1659
+      '[Net Sales Revenue]': 92347.56000000001
+    - Ship To[LT1.2 - Customer]: ASADERO LOS TROMPOS
+      '[Unit Cases]': 529.5087
+      '[Net Sales Revenue]': 89130.15000000001
+    - Ship To[LT1.2 - Customer]: El Porton
+      '[Unit Cases]': 553.378
+      '[Net Sales Revenue]': 75786.31000000003
+    - Ship To[LT1.2 - Customer]: California Pizza Kitchen Inc.
+      '[Unit Cases]': 369.7681
+      '[Net Sales Revenue]': 69908.95
+    - Ship To[LT1.2 - Customer]: Linea Aerea Azteca
+      '[Unit Cases]': 5435.0127
+      '[Net Sales Revenue]': 56362.0
+    - Ship To[LT1.2 - Customer]: EL PESCAU
+      '[Unit Cases]': 221.0436
+      '[Net Sales Revenue]': 56188.84000000001
+    - Ship To[LT1.2 - Customer]: SPORT CITY & CITY CAF?
+      '[Unit Cases]': 235.619
+      '[Net Sales Revenue]': 52246.09999999999
+    - Ship To[LT1.2 - Customer]: Andiamo
+      '[Unit Cases]': 338.4439
+      '[Net Sales Revenue]': 50930.810000000005
+    - Ship To[LT1.2 - Customer]: THE FOOD BOX
+      '[Unit Cases]': 241.0725
+      '[Net Sales Revenue]': 48356.47000000002
+    - Ship To[LT1.2 - Customer]: TORTAS HIPOCAMPO
+      '[Unit Cases]': 366.6822
+      '[Net Sales Revenue]': 48169.171999999984
+    - Ship To[LT1.2 - Customer]: LOS PACOS
+      '[Unit Cases]': 169.5596
+      '[Net Sales Revenue]': 42149.526000000005
+    - Ship To[LT1.2 - Customer]: Grupo Restaurantero del Centro S.A.de CV
+      '[Unit Cases]': 130.4403
+      '[Net Sales Revenue]': 32205.529999999995
+    - Ship To[LT1.2 - Customer]: Dunkin Donuts
+      '[Unit Cases]': 267.9843
+      '[Net Sales Revenue]': 31730.660000000007
+    - Ship To[LT1.2 - Customer]: CINE MADERO
+      '[Unit Cases]': 136.7596
+      '[Net Sales Revenue]': 14095.120000000003
+    - Ship To[LT1.2 - Customer]: Hilton Hotel Corporation
+      '[Unit Cases]': 35.6944
+      '[Net Sales Revenue]': 8207.32
+    - Ship To[LT1.2 - Customer]: Almacenes Zaragoza
+      '[Unit Cases]': 58.6259
+      '[Net Sales Revenue]': 7462.2
+    - Ship To[LT1.2 - Customer]: DONA TOTA
+      '[Unit Cases]': 62.1346
+      '[Net Sales Revenue]': 6223.9800000000005
+    - Ship To[LT1.2 - Customer]: Industrial De Alimentos De Linares S.A.
+      '[Unit Cases]': 21.444
+      '[Net Sales Revenue]': 2088.69
+    - Ship To[LT1.2 - Customer]: Hyatt Hotels Corporation
+      '[Unit Cases]': 73.9697
+      '[Net Sales Revenue]': 913.5
+    - Ship To[LT1.2 - Customer]: Comunicaciones Nextel de Mexico, S.A. de
+      '[Unit Cases]': 25.0088
+      '[Net Sales Revenue]': 355.17
+    - Ship To[LT1.2 - Customer]: Estrella Blanca
+      '[Unit Cases]': 71.328
+      '[Net Sales Revenue]': 0.0
+- id: 7
+  question: Give me the Unit Cases and Net Sales Revenue for Colombia by Client in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Ship To'[LT1.2 - Customer],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Colombia"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Ship To[LT1.2 - Customer]: All Other Customer
+      '[Unit Cases]': 174374168.3429
+      '[Net Sales Revenue]': 2437590038303.0
+    - Ship To[LT1.2 - Customer]: Grupo Exito
+      '[Unit Cases]': 6122032.4291
+      '[Net Sales Revenue]': 94418700243.0
+    - Ship To[LT1.2 - Customer]: Ahold Delhaize
+      '[Unit Cases]': 5673117.3833
+      '[Net Sales Revenue]': 75832199718.0
+    - Ship To[LT1.2 - Customer]: Oxxo
+      '[Unit Cases]': 2085493.269
+      '[Net Sales Revenue]': 38388350821.0
+    - Ship To[LT1.2 - Customer]: Olimpica
+      '[Unit Cases]': 1705214.2614
+      '[Net Sales Revenue]': 27254694982.0
+    - Ship To[LT1.2 - Customer]: Cencosud
+      '[Unit Cases]': 976200.131
+      '[Net Sales Revenue]': 15005403956.0
+    - Ship To[LT1.2 - Customer]: Metro Group
+      '[Unit Cases]': 875083.3819
+      '[Net Sales Revenue]': 13040821299.0
+    - Ship To[LT1.2 - Customer]: PriceSmart
+      '[Unit Cases]': 870588.9954
+      '[Net Sales Revenue]': 12652073465.0
+    - Ship To[LT1.2 - Customer]: Terpel S.A.
+      '[Unit Cases]': 280832.2218
+      '[Net Sales Revenue]': 6196406488.0
+    - Ship To[LT1.2 - Customer]: Cinemark
+      '[Unit Cases]': 389211.8289
+      '[Net Sales Revenue]': 4910858855.0
+    - Ship To[LT1.2 - Customer]: Crepes & Waffles
+      '[Unit Cases]': 231653.9051
+      '[Net Sales Revenue]': 4249604614.0
+    - Ship To[LT1.2 - Customer]: McDonald's
+      '[Unit Cases]': 807695.8793
+      '[Net Sales Revenue]': 4102715801.6154118
+    - Ship To[LT1.2 - Customer]: TACA Airlines
+      '[Unit Cases]': 386282.8127
+      '[Net Sales Revenue]': 3519995649.0
+    - Ship To[LT1.2 - Customer]: 100%Video
+      '[Unit Cases]': 199220.9283
+      '[Net Sales Revenue]': 3180826764.0
+    - Ship To[LT1.2 - Customer]: Domino's Pizza Inc.
+      '[Unit Cases]': 403002.8611
+      '[Net Sales Revenue]': 3018739235.0
+    - Ship To[LT1.2 - Customer]: Compass Group Plc
+      '[Unit Cases]': 213841.6332
+      '[Net Sales Revenue]': 2781824593.0
+    - Ship To[LT1.2 - Customer]: Little Ceasars
+      '[Unit Cases]': 199338.6181
+      '[Net Sales Revenue]': 1839840913.0
+    - Ship To[LT1.2 - Customer]: Cinepolis
+      '[Unit Cases]': 135031.2642
+      '[Net Sales Revenue]': 1761411159.0
+    - Ship To[LT1.2 - Customer]: Decameron
+      '[Unit Cases]': 287424.1656
+      '[Net Sales Revenue]': 1645666019.0
+    - Ship To[LT1.2 - Customer]: Sodexo
+      '[Unit Cases]': 198529.518
+      '[Net Sales Revenue]': 1523328016.0
+    - Ship To[LT1.2 - Customer]: Papa John's Pizza
+      '[Unit Cases]': 116331.0553
+      '[Net Sales Revenue]': 1366889891.0
+    - Ship To[LT1.2 - Customer]: Dunkin Donuts
+      '[Unit Cases]': 77106.5439
+      '[Net Sales Revenue]': 1275742168.0
+    - Ship To[LT1.2 - Customer]: Dominican Republic
+      '[Unit Cases]': 83878.139
+      '[Net Sales Revenue]': 1143321068.0
+    - Ship To[LT1.2 - Customer]: Hilton Group Plc
+      '[Unit Cases]': 21969.391
+      '[Net Sales Revenue]': 439214637.0
+    - Ship To[LT1.2 - Customer]: Juan Valdez
+      '[Unit Cases]': 11155.6771
+      '[Net Sales Revenue]': 422314969.0
+    - Ship To[LT1.2 - Customer]: Primax
+      '[Unit Cases]': 20345.8432
+      '[Net Sales Revenue]': 358766157.0
+    - Ship To[LT1.2 - Customer]: Grupo Falabella
+      '[Unit Cases]': 17195.1392
+      '[Net Sales Revenue]': 339701258.0
+    - Ship To[LT1.2 - Customer]: FOODOLOGY
+      '[Unit Cases]': 16247.4081
+      '[Net Sales Revenue]': 338789727.0
+    - Ship To[LT1.2 - Customer]: Buffalo Wild Wings
+      '[Unit Cases]': 16917.7415
+      '[Net Sales Revenue]': 335162233.0
+    - Ship To[LT1.2 - Customer]: Accor Hotels
+      '[Unit Cases]': 21818.3936
+      '[Net Sales Revenue]': 328113392.0
+    - Ship To[LT1.2 - Customer]: Dufry Yucatan SA DE CV
+      '[Unit Cases]': 14840.9041
+      '[Net Sales Revenue]': 326865832.0
+    - Ship To[LT1.2 - Customer]: Teriyaki
+      '[Unit Cases]': 8830.3276
+      '[Net Sales Revenue]': 301944788.0
+    - Ship To[LT1.2 - Customer]: Buffalo S.A.
+      '[Unit Cases]': 9138.5871
+      '[Net Sales Revenue]': 273392785.0
+    - Ship To[LT1.2 - Customer]: Unassigned
+      '[Unit Cases]': 13750.615
+      '[Net Sales Revenue]': 193796197.0
+    - Ship To[LT1.2 - Customer]: Starbuck's Coffee Co.
+      '[Unit Cases]': 13816.9623
+      '[Net Sales Revenue]': 193501101.0
+    - Ship To[LT1.2 - Customer]: Grupo Trigo
+      '[Unit Cases]': 11234.7058
+      '[Net Sales Revenue]': 192338876.0
+    - Ship To[LT1.2 - Customer]: Mulliez Group (Non Grocery)
+      '[Unit Cases]': 9732.1931
+      '[Net Sales Revenue]': 157888805.0
+    - Ship To[LT1.2 - Customer]: Pizza Factory
+      '[Unit Cases]': 9713.6731
+      '[Net Sales Revenue]': 146789360.0
+    - Ship To[LT1.2 - Customer]: Sentry Markets
+      '[Unit Cases]': 5331.6425
+      '[Net Sales Revenue]': 142683492.0
+    - Ship To[LT1.2 - Customer]: Bonanza
+      '[Unit Cases]': 8178.2624
+      '[Net Sales Revenue]': 140336841.0
+    - Ship To[LT1.2 - Customer]: Wingstop
+      '[Unit Cases]': 5421.5168
+      '[Net Sales Revenue]': 110864881.0
+    - Ship To[LT1.2 - Customer]: Petrobras
+      '[Unit Cases]': 5521.9104
+      '[Net Sales Revenue]': 110613266.0
+    - Ship To[LT1.2 - Customer]: Bagatelle
+      '[Unit Cases]': 3129.0757
+      '[Net Sales Revenue]': 110510550.0
+    - Ship To[LT1.2 - Customer]: Pizza Mania
+      '[Unit Cases]': 7184.959
+      '[Net Sales Revenue]': 100739168.0
+    - Ship To[LT1.2 - Customer]: Hooters
+      '[Unit Cases]': 4796.3204
+      '[Net Sales Revenue]': 93919894.0
+    - Ship To[LT1.2 - Customer]: MERQUEO
+      '[Unit Cases]': .nan
+      '[Net Sales Revenue]': 89941413.0
+    - Ship To[LT1.2 - Customer]: Hyatt Hotels Corporation
+      '[Unit Cases]': 2967.3158
+      '[Net Sales Revenue]': 78480761.0
+    - Ship To[LT1.2 - Customer]: Piccolo
+      '[Unit Cases]': 3082.2103
+      '[Net Sales Revenue]': 67480314.0
+    - Ship To[LT1.2 - Customer]: Marriott International
+      '[Unit Cases]': 2731.7879
+      '[Net Sales Revenue]': 53834995.0
+    - Ship To[LT1.2 - Customer]: Bodega Latina Corporation
+      '[Unit Cases]': 3259.9806
+      '[Net Sales Revenue]': 46936785.0
+- id: 8
+  question: Give me the Unit Cases and Net Sales Revenue for Brasil by Client in 2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Ship To'[LT1.2 - Customer],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Brazil"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Ship To[LT1.2 - Customer]: All Other Customer
+      '[Unit Cases]': 1092160235.5607
+      '[Net Sales Revenue]': 18000575586.687325
+    - Ship To[LT1.2 - Customer]: Carrefour Group
+      '[Unit Cases]': 43711254.504
+      '[Net Sales Revenue]': 824016205.5381002
+    - Ship To[LT1.2 - Customer]: Assai
+      '[Unit Cases]': 36770226.9843
+      '[Net Sales Revenue]': 748591581.1622003
+    - Ship To[LT1.2 - Customer]: GPA
+      '[Unit Cases]': 10037462.964
+      '[Net Sales Revenue]': 191724905.3779
+    - Ship To[LT1.2 - Customer]: McDonald's
+      '[Unit Cases]': 11191141.7381
+      '[Net Sales Revenue]': 87304999.44570002
+    - Ship To[LT1.2 - Customer]: Cencosud
+      '[Unit Cases]': 4845394.4514
+      '[Net Sales Revenue]': 85027968.70069993
+    - Ship To[LT1.2 - Customer]: Oxxo
+      '[Unit Cases]': 2248989.722
+      '[Net Sales Revenue]': 46719554.28999999
+    - Ship To[LT1.2 - Customer]: W PREMIUM
+      '[Unit Cases]': 1324276.2699
+      '[Net Sales Revenue]': 33798173.129999995
+    - Ship To[LT1.2 - Customer]: Rede Dia
+      '[Unit Cases]': 1692449.3259
+      '[Net Sales Revenue]': 31462931.631800003
+    - Ship To[LT1.2 - Customer]: EPA
+      '[Unit Cases]': 1765395.3491
+      '[Net Sales Revenue]': 30774052.35999999
+    - Ship To[LT1.2 - Customer]: Ipiranga
+      '[Unit Cases]': 1141755.2491
+      '[Net Sales Revenue]': 24338445.005799986
+    - Ship To[LT1.2 - Customer]: Subway
+      '[Unit Cases]': 1143093.2371
+      '[Net Sales Revenue]': 22616566.8727
+    - Ship To[LT1.2 - Customer]: Shell
+      '[Unit Cases]': 1026875.7473
+      '[Net Sales Revenue]': 21150389.926899992
+    - Ship To[LT1.2 - Customer]: Petrobras
+      '[Unit Cases]': 968752.0139
+      '[Net Sales Revenue]': 20381262.86129999
+    - Ship To[LT1.2 - Customer]: IMC
+      '[Unit Cases]': 1314128.1666
+      '[Net Sales Revenue]': 20213007.909900054
+    - Ship To[LT1.2 - Customer]: Sodexo
+      '[Unit Cases]': 944667.6234
+      '[Net Sales Revenue]': 18300580.523700006
+    - Ship To[LT1.2 - Customer]: Grupo Trigo
+      '[Unit Cases]': 604452.1654
+      '[Net Sales Revenue]': 17309712.440500014
+    - Ship To[LT1.2 - Customer]: IGA Inc
+      '[Unit Cases]': 969494.2236
+      '[Net Sales Revenue]': 16879379.53
+    - Ship To[LT1.2 - Customer]: D Angelo Inc
+      '[Unit Cases]': 654214.5728
+      '[Net Sales Revenue]': 14743497.810000006
+    - Ship To[LT1.2 - Customer]: BFFC
+      '[Unit Cases]': 978078.5784
+      '[Net Sales Revenue]': 14681565.472600002
+    - Ship To[LT1.2 - Customer]: Ahold Delhaize
+      '[Unit Cases]': 989270.8296
+      '[Net Sales Revenue]': 12954398.070000004
+    - Ship To[LT1.2 - Customer]: Gran Sapore
+      '[Unit Cases]': 540443.8065
+      '[Net Sales Revenue]': 12329999.8347
+    - Ship To[LT1.2 - Customer]: Grupo GPS
+      '[Unit Cases]': 606844.2867
+      '[Net Sales Revenue]': 11990353.689999998
+    - Ship To[LT1.2 - Customer]: Divino Fogao
+      '[Unit Cases]': 487614.7249
+      '[Net Sales Revenue]': 11750193.676800005
+    - Ship To[LT1.2 - Customer]: Grupo Madero
+      '[Unit Cases]': 522091.8696
+      '[Net Sales Revenue]': 11037567.653900009
+    - Ship To[LT1.2 - Customer]: WORLD FOOD GESTAO LTDA
+      '[Unit Cases]': 431369.3046
+      '[Net Sales Revenue]': 10740686.176999995
+    - Ship To[LT1.2 - Customer]: Giraffas
+      '[Unit Cases]': 622984.0147
+      '[Net Sales Revenue]': 9655202.262500014
+    - Ship To[LT1.2 - Customer]: Movenpick Group
+      '[Unit Cases]': 422283.1812
+      '[Net Sales Revenue]': 9519579.979999997
+    - Ship To[LT1.2 - Customer]: Cinemark
+      '[Unit Cases]': 720755.5308
+      '[Net Sales Revenue]': 9351237.360000005
+    - Ship To[LT1.2 - Customer]: Bloomin'
+      '[Unit Cases]': 926954.0465
+      '[Net Sales Revenue]': 9285048.664800007
+    - Ship To[LT1.2 - Customer]: Graal
+      '[Unit Cases]': 291311.158
+      '[Net Sales Revenue]': 8838365.399999999
+    - Ship To[LT1.2 - Customer]: TT INTERNATIONAL LIMITED
+      '[Unit Cases]': 386042.4941
+      '[Net Sales Revenue]': 7967488.110000002
+    - Ship To[LT1.2 - Customer]: Burger King
+      '[Unit Cases]': 368130.6612
+      '[Net Sales Revenue]': 7813816.275899999
+    - Ship To[LT1.2 - Customer]: Bonanza
+      '[Unit Cases]': 400511.2864
+      '[Net Sales Revenue]': 7408982.869999999
+    - Ship To[LT1.2 - Customer]: Grupo DPSP
+      '[Unit Cases]': 405852.2554
+      '[Net Sales Revenue]': 7294805.401100002
+    - Ship To[LT1.2 - Customer]: Piccadilly
+      '[Unit Cases]': 291708.4335
+      '[Net Sales Revenue]': 7017349.08
+    - Ship To[LT1.2 - Customer]: Pague Menos
+      '[Unit Cases]': 318440.3742
+      '[Net Sales Revenue]': 6625657.522000004
+    - Ship To[LT1.2 - Customer]: LATAM Airlines Group
+      '[Unit Cases]': 412451.8093
+      '[Net Sales Revenue]': 6463325.01
+    - Ship To[LT1.2 - Customer]: Big Mart Pvt Ltd
+      '[Unit Cases]': 329046.8249
+      '[Net Sales Revenue]': 6266020.840000002
+    - Ship To[LT1.2 - Customer]: Domino's Pizza Inc.
+      '[Unit Cases]': 342659.2177
+      '[Net Sales Revenue]': 4875734.557
+    - Ship To[LT1.2 - Customer]: Cinepolis
+      '[Unit Cases]': 340697.538
+      '[Net Sales Revenue]': 4202062.714800001
+    - Ship To[LT1.2 - Customer]: Grupo Severiano Ribeiro
+      '[Unit Cases]': 162036.3665
+      '[Net Sales Revenue]': 3457982.484100001
+    - Ship To[LT1.2 - Customer]: Rei Do Mate
+      '[Unit Cases]': 135416.1473
+      '[Net Sales Revenue]': 3078864.790000003
+    - Ship To[LT1.2 - Customer]: Cine Araujo
+      '[Unit Cases]': 124588.467
+      '[Net Sales Revenue]': 3056028.9600000004
+    - Ship To[LT1.2 - Customer]: VivendadoCamarao
+      '[Unit Cases]': 116927.6345
+      '[Net Sales Revenue]': 2594317.9519000025
+    - Ship To[LT1.2 - Customer]: GOL
+      '[Unit Cases]': 348389.189
+      '[Net Sales Revenue]': 2584333.9000000013
+    - Ship To[LT1.2 - Customer]: G&N Brands
+      '[Unit Cases]': 122230.3962
+      '[Net Sales Revenue]': 1961482.075299999
+    - Ship To[LT1.2 - Customer]: Moviecom
+      '[Unit Cases]': 84910.733
+      '[Net Sales Revenue]': 1933321.5315999996
+    - Ship To[LT1.2 - Customer]: Wal-Mart Inc.
+      '[Unit Cases]': 106686.9815
+      '[Net Sales Revenue]': 1887045.3899999997
+    - Ship To[LT1.2 - Customer]: Santa Clara Mercantil de Pachuca SA de C
+      '[Unit Cases]': 111767.0233
+      '[Net Sales Revenue]': 1882491.9400000004
+    - Ship To[LT1.2 - Customer]: Extrafarma
+      '[Unit Cases]': 94188.5569
+      '[Net Sales Revenue]': 1869325.0400000007
+    - Ship To[LT1.2 - Customer]: Dufry Yucatan SA DE CV
+      '[Unit Cases]': 107795.0414
+      '[Net Sales Revenue]': 1715579.956599999
+    - Ship To[LT1.2 - Customer]: ITAL IN HOUSE
+      '[Unit Cases]': 61828.446
+      '[Net Sales Revenue]': 1653043.565599999
+    - Ship To[LT1.2 - Customer]: Casa Pao De Queijo
+      '[Unit Cases]': 85998.5242
+      '[Net Sales Revenue]': 1582936.1362999992
+    - Ship To[LT1.2 - Customer]: Cadena Real S.A.
+      '[Unit Cases]': 108300.0418
+      '[Net Sales Revenue]': 1535401.9400000004
+    - Ship To[LT1.2 - Customer]: Patroni Pizza
+      '[Unit Cases]': 59035.8319
+      '[Net Sales Revenue]': 1486634.8555999978
+    - Ship To[LT1.2 - Customer]: Konzum
+      '[Unit Cases]': 82984.4736
+      '[Net Sales Revenue]': 1476092.1500000006
+    - Ship To[LT1.2 - Customer]: MUNDO ANIMAL
+      '[Unit Cases]': 66639.3313
+      '[Net Sales Revenue]': 1438109.59
+    - Ship To[LT1.2 - Customer]: ZENSHO HOLDINGS
+      '[Unit Cases]': 37968.9601
+      '[Net Sales Revenue]': 1298870.1699999992
+    - Ship To[LT1.2 - Customer]: Ale Sat
+      '[Unit Cases]': 86003.4512
+      '[Net Sales Revenue]': 1273463.9775000005
+    - Ship To[LT1.2 - Customer]: Cia Do Churrasco
+      '[Unit Cases]': 46995.1085
+      '[Net Sales Revenue]': 1208208.4500000007
+    - Ship To[LT1.2 - Customer]: FranqueadoraOBurguesLTDA
+      '[Unit Cases]': 35094.2824
+      '[Net Sales Revenue]': 1109176.6600000001
+    - Ship To[LT1.2 - Customer]: Nevada
+      '[Unit Cases]': 68274.3443
+      '[Net Sales Revenue]': 1102374.35
+    - Ship To[LT1.2 - Customer]: Parmeggio
+      '[Unit Cases]': 39622.0987
+      '[Net Sales Revenue]': 1100591.439999999
+    - Ship To[LT1.2 - Customer]: Sforza
+      '[Unit Cases]': 68247.7391
+      '[Net Sales Revenue]': 1037442.5899999997
+    - Ship To[LT1.2 - Customer]: Accor
+      '[Unit Cases]': 27404.0782
+      '[Net Sales Revenue]': 860517.9300000004
+    - Ship To[LT1.2 - Customer]: Operadora de Cd Juarez
+      '[Unit Cases]': 61288.9518
+      '[Net Sales Revenue]': 846130.2300000001
+    - Ship To[LT1.2 - Customer]: Centerplex
+      '[Unit Cases]': 40256.8648
+      '[Net Sales Revenue]': 838532.4200000002
+    - Ship To[LT1.2 - Customer]: Bebelu
+      '[Unit Cases]': 40915.2699
+      '[Net Sales Revenue]': 825972.5399999998
+    - Ship To[LT1.2 - Customer]: Club Med
+      '[Unit Cases]': 36568.731
+      '[Net Sales Revenue]': 792114.5000000002
+    - Ship To[LT1.2 - Customer]: Grupo Aresta / Carlson
+      '[Unit Cases]': 31864.5832
+      '[Net Sales Revenue]': 748524.58
+    - Ship To[LT1.2 - Customer]: Rewe Zentral AG
+      '[Unit Cases]': 32635.4663
+      '[Net Sales Revenue]': 730044.78
+    - Ship To[LT1.2 - Customer]: FabricadeBolosVoAlzira
+      '[Unit Cases]': 39605.5224
+      '[Net Sales Revenue]': 723528.8799999995
+    - Ship To[LT1.2 - Customer]: Mama Mia Pizza Ltd
+      '[Unit Cases]': 28309.2654
+      '[Net Sales Revenue]': 723271.5599999998
+    - Ship To[LT1.2 - Customer]: Carioca
+      '[Unit Cases]': 44168.4199
+      '[Net Sales Revenue]': 718256.6500000001
+    - Ship To[LT1.2 - Customer]: Grao Espresso
+      '[Unit Cases]': 28049.4137
+      '[Net Sales Revenue]': 713974.7399999998
+    - Ship To[LT1.2 - Customer]: ATW Delivery
+      '[Unit Cases]': 27025.922
+      '[Net Sales Revenue]': 711382.7130999995
+    - Ship To[LT1.2 - Customer]: Camarao & Cia
+      '[Unit Cases]': 23723.4168
+      '[Net Sales Revenue]': 626474.1299999995
+    - Ship To[LT1.2 - Customer]: Pizza Cesar
+      '[Unit Cases]': 34520.3617
+      '[Net Sales Revenue]': 616532.6
+    - Ship To[LT1.2 - Customer]: Azul
+      '[Unit Cases]': 29332.5095
+      '[Net Sales Revenue]': 567740.31
+    - Ship To[LT1.2 - Customer]: Lug's
+      '[Unit Cases]': 20542.0499
+      '[Net Sales Revenue]': 519459.18610000005
+    - Ship To[LT1.2 - Customer]: Unassigned
+      '[Unit Cases]': 16324.8921
+      '[Net Sales Revenue]': 456780.2112999999
+    - Ship To[LT1.2 - Customer]: Europa
+      '[Unit Cases]': 27029.4937
+      '[Net Sales Revenue]': 417838.9699999999
+    - Ship To[LT1.2 - Customer]: Darden Restaurants
+      '[Unit Cases]': 16659.3004
+      '[Net Sales Revenue]': 414855.50999999995
+    - Ship To[LT1.2 - Customer]: Mr. Pretzel
+      '[Unit Cases]': 20312.8872
+      '[Net Sales Revenue]': 400113.67999999993
+    - Ship To[LT1.2 - Customer]: Frans Cafe
+      '[Unit Cases]': 17782.1686
+      '[Net Sales Revenue]': 389430.1701
+    - Ship To[LT1.2 - Customer]: Cafe Do Ponto
+      '[Unit Cases]': 19296.4037
+      '[Net Sales Revenue]': 383434.7199999998
+    - Ship To[LT1.2 - Customer]: Firehouse Restaurant Group
+      '[Unit Cases]': 17371.142
+      '[Net Sales Revenue]': 373252.82999999996
+    - Ship To[LT1.2 - Customer]: Croasonho
+      '[Unit Cases]': 17941.3149
+      '[Net Sales Revenue]': 355704.6899999998
+    - Ship To[LT1.2 - Customer]: Atlantic
+      '[Unit Cases]': 20085.3824
+      '[Net Sales Revenue]': 352878.99
+    - Ship To[LT1.2 - Customer]: Millenium Torg
+      '[Unit Cases]': 20295.4906
+      '[Net Sales Revenue]': 303741.37
+    - Ship To[LT1.2 - Customer]: Autozone
+      '[Unit Cases]': 12646.9411
+      '[Net Sales Revenue]': 284647.5900000001
+    - Ship To[LT1.2 - Customer]: President
+      '[Unit Cases]': 10624.0257
+      '[Net Sales Revenue]': 284047.27000000014
+    - Ship To[LT1.2 - Customer]: Arteplex
+      '[Unit Cases]': 13805.3247
+      '[Net Sales Revenue]': 254124.62
+    - Ship To[LT1.2 - Customer]: Bigxpicanha
+      '[Unit Cases]': 8493.2666
+      '[Net Sales Revenue]': 221448.06000000006
+    - Ship To[LT1.2 - Customer]: Havanna
+      '[Unit Cases]': 10176.9159
+      '[Net Sales Revenue]': 191653.80000000002
+    - Ship To[LT1.2 - Customer]: Select Food
+      '[Unit Cases]': 6153.481
+      '[Net Sales Revenue]': 149333.90999999997
+    - Ship To[LT1.2 - Customer]: .nan
+      '[Unit Cases]': 6494.0549
+      '[Net Sales Revenue]': 148360.99979999993
+    - Ship To[LT1.2 - Customer]: Applebee's
+      '[Unit Cases]': 6688.9683
+      '[Net Sales Revenue]': 132872.91999999995
+    - Ship To[LT1.2 - Customer]: Tengelmann
+      '[Unit Cases]': 8926.0154
+      '[Net Sales Revenue]': 122345.75000000001
+    - Ship To[LT1.2 - Customer]: Hilton Group Plc
+      '[Unit Cases]': 4491.7469
+      '[Net Sales Revenue]': 109910.90000000001
+    - Ship To[LT1.2 - Customer]: ECE
+      '[Unit Cases]': 5120.3162
+      '[Net Sales Revenue]': 97348.52999999997
+    - Ship To[LT1.2 - Customer]: Eldorado
+      '[Unit Cases]': 5193.7507
+      '[Net Sales Revenue]': 93670.63
+    - Ship To[LT1.2 - Customer]: Exxon Mobil Corporation
+      '[Unit Cases]': 2936.0413
+      '[Net Sales Revenue]': 67031.23999999999
+    - Ship To[LT1.2 - Customer]: Krispy Kreme
+      '[Unit Cases]': 3980.1636
+      '[Net Sales Revenue]': 66439.71
+    - Ship To[LT1.2 - Customer]: Accor Hotels
+      '[Unit Cases]': 1852.5303
+      '[Net Sales Revenue]': 58118.530000000035
+    - Ship To[LT1.2 - Customer]: Fat Boys Concept (M) Sdn Bhd
+      '[Unit Cases]': 2320.3865
+      '[Net Sales Revenue]': 54333.03
+    - Ship To[LT1.2 - Customer]: Casino Group
+      '[Unit Cases]': 5533.1267
+      '[Net Sales Revenue]': 46211.56999999999
+    - Ship To[LT1.2 - Customer]: FRANGO NO POTE
+      '[Unit Cases]': 2744.5425
+      '[Net Sales Revenue]': 45074.640000000014
+    - Ship To[LT1.2 - Customer]: Dairy Queen
+      '[Unit Cases]': 1215.2379
+      '[Net Sales Revenue]': 40594.61
+    - Ship To[LT1.2 - Customer]: Marriott International
+      '[Unit Cases]': 1678.0601
+      '[Net Sales Revenue]': 38229.16000000002
+    - Ship To[LT1.2 - Customer]: Andiamo
+      '[Unit Cases]': 980.8388
+      '[Net Sales Revenue]': 35531.48999999998
+    - Ship To[LT1.2 - Customer]: Pizza Pizza S.A
+      '[Unit Cases]': 1039.3966
+      '[Net Sales Revenue]': 35401.770000000004
+    - Ship To[LT1.2 - Customer]: Micromarket
+      '[Unit Cases]': 1369.3053
+      '[Net Sales Revenue]': 27109.9
+    - Ship To[LT1.2 - Customer]: Chevron
+      '[Unit Cases]': 1584.0263
+      '[Net Sales Revenue]': 25468.06
+    - Ship To[LT1.2 - Customer]: Dunkin Donuts
+      '[Unit Cases]': 827.425
+      '[Net Sales Revenue]': 24419.159999999996
+    - Ship To[LT1.2 - Customer]: Brahims Holdings Berhad
+      '[Unit Cases]': 618.4924
+      '[Net Sales Revenue]': 17817.5
+    - Ship To[LT1.2 - Customer]: Brasileirinho Delivery
+      '[Unit Cases]': 131.6662
+      '[Net Sales Revenue]': 2883.3099999999995
+- id: 9
+  question: Give me the Unit Cases and Net Sales Revenue for Mexico by Bottler in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Ship From'[L1.3 - Bottler],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Ship From[L1.3 - Bottler]: MX Coca-Cola Femsa
+      '[Unit Cases]': 1065139548.3241
+      '[Net Sales Revenue]': 69697996281.35832
+    - Ship From[L1.3 - Bottler]: MX Arca Continental
+      '[Unit Cases]': 686220639.061
+      '[Net Sales Revenue]': 53645660821.54994
+    - Ship From[L1.3 - Bottler]: MX Bepensa
+      '[Unit Cases]': 189729458.7764
+      '[Net Sales Revenue]': 9153321432.703001
+    - Ship From[L1.3 - Bottler]: MX CDF
+      '[Unit Cases]': 76116011.1005
+      '[Net Sales Revenue]': 6433310648.910002
+    - Ship From[L1.3 - Bottler]: MX Santa Clara
+      '[Unit Cases]': 28854262.0714
+      '[Net Sales Revenue]': 5661724673.072999
+    - Ship From[L1.3 - Bottler]: MX Rica
+      '[Unit Cases]': 56661236.6632
+      '[Net Sales Revenue]': 3783532665.9300013
+    - Ship From[L1.3 - Bottler]: MX JDV
+      '[Unit Cases]': 30135433.572
+      '[Net Sales Revenue]': 3365724957.096001
+    - Ship From[L1.3 - Bottler]: MX Tepic
+      '[Unit Cases]': 41785259.9733
+      '[Net Sales Revenue]': 2678565033.33048
+    - Ship From[L1.3 - Bottler]: MX Colima
+      '[Unit Cases]': 21937833.3142
+      '[Net Sales Revenue]': 1319490455.5624
+    - Ship From[L1.3 - Bottler]: MX Nogales
+      '[Unit Cases]': 6081271.6001
+      '[Net Sales Revenue]': 615790481.34234
+- id: 10
+  question: Give me the Unit Cases and Net Sales Revenue for Colombia by Bottler in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Ship From'[L1.3 - Bottler],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Colombia"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Ship From[L1.3 - Bottler]: CO Coca-Cola Femsa
+      '[Unit Cases]': 195922354.2209
+      '[Net Sales Revenue]': 2762241240651.0
+    - Ship From[L1.3 - Bottler]: CO Uraba
+      '[Unit Cases]': 819348.7991
+      '[Net Sales Revenue]': .nan
+    - Ship From[L1.3 - Bottler]: CO Leticia
+      '[Unit Cases]': 181369.9721
+      '[Net Sales Revenue]': .nan
+    - Ship From[L1.3 - Bottler]: CO MM Volumen
+      '[Unit Cases]': 36519.12
+      '[Net Sales Revenue]': -46864153.38458801
+- id: 11
+  question: Give me the Unit Cases and Net Sales Revenue for Brasil by Bottler in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Ship From'[L1.3 - Bottler],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Brazil"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Ship From[L1.3 - Bottler]: BR Coca-Cola Femsa
+      '[Unit Cases]': 598746126.4533
+      '[Net Sales Revenue]': 10567142662.419996
+    - Ship From[L1.3 - Bottler]: BR Solar
+      '[Unit Cases]': 275321849.472
+      '[Net Sales Revenue]': 5022335847.450002
+    - Ship From[L1.3 - Bottler]: BR Andina
+      '[Unit Cases]': 155241094.5069
+      '[Net Sales Revenue]': 2341105936.199998
+    - Ship From[L1.3 - Bottler]: BR Private Bottlers
+      '[Unit Cases]': 125136875.0595
+      '[Net Sales Revenue]': 2289412730.0125246
+    - Ship From[L1.3 - Bottler]: BR Leao NRTD
+      '[Unit Cases]': 72559671.4745
+      '[Net Sales Revenue]': 266799245.78000003
+    - Ship From[L1.3 - Bottler]: BR Delvalle
+      '[Unit Cases]': 1873049.6473
+      '[Net Sales Revenue]': 28609857.41
+- id: 12
+  question: Give me the Unit Cases and Net Sales Revenue for Mexico by Segment in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.7 - Segment],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.7 - Segment]: SSDs
+      '[Unit Cases]': 1378052868.4168
+      '[Net Sales Revenue]': 110100264839.48904
+    - Product[LT1.7 - Segment]: Stills
+      '[Unit Cases]': 822275609.8138
+      '[Net Sales Revenue]': 44910187053.52803
+    - Product[LT1.7 - Segment]: Unassigned
+      '[Unit Cases]': 3952.5952
+      '[Net Sales Revenue]': 890930607.7840006
+    - Product[LT1.7 - Segment]: Alcoholic Beverages
+      '[Unit Cases]': 1845018.5585
+      '[Net Sales Revenue]': 368006416.207501
+    - Product[LT1.7 - Segment]: .nan
+      '[Unit Cases]': 483505.0719
+      '[Net Sales Revenue]': 85728533.84850112
+- id: 13
+  question: Give me the Unit Cases and Net Sales Revenue for Colombia by Segment in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.7 - Segment],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Colombia"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.7 - Segment]: SSDs
+      '[Unit Cases]': 149187552.5074
+      '[Net Sales Revenue]': 2188586417617.0
+    - Product[LT1.7 - Segment]: Stills
+      '[Unit Cases]': 47711851.8281
+      '[Net Sales Revenue]': 572442609267.6155
+    - Product[LT1.7 - Segment]: .nan
+      '[Unit Cases]': 60187.7766
+      '[Net Sales Revenue]': 970136068.0
+    - Product[LT1.7 - Segment]: Unassigned
+      '[Unit Cases]': 0.0
+      '[Net Sales Revenue]': 194030334.0
+    - Product[LT1.7 - Segment]: Distribution Agreement
+      '[Unit Cases]': 0.0
+      '[Net Sales Revenue]': 1183211.0
+- id: 14
+  question: Give me the Unit Cases and Net Sales Revenue for Brasil by Segment in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.7 - Segment],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Brazil"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.7 - Segment]: SSDs
+      '[Unit Cases]': 989950922.8639
+      '[Net Sales Revenue]': 17275915792.41539
+    - Product[LT1.7 - Segment]: Stills
+      '[Unit Cases]': 237978746.3262
+      '[Net Sales Revenue]': 3192795579.926868
+    - Product[LT1.7 - Segment]: Alcoholic Beverages
+      '[Unit Cases]': 523337.5083
+      '[Net Sales Revenue]': 40211449.5699998
+    - Product[LT1.7 - Segment]: .nan
+      '[Unit Cases]': 425659.9151
+      '[Net Sales Revenue]': 6483457.360000042
+- id: 15
+  question: Give me the Unit Cases and Net Sales Revenue for Mexico by Category in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.5 - Category],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.5 - Category]: Colas
+      '[Unit Cases]': 1178822202.6329
+      '[Net Sales Revenue]': 95640183159.12544
+    - Product[LT1.5 - Category]: Packaged Water
+      '[Unit Cases]': 609327343.3509
+      '[Net Sales Revenue]': 18291840534.812717
+    - Product[LT1.5 - Category]: Juices & Juice Drinks
+      '[Unit Cases]': 106754764.4537
+      '[Net Sales Revenue]': 10545728643.4114
+    - Product[LT1.5 - Category]: Flavors
+      '[Unit Cases]': 125904351.7483
+      '[Net Sales Revenue]': 8895171856.380571
+    - Product[LT1.5 - Category]: Dairy Beverages
+      '[Unit Cases]': 49947632.5797
+      '[Net Sales Revenue]': 8518368306.0296
+    - Product[LT1.5 - Category]: Core Flavors
+      '[Unit Cases]': 73326314.0356
+      '[Net Sales Revenue]': 5564909823.85264
+    - Product[LT1.5 - Category]: Active Hydration
+      '[Unit Cases]': 31410294.4014
+      '[Net Sales Revenue]': 4110674424.552634
+    - Product[LT1.5 - Category]: Tea
+      '[Unit Cases]': 22791132.2173
+      '[Net Sales Revenue]': 3126176176.679865
+    - Product[LT1.5 - Category]: Unassigned
+      '[Unit Cases]': 3952.5952
+      '[Net Sales Revenue]': 890930607.7840005
+    - Product[LT1.5 - Category]: ARTD
+      '[Unit Cases]': 1845018.5585
+      '[Net Sales Revenue]': 368006416.20750123
+    - Product[LT1.5 - Category]: Plant Based Beverages
+      '[Unit Cases]': 1964332.4034
+      '[Net Sales Revenue]': 281795922.6889016
+    - Product[LT1.5 - Category]: .nan
+      '[Unit Cases]': 483505.0719
+      '[Net Sales Revenue]': 85728533.84849992
+    - Product[LT1.5 - Category]: Coffee
+      '[Unit Cases]': 80110.4074
+      '[Net Sales Revenue]': 35603045.3584
+    - Product[LT1.5 - Category]: Energy Drinks
+      '[Unit Cases]': 0.0
+      '[Net Sales Revenue]': 0.129999999999999
+- id: 16
+  question: Give me the Unit Cases and Net Sales Revenue for Colombia by Category
+    in 2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.5 - Category],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Colombia"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.5 - Category]: Colas
+      '[Unit Cases]': 124020841.952
+      '[Net Sales Revenue]': 1858113260791.0
+    - Product[LT1.5 - Category]: Packaged Water
+      '[Unit Cases]': 33116308.6929
+      '[Net Sales Revenue]': 375347830161.0
+    - Product[LT1.5 - Category]: Flavors
+      '[Unit Cases]': 18989446.7011
+      '[Net Sales Revenue]': 243448565674.0
+    - Product[LT1.5 - Category]: Juices & Juice Drinks
+      '[Unit Cases]': 12783926.5989
+      '[Net Sales Revenue]': 152751546462.61542
+    - Product[LT1.5 - Category]: Core Flavors
+      '[Unit Cases]': 6177263.8543
+      '[Net Sales Revenue]': 87024591152.0
+    - Product[LT1.5 - Category]: Active Hydration
+      '[Unit Cases]': 1070358.5631
+      '[Net Sales Revenue]': 24762226363.0
+    - Product[LT1.5 - Category]: Tea
+      '[Unit Cases]': 741261.138
+      '[Net Sales Revenue]': 19581167270.0
+    - Product[LT1.5 - Category]: .nan
+      '[Unit Cases]': 60187.7766
+      '[Net Sales Revenue]': 970136068.0
+    - Product[LT1.5 - Category]: Unassigned
+      '[Unit Cases]': 0.0
+      '[Net Sales Revenue]': 194030334.0
+    - Product[LT1.5 - Category]: Personal & Beauty Care
+      '[Unit Cases]': 0.0
+      '[Net Sales Revenue]': 665562.0
+    - Product[LT1.5 - Category]: Hair Care
+      '[Unit Cases]': 0.0
+      '[Net Sales Revenue]': 517649.0
+    - Product[LT1.5 - Category]: Plant Based Beverages
+      '[Unit Cases]': -3.1648
+      '[Net Sales Revenue]': -160989.0
+- id: 17
+  question: Give me the Unit Cases and Net Sales Revenue for Brasil by Category in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.5 - Category],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Brazil"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.5 - Category]: Colas
+      '[Unit Cases]': 777835429.4931
+      '[Net Sales Revenue]': 14067885641.704185
+    - Product[LT1.5 - Category]: Core Flavors
+      '[Unit Cases]': 170742777.1176
+      '[Net Sales Revenue]': 2767767126.9360514
+    - Product[LT1.5 - Category]: Juices & Juice Drinks
+      '[Unit Cases]': 45535494.0296
+      '[Net Sales Revenue]': 1228430424.415522
+    - Product[LT1.5 - Category]: Packaged Water
+      '[Unit Cases]': 93967567.8676
+      '[Net Sales Revenue]': 1095753645.5199647
+    - Product[LT1.5 - Category]: Tea
+      '[Unit Cases]': 87255838.7439
+      '[Net Sales Revenue]': 542725517.0530834
+    - Product[LT1.5 - Category]: Flavors
+      '[Unit Cases]': 41372716.2532
+      '[Net Sales Revenue]': 440263023.7768426
+    - Product[LT1.5 - Category]: Active Hydration
+      '[Unit Cases]': 7854649.4864
+      '[Net Sales Revenue]': 223287193.14798307
+    - Product[LT1.5 - Category]: Plant Based Beverages
+      '[Unit Cases]': 3365196.1987
+      '[Net Sales Revenue]': 102598799.78999895
+    - Product[LT1.5 - Category]: ARTD
+      '[Unit Cases]': 523337.5083
+      '[Net Sales Revenue]': 40211449.56999977
+    - Product[LT1.5 - Category]: .nan
+      '[Unit Cases]': 425659.9151
+      '[Net Sales Revenue]': 6483457.360000044
+- id: 18
+  question: Give me the Unit Cases and Net Sales Revenue for Mexico by Brand in 2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.2 - Brand Group],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.2 - Brand Group]: Coca-Cola Less Sugar
+      '[Unit Cases]': 903342177.9227
+      '[Net Sales Revenue]': 60669532933.47477
+    - Product[LT1.2 - Brand Group]: Coca-Cola
+      '[Unit Cases]': 194747134.6838
+      '[Net Sales Revenue]': 25977437984.883354
+    - Product[LT1.2 - Brand Group]: Ciel
+      '[Unit Cases]': 437968529.0822
+      '[Net Sales Revenue]': 10120086538.86506
+    - Product[LT1.2 - Brand Group]: Santa Clara
+      '[Unit Cases]': 49804119.1449
+      '[Net Sales Revenue]': 8488582828.697382
+    - Product[LT1.2 - Brand Group]: Coca-Cola Zero
+      '[Unit Cases]': 60267833.1992
+      '[Net Sales Revenue]': 6245315631.039418
+    - Product[LT1.2 - Brand Group]: Topo Chico
+      '[Unit Cases]': 36778438.6273
+      '[Net Sales Revenue]': 5177077654.466325
+    - Product[LT1.2 - Brand Group]: Del Valle
+      '[Unit Cases]': 30033879.9467
+      '[Net Sales Revenue]': 4668163098.161563
+    - Product[LT1.2 - Brand Group]: Powerade
+      '[Unit Cases]': 29763931.0251
+      '[Net Sales Revenue]': 3916252697.015946
+    - Product[LT1.2 - Brand Group]: Del Valle Frut
+      '[Unit Cases]': 50151197.7788
+      '[Net Sales Revenue]': 3291064063.6839013
+    - Product[LT1.2 - Brand Group]: Fresca
+      '[Unit Cases]': 40302071.979
+      '[Net Sales Revenue]': 2884672571.967861
+    - Product[LT1.2 - Brand Group]: Fuze Tea Black Tea
+      '[Unit Cases]': 20442717.1864
+      '[Net Sales Revenue]': 2794347032.991958
+    - Product[LT1.2 - Brand Group]: Coca-Cola Low-Cal
+      '[Unit Cases]': 20465057.3257
+      '[Net Sales Revenue]': 2747898216.3613605
+    - Product[LT1.2 - Brand Group]: Sidral Mundet
+      '[Unit Cases]': 41943316.7951
+      '[Net Sales Revenue]': 2732713562.8989997
+    - Product[LT1.2 - Brand Group]: Fanta
+      '[Unit Cases]': 34437935.5895
+      '[Net Sales Revenue]': 2602702538.026368
+    - Product[LT1.2 - Brand Group]: Sprite
+      '[Unit Cases]': 31422115.9411
+      '[Net Sales Revenue]': 2383326184.2336316
+    - Product[LT1.2 - Brand Group]: Cristal Purified Water
+      '[Unit Cases]': 121523860.8799
+      '[Net Sales Revenue]': 1734765371.0056005
+    - Product[LT1.2 - Brand Group]: Joya
+      '[Unit Cases]': 11408675.6828
+      '[Net Sales Revenue]': 1029537934.5000001
+    - Product[LT1.2 - Brand Group]: Unassigned
+      '[Unit Cases]': 3952.5952
+      '[Net Sales Revenue]': 890930607.784001
+    - Product[LT1.2 - Brand Group]: Ciel (Carb)
+      '[Unit Cases]': 7204452.0717
+      '[Net Sales Revenue]': 790734012.1100106
+    - Product[LT1.2 - Brand Group]: Valle Frut
+      '[Unit Cases]': 8535609.7749
+      '[Net Sales Revenue]': 689208418.3615916
+    - Product[LT1.2 - Brand Group]: Delaware Punch
+      '[Unit Cases]': 8355753.8558
+      '[Net Sales Revenue]': 664374974.8934807
+    - Product[LT1.2 - Brand Group]: Sprite Zero
+      '[Unit Cases]': 4792365.8903
+      '[Net Sales Revenue]': 377732168.693599
+    - Product[LT1.2 - Brand Group]: Del Valle Fizz
+      '[Unit Cases]': 4478233.5625
+      '[Net Sales Revenue]': 343830354.73534006
+    - Product[LT1.2 - Brand Group]: Frutsi
+      '[Unit Cases]': 3277110.843
+      '[Net Sales Revenue]': 317855513.52920276
+    - Product[LT1.2 - Brand Group]: Fuze Tea Green Tea
+      '[Unit Cases]': 2141336.5962
+      '[Net Sales Revenue]': 301272891.86990595
+    - Product[LT1.2 - Brand Group]: Del Valle Pulpy
+      '[Unit Cases]': 1609605.8688
+      '[Net Sales Revenue]': 292694573.9425983
+    - Product[LT1.2 - Brand Group]: Cristal Mineral Water
+      '[Unit Cases]': 2825475.6781
+      '[Net Sales Revenue]': 276050515.7129988
+    - Product[LT1.2 - Brand Group]: Ameyal
+      '[Unit Cases]': 6331611.1323
+      '[Net Sales Revenue]': 248662641.79600486
+    - Product[LT1.2 - Brand Group]: Escuis
+      '[Unit Cases]': 3406664.3899
+      '[Net Sales Revenue]': 244127754.68379757
+    - Product[LT1.2 - Brand Group]: Senzao
+      '[Unit Cases]': 2868687.2686
+      '[Net Sales Revenue]': 223534880.78000098
+    - Product[LT1.2 - Brand Group]: Victoria
+      '[Unit Cases]': 3231605.2759
+      '[Net Sales Revenue]': 201956125.8710011
+    - Product[LT1.2 - Brand Group]: Fanta Zero
+      '[Unit Cases]': 2673896.6147
+      '[Net Sales Revenue]': 201148932.89909977
+    - Product[LT1.2 - Brand Group]: FlashLyte
+      '[Unit Cases]': 1590664.3863
+      '[Net Sales Revenue]': 191138389.43670237
+    - Product[LT1.2 - Brand Group]: Bacardi & Coke
+      '[Unit Cases]': 985421.8973
+      '[Net Sales Revenue]': 185609130.92090043
+    - Product[LT1.2 - Brand Group]: Ciel Zero
+      '[Unit Cases]': 2866603.538
+      '[Net Sales Revenue]': 178747829.56249663
+    - Product[LT1.2 - Brand Group]: Yoli
+      '[Unit Cases]': 2384307.2368
+      '[Net Sales Revenue]': 176339805.45899913
+    - Product[LT1.2 - Brand Group]: Del Valle Kids
+      '[Unit Cases]': 1332394.1205
+      '[Net Sales Revenue]': 157794425.42300007
+    - Product[LT1.2 - Brand Group]: Sidral
+      '[Unit Cases]': 1771083.8996
+      '[Net Sales Revenue]': 156888704.2684993
+    - Product[LT1.2 - Brand Group]: Cristal Flavors
+      '[Unit Cases]': 1921629.6154
+      '[Net Sales Revenue]': 144291357.6673997
+    - Product[LT1.2 - Brand Group]: Plant Based (Seeds)
+      '[Unit Cases]': 925379.0592
+      '[Net Sales Revenue]': 143760323.85560033
+    - Product[LT1.2 - Brand Group]: Del Valle Reserva Antiox
+      '[Unit Cases]': 993036.4078
+      '[Net Sales Revenue]': 141593280.7304995
+    - Product[LT1.2 - Brand Group]: Fresca Zero
+      '[Unit Cases]': 1971203.4456
+      '[Net Sales Revenue]': 141360582.5497002
+    - Product[LT1.2 - Brand Group]: Del Valle-KO
+      '[Unit Cases]': 836880.0921
+      '[Net Sales Revenue]': 140768634.88000008
+    - Product[LT1.2 - Brand Group]: Plant Based (Fruit)
+      '[Unit Cases]': 1038953.3442
+      '[Net Sales Revenue]': 138035598.83330077
+    - Product[LT1.2 - Brand Group]: Topo Chico Drinks Mexicanos
+      '[Unit Cases]': 654339.2352
+      '[Net Sales Revenue]': 131097528.67080002
+    - Product[LT1.2 - Brand Group]: CRISTAL
+      '[Unit Cases]': 1473409.4797
+      '[Net Sales Revenue]': 125316472.87199964
+    - Product[LT1.2 - Brand Group]: Agua de Taxco
+      '[Unit Cases]': 1139538.6776
+      '[Net Sales Revenue]': 120946779.19399986
+    - Product[LT1.2 - Brand Group]: .nan
+      '[Unit Cases]': 483505.0719
+      '[Net Sales Revenue]': 85728533.84849992
+    - Product[LT1.2 - Brand Group]: Del Valle 100%
+      '[Unit Cases]': 451437.967
+      '[Net Sales Revenue]': 72773951.40360004
+    - Product[LT1.2 - Brand Group]: Bevi
+      '[Unit Cases]': 223623.8422
+      '[Net Sales Revenue]': 65388522.690599956
+    - Product[LT1.2 - Brand Group]: Florida 7
+      '[Unit Cases]': 718010.0742
+      '[Net Sales Revenue]': 60461709.22350002
+    - Product[LT1.2 - Brand Group]: Prisco
+      '[Unit Cases]': 432451.2917
+      '[Net Sales Revenue]': 54650662.27599996
+    - Product[LT1.2 - Brand Group]: Jack Daniels & Coke
+      '[Unit Cases]': 195881.1981
+      '[Net Sales Revenue]': 49478982.04300006
+    - Product[LT1.2 - Brand Group]: Glaceau Vitamine Water
+      '[Unit Cases]': 189564.5457
+      '[Net Sales Revenue]': 45999456.217500046
+    - Product[LT1.2 - Brand Group]: Del Valle Junior
+      '[Unit Cases]': 203363.1654
+      '[Net Sales Revenue]': 25748989.55
+    - Product[LT1.2 - Brand Group]: Seagrams
+      '[Unit Cases]': 89643.2861
+      '[Net Sales Revenue]': 23399429.522800025
+    - Product[LT1.2 - Brand Group]: Ameyal-KO
+      '[Unit Cases]': 651253.3407
+      '[Net Sales Revenue]': 19879665.143000036
+    - Product[LT1.2 - Brand Group]: Ciel Exprim
+      '[Unit Cases]': 169159.304
+      '[Net Sales Revenue]': 11137764.865000006
+    - Product[LT1.2 - Brand Group]: Del Valle Frutal
+      '[Unit Cases]': 75036.5582
+      '[Net Sales Revenue]': 9539043.439999998
+    - Product[LT1.2 - Brand Group]: Del Valle Reserva
+      '[Unit Cases]': 48872.8039
+      '[Net Sales Revenue]': 7824721.540000001
+    - Product[LT1.2 - Brand Group]: Sangria Mundet
+      '[Unit Cases]': 65700.0739
+      '[Net Sales Revenue]': 6980843.876999996
+    - Product[LT1.2 - Brand Group]: Shandy
+      '[Unit Cases]': 132699.1514
+      '[Net Sales Revenue]': 6131247.997800001
+    - Product[LT1.2 - Brand Group]: Cristal (Carb)
+      '[Unit Cases]': 41557.2371
+      '[Net Sales Revenue]': 3874864.572900003
+    - Product[LT1.2 - Brand Group]: Powerade Zero
+      '[Unit Cases]': 55696.9646
+      '[Net Sales Revenue]': 3282926.5599999996
+    - Product[LT1.2 - Brand Group]: Topo Chico Hard Seltzer
+      '[Unit Cases]': 9376.2279
+      '[Net Sales Revenue]': 1820964.7428000022
+    - Product[LT1.2 - Brand Group]: Del Valle & Nada
+      '[Unit Cases]': 51.3417
+      '[Net Sales Revenue]': 4658.141799999999
+    - Product[LT1.2 - Brand Group]: Powerade Fit
+      '[Unit Cases]': 2.642
+      '[Net Sales Revenue]': 516.25
+    - Product[LT1.2 - Brand Group]: Tropi Frut
+      '[Unit Cases]': 0.4403
+      '[Net Sales Revenue]': 21.3
+    - Product[LT1.2 - Brand Group]: Coca-Cola Energy
+      '[Unit Cases]': 0.0
+      '[Net Sales Revenue]': 0.129999999999999
+    - Product[LT1.2 - Brand Group]: Fuze Iced Tea
+      '[Unit Cases]': .nan
+      '[Net Sales Revenue]': -0.02
+    - Product[LT1.2 - Brand Group]: Del Valle Nutridefensas
+      '[Unit Cases]': -0.009
+      '[Net Sales Revenue]': -0.7900000000000009
+    - Product[LT1.2 - Brand Group]: Bebere
+      '[Unit Cases]': 0.0
+      '[Net Sales Revenue]': -1.9899999999999993
+    - Product[LT1.2 - Brand Group]: Del Valle Nutriforce
+      '[Unit Cases]': -0.0352
+      '[Net Sales Revenue]': -6.38
+    - Product[LT1.2 - Brand Group]: Sierra Azul
+      '[Unit Cases]': -0.0626
+      '[Net Sales Revenue]': -8.620000000000001
+    - Product[LT1.2 - Brand Group]: Del Valle Blend
+      '[Unit Cases]': -0.071
+      '[Net Sales Revenue]': -9.76
+    - Product[LT1.2 - Brand Group]: Fuze Tea White Tea
+      '[Unit Cases]': -0.2111
+      '[Net Sales Revenue]': -33.64
+    - Product[LT1.2 - Brand Group]: Isolite
+      '[Unit Cases]': -0.6166
+      '[Net Sales Revenue]': -104.71000000000001
+    - Product[LT1.2 - Brand Group]: Lift
+      '[Unit Cases]': -4.9313
+      '[Net Sales Revenue]': -110.28999999999999
+    - Product[LT1.2 - Brand Group]: Lemon-Dou
+      '[Unit Cases]': 0.0
+      '[Net Sales Revenue]': -190.17
+    - Product[LT1.2 - Brand Group]: Coca-Cola Functional
+      '[Unit Cases]': -0.3732
+      '[Net Sales Revenue]': -288.95
+    - Product[LT1.2 - Brand Group]: Coca-Cola Creations
+      '[Unit Cases]': -0.1253
+      '[Net Sales Revenue]': -1317.6899999999998
+    - Product[LT1.2 - Brand Group]: Del Valle Seleccion
+      '[Unit Cases]': -18.4924
+      '[Net Sales Revenue]': -2916.7799999999997
+    - Product[LT1.2 - Brand Group]: Florida 7 Juice 100%
+      '[Unit Cases]': .nan
+      '[Net Sales Revenue]': -52896.69
+    - Product[LT1.2 - Brand Group]: Ciel Mini
+      '[Unit Cases]': -105.7875
+      '[Net Sales Revenue]': -212192.26
+- id: 19
+  question: Give me the Unit Cases and Net Sales Revenue for Colombia by Brand in
+    2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.2 - Brand Group],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Colombia"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Unit Cases] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.2 - Brand Group]: Coca-Cola Less Sugar
+      '[Unit Cases]': 82161260.1119
+      '[Net Sales Revenue]': 974317522191.0
+    - Product[LT1.2 - Brand Group]: Coca-Cola
+      '[Unit Cases]': 30383647.0313
+      '[Net Sales Revenue]': 674724200327.0
+    - Product[LT1.2 - Brand Group]: Brisa
+      '[Unit Cases]': 19408044.5378
+      '[Net Sales Revenue]': 156246301270.0
+    - Product[LT1.2 - Brand Group]: Quatro
+      '[Unit Cases]': 17647709.1393
+      '[Net Sales Revenue]': 223807571948.0
+    - Product[LT1.2 - Brand Group]: Del Valle Fresh
+      '[Unit Cases]': 11959182.5003
+      '[Net Sales Revenue]': 135512689948.0
+    - Product[LT1.2 - Brand Group]: Coca-Cola Zero
+      '[Unit Cases]': 11453403.3398
+      '[Net Sales Revenue]': 208047218221.0
+    - Product[LT1.2 - Brand Group]: Brisa (Carb)
+      '[Unit Cases]': 7945013.425
+      '[Net Sales Revenue]': 99963715999.0
+    - Product[LT1.2 - Brand Group]: Sprite
+      '[Unit Cases]': 4007013.7852
+      '[Net Sales Revenue]': 57047101414.0
+    - Product[LT1.2 - Brand Group]: Schweppes
+      '[Unit Cases]': 3449591.9624
+      '[Net Sales Revenue]': 61649326593.0
+    - Product[LT1.2 - Brand Group]: Manantial
+      '[Unit Cases]': 2961388.0344
+      '[Net Sales Revenue]': 57282850966.0
+    - Product[LT1.2 - Brand Group]: Premio
+      '[Unit Cases]': 1341737.5618
+      '[Net Sales Revenue]': 19640993726.0
+    - Product[LT1.2 - Brand Group]: Powerade
+      '[Unit Cases]': 929804.091
+      '[Net Sales Revenue]': 20764955098.0
+    - Product[LT1.2 - Brand Group]: Manantial(Carb)
+      '[Unit Cases]': 759287.0177
+      '[Net Sales Revenue]': 17170985609.0
+    - Product[LT1.2 - Brand Group]: Brisa Spa
+      '[Unit Cases]': 697189.6994
+      '[Net Sales Revenue]': 11774548670.0
+    - Product[LT1.2 - Brand Group]: Del Valle Frutal
+      '[Unit Cases]': 504825.3105
+      '[Net Sales Revenue]': 10469172821.0
+    - Product[LT1.2 - Brand Group]: Fuze Tea Black Tea
+      '[Unit Cases]': 496511.9843
+      '[Net Sales Revenue]': 12536317883.0
+    - Product[LT1.2 - Brand Group]: Del Valle
+      '[Unit Cases]': 273995.8104
+      '[Net Sales Revenue]': 6206367106.0
+    - Product[LT1.2 - Brand Group]: Fuze Tea Green Tea
+      '[Unit Cases]': 182001.383
+      '[Net Sales Revenue]': 5311945173.0
+    - Product[LT1.2 - Brand Group]: FlashLyte
+      '[Unit Cases]': 140554.4721
+      '[Net Sales Revenue]': 3997271265.0
+    - Product[LT1.2 - Brand Group]: Fanta
+      '[Unit Cases]': 65916.0112
+      '[Net Sales Revenue]': 1237721265.0
+    - Product[LT1.2 - Brand Group]: Fuze Tea
+      '[Unit Cases]': 62747.7707
+      '[Net Sales Revenue]': 1732904214.0
+    - Product[LT1.2 - Brand Group]: .nan
+      '[Unit Cases]': 60187.7766
+      '[Net Sales Revenue]': 970136068.0
+    - Product[LT1.2 - Brand Group]: Minute Maid Nectar
+      '[Unit Cases]': 36519.12
+      '[Net Sales Revenue]': -46864153.384588
+    - Product[LT1.2 - Brand Group]: Coca-Cola Functional
+      '[Unit Cases]': 22535.6356
+      '[Net Sales Revenue]': 1024537772.0
+    - Product[LT1.2 - Brand Group]: Del Valle Kids
+      '[Unit Cases]': 9404.386
+      '[Net Sales Revenue]': 610205951.0
+    - Product[LT1.2 - Brand Group]: Dasani
+      '[Unit Cases]': 138.297
+      '[Net Sales Revenue]': .nan
+    - Product[LT1.2 - Brand Group]: Plant Based (Fruit)
+      '[Unit Cases]': 1.9993
+      '[Net Sales Revenue]': 110924.0
+    - Product[LT1.2 - Brand Group]: Head & Shoulders
+      '[Unit Cases]': 0.0
+      '[Net Sales Revenue]': 1183211.0
+    - Product[LT1.2 - Brand Group]: Unassigned
+      '[Unit Cases]': 0.0
+      '[Net Sales Revenue]': 194030334.0
+    - Product[LT1.2 - Brand Group]: Del Valle Nutridefensas
+      '[Unit Cases]': -0.5283
+      '[Net Sales Revenue]': -25210.0
+    - Product[LT1.2 - Brand Group]: Schweppes Zero
+      '[Unit Cases]': -1.5053
+      '[Net Sales Revenue]': -22800.0
+    - Product[LT1.2 - Brand Group]: Coca-Cola Creations
+      '[Unit Cases]': -4.1666
+      '[Net Sales Revenue]': -217720.0
+    - Product[LT1.2 - Brand Group]: Plant Based (Seeds)
+      '[Unit Cases]': -5.1641
+      '[Net Sales Revenue]': -271913.0
+    - Product[LT1.2 - Brand Group]: Sprite Zero
+      '[Unit Cases]': -8.7176
+      '[Net Sales Revenue]': -107673.0
+- id: 20
+  question: Give me the Unit Cases and Net Sales Revenue for Brazil by Brand in 2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.2 - Brand Group],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Brazil"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Unit Cases] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.2 - Brand Group]: Coca-Cola Less Sugar
+      '[Unit Cases]': 363448058.2618
+      '[Net Sales Revenue]': 5491051571.461143
+    - Product[LT1.2 - Brand Group]: Coca-Cola Zero
+      '[Unit Cases]': 213936273.9193
+      '[Net Sales Revenue]': 4302801833.263432
+    - Product[LT1.2 - Brand Group]: Coca-Cola
+      '[Unit Cases]': 199566260.6613
+      '[Net Sales Revenue]': 4241979602.749658
+    - Product[LT1.2 - Brand Group]: Fanta
+      '[Unit Cases]': 99602059.2142
+      '[Net Sales Revenue]': 1539106465.265986
+    - Product[LT1.2 - Brand Group]: Matte Leao
+      '[Unit Cases]': 70848195.2909
+      '[Net Sales Revenue]': 296338332.6299941
+    - Product[LT1.2 - Brand Group]: Crystal
+      '[Unit Cases]': 53609544.9712
+      '[Net Sales Revenue]': 560769215.9599992
+    - Product[LT1.2 - Brand Group]: Sprite
+      '[Unit Cases]': 40400271.85
+      '[Net Sales Revenue]': 665883362.8571572
+    - Product[LT1.2 - Brand Group]: Crystal (Carb)
+      '[Unit Cases]': 37341623.7171
+      '[Net Sales Revenue]': 492731293.17999554
+    - Product[LT1.2 - Brand Group]: Kuat
+      '[Unit Cases]': 23224525.5558
+      '[Net Sales Revenue]': 242421203.50464296
+    - Product[LT1.2 - Brand Group]: Del Valle Frut
+      '[Unit Cases]': 17881389.8297
+      '[Net Sales Revenue]': 261866358.64339882
+    - Product[LT1.2 - Brand Group]: Sprite Zero
+      '[Unit Cases]': 17648675.1858
+      '[Net Sales Revenue]': 267232144.446499
+    - Product[LT1.2 - Brand Group]: Del Valle
+      '[Unit Cases]': 14629741.6611
+      '[Net Sales Revenue]': 487617664.3700355
+    - Product[LT1.2 - Brand Group]: Del Valle Kapo
+      '[Unit Cases]': 8815229.3992
+      '[Net Sales Revenue]': 324609924.7220832
+    - Product[LT1.2 - Brand Group]: Powerade
+      '[Unit Cases]': 7213226.373
+      '[Net Sales Revenue]': 204757621.4901876
+    - Product[LT1.2 - Brand Group]: Charrua
+      '[Unit Cases]': 6000095.6039
+      '[Net Sales Revenue]': 48549790.549999915
+    - Product[LT1.2 - Brand Group]: Schweppes
+      '[Unit Cases]': 5917394.0647
+      '[Net Sales Revenue]': 148708647.66989627
+    - Product[LT1.2 - Brand Group]: Tuchaua
+      '[Unit Cases]': 5010487.1847
+      '[Net Sales Revenue]': 56436055.289999954
+    - Product[LT1.2 - Brand Group]: Leao Fuze
+      '[Unit Cases]': 4320103.5395
+      '[Net Sales Revenue]': 67041623.38430019
+    - Product[LT1.2 - Brand Group]: Ice Tea Leao
+      '[Unit Cases]': 4037087.5489
+      '[Net Sales Revenue]': 73907101.25880145
+    - Product[LT1.2 - Brand Group]: Schweppes Zero
+      '[Unit Cases]': 3946667.8939
+      '[Net Sales Revenue]': 93074591.464199
+    - Product[LT1.2 - Brand Group]: Leao
+      '[Unit Cases]': 3352841.8819
+      '[Net Sales Revenue]': 32235937.569999844
+    - Product[LT1.2 - Brand Group]: Fanta Zero
+      '[Unit Cases]': 3245545.4425
+      '[Net Sales Revenue]': 54405523.92259933
+    - Product[LT1.2 - Brand Group]: Plant Based (Fruit)
+      '[Unit Cases]': 2743311.2701
+      '[Net Sales Revenue]': 80476149.43999888
+    - Product[LT1.2 - Brand Group]: Guarana Jesus
+      '[Unit Cases]': 2573861.7777
+      '[Net Sales Revenue]': 52039498.253099956
+    - Product[LT1.2 - Brand Group]: Del Valle Mais
+      '[Unit Cases]': 2558854.3928
+      '[Net Sales Revenue]': 86882368.26999953
+    - Product[LT1.2 - Brand Group]: Kuat Zero
+      '[Unit Cases]': 2284737.1134
+      '[Net Sales Revenue]': 18546984.079099983
+    - Product[LT1.2 - Brand Group]: Guarapan
+      '[Unit Cases]': 2220489.8546
+      '[Net Sales Revenue]': 20677103.43999999
+    - Product[LT1.2 - Brand Group]: Cha Leao
+      '[Unit Cases]': 1477125.4743
+      '[Net Sales Revenue]': 20680005.17
+    - Product[LT1.2 - Brand Group]: Crystal Sparkling
+      '[Unit Cases]': 1439944.431
+      '[Net Sales Revenue]': 24174295.270001356
+    - Product[LT1.2 - Brand Group]: Belagua
+      '[Unit Cases]': 1219730.2182
+      '[Net Sales Revenue]': 11930495.92
+    - Product[LT1.2 - Brand Group]: Leao Ice Tea
+      '[Unit Cases]': 1164680.0148
+      '[Net Sales Revenue]': 27157420.91000011
+    - Product[LT1.2 - Brand Group]: Coca-Cola Functional
+      '[Unit Cases]': 773738.9794
+      '[Net Sales Revenue]': 27913877.078300163
+    - Product[LT1.2 - Brand Group]: Del Valle 100%
+      '[Unit Cases]': 709147.6797
+      '[Net Sales Revenue]': 36022368.14000003
+    - Product[LT1.2 - Brand Group]: Powerade Zero
+      '[Unit Cases]': 641423.1134
+      '[Net Sales Revenue]': 18529571.657800075
+    - Product[LT1.2 - Brand Group]: Plant Based (Seeds)
+      '[Unit Cases]': 621884.9286
+      '[Net Sales Revenue]': 22122650.35000006
+    - Product[LT1.2 - Brand Group]: Leao Cold Brew
+      '[Unit Cases]': 582109.5392
+      '[Net Sales Revenue]': 6394097.45
+    - Product[LT1.2 - Brand Group]: Leao Functional
+      '[Unit Cases]': 509816.0558
+      '[Net Sales Revenue]': 7548557.140000001
+    - Product[LT1.2 - Brand Group]: Mais
+      '[Unit Cases]': 476927.6023
+      '[Net Sales Revenue]': 13329040.739999983
+    - Product[LT1.2 - Brand Group]: Del Valle No Sugar
+      '[Unit Cases]': 464203.4648
+      '[Net Sales Revenue]': 18102699.53000005
+    - Product[LT1.2 - Brand Group]: .nan
+      '[Unit Cases]': 425659.9151
+      '[Net Sales Revenue]': 6483457.360000044
+    - Product[LT1.2 - Brand Group]: Cha Leao Kids
+      '[Unit Cases]': 377409.0926
+      '[Net Sales Revenue]': 4530985.7
+    - Product[LT1.2 - Brand Group]: Schweppes Mixed
+      '[Unit Cases]': 325456.8647
+      '[Net Sales Revenue]': 21751347.58999993
+    - Product[LT1.2 - Brand Group]: Belagua (Carb)
+      '[Unit Cases]': 280280.6637
+      '[Net Sales Revenue]': 3648039.96
+    - Product[LT1.2 - Brand Group]: Leao Senses
+      '[Unit Cases]': 266549.5476
+      '[Net Sales Revenue]': 3455793.079999999
+    - Product[LT1.2 - Brand Group]: Cha Leao Vitaminico
+      '[Unit Cases]': 145981.7838
+      '[Net Sales Revenue]': 2431983.0700000003
+    - Product[LT1.2 - Brand Group]: Absolut Vodka & Sprite
+      '[Unit Cases]': 130249.5792
+      '[Net Sales Revenue]': 11593550.059999939
+    - Product[LT1.2 - Brand Group]: Coca-Cola Low-Cal
+      '[Unit Cases]': 111097.6713
+      '[Net Sales Revenue]': 4138757.1499999915
+    - Product[LT1.2 - Brand Group]: Matte Leao Toasted
+      '[Unit Cases]': 95725.916
+      '[Net Sales Revenue]': 134302.11
+    - Product[LT1.2 - Brand Group]: Cha Leao Ice Tea
+      '[Unit Cases]': 78213.0586
+      '[Net Sales Revenue]': 869377.5800000002
+    - Product[LT1.2 - Brand Group]: Jack Daniels & Coke
+      '[Unit Cases]': 67631.0644
+      '[Net Sales Revenue]': 6866551.919999974
+    - Product[LT1.2 - Brand Group]: Glaceau Smartwater
+      '[Unit Cases]': 58607.3329
+      '[Net Sales Revenue]': 1856696.5399999993
+    - Product[LT1.2 - Brand Group]: Guarana Jesus Zero
+      '[Unit Cases]': 58519.1631
+      '[Net Sales Revenue]': 1592388.6600000001
+- id: 21
+  question: Give me monthly Unit Cases for Arca Continental and Bepensa in Mexico
+    in 2026, for brand group Coca-Cola.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Period'[Month 445],
+        'Period'[Month 445 Code],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Arca Continental", "MX Bepensa" }),
+        FILTER(ALL('Product'[LT1.2 - Brand Group]), 'Product'[LT1.2 - Brand Group] = "Coca-Cola"),
+        FILTER(ALL('Period'[Month 445 Code]), 'Period'[Month 445 Code] >= "202601" && 'Period'[Month 445 Code] <= "202612"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC]
+    )
+    ORDER BY 'Period'[Month 445 Code] ASC
+  dax_answer:
+    status: ok
+    data:
+    - Period[Month 445]: 2026 Jan
+      Period[Month 445 Code]: '202601'
+      '[Unit Cases]': 10143846.8868
+    - Period[Month 445]: 2026 Feb
+      Period[Month 445 Code]: '202602'
+      '[Unit Cases]': 10549982.8839
+    - Period[Month 445]: 2026 Mar
+      Period[Month 445 Code]: '202603'
+      '[Unit Cases]': 14682339.7281
+    - Period[Month 445]: 2026 Apr
+      Period[Month 445 Code]: '202604'
+      '[Unit Cases]': 12170953.947
+    - Period[Month 445]: 2026 May
+      Period[Month 445 Code]: '202605'
+      '[Unit Cases]': 13113993.3933
+    - Period[Month 445]: 2026 Jun
+      Period[Month 445 Code]: '202606'
+      '[Unit Cases]': 16112400.1481
+    - Period[Month 445]: 2026 Jul
+      Period[Month 445 Code]: '202607'
+      '[Unit Cases]': 4021206.733
+- id: 22
+  question: Compare Chedraui sales by bottler, Q1 2025 vs Q1 2026, in volume for Powerade.
+  dax_query: |
+    EVALUATE
+    ADDCOLUMNS(
+        CALCULATETABLE(
+            VALUES('Ship From'[L1.3 - Bottler]),
+            'Ship From'[L1.5 - Country] = "Mexico"
+        ),
+        "Q1 2026 Unit Cases",
+        CALCULATE(
+            [Unit Cases AC QTD],
+            KEEPFILTERS(FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] = "Chedraui")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.2 - Brand Group]), 'Product'[LT1.2 - Brand Group] = "Powerade")),
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202601")),
+            KEEPFILTERS(FILTER(ALL('Period'[Month 445]), 'Period'[Month 445] <> "")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        ),
+        "Q1 2025 Unit Cases",
+        CALCULATE(
+            [Unit Cases AC QTD],
+            KEEPFILTERS(FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] = "Chedraui")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.2 - Brand Group]), 'Product'[LT1.2 - Brand Group] = "Powerade")),
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202501")),
+            KEEPFILTERS(FILTER(ALL('Period'[Month 445]), 'Period'[Month 445] <> "")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        )
+    )
+    ORDER BY [Q1 2026 Unit Cases] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Ship From[L1.3 - Bottler]: MX Coca-Cola Femsa
+      '[Q1 2026 Unit Cases]': 84386.4946
+      '[Q1 2025 Unit Cases]': 253672.2929
+    - Ship From[L1.3 - Bottler]: MX JDV
+      '[Q1 2026 Unit Cases]': 42869.3872
+      '[Q1 2025 Unit Cases]': 1787.3198
+    - Ship From[L1.3 - Bottler]: MX Bepensa
+      '[Q1 2026 Unit Cases]': 23396.727
+      '[Q1 2025 Unit Cases]': 39680.1168
+    - Ship From[L1.3 - Bottler]: MX Tepic
+      '[Q1 2026 Unit Cases]': 771.3999
+      '[Q1 2025 Unit Cases]': 793.3781
+    - Ship From[L1.3 - Bottler]: MX Rica
+      '[Q1 2026 Unit Cases]': 648.821
+      '[Q1 2025 Unit Cases]': 1176.7549
+    - Ship From[L1.3 - Bottler]: MX Arca Continental
+      '[Q1 2026 Unit Cases]': 389.9261
+      '[Q1 2025 Unit Cases]': 581.7192
+    - Ship From[L1.3 - Bottler]: MX CDF
+      '[Q1 2026 Unit Cases]': .nan
+      '[Q1 2025 Unit Cases]': .nan
+    - Ship From[L1.3 - Bottler]: MX Colima
+      '[Q1 2026 Unit Cases]': .nan
+      '[Q1 2025 Unit Cases]': .nan
+    - Ship From[L1.3 - Bottler]: MX Nogales
+      '[Q1 2026 Unit Cases]': .nan
+      '[Q1 2025 Unit Cases]': .nan
+    - Ship From[L1.3 - Bottler]: MX Santa Clara
+      '[Q1 2026 Unit Cases]': .nan
+      '[Q1 2025 Unit Cases]': .nan
+- id: 23
+  question: What is the Net Sales Revenue in Modern and Traditional channel for Bepensa
+    Mexico in January 2026 for Colas?
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Channel'[LT1.3 - Channel Macro Group],
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Bepensa" }),
+        FILTER(ALL('Channel'[LT1.3 - Channel Macro Group]), 'Channel'[LT1.3 - Channel Macro Group] IN { "Modern", "Traditional" }),
+        FILTER(ALL('Product'[LT1.5 - Category]), 'Product'[LT1.5 - Category] = "Colas"),
+        FILTER(ALL('Period'[Month 445 Code]), 'Period'[Month 445 Code] = "202601"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Channel[LT1.3 - Channel Macro Group]: Traditional
+      '[Net Sales Revenue]': 412798429.228501
+    - Channel[LT1.3 - Channel Macro Group]: Modern
+      '[Net Sales Revenue]': 272114589.8184999
+- id: 24
+  question: Compare volume of Chedraui vs Walmart within Arca Continental for Fanta
+    in Q1 2025, Mexico.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Ship To'[LT1.2 - Customer],
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] = "MX Arca Continental"),
+        FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] IN { "Chedraui", "Wal-Mart Inc." }),
+        FILTER(ALL('Product'[LT1.2 - Brand Group]), 'Product'[LT1.2 - Brand Group] = "Fanta"),
+        FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202501"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC]
+    )
+    ORDER BY [Unit Cases] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Ship To[LT1.2 - Customer]: Wal-Mart Inc.
+      '[Unit Cases]': 120748.6455
+    - Ship To[LT1.2 - Customer]: Chedraui
+      '[Unit Cases]': 8938.5178
+- id: 25
+  question: Table of sales by category for Arca Continental in Mexico, Q1 2026 vs
+    Q1 2025.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.5 - Category],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Arca Continental" }),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        "Q1 2026 Net Sales Revenue", CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202601")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        ),
+        "Q1 2025 Net Sales Revenue", CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202501")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        ),
+        "Q1 2026 vs PY", CALCULATE(
+            [Bottler Net Revenue AC (LC) vs PY],
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202601")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        ),
+        "Q1 2026 % vs PY", CALCULATE(
+            [Bottler Net Revenue AC (LC) % vs PY],
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202601")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        )
+    )
+    ORDER BY [Q1 2026 Net Sales Revenue] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.5 - Category]: Colas
+      '[Q1 2026 Net Sales Revenue]': 15653698898.450588
+      '[Q1 2025 Net Sales Revenue]': 13872200248.759638
+      '[Q1 2026 vs PY]': 1781498649.6909618
+      '[Q1 2026 % vs PY]': 0.12842221260828854
+    - Product[LT1.5 - Category]: Packaged Water
+      '[Q1 2026 Net Sales Revenue]': 2627266364.6699805
+      '[Q1 2025 Net Sales Revenue]': 1986698656.9700396
+      '[Q1 2026 vs PY]': 640567707.6999481
+      '[Q1 2026 % vs PY]': 0.3224282180151544
+    - Product[LT1.5 - Category]: Flavors
+      '[Q1 2026 Net Sales Revenue]': 1308087063.3599992
+      '[Q1 2025 Net Sales Revenue]': 1202674269.1500192
+      '[Q1 2026 vs PY]': 105412794.20997429
+      '[Q1 2026 % vs PY]': 0.08764866507410479
+    - Product[LT1.5 - Category]: Juices & Juice Drinks
+      '[Q1 2026 Net Sales Revenue]': 1278984988.4699876
+      '[Q1 2025 Net Sales Revenue]': 1120487715.4601605
+      '[Q1 2026 vs PY]': 158497273.0098312
+      '[Q1 2026 % vs PY]': 0.14145382481479532
+    - Product[LT1.5 - Category]: Core Flavors
+      '[Q1 2026 Net Sales Revenue]': 973424952.1800045
+      '[Q1 2025 Net Sales Revenue]': 958373514.9299945
+      '[Q1 2026 vs PY]': 15051437.250005007
+      '[Q1 2026 % vs PY]': 0.015705189068277184
+    - Product[LT1.5 - Category]: Active Hydration
+      '[Q1 2026 Net Sales Revenue]': 601996813.25
+      '[Q1 2025 Net Sales Revenue]': 593370289.339953
+      '[Q1 2026 vs PY]': 8626523.910045385
+      '[Q1 2026 % vs PY]': 0.014538179725245839
+    - Product[LT1.5 - Category]: Tea
+      '[Q1 2026 Net Sales Revenue]': 517852526.4000075
+      '[Q1 2025 Net Sales Revenue]': 380923743.9800133
+      '[Q1 2026 vs PY]': 136928782.4199894
+      '[Q1 2026 % vs PY]': 0.3594650755799885
+    - Product[LT1.5 - Category]: Dairy Beverages
+      '[Q1 2026 Net Sales Revenue]': 454401499.3900026
+      '[Q1 2025 Net Sales Revenue]': 363157940.8700081
+      '[Q1 2026 vs PY]': 91243558.51999468
+      '[Q1 2026 % vs PY]': 0.25125034661614415
+    - Product[LT1.5 - Category]: Plant Based Beverages
+      '[Q1 2026 Net Sales Revenue]': 20573459.200000387
+      '[Q1 2025 Net Sales Revenue]': 21784966.440000113
+      '[Q1 2026 vs PY]': -1211507.2399997078
+      '[Q1 2026 % vs PY]': -0.055612077408355304
+    - Product[LT1.5 - Category]: ARTD
+      '[Q1 2026 Net Sales Revenue]': 11965176.29000003
+      '[Q1 2025 Net Sales Revenue]': 16267762.890000056
+      '[Q1 2026 vs PY]': -4302586.600000026
+      '[Q1 2026 % vs PY]': -0.2644854507096895
+    - Product[LT1.5 - Category]: Unassigned
+      '[Q1 2026 Net Sales Revenue]': 5576441.339999997
+      '[Q1 2025 Net Sales Revenue]': 3196380.799999999
+      '[Q1 2026 vs PY]': 2380060.539999998
+      '[Q1 2026 % vs PY]': 0.7446110738745518
+- id: 26
+  question: Table of sales by channel for Arca Continental in Mexico, Q1 2026 vs Q1
+    2025.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Channel'[LT1.2 - Channel Group],
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Arca Continental" }),
+        "Q1 2026", CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202601")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        ),
+        "Q1 2025", CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202501")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        ),
+        "Delta vs PY", CALCULATE(
+            [Bottler Net Revenue AC (LC) vs PY],
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202601")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        )
+    )
+    ORDER BY [Q1 2026] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Channel[LT1.2 - Channel Group]: Off Premise
+      '[Q1 2026]': 19172659920.850952
+      '[Q1 2025]': 16635638351.679197
+      '[Delta vs PY]': 2537021569.170973
+    - Channel[LT1.2 - Channel Group]: On Premise
+      '[Q1 2026]': 3832743833.8299127
+      '[Q1 2025]': 3479419389.5398154
+      '[Delta vs PY]': 353324444.2899685
+    - Channel[LT1.2 - Channel Group]: D2C
+      '[Q1 2026]': 448424428.31999826
+      '[Q1 2025]': 404077748.3699986
+      '[Delta vs PY]': 44346679.949998856
+- id: 27
+  question: Table of Unit Case sales by Mexican bottler, high to low, for the Traditional
+    channel of Powerade in 2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Ship From'[L1.3 - Bottler],
+        'Period'[Year 445 Code],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Period'[Year 445]), 'Period'[Year 445] = "2026"),
+        FILTER(ALL('Channel'[LT1.3 - Channel Macro Group]), 'Channel'[LT1.3 - Channel Macro Group] = "Traditional"),
+        FILTER(ALL('Product'[LT1.2 - Brand Group]), 'Product'[LT1.2 - Brand Group] = "Powerade"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC]
+    )
+    ORDER BY 'Period'[Year 445 Code] ASC, [Unit Cases] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Ship From[L1.3 - Bottler]: MX Arca Continental
+      Period[Year 445 Code]: '2026'
+      '[Unit Cases]': 6235917.7325
+    - Ship From[L1.3 - Bottler]: MX Coca-Cola Femsa
+      Period[Year 445 Code]: '2026'
+      '[Unit Cases]': 5950980.8667
+    - Ship From[L1.3 - Bottler]: MX Bepensa
+      Period[Year 445 Code]: '2026'
+      '[Unit Cases]': 823398.5105
+    - Ship From[L1.3 - Bottler]: MX CDF
+      Period[Year 445 Code]: '2026'
+      '[Unit Cases]': 674397.5643
+    - Ship From[L1.3 - Bottler]: MX Tepic
+      Period[Year 445 Code]: '2026'
+      '[Unit Cases]': 373815.5917
+    - Ship From[L1.3 - Bottler]: MX Rica
+      Period[Year 445 Code]: '2026'
+      '[Unit Cases]': 336150.1171
+    - Ship From[L1.3 - Bottler]: MX Colima
+      Period[Year 445 Code]: '2026'
+      '[Unit Cases]': 158023.4501
+    - Ship From[L1.3 - Bottler]: MX Nogales
+      Period[Year 445 Code]: '2026'
+      '[Unit Cases]': 58037.5376
+    - Ship From[L1.3 - Bottler]: MX JDV
+      Period[Year 445 Code]: '2026'
+      '[Unit Cases]': 13124.9029
+- id: 28
+  question: Compare volume in Mexico of Coca-Cola vs Coca-Cola Zero for Walmart within
+    FEMSA in Q1 2026.
+  dax_query: |
+    EVALUATE
+    ADDCOLUMNS(
+        FILTER(
+            VALUES('Product'[LT1.2 - Brand Group]),
+            'Product'[LT1.2 - Brand Group] IN { "Coca-Cola", "Coca-Cola Zero" }
+        ),
+        "Unit Cases",
+        CALCULATE(
+            [Unit Cases AC QTD],
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico")),
+            KEEPFILTERS(FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] = "MX Coca-Cola Femsa")),
+            KEEPFILTERS(FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] = "Wal-Mart Inc.")),
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202601")),
+            KEEPFILTERS(FILTER(ALL('Period'[Month 445]), 'Period'[Month 445] <> "")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        )
+    )
+    ORDER BY [Unit Cases] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.2 - Brand Group]: Coca-Cola
+      '[Unit Cases]': 2505394.4488
+    - Product[LT1.2 - Brand Group]: Coca-Cola Zero
+      '[Unit Cases]': 1832499.252
+- id: 29
+  question: Give me Unit Case sales for FEMSA in Mexico in Q2 2025 by month for the
+    SSDs segment
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Period'[Month 445],
+        'Period'[Month 445 Code],
+        FILTER(ALL('Period'[Month 445 Code]), 'Period'[Month 445 Code] >= "202504" && 'Period'[Month 445 Code] <= "202506"),
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Coca-Cola Femsa" }),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] = "SSDs"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC]
+    )
+    ORDER BY 'Period'[Month 445 Code] ASC
+  dax_answer:
+    status: ok
+    data:
+    - Period[Month 445]: 2025 Apr
+      Period[Month 445 Code]: '202504'
+      '[Unit Cases]': 108114047.8288
+    - Period[Month 445]: 2025 May
+      Period[Month 445 Code]: '202505'
+      '[Unit Cases]': 119405956.0809
+    - Period[Month 445]: 2025 Jun
+      Period[Month 445 Code]: '202506'
+      '[Unit Cases]': 133687384.1286
+- id: 30
+  question: Give me Net Sales Revenue for FEMSA in Mexico in Q2 2025 by month for
+    the SSDs segment
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Period'[Month 445],
+        'Period'[Month 445 Code],
+        FILTER(ALL('Period'[Month 445 Code]), 'Period'[Month 445 Code] >= "202504" && 'Period'[Month 445 Code] <= "202506"),
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Coca-Cola Femsa" }),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] = "SSDs"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY 'Period'[Month 445 Code] ASC
+  dax_answer:
+    status: ok
+    data:
+    - Period[Month 445]: 2025 Apr
+      Period[Month 445 Code]: '202504'
+      '[Net Sales Revenue]': 8259835358.873517
+    - Period[Month 445]: 2025 May
+      Period[Month 445 Code]: '202505'
+      '[Net Sales Revenue]': 9007812815.985214
+    - Period[Month 445]: 2025 Jun
+      Period[Month 445 Code]: '202506'
+      '[Net Sales Revenue]': 10173403768.146626
+- id: 31
+  question: Compare Unit Case sales Q1 2025 vs Q1 2026 for Femsa in Mexico, client
+    Oxxo, brand Fanta.
+  dax_query: |
+    EVALUATE
+    ROW(
+        "Unit Cases Q1 2025",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS(FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico")),
+            KEEPFILTERS(FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] = "MX Coca-Cola Femsa")),
+            KEEPFILTERS(FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] = "Oxxo")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.2 - Brand Group]), 'Product'[LT1.2 - Brand Group] = "Fanta")),
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202501")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        ),
+        "Unit Cases Q1 2026",
+        CALCULATE(
+            [Unit Cases AC],
+            KEEPFILTERS(FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico")),
+            KEEPFILTERS(FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] = "MX Coca-Cola Femsa")),
+            KEEPFILTERS(FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] = "Oxxo")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.2 - Brand Group]), 'Product'[LT1.2 - Brand Group] = "Fanta")),
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202601")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        ),
+        "Difference (2026 Q1 - 2025 Q1)",
+        (
+            CALCULATE(
+                [Unit Cases AC],
+                KEEPFILTERS(FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico")),
+                KEEPFILTERS(FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] = "MX Coca-Cola Femsa")),
+                KEEPFILTERS(FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] = "Oxxo")),
+                KEEPFILTERS(FILTER(ALL('Product'[LT1.2 - Brand Group]), 'Product'[LT1.2 - Brand Group] = "Fanta")),
+                KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202601")),
+                KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+                KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+                KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+                KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+                KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+            )
+            -
+            CALCULATE(
+                [Unit Cases AC],
+                KEEPFILTERS(FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico")),
+                KEEPFILTERS(FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] = "MX Coca-Cola Femsa")),
+                KEEPFILTERS(FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] = "Oxxo")),
+                KEEPFILTERS(FILTER(ALL('Product'[LT1.2 - Brand Group]), 'Product'[LT1.2 - Brand Group] = "Fanta")),
+                KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202501")),
+                KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+                KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+                KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+                KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+                KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+            )
+        )
+    )
+  dax_answer:
+    status: ok
+    data:
+    - '[Unit Cases Q1 2025]': 210818.8826
+      '[Unit Cases Q1 2026]': 208095.3096
+      '[Difference (2026 Q1 - 2025 Q1)]': -2723.573
+- id: 32
+  question: Compare Net Sales Revenue Q1 2025 vs Q1 2026 for Femsa in Mexico, client
+    Oxxo, brand Fanta.
+  dax_query: |
+    EVALUATE
+    VAR Q1_2026 =
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS(FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico")),
+            KEEPFILTERS(FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Coca-Cola Femsa" })),
+            KEEPFILTERS(FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] = "Oxxo")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.2 - Brand Group]), 'Product'[LT1.2 - Brand Group] = "Fanta")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202601")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        )
+    VAR Q1_2025 =
+        CALCULATE(
+            [Bottler Net Revenue AC (LC)],
+            KEEPFILTERS(FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico")),
+            KEEPFILTERS(FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Coca-Cola Femsa" })),
+            KEEPFILTERS(FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] = "Oxxo")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.2 - Brand Group]), 'Product'[LT1.2 - Brand Group] = "Fanta")),
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Period'[Quarter 445 Code]), 'Period'[Quarter 445 Code] = "202501")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        )
+    VAR AbsoluteChange = Q1_2026 - Q1_2025
+    VAR PercentChange = DIVIDE(AbsoluteChange, Q1_2025)
+    RETURN
+    ROW(
+        "Q1 2026 Net Sales Revenue", Q1_2026,
+        "Q1 2025 Net Sales Revenue", Q1_2025,
+        "Absolute Change", AbsoluteChange,
+        "Percent Change", PercentChange
+    )
+  dax_answer:
+    status: ok
+    data:
+    - '[Q1 2026 Net Sales Revenue]': 15369254.081000045
+      '[Q1 2025 Net Sales Revenue]': 14016510.938999979
+      '[Absolute Change]': 1352743.1420000661
+      '[Percent Change]': 0.09651068999176901
+- id: 33
+  question: Compare volume of SSDs vs Stills drinks for Arca Continental Mexico in
+    June 2025.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.7 - Segment],
+        'Period'[Month 445],
+        'Period'[Month 445 Code],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Arca Continental" }),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] IN { "SSDs", "Stills" }),
+        FILTER(ALL('Period'[Month 445 Code]), 'Period'[Month 445 Code] = "202506"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC]
+    )
+    ORDER BY [Unit Cases] DESC, 'Period'[Month 445 Code] ASC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.7 - Segment]: SSDs
+      Period[Month 445]: 2025 Jun
+      Period[Month 445 Code]: '202506'
+      '[Unit Cases]': 94532958.4563
+    - Product[LT1.7 - Segment]: Stills
+      Period[Month 445]: 2025 Jun
+      Period[Month 445 Code]: '202506'
+      '[Unit Cases]': 45215225.5465
+- id: 34
+  question: How much did FEMSA Mexico sell in volume in 2026 by month across Walmart,
+    Chedraui and Oxxo?
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Period'[Month 445],
+        'Period'[Month 445 Code],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Coca-Cola Femsa" }),
+        FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] IN { "Wal-Mart Inc.", "Chedraui", "Oxxo" }),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC]
+    )
+    ORDER BY 'Period'[Month 445 Code] ASC
+  dax_answer:
+    status: ok
+    data:
+    - Period[Month 445]: 2026 Jan
+      Period[Month 445 Code]: '202601'
+      '[Unit Cases]': 14688412.9561
+    - Period[Month 445]: 2026 Feb
+      Period[Month 445 Code]: '202602'
+      '[Unit Cases]': 14587369.7323
+    - Period[Month 445]: 2026 Mar
+      Period[Month 445 Code]: '202603'
+      '[Unit Cases]': 21745255.1444
+    - Period[Month 445]: 2026 Apr
+      Period[Month 445 Code]: '202604'
+      '[Unit Cases]': 17867319.0091
+    - Period[Month 445]: 2026 May
+      Period[Month 445 Code]: '202605'
+      '[Unit Cases]': 20523287.2646
+    - Period[Month 445]: 2026 Jun
+      Period[Month 445 Code]: '202606'
+      '[Unit Cases]': 23195798.2499
+    - Period[Month 445]: 2026 Jul
+      Period[Month 445 Code]: '202607'
+      '[Unit Cases]': 5760590.4122
+- id: 35
+  question: How much did Arca Continental Mexico sell in Net Sales Revenue in 2026
+    by month across Walmart, Chedraui and Oxxo?
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Period'[Month 445],
+        'Period'[Month 445 Code],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] = "MX Arca Continental"),
+        FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] IN { "Wal-Mart Inc.", "Chedraui", "Oxxo" }),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY 'Period'[Month 445 Code] ASC
+  dax_answer:
+    status: ok
+    data:
+    - Period[Month 445]: 2026 Jan
+      Period[Month 445 Code]: '202601'
+      '[Net Sales Revenue]': 877976736.210003
+    - Period[Month 445]: 2026 Feb
+      Period[Month 445 Code]: '202602'
+      '[Net Sales Revenue]': 954915922.0100029
+    - Period[Month 445]: 2026 Mar
+      Period[Month 445 Code]: '202603'
+      '[Net Sales Revenue]': 1494674371.700003
+    - Period[Month 445]: 2026 Apr
+      Period[Month 445 Code]: '202604'
+      '[Net Sales Revenue]': 1099760252.1800053
+    - Period[Month 445]: 2026 May
+      Period[Month 445 Code]: '202605'
+      '[Net Sales Revenue]': 1250741939.2100053
+    - Period[Month 445]: 2026 Jun
+      Period[Month 445 Code]: '202606'
+      '[Net Sales Revenue]': 1676969085.0900116
+    - Period[Month 445]: 2026 Jul
+      Period[Month 445 Code]: '202607'
+      '[Net Sales Revenue]': 444982647.29000056
+- id: 36
+  question: Calculate the channel mix variation in Mexico for the YTD 2025 vs PY
+  dax_query: "EVALUATE\nSUMMARIZECOLUMNS(\n    'Channel'[LT1.2 - Channel Group],\n\
+    \    FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = \"\
+    Mexico\"),\n    FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] =\
+    \ \"2025\"),\n    FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting\
+    \ View] = \"Operational View\"),\n    FILTER(ALL('Sales Type'[Primary Sales Indicator]),\
+    \ 'Sales Type'[Primary Sales Indicator] = \"Y\"),\n    FILTER(ALL('Transaction\
+    \ Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = \"Actuals\"\
+    ),\n    FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> \"\
+    Y\"),\n    FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment]\
+    \ <> \"GV Brands\"),\n    \"Unit Cases\", [Unit Cases AC],\n    \"Unit Cases PY\"\
+    , [Unit Cases AC PY],\n    \"Share\", DIVIDE([Unit Cases AC], CALCULATE([Unit\
+    \ Cases AC], ALL('Channel'[LT1.2 - Channel Group]))),\n    \"Share PY\", DIVIDE([Unit\
+    \ Cases AC PY], CALCULATE([Unit Cases AC PY], ALL('Channel'[LT1.2 - Channel Group]))),\n\
+    \    \"Channel Mix Variation vs PY\", \n        DIVIDE([Unit Cases AC], CALCULATE([Unit\
+    \ Cases AC], ALL('Channel'[LT1.2 - Channel Group])))\n        - DIVIDE([Unit Cases\
+    \ AC PY], CALCULATE([Unit Cases AC PY], ALL('Channel'[LT1.2 - Channel Group])))\n\
+    )\nORDER BY [Channel Mix Variation vs PY] DESC\n"
+  dax_answer:
+    status: ok
+    data:
+    - Channel[LT1.2 - Channel Group]: D2C
+      '[Unit Cases]': 330780025.7964
+      '[Unit Cases PY]': 331888152.9642
+      '[Share]': 0.07926205451806226
+      '[Share PY]': 0.07660600596808977
+      '[Channel Mix Variation vs PY]': 0.0026560485499724923
+    - Channel[LT1.2 - Channel Group]: Off Premise
+      '[Unit Cases]': 3376176434.4634
+      '[Unit Cases PY]': 3510609491.1363
+      '[Share]': 0.8090049571969876
+      '[Share PY]': 0.810314466568589
+      '[Channel Mix Variation vs PY]': -0.0013095093716013473
+    - Channel[LT1.2 - Channel Group]: On Premise
+      '[Unit Cases]': 466289209.5332
+      '[Unit Cases PY]': 489906176.8538
+      '[Share]': 0.1117329882849501
+      '[Share PY]': 0.11307952746332132
+      '[Channel Mix Variation vs PY]': -0.0013465391783712283
+- id: 37
+  question: Calculate the channel mix variation in Brazil for the YTD 2025 vs PY
+  dax_query: "EVALUATE\nSUMMARIZECOLUMNS(\n    'Channel'[LT1.2 - Channel Group],\n\
+    \    FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = \"\
+    Brazil\"),\n    FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] =\
+    \ \"2025\"),\n    FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting\
+    \ View] = \"Operational View\"),\n    FILTER(ALL('Sales Type'[Primary Sales Indicator]),\
+    \ 'Sales Type'[Primary Sales Indicator] = \"Y\"),\n    FILTER(ALL('Transaction\
+    \ Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = \"Actuals\"\
+    ),\n    FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> \"\
+    Y\"),\n    FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment]\
+    \ <> \"GV Brands\"),\n    \"Unit Cases\", [Unit Cases AC],\n    \"Unit Cases PY\"\
+    , [Unit Cases AC PY],\n    \"Share\", DIVIDE([Unit Cases AC], CALCULATE([Unit\
+    \ Cases AC], ALL('Channel'[LT1.2 - Channel Group]))),\n    \"Share PY\", DIVIDE([Unit\
+    \ Cases AC PY], CALCULATE([Unit Cases AC PY], ALL('Channel'[LT1.2 - Channel Group]))),\n\
+    \    \"Channel Mix Variation vs PY\", \n        DIVIDE([Unit Cases AC], CALCULATE([Unit\
+    \ Cases AC], ALL('Channel'[LT1.2 - Channel Group])))\n        - DIVIDE([Unit Cases\
+    \ AC PY], CALCULATE([Unit Cases AC PY], ALL('Channel'[LT1.2 - Channel Group])))\n\
+    )\nORDER BY [Channel Mix Variation vs PY] DESC\n"
+  dax_answer:
+    status: ok
+    data:
+    - Channel[LT1.2 - Channel Group]: Off Premise
+      '[Unit Cases]': 1710813957.9511
+      '[Unit Cases PY]': 1650648144.4027
+      '[Share]': 0.7152123698709049
+      '[Share PY]': 0.705278542114648
+      '[Channel Mix Variation vs PY]': 0.009933827756256841
+    - Channel[LT1.2 - Channel Group]: On Premise
+      '[Unit Cases]': 328902374.5072
+      '[Unit Cases PY]': 321056332.3675
+      '[Share]': 0.1374989054971143
+      '[Share PY]': 0.13717892743929583
+      '[Channel Mix Variation vs PY]': 0.0003199780578184708
+    - Channel[LT1.2 - Channel Group]: Off Premise - B2B
+      '[Unit Cases]': 352319977.3442
+      '[Unit Cases PY]': 368715720.1261
+      '[Share]': 0.14728872463198084
+      '[Share PY]': 0.15754253044605612
+      '[Channel Mix Variation vs PY]': -0.010253805814075284
+- id: 38
+  question: Calculate the channel mix variation in Colombia for the YTD 2025 vs PY
+  dax_query: "EVALUATE\nSUMMARIZECOLUMNS(\n    'Channel'[LT1.2 - Channel Group],\n\
+    \    FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = \"\
+    Colombia\"),\n    FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code]\
+    \ = \"2025\"),\n    FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting\
+    \ View] = \"Operational View\"),\n    FILTER(ALL('Sales Type'[Primary Sales Indicator]),\
+    \ 'Sales Type'[Primary Sales Indicator] = \"Y\"),\n    FILTER(ALL('Transaction\
+    \ Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = \"Actuals\"\
+    ),\n    FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> \"\
+    Y\"),\n    FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment]\
+    \ <> \"GV Brands\"),\n    \"Unit Cases\", [Unit Cases AC],\n    \"Unit Cases PY\"\
+    , [Unit Cases AC PY],\n    \"Share\", DIVIDE([Unit Cases AC], CALCULATE([Unit\
+    \ Cases AC], ALL('Channel'[LT1.2 - Channel Group]))),\n    \"Share PY\", DIVIDE([Unit\
+    \ Cases AC PY], CALCULATE([Unit Cases AC PY], ALL('Channel'[LT1.2 - Channel Group]))),\n\
+    \    \"Channel Mix Variation vs PY\", \n        DIVIDE([Unit Cases AC], CALCULATE([Unit\
+    \ Cases AC], ALL('Channel'[LT1.2 - Channel Group])))\n        - DIVIDE([Unit Cases\
+    \ AC PY], CALCULATE([Unit Cases AC PY], ALL('Channel'[LT1.2 - Channel Group])))\n\
+    )\nORDER BY [Channel Mix Variation vs PY] DESC\n"
+  dax_answer:
+    status: ok
+    data:
+    - Channel[LT1.2 - Channel Group]: Off Premise
+      '[Unit Cases]': 261646746.1226
+      '[Unit Cases PY]': 262644675.771
+      '[Share]': 0.7585962240922739
+      '[Share PY]': 0.7561323617681497
+      '[Channel Mix Variation vs PY]': 0.002463862324124211
+    - Channel[LT1.2 - Channel Group]: Others
+      '[Unit Cases]': 399941.2536
+      '[Unit Cases PY]': 344239.053
+      '[Share]': 0.001159555505030164
+      '[Share PY]': 0.0009910358448867566
+      '[Channel Mix Variation vs PY]': 0.0001685196601434074
+    - Channel[LT1.2 - Channel Group]: D2C
+      '[Unit Cases]': 79997.2006
+      '[Unit Cases PY]': 99627.2484
+      '[Share]': 0.00023193704952354616
+      '[Share PY]': 0.0002868186320854095
+      '[Channel Mix Variation vs PY]': -5.488158256186334e-05
+    - Channel[LT1.2 - Channel Group]: On Premise
+      '[Unit Cases]': 82782422.2879
+      '[Unit Cases PY]': 84264235.1012
+      '[Share]': 0.2400122833531724
+      '[Share PY]': 0.24258978375487816
+      '[Channel Mix Variation vs PY]': -0.0025775004017057623
+- id: 39
+  question: Calculate the channel mix variation for Mexico, Colombia, and Brazil by
+    comparing YTD 2025 against the prior year (PY). Break down the results by country.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Ship From'[L1.5 - Country],
+        'Channel'[LT1.2 - Channel Group],
+
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] IN {"Mexico", "Colombia", "Brazil"}),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2025"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+
+        "Unit Cases", [Unit Cases AC],
+        "Unit Cases PY", [Unit Cases AC PY],
+
+        "Share",
+            DIVIDE(
+                [Unit Cases AC],
+                CALCULATE(
+                    [Unit Cases AC],
+                    ALL('Channel'[LT1.2 - Channel Group])
+                )
+            ),
+
+        "Share PY",
+            DIVIDE(
+                [Unit Cases AC PY],
+                CALCULATE(
+                    [Unit Cases AC PY],
+                    ALL('Channel'[LT1.2 - Channel Group])
+                )
+            ),
+
+        "Channel Mix Variation vs PY",
+            DIVIDE(
+                [Unit Cases AC],
+                CALCULATE(
+                    [Unit Cases AC],
+                    ALL('Channel'[LT1.2 - Channel Group])
+                )
+            )
+            -
+            DIVIDE(
+                [Unit Cases AC PY],
+                CALCULATE(
+                    [Unit Cases AC PY],
+                    ALL('Channel'[LT1.2 - Channel Group])
+                )
+            )
+    )
+
+    ORDER BY
+        'Ship From'[L1.5 - Country],
+        [Channel Mix Variation vs PY] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Ship From[L1.5 - Country]: Brazil
+      Channel[LT1.2 - Channel Group]: Off Premise
+      '[Unit Cases]': 1710813957.9511
+      '[Unit Cases PY]': 1650648144.4027
+      '[Share]': 0.7152123698709049
+      '[Share PY]': 0.705278542114648
+      '[Channel Mix Variation vs PY]': 0.009933827756256841
+    - Ship From[L1.5 - Country]: Brazil
+      Channel[LT1.2 - Channel Group]: On Premise
+      '[Unit Cases]': 328902374.5072
+      '[Unit Cases PY]': 321056332.3675
+      '[Share]': 0.1374989054971143
+      '[Share PY]': 0.13717892743929583
+      '[Channel Mix Variation vs PY]': 0.0003199780578184708
+    - Ship From[L1.5 - Country]: Brazil
+      Channel[LT1.2 - Channel Group]: Off Premise - B2B
+      '[Unit Cases]': 352319977.3442
+      '[Unit Cases PY]': 368715720.1261
+      '[Share]': 0.14728872463198084
+      '[Share PY]': 0.15754253044605612
+      '[Channel Mix Variation vs PY]': -0.010253805814075284
+    - Ship From[L1.5 - Country]: Colombia
+      Channel[LT1.2 - Channel Group]: Off Premise
+      '[Unit Cases]': 261646746.1226
+      '[Unit Cases PY]': 262644675.771
+      '[Share]': 0.7585962240922739
+      '[Share PY]': 0.7561323617681497
+      '[Channel Mix Variation vs PY]': 0.002463862324124211
+    - Ship From[L1.5 - Country]: Colombia
+      Channel[LT1.2 - Channel Group]: Others
+      '[Unit Cases]': 399941.2536
+      '[Unit Cases PY]': 344239.053
+      '[Share]': 0.001159555505030164
+      '[Share PY]': 0.0009910358448867566
+      '[Channel Mix Variation vs PY]': 0.0001685196601434074
+    - Ship From[L1.5 - Country]: Colombia
+      Channel[LT1.2 - Channel Group]: D2C
+      '[Unit Cases]': 79997.2006
+      '[Unit Cases PY]': 99627.2484
+      '[Share]': 0.00023193704952354616
+      '[Share PY]': 0.0002868186320854095
+      '[Channel Mix Variation vs PY]': -5.488158256186334e-05
+    - Ship From[L1.5 - Country]: Colombia
+      Channel[LT1.2 - Channel Group]: On Premise
+      '[Unit Cases]': 82782422.2879
+      '[Unit Cases PY]': 84264235.1012
+      '[Share]': 0.2400122833531724
+      '[Share PY]': 0.24258978375487816
+      '[Channel Mix Variation vs PY]': -0.0025775004017057623
+    - Ship From[L1.5 - Country]: Mexico
+      Channel[LT1.2 - Channel Group]: D2C
+      '[Unit Cases]': 330780025.7964
+      '[Unit Cases PY]': 331888152.9642
+      '[Share]': 0.07926205451806226
+      '[Share PY]': 0.07660600596808977
+      '[Channel Mix Variation vs PY]': 0.0026560485499724923
+    - Ship From[L1.5 - Country]: Mexico
+      Channel[LT1.2 - Channel Group]: Off Premise
+      '[Unit Cases]': 3376176434.4634
+      '[Unit Cases PY]': 3510609491.1363
+      '[Share]': 0.8090049571969876
+      '[Share PY]': 0.810314466568589
+      '[Channel Mix Variation vs PY]': -0.0013095093716013473
+    - Ship From[L1.5 - Country]: Mexico
+      Channel[LT1.2 - Channel Group]: On Premise
+      '[Unit Cases]': 466289209.5332
+      '[Unit Cases PY]': 489906176.8538
+      '[Share]': 0.1117329882849501
+      '[Share PY]': 0.11307952746332132
+      '[Channel Mix Variation vs PY]': -0.0013465391783712283
+- id: 40
+  question: Crea una tabla con las 10 categorías de mejor desempeño en volumen para
+    FEMSA en México, considerando el periodo de enero a mayo de 2026. Ordena los resultados
+    de mayor a menor volumen.
+  dax_query: |
+    EVALUATE
+    VAR Base =
+        SUMMARIZECOLUMNS(
+            'Product'[LT1.5 - Category],
+            FILTER(ALL('Period'[Month 445 Code]), 'Period'[Month 445 Code] >= "202601" && 'Period'[Month 445 Code] <= "202605"),
+            FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+            FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Coca-Cola Femsa" }),
+            FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+            FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+            FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+            FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+            FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+            "Unit Cases", [Unit Cases AC]
+        )
+    VAR Ranked =
+        ADDCOLUMNS(
+            Base,
+            "Rank", RANKX(Base, [Unit Cases],,DESC, DENSE)
+        )
+    VAR Top10 =
+        FILTER(Ranked, [Rank] <= 10)
+    RETURN
+    Top10
+    ORDER BY [Unit Cases] DESC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.5 - Category]: Colas
+      '[Unit Cases]': 456715721.867
+      '[Rank]': 1
+    - Product[LT1.5 - Category]: Packaged Water
+      '[Unit Cases]': 203798083.9914
+      '[Rank]': 2
+    - Product[LT1.5 - Category]: Flavors
+      '[Unit Cases]': 55746182.4392
+      '[Rank]': 3
+    - Product[LT1.5 - Category]: Juices & Juice Drinks
+      '[Unit Cases]': 38349501.7171
+      '[Rank]': 4
+    - Product[LT1.5 - Category]: Core Flavors
+      '[Unit Cases]': 29047232.66
+      '[Rank]': 5
+    - Product[LT1.5 - Category]: Dairy Beverages
+      '[Unit Cases]': 9676475.8529
+      '[Rank]': 6
+    - Product[LT1.5 - Category]: Active Hydration
+      '[Unit Cases]': 8212247.6516
+      '[Rank]': 7
+    - Product[LT1.5 - Category]: Tea
+      '[Unit Cases]': 4704747.0981
+      '[Rank]': 8
+    - Product[LT1.5 - Category]: ARTD
+      '[Unit Cases]': 472270.7552
+      '[Rank]': 9
+    - Product[LT1.5 - Category]: Plant Based Beverages
+      '[Unit Cases]': 217305.8626
+      '[Rank]': 10
+- id: 41
+  question: Crea una tabla con las 10 categorías de menor desempeño en volumen para
+    FEMSA en México, considerando el periodo de enero a mayo de 2026. Ordena los resultados
+    de menor a mayor volumen.
+  dax_query: |
+    EVALUATE
+    VAR BaseTable =
+        SUMMARIZECOLUMNS(
+            'Product'[LT1.5 - Category],
+            FILTER(ALL('Period'[Month 445 Code]), 'Period'[Month 445 Code] >= "202601" && 'Period'[Month 445 Code] <= "202605"),
+            FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+            FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Coca-Cola Femsa" }),
+            FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+            FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+            FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+            FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+            FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+            "Unit Cases", [Unit Cases AC]
+        )
+
+    VAR Ranked =
+        ADDCOLUMNS(
+            BaseTable,
+            "Rank", RANKX(BaseTable, [Unit Cases], , ASC, DENSE)
+        )
+
+    VAR Bottom10 =
+        FILTER(Ranked, [Rank] <= 10)
+
+    RETURN
+    Bottom10
+    ORDER BY [Unit Cases] ASC
+  dax_answer:
+    status: ok
+    data:
+    - Product[LT1.5 - Category]: Coffee
+      '[Unit Cases]': 6.8689
+      '[Rank]': 1
+    - Product[LT1.5 - Category]: Unassigned
+      '[Unit Cases]': 187.3547
+      '[Rank]': 2
+    - Product[LT1.5 - Category]: Plant Based Beverages
+      '[Unit Cases]': 217305.8626
+      '[Rank]': 3
+    - Product[LT1.5 - Category]: ARTD
+      '[Unit Cases]': 472270.7552
+      '[Rank]': 4
+    - Product[LT1.5 - Category]: Tea
+      '[Unit Cases]': 4704747.0981
+      '[Rank]': 5
+    - Product[LT1.5 - Category]: Active Hydration
+      '[Unit Cases]': 8212247.6516
+      '[Rank]': 6
+    - Product[LT1.5 - Category]: Dairy Beverages
+      '[Unit Cases]': 9676475.8529
+      '[Rank]': 7
+    - Product[LT1.5 - Category]: Core Flavors
+      '[Unit Cases]': 29047232.66
+      '[Rank]': 8
+    - Product[LT1.5 - Category]: Juices & Juice Drinks
+      '[Unit Cases]': 38349501.7171
+      '[Rank]': 9
+    - Product[LT1.5 - Category]: Flavors
+      '[Unit Cases]': 55746182.4392
+      '[Rank]': 10
