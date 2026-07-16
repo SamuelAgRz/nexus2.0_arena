@@ -1,0 +1,3 @@
+credentials/
+results/*/response_q*.yaml
+__pycache__/
