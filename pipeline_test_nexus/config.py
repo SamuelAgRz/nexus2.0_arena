@@ -28,6 +28,11 @@ STR_CONN = (
 CHATBOT_URL = "https://stage.nexusai.coke.com/weekly-ou360"
 
 INPUT_SELECTOR = "textarea[placeholder='Ask me anything...']"
+# El input existe desde el primer render pero queda disabled mientras la app
+# inicializa — hay que esperar a que esté visible Y habilitado.
+INPUT_READY_SELECTOR = "textarea[placeholder='Ask me anything...']:not([disabled])"
+INPUT_READY_TIMEOUT_MS = 60_000   # espera por intento a que el input se habilite
+PAGE_LOAD_ATTEMPTS = 3            # recargas de página si el input nunca se habilita
 AGENT_BTN_SELECTOR = "button:has-text('Agent Interaction')"
 THREAD_ID_RE = re.compile(r"threadId:\s*([0-9a-fA-F-]+)")
 SUMMARIZER_RE = re.compile(r"Source: SummarizerAgent.*?Content:\n\n(.*?)\nCopy", re.DOTALL)

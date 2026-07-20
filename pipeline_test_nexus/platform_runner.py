@@ -14,6 +14,7 @@ import time
 from pathlib import Path
 
 from playwright.async_api import Browser, async_playwright
+from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 
 from adomd_connector import LiteralString, save_yaml
 from config import (
@@ -22,7 +23,10 @@ from config import (
     CHATBOT_URL,
     CONCURRENCY,
     HEADLESS,
+    INPUT_READY_SELECTOR,
+    INPUT_READY_TIMEOUT_MS,
     INPUT_SELECTOR,
+    PAGE_LOAD_ATTEMPTS,
     RESPONSE_TIMEOUT_MS,
     SUMMARIZER_RE,
     THREAD_ID_RE,
@@ -93,7 +97,33 @@ def elapsed(batch_start: float) -> str:
     return f"{round(time.time() - batch_start, 1)}s"
 
 
-async def check_session(browser: Browser) -> None:
+async def wait_for_input_ready(page, label: str, batch_start: float) -> None:
+    """
+    Espera a que el chat input esté visible Y habilitado (la app lo renderiza
+    disabled mientras inicializa). Si no se habilita en INPUT_READY_TIMEOUT_MS,
+    recarga la página y reintenta, hasta PAGE_LOAD_ATTEMPTS cargas en total.
+    """
+    for load_attempt in range(1, PAGE_LOAD_ATTEMPTS + 1):
+        try:
+            await page.locator(INPUT_READY_SELECTOR).wait_for(
+                state="visible", timeout=INPUT_READY_TIMEOUT_MS
+            )
+            return
+        except PlaywrightTimeoutError:
+            if load_attempt == PAGE_LOAD_ATTEMPTS:
+                raise RuntimeError(
+                    f"El chat input nunca se habilitó tras {PAGE_LOAD_ATTEMPTS} cargas de página"
+                )
+            print(
+                f"{label} [{elapsed(batch_start)}] Input deshabilitado tras "
+                f"{INPUT_READY_TIMEOUT_MS // 1000}s, recargando página "
+                f"(intento {load_attempt}/{PAGE_LOAD_ATTEMPTS})..."
+            )
+            await page.reload(wait_until="domcontentloaded", timeout=60_000)
+            await page.wait_for_load_state("networkidle", timeout=60_000)
+
+
+async def check_session(browser: Browser, batch_start: float) -> None:
     """Navega una vez antes del fan-out para detectar sesión expirada temprano."""
     context = await browser.new_context(storage_state=str(AUTH_STATE_FILE))
     page = await context.new_page()
@@ -102,6 +132,7 @@ async def check_session(browser: Browser) -> None:
         await page.wait_for_load_state("networkidle", timeout=60_000)
         if "microsoftonline" in page.url or "login" in page.url.lower():
             raise RuntimeError("Sesión expirada — corre auth.py de nuevo para refrescar credenciales.")
+        await wait_for_input_ready(page, "[session]", batch_start)
     finally:
         await context.close()
 
@@ -132,8 +163,8 @@ async def ask_question(
             if "microsoftonline" in page.url or "login" in page.url.lower():
                 raise RuntimeError("Sesión expirada — corre auth.py de nuevo para refrescar credenciales.")
 
+            await wait_for_input_ready(page, label, batch_start)
             chat_input = page.locator(INPUT_SELECTOR)
-            await chat_input.wait_for(state="visible", timeout=30_000)
 
             for attempt in range(1, 4):
                 await chat_input.click()
@@ -228,7 +259,7 @@ async def run_platform(items: list[dict], run_dir: Path) -> list[dict]:
         browser = await p.chromium.launch(headless=HEADLESS)
 
         print("Verificando sesión...")
-        await check_session(browser)
+        await check_session(browser, batch_start)
         print("Sesión válida.\n")
 
         answers = await asyncio.gather(
