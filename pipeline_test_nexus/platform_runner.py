@@ -2,9 +2,12 @@
 Paso 2 del pipeline: preguntar cada question del golden set al chatbot
 Nexus vía Playwright y capturar la respuesta del SummarizerAgent.
 
-Cada pregunta corre en su propio browser context (sesión compartida desde
-credentials/auth_state.json) y guarda un checkpoint YAML individual en la
-carpeta del run, de modo que un crash no pierde las respuestas ya completadas.
+Cada pregunta se corre CONCURRENCY veces en paralelo (misma pregunta,
+distintos browser contexts, sesión compartida desde credentials/auth_state.json)
+para medir consistencia de respuesta entre corridas repetidas, una pregunta
+a la vez (batch por pregunta). Cada corrida guarda su propio checkpoint YAML
+en la carpeta del run, de modo que un crash no pierde las corridas ya
+completadas.
 """
 
 import ast
@@ -28,6 +31,8 @@ from config import (
     INPUT_SELECTOR,
     PAGE_LOAD_ATTEMPTS,
     RESPONSE_TIMEOUT_MS,
+    SEND_CONFIRM_TIMEOUT_MS,
+    SEND_RETRY_CLICK_TIMEOUT_MS,
     SUMMARIZER_RE,
     THREAD_ID_RE,
 )
@@ -140,15 +145,20 @@ async def check_session(browser: Browser, batch_start: float) -> None:
 async def ask_question(
     browser: Browser,
     item: dict,
-    index: int,
-    total: int,
+    run_index: int,
+    total_runs: int,
     semaphore: asyncio.Semaphore,
     run_dir: Path,
     batch_start: float,
 ) -> dict:
-    """Hace una pregunta al chatbot y devuelve el dict platform_answer."""
+    """
+    Hace una pregunta al chatbot y devuelve el dict platform_answer.
+
+    run_index/total_runs identifican la corrida repetida (1..N) de ESTA MISMA
+    pregunta dentro de su batch, no la posición de la pregunta en el golden set.
+    """
     question = item["question"]
-    label = f"[Q{item['id']} {index}/{total}]"
+    label = f"[Q{item['id']} run {run_index}/{total_runs}]"
 
     async with semaphore:
         start_time = time.time()
@@ -167,7 +177,17 @@ async def ask_question(
             chat_input = page.locator(INPUT_SELECTOR)
 
             for attempt in range(1, 4):
-                await chat_input.click()
+                try:
+                    await chat_input.click(timeout=SEND_RETRY_CLICK_TIMEOUT_MS)
+                except PlaywrightTimeoutError:
+                    # El input dejó de ser clickeable entre nuestro intento
+                    # anterior (que parecía fallido) y este reintento — lo más
+                    # probable es que ese intento sí se haya enviado y la app
+                    # ya esté ocupada procesándolo.
+                    print(f"{label} [{elapsed(batch_start)}] Input no disponible para reintentar, "
+                          f"asumiendo que el envío anterior sí funcionó.")
+                    break
+
                 await chat_input.fill(question)
                 await page.wait_for_timeout(500)
                 await chat_input.press("Enter")
@@ -175,10 +195,16 @@ async def ask_question(
                 try:
                     await page.wait_for_function(
                         f"document.querySelector({INPUT_SELECTOR!r})?.value === ''",
-                        timeout=5_000,
+                        timeout=SEND_CONFIRM_TIMEOUT_MS,
                     )
                     break
-                except Exception:
+                except PlaywrightTimeoutError:
+                    # El textarea puede tardar más que SEND_CONFIRM_TIMEOUT_MS
+                    # en vaciarse bajo carga concurrente aunque el envío haya
+                    # funcionado — antes de asumir que falló, chequeamos el
+                    # valor actual.
+                    if await chat_input.input_value() == "":
+                        break
                     if attempt == 3:
                         raise RuntimeError("El mensaje no se envió tras 3 intentos — el textarea nunca se vació")
                     print(f"{label} [{elapsed(batch_start)}] Intento de envío {attempt} falló, reintentando...")
@@ -233,11 +259,12 @@ async def ask_question(
         finally:
             await context.close()
 
-        # Checkpoint individual: un crash del batch no pierde esta respuesta
-        checkpoint_file = run_dir / f"response_q{item['id']}.yaml"
+        # Checkpoint individual: un crash del batch no pierde esta corrida
+        checkpoint_file = run_dir / f"response_q{item['id']}_run{run_index}.yaml"
         save_yaml(checkpoint_file, {
             "id": item["id"],
             "question": question,
+            "run_index": run_index,
             "platform_answer": platform_answer,
         })
         print(f"{label} [{elapsed(batch_start)}] Checkpoint → {checkpoint_file.name}")
@@ -247,13 +274,17 @@ async def ask_question(
 
 async def run_platform(items: list[dict], run_dir: Path) -> list[dict]:
     """
-    Pregunta cada item al chatbot (concurrencia CONCURRENCY) y le agrega
-    la llave 'platform_answer': {status, answer, total_runtime_seconds, thread_id}.
+    Para cada pregunta del golden set, lanza CONCURRENCY corridas concurrentes
+    de LA MISMA pregunta (batch por pregunta, una pregunta a la vez) y le
+    agrega la llave 'platform_answers': una lista de CONCURRENCY dicts
+    {status, answer, total_runtime_seconds, thread_id}, para medir
+    consistencia de respuesta entre corridas repetidas.
     """
     batch_start = time.time()
     semaphore = asyncio.Semaphore(CONCURRENCY)
+    repeats = CONCURRENCY
 
-    print(f"Plataforma: {len(items)} pregunta(s) | concurrencia: {CONCURRENCY}")
+    print(f"Plataforma: {len(items)} pregunta(s) | {repeats} corrida(s) repetida(s) por pregunta\n")
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=HEADLESS)
@@ -262,18 +293,24 @@ async def run_platform(items: list[dict], run_dir: Path) -> list[dict]:
         await check_session(browser, batch_start)
         print("Sesión válida.\n")
 
-        answers = await asyncio.gather(
-            *[
-                ask_question(browser, item, i + 1, len(items), semaphore, run_dir, batch_start)
-                for i, item in enumerate(items)
-            ]
-        )
+        for q_index, item in enumerate(items, start=1):
+            print(f"=== Pregunta {q_index}/{len(items)}: id {item['id']} — {repeats} corridas concurrentes ===")
+
+            answers = await asyncio.gather(
+                *[
+                    ask_question(browser, item, run_index, repeats, semaphore, run_dir, batch_start)
+                    for run_index in range(1, repeats + 1)
+                ]
+            )
+
+            item["platform_answers"] = answers
+            ok = sum(1 for a in answers if a["status"] == "ok")
+            print(f"=== Pregunta {q_index}/{len(items)} lista: {ok}/{repeats} corridas OK ===\n")
 
         await browser.close()
 
-    for item, answer in zip(items, answers):
-        item["platform_answer"] = answer
-
-    ok = sum(1 for a in answers if a["status"] == "ok")
-    print(f"\nPlataforma lista en {elapsed(batch_start)}: {ok}/{len(items)} preguntas OK.\n")
+    total_runs = len(items) * repeats
+    total_ok = sum(1 for item in items for a in item["platform_answers"] if a["status"] == "ok")
+    print(f"\nPlataforma lista en {elapsed(batch_start)}: {total_ok}/{total_runs} corridas OK "
+          f"({len(items)} preguntas x {repeats} corridas).\n")
     return items

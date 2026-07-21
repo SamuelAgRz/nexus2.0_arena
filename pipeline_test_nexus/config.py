@@ -37,6 +37,18 @@ AGENT_BTN_SELECTOR = "button:has-text('Agent Interaction')"
 THREAD_ID_RE = re.compile(r"threadId:\s*([0-9a-fA-F-]+)")
 SUMMARIZER_RE = re.compile(r"Source: SummarizerAgent.*?Content:\n\n(.*?)\nCopy", re.DOTALL)
 
+# Cuánto esperar a que el textarea se vacíe tras presionar Enter (confirmación
+# de envío). Bajo carga concurrente (varias ventanas mandando la misma
+# pregunta a la vez) el indicador de "loading" puede tardar más en aparecer.
+SEND_CONFIRM_TIMEOUT_MS = 20_000
+# Timeout del click al reintentar un envío. Si el input ya no es clickeable
+# para entonces, es señal de que el envío anterior sí funcionó y la app está
+# ocupada procesándolo — no vale la pena esperar el default de Playwright (30s).
+SEND_RETRY_CLICK_TIMEOUT_MS = 10_000
+
 RESPONSE_TIMEOUT_MS = 600_000  # 10 minutos por pregunta
+# Doble uso: tamaño del semáforo de ventanas de browser concurrentes Y
+# número de corridas repetidas (misma pregunta) que se lanzan por cada
+# item del golden set, para medir consistencia de respuestas.
 CONCURRENCY = 5
 HEADLESS = False

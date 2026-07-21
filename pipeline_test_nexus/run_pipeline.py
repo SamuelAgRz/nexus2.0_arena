@@ -3,8 +3,10 @@ Pipeline de testing end-to-end del golden set contra la plataforma Nexus.
 
 Para cada pregunta del golden set:
   1. Ground truth : ejecuta el dax_query contra el cubo de Power BI (ADOMD).
-  2. Plataforma   : hace la pregunta al chatbot Nexus vía Playwright.
-  3. Merge        : guarda un YAML con question + ground_truth + platform_answer.
+  2. Plataforma   : hace la misma pregunta CONCURRENCY veces (en paralelo) al
+                    chatbot Nexus vía Playwright, para medir consistencia.
+  3. Merge        : guarda un YAML con question + ground_truth + platform_answers
+                    (lista de corridas repetidas).
 
 Uso:
     .venv\\Scripts\\python.exe pipeline_test_nexus/run_pipeline.py
@@ -91,7 +93,7 @@ def main():
             "question": item["question"],
             "dax_query": LiteralString(item["dax_query"]),
             "ground_truth": item.get("ground_truth"),
-            "platform_answer": item.get("platform_answer"),
+            "platform_answers": item.get("platform_answers"),
         })
 
     results_file = run_dir / "results.yaml"
@@ -102,8 +104,14 @@ def main():
         gt_ok = sum(1 for r in resultados if (r["ground_truth"] or {}).get("status") == "ok")
         print(f"Ground truth OK : {gt_ok}/{len(resultados)}")
     if run_platform_step:
-        pf_ok = sum(1 for r in resultados if (r["platform_answer"] or {}).get("status") == "ok")
-        print(f"Plataforma OK   : {pf_ok}/{len(resultados)}")
+        total_runs = sum(len(r["platform_answers"] or []) for r in resultados)
+        pf_ok_runs = sum(
+            1
+            for r in resultados
+            for run in (r["platform_answers"] or [])
+            if (run or {}).get("status") == "ok"
+        )
+        print(f"Plataforma OK   : {pf_ok_runs}/{total_runs} corridas ({len(resultados)} preguntas)")
     print(f"Resultados guardados en {results_file}")
 
 
