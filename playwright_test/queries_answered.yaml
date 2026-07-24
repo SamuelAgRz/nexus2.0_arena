@@ -36,6 +36,7 @@
     status: ok
     data:
     - Ship From[L1.5 - Country]: Brazil
+<<<<<<< HEAD
       '[Unit Cases YTD]': 1235488127.654
       '[Net Sales Revenue YTD]': 20636802119.558823
     - Ship From[L1.5 - Country]: Colombia
@@ -44,6 +45,16 @@
     - Ship From[L1.5 - Country]: Mexico
       '[Unit Cases YTD]': 2212364720.1827
       '[Net Sales Revenue YTD]': 157007828174.60712
+=======
+      '[Unit Cases YTD]': 1235488236.3111
+      '[Net Sales Revenue YTD]': 20636802119.55882
+    - Ship From[L1.5 - Country]: Colombia
+      '[Unit Cases YTD]': 198128368.6648
+      '[Net Sales Revenue YTD]': 2778748301253.6157
+    - Ship From[L1.5 - Country]: Mexico
+      '[Unit Cases YTD]': 2216797532.3616
+      '[Net Sales Revenue YTD]': 157355811408.87717
+>>>>>>> origin/nexus-test-pipeline
 - id: 3
   question: Give me the Unit Cases and Net Sales Revenue for Mexico by Channel in
     2026.
@@ -66,6 +77,7 @@
     status: ok
     data:
     - Channel[LT1.2 - Channel Group]: Off Premise
+<<<<<<< HEAD
       '[Unit Cases]': 1790223534.9171
       '[Net Sales Revenue]': 131890046828.27357
     - Channel[LT1.2 - Channel Group]: On Premise
@@ -74,6 +86,16 @@
     - Channel[LT1.2 - Channel Group]: D2C
       '[Unit Cases]': 178662769.4349
       '[Net Sales Revenue]': 4078506913.7459836
+=======
+      '[Unit Cases]': 1793829822.0523
+      '[Net Sales Revenue]': 132178985798.89267
+    - Channel[LT1.2 - Channel Group]: On Premise
+      '[Unit Cases]': 244043009.9851
+      '[Net Sales Revenue]': 21092247019.190323
+    - Channel[LT1.2 - Channel Group]: D2C
+      '[Unit Cases]': 178924700.3242
+      '[Net Sales Revenue]': 4084578590.7959843
+>>>>>>> origin/nexus-test-pipeline
 - id: 4
   question: Give me the Unit Cases and Net Sales Revenue for Colombia by Channel in
     2026.
@@ -100,7 +122,11 @@
       '[Net Sales Revenue]': 2060542965948.0
     - Channel[LT1.2 - Channel Group]: On Premise
       '[Unit Cases]': 44822030.9127
+<<<<<<< HEAD
       '[Net Sales Revenue]': 714595588268.6155
+=======
+      '[Net Sales Revenue]': 714595588268.6154
+>>>>>>> origin/nexus-test-pipeline
     - Channel[LT1.2 - Channel Group]: Others
       '[Unit Cases]': 287652.4652
       '[Net Sales Revenue]': 3174942609.0
@@ -129,6 +155,7 @@
     status: ok
     data:
     - Channel[LT1.2 - Channel Group]: Off Premise
+<<<<<<< HEAD
       '[Unit Cases]': 890659004.2965
       '[Net Sales Revenue]': 14736318877.7421
     - Channel[LT1.2 - Channel Group]: On Premise
@@ -137,6 +164,16 @@
     - Channel[LT1.2 - Channel Group]: Off Premise - B2B
       '[Unit Cases]': 176696562.2044
       '[Net Sales Revenue]': 2413598775.793909
+=======
+      '[Unit Cases]': 890659223.4676
+      '[Net Sales Revenue]': 14736318877.74215
+    - Channel[LT1.2 - Channel Group]: On Premise
+      '[Unit Cases]': 168132417.3682
+      '[Net Sales Revenue]': 3486883410.6027694
+    - Channel[LT1.2 - Channel Group]: Off Premise - B2B
+      '[Unit Cases]': 176696562.2044
+      '[Net Sales Revenue]': 2413598775.793908
+>>>>>>> origin/nexus-test-pipeline
     - Channel[LT1.2 - Channel Group]: .nan
       '[Unit Cases]': 33.2709
       '[Net Sales Revenue]': 1055.4199999999998
@@ -161,6 +198,7 @@
     status: ok
     data:
     - Ship To[LT1.2 - Customer]: All Other Customer
+<<<<<<< HEAD
       '[Unit Cases]': 1717653297.4489
       '[Net Sales Revenue]': 115151137340.99818
     - Ship To[LT1.2 - Customer]: Oxxo
@@ -211,10 +249,63 @@
     - Ship To[LT1.2 - Customer]: Comercial Mexicana (CCM)
       '[Unit Cases]': 3796172.7341
       '[Net Sales Revenue]': 352155624.6249801
+=======
+      '[Unit Cases]': 1720868992.7708
+      '[Net Sales Revenue]': 115400508153.22821
+    - Ship To[LT1.2 - Customer]: Oxxo
+      '[Unit Cases]': 182218896.5997
+      '[Net Sales Revenue]': 13029371652.87633
+    - Ship To[LT1.2 - Customer]: Wal-Mart Inc.
+      '[Unit Cases]': 107789221.7468
+      '[Net Sales Revenue]': 10956405718.570408
+    - Ship To[LT1.2 - Customer]: Soriana
+      '[Unit Cases]': 20808357.3844
+      '[Net Sales Revenue]': 1936087404.5997329
+    - Ship To[LT1.2 - Customer]: Chedraui
+      '[Unit Cases]': 20627971.5279
+      '[Net Sales Revenue]': 1845208347.7827995
+    - Ship To[LT1.2 - Customer]: Six
+      '[Unit Cases]': 19252008.9579
+      '[Net Sales Revenue]': 1546203376.0644221
+    - Ship To[LT1.2 - Customer]: 7-Eleven, Inc.
+      '[Unit Cases]': 16289361.2102
+      '[Net Sales Revenue]': 1429601793.3784
+    - Ship To[LT1.2 - Customer]: Farmacias Guadalajara
+      '[Unit Cases]': 12300621.9416
+      '[Net Sales Revenue]': 1217029697.4478593
+    - Ship To[LT1.2 - Customer]: TIENDAS NETO
+      '[Unit Cases]': 13530385.6756
+      '[Net Sales Revenue]': 1137010379.5511794
+    - Ship To[LT1.2 - Customer]: HEB
+      '[Unit Cases]': 7467518.8061
+      '[Net Sales Revenue]': 746853238.4540002
+    - Ship To[LT1.2 - Customer]: Safeway
+      '[Unit Cases]': 6916902.4081
+      '[Net Sales Revenue]': 606023400.363824
+    - Ship To[LT1.2 - Customer]: Costco Wholesale
+      '[Unit Cases]': 4068384.6595
+      '[Net Sales Revenue]': 602817322.3581
+    - Ship To[LT1.2 - Customer]: Operadora Futurama
+      '[Unit Cases]': 5023126.5429
+      '[Net Sales Revenue]': 447422845.61999995
+    - Ship To[LT1.2 - Customer]: Cinepolis
+      '[Unit Cases]': 7532508.7414
+      '[Net Sales Revenue]': 436347906.4486201
+    - Ship To[LT1.2 - Customer]: City Club
+      '[Unit Cases]': 3296185.4263
+      '[Net Sales Revenue]': 405364222.12839997
+    - Ship To[LT1.2 - Customer]: Modelorama
+      '[Unit Cases]': 4274092.5439
+      '[Net Sales Revenue]': 387107644.43041074
+    - Ship To[LT1.2 - Customer]: Comercial Mexicana (CCM)
+      '[Unit Cases]': 3796172.7341
+      '[Net Sales Revenue]': 352155624.6249799
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Almacenes Distribuidores de La frontera
-      '[Unit Cases]': 3802871.585
-      '[Net Sales Revenue]': 313290844.32
+      '[Unit Cases]': 3837746.5426
+      '[Net Sales Revenue]': 316150172.18999994
     - Ship To[LT1.2 - Customer]: Circle K Corp
+<<<<<<< HEAD
       '[Unit Cases]': 3673210.5347
       '[Net Sales Revenue]': 307937888.1235001
     - Ship To[LT1.2 - Customer]: Operadora de Cd Juarez
@@ -244,10 +335,42 @@
     - Ship To[LT1.2 - Customer]: McDonald's
       '[Unit Cases]': 3432242.5805
       '[Net Sales Revenue]': 143407147.67830002
+=======
+      '[Unit Cases]': 3683116.653
+      '[Net Sales Revenue]': 308794570.9334999
+    - Ship To[LT1.2 - Customer]: Operadora de Cd Juarez
+      '[Unit Cases]': 3571529.7352
+      '[Net Sales Revenue]': 305011969.94
+    - Ship To[LT1.2 - Customer]: SERVICIO COMERCIAL GARIS S.A. DE C.V.
+      '[Unit Cases]': 2369526.5551
+      '[Net Sales Revenue]': 210946075.12200004
+    - Ship To[LT1.2 - Customer]: CKE
+      '[Unit Cases]': 4185621.3217
+      '[Net Sales Revenue]': 202543961.96534005
+    - Ship To[LT1.2 - Customer]: Calimax
+      '[Unit Cases]': 2078911.0246
+      '[Net Sales Revenue]': 201633501.38999996
+    - Ship To[LT1.2 - Customer]: Commercializadora Farmaceutica de Chiapa
+      '[Unit Cases]': 1695693.7247
+      '[Net Sales Revenue]': 169879594.91452
+    - Ship To[LT1.2 - Customer]: TIENDAS COMERCIAL MEXICANA SA DE CV
+      '[Unit Cases]': 908329.3645
+      '[Net Sales Revenue]': 167317418.286
+    - Ship To[LT1.2 - Customer]: Yum! Brands, Inc.
+      '[Unit Cases]': 3186352.9198
+      '[Net Sales Revenue]': 166143401.42564014
+    - Ship To[LT1.2 - Customer]: Unassigned
+      '[Unit Cases]': 2285133.227
+      '[Net Sales Revenue]': 145686170.18600005
+    - Ship To[LT1.2 - Customer]: McDonald's
+      '[Unit Cases]': 3437417.237
+      '[Net Sales Revenue]': 143544218.11830002
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Cinemex
       '[Unit Cases]': 2332214.0039
       '[Net Sales Revenue]': 141774858.81458
     - Ship To[LT1.2 - Customer]: Super Gutierrez, SA De C.V.
+<<<<<<< HEAD
       '[Unit Cases]': 1555687.3182
       '[Net Sales Revenue]': 120868043.43999998
     - Ship To[LT1.2 - Customer]: Stephen Martin Go
@@ -256,6 +379,16 @@
     - Ship To[LT1.2 - Customer]: Grupo Bimbo
       '[Unit Cases]': 917234.9079
       '[Net Sales Revenue]': 117284894.06539993
+=======
+      '[Unit Cases]': 1564934.9773
+      '[Net Sales Revenue]': 121551946.27999997
+    - Ship To[LT1.2 - Customer]: Stephen Martin Go
+      '[Unit Cases]': 1655767.7079
+      '[Net Sales Revenue]': 120475846.0913
+    - Ship To[LT1.2 - Customer]: Grupo Bimbo
+      '[Unit Cases]': 918895.6005
+      '[Net Sales Revenue]': 117489602.48539995
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Tiendas de Descuento Arteli Sa de Cv
       '[Unit Cases]': 1212265.3353
       '[Net Sales Revenue]': 97831743.24700001
@@ -263,6 +396,7 @@
       '[Unit Cases]': 1581839.5861
       '[Net Sales Revenue]': 95795475.43860002
     - Ship To[LT1.2 - Customer]: Comercializadora Merco
+<<<<<<< HEAD
       '[Unit Cases]': 963187.5042
       '[Net Sales Revenue]': 85845140.70999998
     - Ship To[LT1.2 - Customer]: Farmacias Benavides
@@ -280,6 +414,25 @@
     - Ship To[LT1.2 - Customer]: FEMSA Comercio
       '[Unit Cases]': 734794.2367
       '[Net Sales Revenue]': 70174296.57788
+=======
+      '[Unit Cases]': 971384.7596
+      '[Net Sales Revenue]': 86576720.24000001
+    - Ship To[LT1.2 - Customer]: Farmacias Benavides
+      '[Unit Cases]': 611781.4595
+      '[Net Sales Revenue]': 77857186.66924796
+    - Ship To[LT1.2 - Customer]: Super Q S.A.
+      '[Unit Cases]': 1369676.3421
+      '[Net Sales Revenue]': 77263123.377
+    - Ship To[LT1.2 - Customer]: Waldo?s Dollar Mart de Mexico S. de R.L.
+      '[Unit Cases]': 639483.3804
+      '[Net Sales Revenue]': 72699745.2528
+    - Ship To[LT1.2 - Customer]: Subway
+      '[Unit Cases]': 959813.7744
+      '[Net Sales Revenue]': 72181449.0533
+    - Ship To[LT1.2 - Customer]: FEMSA Comercio
+      '[Unit Cases]': 737572.3762
+      '[Net Sales Revenue]': 70437416.21788001
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Tiendas Grand S.A. de C.V.
       '[Unit Cases]': 823582.6689
       '[Net Sales Revenue]': 60593600.181
@@ -288,22 +441,37 @@
       '[Net Sales Revenue]': 59194199.772
     - Ship To[LT1.2 - Customer]: Almacenes Ibarra, S.A. de C.V
       '[Unit Cases]': 802122.2033
+<<<<<<< HEAD
       '[Net Sales Revenue]': 58309644.42100001
+=======
+      '[Net Sales Revenue]': 58309644.42099999
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Smart & Final Dev Noroeste SA de CV
       '[Unit Cases]': 402799.2163
       '[Net Sales Revenue]': 54382318.59
     - Ship To[LT1.2 - Customer]: Tiendas Garces S.A .de C.V.
       '[Unit Cases]': 643029.5987
+<<<<<<< HEAD
       '[Net Sales Revenue]': 53696235.81099999
+=======
+      '[Net Sales Revenue]': 53696235.811000004
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Amazon Inc
       '[Unit Cases]': 323871.4787
       '[Net Sales Revenue]': 52014581.330000006
     - Ship To[LT1.2 - Customer]: Grupo ADO
       '[Unit Cases]': 560268.0985
+<<<<<<< HEAD
       '[Net Sales Revenue]': 49064120.42200004
     - Ship To[LT1.2 - Customer]: Alsea
       '[Unit Cases]': 399162.8204
       '[Net Sales Revenue]': 43961647.53509996
+=======
+      '[Net Sales Revenue]': 49064120.42200003
+    - Ship To[LT1.2 - Customer]: Alsea
+      '[Unit Cases]': 399608.1953
+      '[Net Sales Revenue]': 44013232.3851
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Xcaret
       '[Unit Cases]': 667908.612
       '[Net Sales Revenue]': 42616508.32290001
@@ -311,6 +479,7 @@
       '[Unit Cases]': 621590.1463
       '[Net Sales Revenue]': 41773275.9726
     - Ship To[LT1.2 - Customer]: Wendy's
+<<<<<<< HEAD
       '[Unit Cases]': 495061.1848
       '[Net Sales Revenue]': 37943433.92850001
     - Ship To[LT1.2 - Customer]: Wingstop
@@ -340,10 +509,42 @@
     - Ship To[LT1.2 - Customer]: CERVECENTRO
       '[Unit Cases]': 318336.4475
       '[Net Sales Revenue]': 24651803.270000003
+=======
+      '[Unit Cases]': 498175.8095
+      '[Net Sales Revenue]': 38177949.31850001
+    - Ship To[LT1.2 - Customer]: Wingstop
+      '[Unit Cases]': 178304.4883
+      '[Net Sales Revenue]': 32695409.527600005
+    - Ship To[LT1.2 - Customer]: Gastrosur SA de CV
+      '[Unit Cases]': 289307.5554
+      '[Net Sales Revenue]': 28192620.226599995
+    - Ship To[LT1.2 - Customer]: Grupo Posadas
+      '[Unit Cases]': 239446.7273
+      '[Net Sales Revenue]': 27836224.0999
+    - Ship To[LT1.2 - Customer]: Carso
+      '[Unit Cases]': 192778.721
+      '[Net Sales Revenue]': 26984294.891599994
+    - Ship To[LT1.2 - Customer]: LA ESPERANZA
+      '[Unit Cases]': 315457.6792
+      '[Net Sales Revenue]': 26646402.27299998
+    - Ship To[LT1.2 - Customer]: Areas Group
+      '[Unit Cases]': 237940.4646
+      '[Net Sales Revenue]': 26555381.351620004
+    - Ship To[LT1.2 - Customer]: The Home Depot
+      '[Unit Cases]': 263979.3665
+      '[Net Sales Revenue]': 25858088.521799996
+    - Ship To[LT1.2 - Customer]: Operadora De Reynosa S.A. De C.V.
+      '[Unit Cases]': 225599.4568
+      '[Net Sales Revenue]': 25773369.80999999
+    - Ship To[LT1.2 - Customer]: CERVECENTRO
+      '[Unit Cases]': 318336.4475
+      '[Net Sales Revenue]': 24651803.27
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Distribuidora Liverpool, S.A. de C.V.
       '[Unit Cases]': 129994.1762
       '[Net Sales Revenue]': 22573513.788199995
     - Ship To[LT1.2 - Customer]: PriceSmart
+<<<<<<< HEAD
       '[Unit Cases]': 226805.2748
       '[Net Sales Revenue]': 21359514.313500017
     - Ship To[LT1.2 - Customer]: PASTES KIKOS
@@ -391,10 +592,60 @@
     - Ship To[LT1.2 - Customer]: AISA Inmuebles S.A. de C.V.
       '[Unit Cases]': 89876.0514
       '[Net Sales Revenue]': 11784549.639999999
+=======
+      '[Unit Cases]': 226895.6798
+      '[Net Sales Revenue]': 21369491.62350001
+    - Ship To[LT1.2 - Customer]: PASTES KIKOS
+      '[Unit Cases]': 145373.6397
+      '[Net Sales Revenue]': 20564244.288799997
+    - Ship To[LT1.2 - Customer]: Corp. Mexicana de Restaurantes
+      '[Unit Cases]': 221185.2658
+      '[Net Sales Revenue]': 20333916.11249999
+    - Ship To[LT1.2 - Customer]: Concesionaria Vuela Compania de Aviacion
+      '[Unit Cases]': 175599.2807
+      '[Net Sales Revenue]': 19319465.853000008
+    - Ship To[LT1.2 - Customer]: FISHER?S
+      '[Unit Cases]': 83727.3369
+      '[Net Sales Revenue]': 17256120.61700001
+    - Ship To[LT1.2 - Customer]: Compass Group Plc
+      '[Unit Cases]': 111107.1255
+      '[Net Sales Revenue]': 16249583.939000007
+    - Ship To[LT1.2 - Customer]: Tim Horton's
+      '[Unit Cases]': 137571.2171
+      '[Net Sales Revenue]': 16195935.603899997
+    - Ship To[LT1.2 - Customer]: Krispy Kreme
+      '[Unit Cases]': 118605.0949
+      '[Net Sales Revenue]': 15962214.739599995
+    - Ship To[LT1.2 - Customer]: Hilton Group Plc
+      '[Unit Cases]': 282359.102
+      '[Net Sales Revenue]': 15539112.592499994
+    - Ship To[LT1.2 - Customer]: SITYF
+      '[Unit Cases]': 166294.2547
+      '[Net Sales Revenue]': 13887592.403600004
+    - Ship To[LT1.2 - Customer]: Aramark
+      '[Unit Cases]': 87116.0339
+      '[Net Sales Revenue]': 13320501.000000002
+    - Ship To[LT1.2 - Customer]: Sodexo
+      '[Unit Cases]': 178135.9404
+      '[Net Sales Revenue]': 13251900.876900002
+    - Ship To[LT1.2 - Customer]: Eric Kayser
+      '[Unit Cases]': 85846.9688
+      '[Net Sales Revenue]': 12574392.454000004
+    - Ship To[LT1.2 - Customer]: Hooters
+      '[Unit Cases]': 68094.0817
+      '[Net Sales Revenue]': 11944146.310399994
+    - Ship To[LT1.2 - Customer]: AISA Inmuebles S.A. de C.V.
+      '[Unit Cases]': 90286.4883
+      '[Net Sales Revenue]': 11837328.570000002
+    - Ship To[LT1.2 - Customer]: Six Flags, Inc.
+      '[Unit Cases]': 154694.2026
+      '[Net Sales Revenue]': 11788071.978799997
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: REBEL WINGS
       '[Unit Cases]': 55580.9299
       '[Net Sales Revenue]': 11345274.621899996
     - Ship To[LT1.2 - Customer]: Operadora Aeroboutiques SA de CV
+<<<<<<< HEAD
       '[Unit Cases]': 87722.8153
       '[Net Sales Revenue]': 10584032.501359997
     - Ship To[LT1.2 - Customer]: Aeroenlaces Nacionales S.A. de C.V.
@@ -403,16 +654,31 @@
     - Ship To[LT1.2 - Customer]: Brinker International Inc.
       '[Unit Cases]': 103145.0891
       '[Net Sales Revenue]': 10231754.078199994
+=======
+      '[Unit Cases]': 87914.2139
+      '[Net Sales Revenue]': 10605881.881359996
+    - Ship To[LT1.2 - Customer]: Aeroenlaces Nacionales S.A. de C.V.
+      '[Unit Cases]': 92880.2775
+      '[Net Sales Revenue]': 10548930.139999999
+    - Ship To[LT1.2 - Customer]: Brinker International Inc.
+      '[Unit Cases]': 104031.6115
+      '[Net Sales Revenue]': 10323127.198199997
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Grupo Flecha Amarilla
       '[Unit Cases]': 75994.5381
       '[Net Sales Revenue]': 9157191.578000003
     - Ship To[LT1.2 - Customer]: SONORA
       '[Unit Cases]': 45550.8792
+<<<<<<< HEAD
       '[Net Sales Revenue]': 8967933.4074
+=======
+      '[Net Sales Revenue]': 8967933.407400003
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Accor
       '[Unit Cases]': 83016.3622
       '[Net Sales Revenue]': 8765314.187700002
     - Ship To[LT1.2 - Customer]: Afc Enterprises Inc.
+<<<<<<< HEAD
       '[Unit Cases]': 83980.8543
       '[Net Sales Revenue]': 8302943.847600001
     - Ship To[LT1.2 - Customer]: Coco Bongo
@@ -421,10 +687,21 @@
     - Ship To[LT1.2 - Customer]: SUPER IBERIA VECINO
       '[Unit Cases]': 125886.6596
       '[Net Sales Revenue]': 8231544.314000001
+=======
+      '[Unit Cases]': 84654.0479
+      '[Net Sales Revenue]': 8369028.237600002
+    - Ship To[LT1.2 - Customer]: Coco Bongo
+      '[Unit Cases]': 113617.5468
+      '[Net Sales Revenue]': 8264959.694699998
+    - Ship To[LT1.2 - Customer]: SUPER IBERIA VECINO
+      '[Unit Cases]': 125886.6596
+      '[Net Sales Revenue]': 8231544.314000003
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: BATLE GROUP
       '[Unit Cases]': 225639.4125
       '[Net Sales Revenue]': 7964682.995700004
     - Ship To[LT1.2 - Customer]: P Tsakiris
+<<<<<<< HEAD
       '[Unit Cases]': 51974.5642
       '[Net Sales Revenue]': 7312745.737599999
     - Ship To[LT1.2 - Customer]: Franquicias Maso En Expansion SA DE CV
@@ -478,6 +755,61 @@
     - Ship To[LT1.2 - Customer]: GARABATOS
       '[Unit Cases]': 17767.9728
       '[Net Sales Revenue]': 3493595.0699999994
+=======
+      '[Unit Cases]': 52045.6808
+      '[Net Sales Revenue]': 7326085.5676
+    - Ship To[LT1.2 - Customer]: Franquicias Maso En Expansion SA DE CV
+      '[Unit Cases]': 34624.7902
+      '[Net Sales Revenue]': 6896742.184770001
+    - Ship To[LT1.2 - Customer]: S?per Oui de San Rafael S.A. de C.V
+      '[Unit Cases]': 107097.9224
+      '[Net Sales Revenue]': 6776525.679
+    - Ship To[LT1.2 - Customer]: Cheesecake Factory
+      '[Unit Cases]': 63372.233
+      '[Net Sales Revenue]': 6149158.435999998
+    - Ship To[LT1.2 - Customer]: FARMACIAS COFAR
+      '[Unit Cases]': 60151.0515
+      '[Net Sales Revenue]': 5929023.727000002
+    - Ship To[LT1.2 - Customer]: GRUPO PRESIDENTE
+      '[Unit Cases]': 23927.3034
+      '[Net Sales Revenue]': 5804110.788999999
+    - Ship To[LT1.2 - Customer]: Franquicias Recorcholis S.A. de C.V.
+      '[Unit Cases]': 47644.8655
+      '[Net Sales Revenue]': 5754793.325400001
+    - Ship To[LT1.2 - Customer]: El Palacio de Hierro SA de CV
+      '[Unit Cases]': 26481.2214
+      '[Net Sales Revenue]': 5348658.182000002
+    - Ship To[LT1.2 - Customer]: Peter Piper Pizza
+      '[Unit Cases]': 62809.0656
+      '[Net Sales Revenue]': 5142173.380000001
+    - Ship To[LT1.2 - Customer]: InterContinental Hotels Group
+      '[Unit Cases]': 37418.1816
+      '[Net Sales Revenue]': 4389421.504000001
+    - Ship To[LT1.2 - Customer]: Princess
+      '[Unit Cases]': 167056.038
+      '[Net Sales Revenue]': 4312295.400500001
+    - Ship To[LT1.2 - Customer]: Inmobiliaria Hascor S.A. de C.V.
+      '[Unit Cases]': 30951.8451
+      '[Net Sales Revenue]': 4130369.1100000003
+    - Ship To[LT1.2 - Customer]: FARMACIAS PDC
+      '[Unit Cases]': 25836.3175
+      '[Net Sales Revenue]': 4030653.0485
+    - Ship To[LT1.2 - Customer]: Applebee's
+      '[Unit Cases]': 27570.3999
+      '[Net Sales Revenue]': 4029951.3000000003
+    - Ship To[LT1.2 - Customer]: HOTEL CAMINO REAL
+      '[Unit Cases]': 57582.3136
+      '[Net Sales Revenue]': 3709142.138999999
+    - Ship To[LT1.2 - Customer]: ABARROTES DUNO
+      '[Unit Cases]': 77578.907
+      '[Net Sales Revenue]': 3635718.107000001
+    - Ship To[LT1.2 - Customer]: Omni
+      '[Unit Cases]': 93829.6951
+      '[Net Sales Revenue]': 3624004.2046999997
+    - Ship To[LT1.2 - Customer]: GARABATOS
+      '[Unit Cases]': 17767.9728
+      '[Net Sales Revenue]': 3493595.07
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: SIA COMEDORES
       '[Unit Cases]': 27827.7467
       '[Net Sales Revenue]': 3479357.9285000013
@@ -491,20 +823,35 @@
       '[Unit Cases]': 41150.0309
       '[Net Sales Revenue]': 3334722.920999999
     - Ship To[LT1.2 - Customer]: Johnny Rockets Group Inc
+<<<<<<< HEAD
       '[Unit Cases]': 24049.6732
       '[Net Sales Revenue]': 3153034.3877000003
     - Ship To[LT1.2 - Customer]: CALIFA
       '[Unit Cases]': 16204.8523
       '[Net Sales Revenue]': 3014229.5399999996
+=======
+      '[Unit Cases]': 24072.0754
+      '[Net Sales Revenue]': 3155195.1677
+    - Ship To[LT1.2 - Customer]: CALIFA
+      '[Unit Cases]': 16204.8523
+      '[Net Sales Revenue]': 3014229.539999999
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: MR SUSHI
       '[Unit Cases]': 18012.049
       '[Net Sales Revenue]': 2806923.178899999
     - Ship To[LT1.2 - Customer]: Carlson
       '[Unit Cases]': 22174.5216
+<<<<<<< HEAD
       '[Net Sales Revenue]': 2668022.4793
     - Ship To[LT1.2 - Customer]: Tesco Plc
       '[Unit Cases]': 28990.306
       '[Net Sales Revenue]': 2650998.272
+=======
+      '[Net Sales Revenue]': 2668022.4792999993
+    - Ship To[LT1.2 - Customer]: Tesco Plc
+      '[Unit Cases]': 28990.306
+      '[Net Sales Revenue]': 2650998.2720000003
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Texas Roadhouse
       '[Unit Cases]': 24811.1103
       '[Net Sales Revenue]': 2592682.6831000005
@@ -513,20 +860,33 @@
       '[Net Sales Revenue]': 2586542.2774
     - Ship To[LT1.2 - Customer]: IHOP
       '[Unit Cases]': 23884.6174
+<<<<<<< HEAD
       '[Net Sales Revenue]': 2532367.859900001
+=======
+      '[Net Sales Revenue]': 2532367.8599000005
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: PERROS Y BURROS
       '[Unit Cases]': 15490.7209
       '[Net Sales Revenue]': 2468762.1699999995
     - Ship To[LT1.2 - Customer]: Oriental Wok SA de CV
+<<<<<<< HEAD
       '[Unit Cases]': 15314.0501
       '[Net Sales Revenue]': 2365017.2199999997
     - Ship To[LT1.2 - Customer]: LUPILLOS
       '[Unit Cases]': 37267.1986
       '[Net Sales Revenue]': 2334396.8230000003
+=======
+      '[Unit Cases]': 15500.5873
+      '[Net Sales Revenue]': 2390802.02
+    - Ship To[LT1.2 - Customer]: LUPILLOS
+      '[Unit Cases]': 37267.1986
+      '[Net Sales Revenue]': 2334396.8229999994
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: FARMACIAS ESQUIVAR
       '[Unit Cases]': 23122.7332
       '[Net Sales Revenue]': 2271670.2239999995
     - Ship To[LT1.2 - Customer]: Nikkori
+<<<<<<< HEAD
       '[Unit Cases]': 13652.0773
       '[Net Sales Revenue]': 2236877.9190000007
     - Ship To[LT1.2 - Customer]: Paris Baguette Singapore Pte Ltd
@@ -535,11 +895,22 @@
     - Ship To[LT1.2 - Customer]: POTZOLLCALLI
       '[Unit Cases]': 11304.9961
       '[Net Sales Revenue]': 2151601.5270000007
+=======
+      '[Unit Cases]': 13754.4865
+      '[Net Sales Revenue]': 2252126.599000001
+    - Ship To[LT1.2 - Customer]: Paris Baguette Singapore Pte Ltd
+      '[Unit Cases]': 26092.439
+      '[Net Sales Revenue]': 2168454.508
+    - Ship To[LT1.2 - Customer]: POTZOLLCALLI
+      '[Unit Cases]': 11304.9961
+      '[Net Sales Revenue]': 2151601.527
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: NEWREST
       '[Unit Cases]': 13973.2306
       '[Net Sales Revenue]': 1983265.0847000002
     - Ship To[LT1.2 - Customer]: Papa John's Pizza
       '[Unit Cases]': 17636.8241
+<<<<<<< HEAD
       '[Net Sales Revenue]': 1954486.8180000002
     - Ship To[LT1.2 - Customer]: Flamingo
       '[Unit Cases]': 37261.5917
@@ -553,15 +924,38 @@
     - Ship To[LT1.2 - Customer]: AMOXXO
       '[Unit Cases]': 45088.3002
       '[Net Sales Revenue]': 1761179.8743000003
+=======
+      '[Net Sales Revenue]': 1954486.8179999997
+    - Ship To[LT1.2 - Customer]: Flamingo
+      '[Unit Cases]': 37261.5917
+      '[Net Sales Revenue]': 1894228.6206999996
+    - Ship To[LT1.2 - Customer]: S S Global SA de CV
+      '[Unit Cases]': 11139.0587
+      '[Net Sales Revenue]': 1862603.2300000007
+    - Ship To[LT1.2 - Customer]: Buffalo Wild Wings
+      '[Unit Cases]': 13279.1015
+      '[Net Sales Revenue]': 1762885.9370000002
+    - Ship To[LT1.2 - Customer]: AMOXXO
+      '[Unit Cases]': 45088.3002
+      '[Net Sales Revenue]': 1761179.8743000005
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: MARISCOS VILLA RICA
       '[Unit Cases]': 10916.7511
       '[Net Sales Revenue]': 1715994.0830000003
     - Ship To[LT1.2 - Customer]: AMF Bowling
+<<<<<<< HEAD
       '[Unit Cases]': 12569.5369
       '[Net Sales Revenue]': 1699344.8599999999
     - Ship To[LT1.2 - Customer]: FARMACIA YIREH
       '[Unit Cases]': 15549.4075
       '[Net Sales Revenue]': 1656829.7469999997
+=======
+      '[Unit Cases]': 12687.2473
+      '[Net Sales Revenue]': 1715293.68
+    - Ship To[LT1.2 - Customer]: FARMACIA YIREH
+      '[Unit Cases]': 15549.4075
+      '[Net Sales Revenue]': 1656829.747
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: El Pollo Loco
       '[Unit Cases]': 19358.1077
       '[Net Sales Revenue]': 1625011.7040000001
@@ -582,13 +976,21 @@
       '[Net Sales Revenue]': 1423102.707
     - Ship To[LT1.2 - Customer]: Outback Steakhouse
       '[Unit Cases]': 10338.8646
+<<<<<<< HEAD
       '[Net Sales Revenue]': 1373435.8500000003
+=======
+      '[Net Sales Revenue]': 1373435.85
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Hotel Las Brisas
       '[Unit Cases]': 8808.3297
       '[Net Sales Revenue]': 1358114.5559999996
     - Ship To[LT1.2 - Customer]: Impulsora de Restaurantes el Fogoncito
       '[Unit Cases]': 6930.2902
+<<<<<<< HEAD
       '[Net Sales Revenue]': 1336512.3307
+=======
+      '[Net Sales Revenue]': 1336512.3306999998
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: CAIPIRINHA
       '[Unit Cases]': 7254.3181
       '[Net Sales Revenue]': 1248944.45
@@ -609,36 +1011,59 @@
       '[Net Sales Revenue]': 1148618.9000000001
     - Ship To[LT1.2 - Customer]: EL PUNTO
       '[Unit Cases]': 12036.9884
+<<<<<<< HEAD
       '[Net Sales Revenue]': 1148548.432
     - Ship To[LT1.2 - Customer]: Tony Roma's
       '[Unit Cases]': 7561.866
       '[Net Sales Revenue]': 1127368.3339999998
+=======
+      '[Net Sales Revenue]': 1148548.4319999998
+    - Ship To[LT1.2 - Customer]: Tony Roma's
+      '[Unit Cases]': 7649.7068
+      '[Net Sales Revenue]': 1138479.1339999998
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: United Airlines
       '[Unit Cases]': 6586.8367
       '[Net Sales Revenue]': 1085164.71
     - Ship To[LT1.2 - Customer]: Marriott International
       '[Unit Cases]': 15917.687
+<<<<<<< HEAD
       '[Net Sales Revenue]': 1030443.1199999999
+=======
+      '[Net Sales Revenue]': 1030443.1200000003
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: ASADERO CIEN
       '[Unit Cases]': 8068.391
       '[Net Sales Revenue]': 1025290.8580000002
     - Ship To[LT1.2 - Customer]: Multimedios Estrellas de Oro
       '[Unit Cases]': 5590.5993
+<<<<<<< HEAD
       '[Net Sales Revenue]': 1010599.5300000001
+=======
+      '[Net Sales Revenue]': 1010599.5300000003
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: GO CINEMA
       '[Unit Cases]': 9533.3674
       '[Net Sales Revenue]': 1009204.5399999998
     - Ship To[LT1.2 - Customer]: FOODOLOGY
       '[Unit Cases]': 10311.2849
+<<<<<<< HEAD
       '[Net Sales Revenue]': 977242.0113000001
     - Ship To[LT1.2 - Customer]: DON MANOLITO
       '[Unit Cases]': 6657.2248
       '[Net Sales Revenue]': 976407.8970000001
+=======
+      '[Net Sales Revenue]': 977242.0112999999
+    - Ship To[LT1.2 - Customer]: DON MANOLITO
+      '[Unit Cases]': 6657.2248
+      '[Net Sales Revenue]': 976407.8970000002
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: JOY
       '[Unit Cases]': 12829.6113
       '[Net Sales Revenue]': 963269.892
     - Ship To[LT1.2 - Customer]: Grupo Madero
       '[Unit Cases]': 4383.7404
+<<<<<<< HEAD
       '[Net Sales Revenue]': 961932.87
     - Ship To[LT1.2 - Customer]: Prohomi SA de CV
       '[Unit Cases]': 8643.5565
@@ -655,10 +1080,29 @@
     - Ship To[LT1.2 - Customer]: Grupo Super Cream S.A. de C.V.
       '[Unit Cases]': 5132.8014
       '[Net Sales Revenue]': 748454.669
+=======
+      '[Net Sales Revenue]': 961932.8699999999
+    - Ship To[LT1.2 - Customer]: Prohomi SA de CV
+      '[Unit Cases]': 8643.5565
+      '[Net Sales Revenue]': 873169.3309999999
+    - Ship To[LT1.2 - Customer]: Amor por el Cine SA de CV
+      '[Unit Cases]': 6428.4979
+      '[Net Sales Revenue]': 851091.5480000001
+    - Ship To[LT1.2 - Customer]: Panaderia y Servicios Tradicionales SA
+      '[Unit Cases]': 4251.1018
+      '[Net Sales Revenue]': 827104.4709000001
+    - Ship To[LT1.2 - Customer]: Edeka
+      '[Unit Cases]': 13612.9238
+      '[Net Sales Revenue]': 794856.19
+    - Ship To[LT1.2 - Customer]: Grupo Super Cream S.A. de C.V.
+      '[Unit Cases]': 5132.8014
+      '[Net Sales Revenue]': 748454.6689999999
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: TACOS EL RODEO
       '[Unit Cases]': 5519.4567
       '[Net Sales Revenue]': 726726.9809999999
     - Ship To[LT1.2 - Customer]: Oriental Grill S.A. de C.V.
+<<<<<<< HEAD
       '[Unit Cases]': 3593.5509
       '[Net Sales Revenue]': 703999.5800000001
     - Ship To[LT1.2 - Customer]: DE LA MANCHA
@@ -667,42 +1111,78 @@
     - Ship To[LT1.2 - Customer]: Farmacias Gi S.A. de C.V.
       '[Unit Cases]': 6832.5507
       '[Net Sales Revenue]': 670594.255
+=======
+      '[Unit Cases]': 3626.774
+      '[Net Sales Revenue]': 708999.78
+    - Ship To[LT1.2 - Customer]: DE LA MANCHA
+      '[Unit Cases]': 3032.8701
+      '[Net Sales Revenue]': 689533.3499999999
+    - Ship To[LT1.2 - Customer]: Farmacias Gi S.A. de C.V.
+      '[Unit Cases]': 6832.5507
+      '[Net Sales Revenue]': 670594.2549999999
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Office Depot, Inc
       '[Unit Cases]': 4727.0387
       '[Net Sales Revenue]': 642463.7609999999
     - Ship To[LT1.2 - Customer]: ECE
       '[Unit Cases]': 7112.0046
+<<<<<<< HEAD
       '[Net Sales Revenue]': 634077.2428999998
+=======
+      '[Net Sales Revenue]': 634077.2429000003
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: BELLINHAUSEN
       '[Unit Cases]': 2468.9503
       '[Net Sales Revenue]': 623392.8800000001
     - Ship To[LT1.2 - Customer]: LA HOJALDRA
       '[Unit Cases]': 5894.3035
+<<<<<<< HEAD
       '[Net Sales Revenue]': 622611.8679999998
+=======
+      '[Net Sales Revenue]': 622611.868
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Las Alitas
       '[Unit Cases]': 4619.8929
       '[Net Sales Revenue]': 611480.0902999998
     - Ship To[LT1.2 - Customer]: NH Hotels
       '[Unit Cases]': 6323.8872
+<<<<<<< HEAD
       '[Net Sales Revenue]': 568546.6465
     - Ship To[LT1.2 - Customer]: MANKA FOODS
       '[Unit Cases]': 3750.8288
       '[Net Sales Revenue]': 474053.67000000004
+=======
+      '[Net Sales Revenue]': 568546.6464999999
+    - Ship To[LT1.2 - Customer]: MANKA FOODS
+      '[Unit Cases]': 3750.8288
+      '[Net Sales Revenue]': 474053.67
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: CL?SICO
       '[Unit Cases]': 2531.6169
       '[Net Sales Revenue]': 466979.2599999999
     - Ship To[LT1.2 - Customer]: ADO/GL UNO
       '[Unit Cases]': 6835.6605
+<<<<<<< HEAD
       '[Net Sales Revenue]': 408817.49999999994
     - Ship To[LT1.2 - Customer]: ANTOJITOS ANITA
       '[Unit Cases]': 5471.5227
       '[Net Sales Revenue]': 387686.05399999995
+=======
+      '[Net Sales Revenue]': 408817.5
+    - Ship To[LT1.2 - Customer]: ANTOJITOS ANITA
+      '[Unit Cases]': 5471.5227
+      '[Net Sales Revenue]': 387686.0540000001
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: ALTABRISA BOWLING
       '[Unit Cases]': 3188.1432
       '[Net Sales Revenue]': 348999.80889999995
     - Ship To[LT1.2 - Customer]: MANANITAS
       '[Unit Cases]': 2540.238
+<<<<<<< HEAD
       '[Net Sales Revenue]': 348656.07
+=======
+      '[Net Sales Revenue]': 348656.0699999999
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: SPORTWAY
       '[Unit Cases]': 2558.8814
       '[Net Sales Revenue]': 333510.318
@@ -711,31 +1191,50 @@
       '[Net Sales Revenue]': 330988.446
     - Ship To[LT1.2 - Customer]: Dairy Queen
       '[Unit Cases]': 11886.3823
+<<<<<<< HEAD
       '[Net Sales Revenue]': 314663.432
+=======
+      '[Net Sales Revenue]': 314663.43200000003
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: American Airlines
       '[Unit Cases]': 2304.5636
       '[Net Sales Revenue]': 293443.22
     - Ship To[LT1.2 - Customer]: Eurest Proper Meals de Mexico S.A. de CV
       '[Unit Cases]': 4822.9153
-      '[Net Sales Revenue]': 291810.99
+      '[Net Sales Revenue]': 291810.9899999999
     - Ship To[LT1.2 - Customer]: LOS ARBOLITOS DE CAJEME
       '[Unit Cases]': 1501.2832
       '[Net Sales Revenue]': 286705.77999999997
     - Ship To[LT1.2 - Customer]: COLORINES TEPOZTL?N
       '[Unit Cases]': 2437.2175
+<<<<<<< HEAD
       '[Net Sales Revenue]': 286669.86000000004
     - Ship To[LT1.2 - Customer]: Taco Inn
       '[Unit Cases]': 1759.936
       '[Net Sales Revenue]': 279210.39300000004
+=======
+      '[Net Sales Revenue]': 286669.86
+    - Ship To[LT1.2 - Customer]: Taco Inn
+      '[Unit Cases]': 1768.8126
+      '[Net Sales Revenue]': 280548.67300000007
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: EL PORTAL DE LA JAIBA
       '[Unit Cases]': 1241.6329
-      '[Net Sales Revenue]': 279113.24
+      '[Net Sales Revenue]': 279113.23999999993
     - Ship To[LT1.2 - Customer]: Farmacias El Fenix
+<<<<<<< HEAD
       '[Unit Cases]': 2883.3985
       '[Net Sales Revenue]': 272797.09
     - Ship To[LT1.2 - Customer]: WINGS CITY
       '[Unit Cases]': 1048.682
       '[Net Sales Revenue]': 219120.7
+=======
+      '[Unit Cases]': 2899.2491
+      '[Net Sales Revenue]': 274113.47
+    - Ship To[LT1.2 - Customer]: WINGS CITY
+      '[Unit Cases]': 1048.682
+      '[Net Sales Revenue]': 219120.69999999998
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: DON GIOVANNI
       '[Unit Cases]': 1759.9629
       '[Net Sales Revenue]': 184432.37
@@ -759,10 +1258,17 @@
       '[Net Sales Revenue]': 131150.69
     - Ship To[LT1.2 - Customer]: Bodegas Alianza
       '[Unit Cases]': 1028.4926
+<<<<<<< HEAD
       '[Net Sales Revenue]': 129177.98939999999
     - Ship To[LT1.2 - Customer]: PIZZAS DE LA LE?A
       '[Unit Cases]': 893.898
       '[Net Sales Revenue]': 125008.20999999999
+=======
+      '[Net Sales Revenue]': 129177.9894
+    - Ship To[LT1.2 - Customer]: PIZZAS DE LA LE?A
+      '[Unit Cases]': 893.898
+      '[Net Sales Revenue]': 125008.20999999998
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: POLLOS RIO
       '[Unit Cases]': 704.7022
       '[Net Sales Revenue]': 118596.34999999998
@@ -771,13 +1277,21 @@
       '[Net Sales Revenue]': 110440.85000000003
     - Ship To[LT1.2 - Customer]: VELERO TIA LICHA
       '[Unit Cases]': 831.0265
+<<<<<<< HEAD
       '[Net Sales Revenue]': 103267.92100000003
+=======
+      '[Net Sales Revenue]': 103267.92099999999
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: MC CARTHY?S IRISH PUB
       '[Unit Cases]': 578.7434
-      '[Net Sales Revenue]': 103026.08999999998
+      '[Net Sales Revenue]': 103026.08999999997
     - Ship To[LT1.2 - Customer]: Piccolo
       '[Unit Cases]': 586.0938
+<<<<<<< HEAD
       '[Net Sales Revenue]': 96127.11
+=======
+      '[Net Sales Revenue]': 96127.11000000002
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: RINC?N & GPO GUAVOS
       '[Unit Cases]': 510.5414
       '[Net Sales Revenue]': 93540.93000000002
@@ -786,7 +1300,11 @@
       '[Net Sales Revenue]': 92347.55999999998
     - Ship To[LT1.2 - Customer]: ASADERO LOS TROMPOS
       '[Unit Cases]': 541.0586
+<<<<<<< HEAD
       '[Net Sales Revenue]': 90718.50000000001
+=======
+      '[Net Sales Revenue]': 90718.49999999997
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: El Porton
       '[Unit Cases]': 553.378
       '[Net Sales Revenue]': 75786.31000000001
@@ -798,7 +1316,11 @@
       '[Net Sales Revenue]': 56843.0
     - Ship To[LT1.2 - Customer]: EL PESCAU
       '[Unit Cases]': 221.0436
+<<<<<<< HEAD
       '[Net Sales Revenue]': 56188.84
+=======
+      '[Net Sales Revenue]': 56188.83999999999
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: SPORT CITY & CITY CAF?
       '[Unit Cases]': 237.8698
       '[Net Sales Revenue]': 52762.29000000001
@@ -807,19 +1329,32 @@
       '[Net Sales Revenue]': 50930.81000000001
     - Ship To[LT1.2 - Customer]: THE FOOD BOX
       '[Unit Cases]': 241.0725
+<<<<<<< HEAD
       '[Net Sales Revenue]': 48356.47000000001
+=======
+      '[Net Sales Revenue]': 48356.47
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: TORTAS HIPOCAMPO
       '[Unit Cases]': 366.6822
       '[Net Sales Revenue]': 48169.17199999998
     - Ship To[LT1.2 - Customer]: LOS PACOS
       '[Unit Cases]': 169.5596
+<<<<<<< HEAD
       '[Net Sales Revenue]': 42149.526000000005
+=======
+      '[Net Sales Revenue]': 42149.52599999999
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Dunkin Donuts
       '[Unit Cases]': 289.1186
       '[Net Sales Revenue]': 34158.21
     - Ship To[LT1.2 - Customer]: Grupo Restaurantero del Centro S.A.de CV
+<<<<<<< HEAD
       '[Unit Cases]': 130.4403
       '[Net Sales Revenue]': 32205.530000000002
+=======
+      '[Unit Cases]': 139.69
+      '[Net Sales Revenue]': 33435.79
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: CINE MADERO
       '[Unit Cases]': 136.7596
       '[Net Sales Revenue]': 14095.120000000003
@@ -834,7 +1369,7 @@
       '[Net Sales Revenue]': 6223.9800000000005
     - Ship To[LT1.2 - Customer]: Industrial De Alimentos De Linares S.A.
       '[Unit Cases]': 21.444
-      '[Net Sales Revenue]': 2088.69
+      '[Net Sales Revenue]': 2088.6899999999996
     - Ship To[LT1.2 - Customer]: Hyatt Hotels Corporation
       '[Unit Cases]': 73.9697
       '[Net Sales Revenue]': 913.5
@@ -900,7 +1435,11 @@
       '[Net Sales Revenue]': 4280531341.0
     - Ship To[LT1.2 - Customer]: McDonald's
       '[Unit Cases]': 811612.7089
+<<<<<<< HEAD
       '[Net Sales Revenue]': 4134097011.6154118
+=======
+      '[Net Sales Revenue]': 4134097011.6154113
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: TACA Airlines
       '[Unit Cases]': 387707.1311
       '[Net Sales Revenue]': 3536834115.0
@@ -1036,26 +1575,45 @@
     status: ok
     data:
     - Ship To[LT1.2 - Customer]: All Other Customer
+<<<<<<< HEAD
       '[Unit Cases]': 1098041991.9485
       '[Net Sales Revenue]': 18108260567.211525
     - Ship To[LT1.2 - Customer]: Carrefour Group
       '[Unit Cases]': 43930618.8616
       '[Net Sales Revenue]': 828523363.796
+=======
+      '[Unit Cases]': 1098042100.1829
+      '[Net Sales Revenue]': 18108260567.211514
+    - Ship To[LT1.2 - Customer]: Carrefour Group
+      '[Unit Cases]': 43930618.8616
+      '[Net Sales Revenue]': 828523363.7960005
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Assai
       '[Unit Cases]': 36897592.0971
       '[Net Sales Revenue]': 751429151.2858
     - Ship To[LT1.2 - Customer]: GPA
       '[Unit Cases]': 10097190.7675
+<<<<<<< HEAD
       '[Net Sales Revenue]': 193114151.06789994
+=======
+      '[Net Sales Revenue]': 193114151.0679
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: McDonald's
       '[Unit Cases]': 11275186.1266
       '[Net Sales Revenue]': 87806275.06030005
     - Ship To[LT1.2 - Customer]: Cencosud
       '[Unit Cases]': 4855460.4105
+<<<<<<< HEAD
       '[Net Sales Revenue]': 85196471.77319999
     - Ship To[LT1.2 - Customer]: Oxxo
       '[Unit Cases]': 2255160.0351
       '[Net Sales Revenue]': 46849334.70999999
+=======
+      '[Net Sales Revenue]': 85196471.77319998
+    - Ship To[LT1.2 - Customer]: Oxxo
+      '[Unit Cases]': 2255160.0351
+      '[Net Sales Revenue]': 46849334.70999998
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: W PREMIUM
       '[Unit Cases]': 1325287.1712
       '[Net Sales Revenue]': 33832315.37
@@ -1064,10 +1622,17 @@
       '[Net Sales Revenue]': 31576956.851800002
     - Ship To[LT1.2 - Customer]: EPA
       '[Unit Cases]': 1786283.7473
+<<<<<<< HEAD
       '[Net Sales Revenue]': 31068063.009999998
     - Ship To[LT1.2 - Customer]: Ipiranga
       '[Unit Cases]': 1150280.0783
       '[Net Sales Revenue]': 24512784.275799997
+=======
+      '[Net Sales Revenue]': 31068063.00999999
+    - Ship To[LT1.2 - Customer]: Ipiranga
+      '[Unit Cases]': 1150280.501
+      '[Net Sales Revenue]': 24512784.275800012
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Subway
       '[Unit Cases]': 1151743.2626
       '[Net Sales Revenue]': 22786381.275599997
@@ -1076,21 +1641,33 @@
       '[Net Sales Revenue]': 21255996.497999996
     - Ship To[LT1.2 - Customer]: Petrobras
       '[Unit Cases]': 974548.4123
+<<<<<<< HEAD
       '[Net Sales Revenue]': 20513603.8407
+=======
+      '[Net Sales Revenue]': 20513603.840699993
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: IMC
       '[Unit Cases]': 1324448.5782
       '[Net Sales Revenue]': 20376402.349500053
     - Ship To[LT1.2 - Customer]: Sodexo
       '[Unit Cases]': 952412.692
+<<<<<<< HEAD
       '[Net Sales Revenue]': 18453109.3494
     - Ship To[LT1.2 - Customer]: Grupo Trigo
       '[Unit Cases]': 609394.3721
       '[Net Sales Revenue]': 17449785.25050002
+=======
+      '[Net Sales Revenue]': 18453109.349400006
+    - Ship To[LT1.2 - Customer]: Grupo Trigo
+      '[Unit Cases]': 609394.3721
+      '[Net Sales Revenue]': 17449785.250500012
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: IGA Inc
       '[Unit Cases]': 970638.2115
       '[Net Sales Revenue]': 16904133.85
     - Ship To[LT1.2 - Customer]: D Angelo Inc
       '[Unit Cases]': 667581.1857
+<<<<<<< HEAD
       '[Net Sales Revenue]': 15032071.860000003
     - Ship To[LT1.2 - Customer]: BFFC
       '[Unit Cases]': 987671.3774
@@ -1104,6 +1681,21 @@
     - Ship To[LT1.2 - Customer]: Grupo GPS
       '[Unit Cases]': 613401.417
       '[Net Sales Revenue]': 12131521.159999996
+=======
+      '[Net Sales Revenue]': 15032071.86
+    - Ship To[LT1.2 - Customer]: BFFC
+      '[Unit Cases]': 987671.3774
+      '[Net Sales Revenue]': 14840900.7851
+    - Ship To[LT1.2 - Customer]: Ahold Delhaize
+      '[Unit Cases]': 997220.5161
+      '[Net Sales Revenue]': 13050649.249999996
+    - Ship To[LT1.2 - Customer]: Gran Sapore
+      '[Unit Cases]': 544214.1765
+      '[Net Sales Revenue]': 12419935.6105
+    - Ship To[LT1.2 - Customer]: Grupo GPS
+      '[Unit Cases]': 613401.417
+      '[Net Sales Revenue]': 12131521.16
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Divino Fogao
       '[Unit Cases]': 491973.3696
       '[Net Sales Revenue]': 11853893.1519
@@ -1118,16 +1710,27 @@
       '[Net Sales Revenue]': 9752479.549999997
     - Ship To[LT1.2 - Customer]: Giraffas
       '[Unit Cases]': 627876.533
+<<<<<<< HEAD
       '[Net Sales Revenue]': 9733422.298000015
+=======
+      '[Net Sales Revenue]': 9733422.298000008
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Cinemark
       '[Unit Cases]': 725033.4394
       '[Net Sales Revenue]': 9407890.930000005
     - Ship To[LT1.2 - Customer]: Bloomin'
       '[Unit Cases]': 933298.0963
+<<<<<<< HEAD
       '[Net Sales Revenue]': 9345797.346700009
     - Ship To[LT1.2 - Customer]: Graal
       '[Unit Cases]': 293097.7907
       '[Net Sales Revenue]': 8896415.759999996
+=======
+      '[Net Sales Revenue]': 9345797.346700005
+    - Ship To[LT1.2 - Customer]: Graal
+      '[Unit Cases]': 293097.7907
+      '[Net Sales Revenue]': 8896415.76
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: TT INTERNATIONAL LIMITED
       '[Unit Cases]': 389895.5516
       '[Net Sales Revenue]': 8046585.070000002
@@ -1136,7 +1739,11 @@
       '[Net Sales Revenue]': 7925879.105699997
     - Ship To[LT1.2 - Customer]: Bonanza
       '[Unit Cases]': 404309.8634
+<<<<<<< HEAD
       '[Net Sales Revenue]': 7491784.710000001
+=======
+      '[Net Sales Revenue]': 7491784.709999999
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Grupo DPSP
       '[Unit Cases]': 405852.2554
       '[Net Sales Revenue]': 7294805.4011
@@ -1151,10 +1758,17 @@
       '[Net Sales Revenue]': 6637698.409700002
     - Ship To[LT1.2 - Customer]: Big Mart Pvt Ltd
       '[Unit Cases]': 329027.8041
+<<<<<<< HEAD
       '[Net Sales Revenue]': 6265782.609999998
     - Ship To[LT1.2 - Customer]: Domino's Pizza Inc.
       '[Unit Cases]': 343885.015
       '[Net Sales Revenue]': 4895704.417000001
+=======
+      '[Net Sales Revenue]': 6265782.610000001
+    - Ship To[LT1.2 - Customer]: Domino's Pizza Inc.
+      '[Unit Cases]': 343885.015
+      '[Net Sales Revenue]': 4895704.417
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Cinepolis
       '[Unit Cases]': 346004.7747
       '[Net Sales Revenue]': 4272848.3148
@@ -1163,7 +1777,11 @@
       '[Net Sales Revenue]': 3491882.8840999994
     - Ship To[LT1.2 - Customer]: Cine Araujo
       '[Unit Cases]': 126264.4513
+<<<<<<< HEAD
       '[Net Sales Revenue]': 3099275.4000000004
+=======
+      '[Net Sales Revenue]': 3099275.4000000013
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Rei Do Mate
       '[Unit Cases]': 136210.7074
       '[Net Sales Revenue]': 3097690.0500000045
@@ -1172,6 +1790,7 @@
       '[Net Sales Revenue]': 2604125.33
     - Ship To[LT1.2 - Customer]: VivendadoCamarao
       '[Unit Cases]': 116927.6345
+<<<<<<< HEAD
       '[Net Sales Revenue]': 2594317.9519000035
     - Ship To[LT1.2 - Customer]: G&N Brands
       '[Unit Cases]': 126630.063
@@ -1179,6 +1798,15 @@
     - Ship To[LT1.2 - Customer]: Moviecom
       '[Unit Cases]': 85931.1911
       '[Net Sales Revenue]': 1956584.4415999996
+=======
+      '[Net Sales Revenue]': 2594317.9519000025
+    - Ship To[LT1.2 - Customer]: G&N Brands
+      '[Unit Cases]': 126630.063
+      '[Net Sales Revenue]': 2012907.3752999986
+    - Ship To[LT1.2 - Customer]: Moviecom
+      '[Unit Cases]': 85931.1911
+      '[Net Sales Revenue]': 1956584.4415999986
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Wal-Mart Inc.
       '[Unit Cases]': 106686.9815
       '[Net Sales Revenue]': 1887045.3899999997
@@ -1196,13 +1824,21 @@
       '[Net Sales Revenue]': 1656460.1955999986
     - Ship To[LT1.2 - Customer]: Casa Pao De Queijo
       '[Unit Cases]': 86293.1559
+<<<<<<< HEAD
       '[Net Sales Revenue]': 1589705.4162999997
+=======
+      '[Net Sales Revenue]': 1589705.4163000002
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Cadena Real S.A.
       '[Unit Cases]': 108300.0418
       '[Net Sales Revenue]': 1535401.9400000004
     - Ship To[LT1.2 - Customer]: Patroni Pizza
       '[Unit Cases]': 59426.5782
+<<<<<<< HEAD
       '[Net Sales Revenue]': 1497577.1755999988
+=======
+      '[Net Sales Revenue]': 1497577.1755999983
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Konzum
       '[Unit Cases]': 83925.5476
       '[Net Sales Revenue]': 1493506.2200000004
@@ -1211,15 +1847,23 @@
       '[Net Sales Revenue]': 1456751.8499999996
     - Ship To[LT1.2 - Customer]: ZENSHO HOLDINGS
       '[Unit Cases]': 38642.6234
+<<<<<<< HEAD
       '[Net Sales Revenue]': 1322510.11
     - Ship To[LT1.2 - Customer]: Ale Sat
       '[Unit Cases]': 86587.6637
       '[Net Sales Revenue]': 1287103.3275
+=======
+      '[Net Sales Revenue]': 1322510.1099999999
+    - Ship To[LT1.2 - Customer]: Ale Sat
+      '[Unit Cases]': 86587.6637
+      '[Net Sales Revenue]': 1287103.3275000006
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Cia Do Churrasco
       '[Unit Cases]': 47115.8894
       '[Net Sales Revenue]': 1211468.7300000004
     - Ship To[LT1.2 - Customer]: Nevada
       '[Unit Cases]': 70431.303
+<<<<<<< HEAD
       '[Net Sales Revenue]': 1136804.79
     - Ship To[LT1.2 - Customer]: FranqueadoraOBurguesLTDA
       '[Unit Cases]': 35403.6761
@@ -1233,42 +1877,82 @@
     - Ship To[LT1.2 - Customer]: Accor
       '[Unit Cases]': 27544.1557
       '[Net Sales Revenue]': 865484.9200000004
+=======
+      '[Net Sales Revenue]': 1136804.7899999998
+    - Ship To[LT1.2 - Customer]: FranqueadoraOBurguesLTDA
+      '[Unit Cases]': 35403.6761
+      '[Net Sales Revenue]': 1119201.5299999998
+    - Ship To[LT1.2 - Customer]: Parmeggio
+      '[Unit Cases]': 39997.3536
+      '[Net Sales Revenue]': 1111911.5499999993
+    - Ship To[LT1.2 - Customer]: Sforza
+      '[Unit Cases]': 68570.6307
+      '[Net Sales Revenue]': 1043182.9100000006
+    - Ship To[LT1.2 - Customer]: Accor
+      '[Unit Cases]': 27544.1557
+      '[Net Sales Revenue]': 865484.9199999999
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Operadora de Cd Juarez
       '[Unit Cases]': 61288.9518
       '[Net Sales Revenue]': 846130.2300000001
     - Ship To[LT1.2 - Customer]: Centerplex
       '[Unit Cases]': 40563.3989
+<<<<<<< HEAD
       '[Net Sales Revenue]': 844964.29
     - Ship To[LT1.2 - Customer]: Bebelu
       '[Unit Cases]': 41059.1409
       '[Net Sales Revenue]': 828468.9699999999
+=======
+      '[Net Sales Revenue]': 844964.2900000003
+    - Ship To[LT1.2 - Customer]: Bebelu
+      '[Unit Cases]': 41059.1409
+      '[Net Sales Revenue]': 828468.9700000001
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Club Med
       '[Unit Cases]': 36568.731
-      '[Net Sales Revenue]': 792114.5000000002
+      '[Net Sales Revenue]': 792114.5
     - Ship To[LT1.2 - Customer]: Grupo Aresta / Carlson
       '[Unit Cases]': 31864.5832
-      '[Net Sales Revenue]': 748524.58
+      '[Net Sales Revenue]': 748524.5799999997
     - Ship To[LT1.2 - Customer]: Rewe Zentral AG
       '[Unit Cases]': 32635.4663
+<<<<<<< HEAD
       '[Net Sales Revenue]': 730044.7799999998
+=======
+      '[Net Sales Revenue]': 730044.78
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Mama Mia Pizza Ltd
       '[Unit Cases]': 28444.1651
       '[Net Sales Revenue]': 726403.03
     - Ship To[LT1.2 - Customer]: FabricadeBolosVoAlzira
       '[Unit Cases]': 39655.716
+<<<<<<< HEAD
       '[Net Sales Revenue]': 724565.3799999995
     - Ship To[LT1.2 - Customer]: Carioca
       '[Unit Cases]': 44384.6439
       '[Net Sales Revenue]': 721805.1500000001
+=======
+      '[Net Sales Revenue]': 724565.38
+    - Ship To[LT1.2 - Customer]: Carioca
+      '[Unit Cases]': 44384.6439
+      '[Net Sales Revenue]': 721805.1499999999
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Grao Espresso
       '[Unit Cases]': 28149.0823
       '[Net Sales Revenue]': 716599.2199999995
     - Ship To[LT1.2 - Customer]: ATW Delivery
       '[Unit Cases]': 27127.3629
+<<<<<<< HEAD
       '[Net Sales Revenue]': 714025.1298999997
     - Ship To[LT1.2 - Customer]: Camarao & Cia
       '[Unit Cases]': 23811.3979
       '[Net Sales Revenue]': 629176.6899999992
+=======
+      '[Net Sales Revenue]': 714025.1298999999
+    - Ship To[LT1.2 - Customer]: Camarao & Cia
+      '[Unit Cases]': 23811.3979
+      '[Net Sales Revenue]': 629176.6899999994
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Pizza Cesar
       '[Unit Cases]': 34665.0253
       '[Net Sales Revenue]': 618745.6499999999
@@ -1280,16 +1964,27 @@
       '[Net Sales Revenue]': 525455.3961
     - Ship To[LT1.2 - Customer]: Unassigned
       '[Unit Cases]': 16485.755
+<<<<<<< HEAD
       '[Net Sales Revenue]': 460621.5713
+=======
+      '[Net Sales Revenue]': 460621.5712999998
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Darden Restaurants
       '[Unit Cases]': 16912.2768
       '[Net Sales Revenue]': 420147.8900000001
     - Ship To[LT1.2 - Customer]: Europa
       '[Unit Cases]': 27029.4937
+<<<<<<< HEAD
       '[Net Sales Revenue]': 417838.9699999998
     - Ship To[LT1.2 - Customer]: Mr. Pretzel
       '[Unit Cases]': 20531.6988
       '[Net Sales Revenue]': 404901.23
+=======
+      '[Net Sales Revenue]': 417838.97000000003
+    - Ship To[LT1.2 - Customer]: Mr. Pretzel
+      '[Unit Cases]': 20531.6988
+      '[Net Sales Revenue]': 404901.22999999986
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Frans Cafe
       '[Unit Cases]': 17896.9692
       '[Net Sales Revenue]': 392159.0600999999
@@ -1298,16 +1993,24 @@
       '[Net Sales Revenue]': 387752.82999999984
     - Ship To[LT1.2 - Customer]: Firehouse Restaurant Group
       '[Unit Cases]': 17557.933
+<<<<<<< HEAD
       '[Net Sales Revenue]': 377173.20000000007
+=======
+      '[Net Sales Revenue]': 377173.19999999995
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Croasonho
       '[Unit Cases]': 18024.1819
       '[Net Sales Revenue]': 357495.0999999998
     - Ship To[LT1.2 - Customer]: Atlantic
       '[Unit Cases]': 20101.9727
+<<<<<<< HEAD
       '[Net Sales Revenue]': 353163.08
+=======
+      '[Net Sales Revenue]': 353163.07999999996
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Millenium Torg
       '[Unit Cases]': 20295.4906
-      '[Net Sales Revenue]': 303741.37
+      '[Net Sales Revenue]': 303741.3700000001
     - Ship To[LT1.2 - Customer]: Autozone
       '[Unit Cases]': 12646.9411
       '[Net Sales Revenue]': 284647.59
@@ -1319,6 +2022,7 @@
       '[Net Sales Revenue]': 254124.62000000005
     - Ship To[LT1.2 - Customer]: Bigxpicanha
       '[Unit Cases]': 8520.3186
+<<<<<<< HEAD
       '[Net Sales Revenue]': 222160.88999999996
     - Ship To[LT1.2 - Customer]: Havanna
       '[Unit Cases]': 10242.2628
@@ -1338,15 +2042,40 @@
     - Ship To[LT1.2 - Customer]: Hilton Group Plc
       '[Unit Cases]': 4555.1495
       '[Net Sales Revenue]': 110991.39999999997
+=======
+      '[Net Sales Revenue]': 222160.8899999999
+    - Ship To[LT1.2 - Customer]: Havanna
+      '[Unit Cases]': 10242.2628
+      '[Net Sales Revenue]': 193050.40999999997
+    - Ship To[LT1.2 - Customer]: .nan
+      '[Unit Cases]': 8185.0114
+      '[Net Sales Revenue]': 183193.1398
+    - Ship To[LT1.2 - Customer]: Select Food
+      '[Unit Cases]': 6153.481
+      '[Net Sales Revenue]': 149333.90999999992
+    - Ship To[LT1.2 - Customer]: Applebee's
+      '[Unit Cases]': 6688.9683
+      '[Net Sales Revenue]': 132872.9199999999
+    - Ship To[LT1.2 - Customer]: Tengelmann
+      '[Unit Cases]': 9002.863
+      '[Net Sales Revenue]': 123693.51000000002
+    - Ship To[LT1.2 - Customer]: Hilton Group Plc
+      '[Unit Cases]': 4555.1495
+      '[Net Sales Revenue]': 110991.4
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: ECE
       '[Unit Cases]': 5120.3162
       '[Net Sales Revenue]': 97348.53
     - Ship To[LT1.2 - Customer]: Eldorado
       '[Unit Cases]': 5193.7507
+<<<<<<< HEAD
       '[Net Sales Revenue]': 93670.63000000003
+=======
+      '[Net Sales Revenue]': 93670.62999999998
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Exxon Mobil Corporation
       '[Unit Cases]': 2936.0413
-      '[Net Sales Revenue]': 67031.23999999999
+      '[Net Sales Revenue]': 67031.24000000002
     - Ship To[LT1.2 - Customer]: Krispy Kreme
       '[Unit Cases]': 3980.1636
       '[Net Sales Revenue]': 66439.71
@@ -1355,18 +2084,23 @@
       '[Net Sales Revenue]': 58118.530000000006
     - Ship To[LT1.2 - Customer]: Fat Boys Concept (M) Sdn Bhd
       '[Unit Cases]': 2320.3865
+<<<<<<< HEAD
       '[Net Sales Revenue]': 54333.029999999984
+=======
+      '[Net Sales Revenue]': 54333.03000000001
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Casino Group
       '[Unit Cases]': 5533.1267
-      '[Net Sales Revenue]': 46211.56999999999
+      '[Net Sales Revenue]': 46211.57000000001
     - Ship To[LT1.2 - Customer]: FRANGO NO POTE
       '[Unit Cases]': 2744.5425
-      '[Net Sales Revenue]': 45074.640000000014
+      '[Net Sales Revenue]': 45074.64
     - Ship To[LT1.2 - Customer]: Dairy Queen
       '[Unit Cases]': 1215.2379
-      '[Net Sales Revenue]': 40594.61
+      '[Net Sales Revenue]': 40594.60999999999
     - Ship To[LT1.2 - Customer]: Marriott International
       '[Unit Cases]': 1699.5324
+<<<<<<< HEAD
       '[Net Sales Revenue]': 38711.210000000014
     - Ship To[LT1.2 - Customer]: Pizza Pizza S.A
       '[Unit Cases]': 1083.6831
@@ -1374,6 +2108,15 @@
     - Ship To[LT1.2 - Customer]: Andiamo
       '[Unit Cases]': 1005.9885
       '[Net Sales Revenue]': 36435.24999999999
+=======
+      '[Net Sales Revenue]': 38711.21000000001
+    - Ship To[LT1.2 - Customer]: Pizza Pizza S.A
+      '[Unit Cases]': 1083.6831
+      '[Net Sales Revenue]': 36883.88999999999
+    - Ship To[LT1.2 - Customer]: Andiamo
+      '[Unit Cases]': 1005.9885
+      '[Net Sales Revenue]': 36435.25
+>>>>>>> origin/nexus-test-pipeline
     - Ship To[LT1.2 - Customer]: Micromarket
       '[Unit Cases]': 1369.3053
       '[Net Sales Revenue]': 27109.899999999994
@@ -1412,10 +2155,17 @@
     data:
     - Ship From[L1.3 - Bottler]: MX Coca-Cola Femsa
       '[Unit Cases]': 1072190701.106
+<<<<<<< HEAD
       '[Net Sales Revenue]': 70154021481.02834
     - Ship From[L1.3 - Bottler]: MX Arca Continental
       '[Unit Cases]': 686220639.061
       '[Net Sales Revenue]': 53645660821.54996
+=======
+      '[Net Sales Revenue]': 70154021481.0283
+    - Ship From[L1.3 - Bottler]: MX Arca Continental
+      '[Unit Cases]': 690653451.2399
+      '[Net Sales Revenue]': 53993644055.81996
+>>>>>>> origin/nexus-test-pipeline
     - Ship From[L1.3 - Bottler]: MX Bepensa
       '[Unit Cases]': 191010554.5324
       '[Net Sales Revenue]': 9217181897.095201
@@ -1430,16 +2180,24 @@
       '[Net Sales Revenue]': 3807443555.449601
     - Ship From[L1.3 - Bottler]: MX JDV
       '[Unit Cases]': 30245464.3527
+<<<<<<< HEAD
       '[Net Sales Revenue]': 3379669590.15
+=======
+      '[Net Sales Revenue]': 3379669590.1500006
+>>>>>>> origin/nexus-test-pipeline
     - Ship From[L1.3 - Bottler]: MX Tepic
       '[Unit Cases]': 41785259.9733
-      '[Net Sales Revenue]': 2678565033.33048
+      '[Net Sales Revenue]': 2678565033.3304796
     - Ship From[L1.3 - Bottler]: MX Colima
       '[Unit Cases]': 22062670.6132
       '[Net Sales Revenue]': 1326694886.5923998
     - Ship From[L1.3 - Bottler]: MX Nogales
       '[Unit Cases]': 6120871.2063
+<<<<<<< HEAD
       '[Net Sales Revenue]': 619611514.008216
+=======
+      '[Net Sales Revenue]': 619611514.0082163
+>>>>>>> origin/nexus-test-pipeline
 - id: 10
   question: Give me the Unit Cases and Net Sales Revenue for Colombia by Bottler in
     2026.
@@ -1472,7 +2230,11 @@
       '[Net Sales Revenue]': .nan
     - Ship From[L1.3 - Bottler]: CO MM Volumen
       '[Unit Cases]': 36519.12
+<<<<<<< HEAD
       '[Net Sales Revenue]': -46864153.384588
+=======
+      '[Net Sales Revenue]': -46864153.384587996
+>>>>>>> origin/nexus-test-pipeline
 - id: 11
   question: Give me the Unit Cases and Net Sales Revenue for Brasil by Bottler in
     2026.
@@ -1495,20 +2257,35 @@
     status: ok
     data:
     - Ship From[L1.3 - Bottler]: BR Coca-Cola Femsa
+<<<<<<< HEAD
       '[Unit Cases]': 602314992.6202
       '[Net Sales Revenue]': 10632815068.869999
     - Ship From[L1.3 - Bottler]: BR Solar
       '[Unit Cases]': 277476499.1833
       '[Net Sales Revenue]': 5062536201.980001
+=======
+      '[Unit Cases]': 602315101.2773
+      '[Net Sales Revenue]': 10632815068.869999
+    - Ship From[L1.3 - Bottler]: BR Solar
+      '[Unit Cases]': 277476499.1833
+      '[Net Sales Revenue]': 5062536201.980002
+>>>>>>> origin/nexus-test-pipeline
     - Ship From[L1.3 - Bottler]: BR Andina
       '[Unit Cases]': 155241094.5069
       '[Net Sales Revenue]': 2341105936.199999
     - Ship From[L1.3 - Bottler]: BR Private Bottlers
       '[Unit Cases]': 125925047.7377
+<<<<<<< HEAD
       '[Net Sales Revenue]': 2304566133.5488243
     - Ship From[L1.3 - Bottler]: BR Leao NRTD
       '[Unit Cases]': 72657443.9586
       '[Net Sales Revenue]': 267168921.54999995
+=======
+      '[Net Sales Revenue]': 2304566133.5488257
+    - Ship From[L1.3 - Bottler]: BR Leao NRTD
+      '[Unit Cases]': 72657443.9586
+      '[Net Sales Revenue]': 267168921.55000007
+>>>>>>> origin/nexus-test-pipeline
     - Ship From[L1.3 - Bottler]: BR Delvalle
       '[Unit Cases]': 1873049.6473
       '[Net Sales Revenue]': 28609857.409999993
@@ -1534,6 +2311,7 @@
     status: ok
     data:
     - Product[LT1.7 - Segment]: SSDs
+<<<<<<< HEAD
       '[Unit Cases]': 1384157419.0569
       '[Net Sales Revenue]': 110548291994.466
     - Product[LT1.7 - Segment]: Stills
@@ -1548,6 +2326,22 @@
     - Product[LT1.7 - Segment]: .nan
       '[Unit Cases]': 502496.4026
       '[Net Sales Revenue]': 89189386.70839986
+=======
+      '[Unit Cases]': 1387093224.565
+      '[Net Sales Revenue]': 110810026686.24629
+    - Product[LT1.7 - Segment]: Stills
+      '[Unit Cases]': 827341300.8426
+      '[Net Sales Revenue]': 45191495634.905396
+    - Product[LT1.7 - Segment]: Unassigned
+      '[Unit Cases]': 3952.5952
+      '[Net Sales Revenue]': 894950673.8140005
+    - Product[LT1.7 - Segment]: Alcoholic Beverages
+      '[Unit Cases]': 1855455.1693
+      '[Net Sales Revenue]': 370101092.3226012
+    - Product[LT1.7 - Segment]: .nan
+      '[Unit Cases]': 503599.1895
+      '[Net Sales Revenue]': 89237321.60839999
+>>>>>>> origin/nexus-test-pipeline
 - id: 13
   question: Give me the Unit Cases and Net Sales Revenue for Colombia by Segment in
     2026.
@@ -1574,7 +2368,11 @@
       '[Net Sales Revenue]': 2201789376920.0
     - Product[LT1.7 - Segment]: Stills
       '[Unit Cases]': 47985001.8699
+<<<<<<< HEAD
       '[Net Sales Revenue]': 575720806609.6154
+=======
+      '[Net Sales Revenue]': 575720806609.6155
+>>>>>>> origin/nexus-test-pipeline
     - Product[LT1.7 - Segment]: .nan
       '[Unit Cases]': 64714.0487
       '[Net Sales Revenue]': 1042803339.0
@@ -1606,6 +2404,7 @@
     status: ok
     data:
     - Product[LT1.7 - Segment]: SSDs
+<<<<<<< HEAD
       '[Unit Cases]': 995670484.7767
       '[Net Sales Revenue]': 17380972592.760223
     - Product[LT1.7 - Segment]: Stills
@@ -1617,6 +2416,19 @@
     - Product[LT1.7 - Segment]: .nan
       '[Unit Cases]': 440367.196
       '[Net Sales Revenue]': 6900060.4400000535
+=======
+      '[Unit Cases]': 995670587.2628
+      '[Net Sales Revenue]': 17380972592.760185
+    - Product[LT1.7 - Segment]: Stills
+      '[Unit Cases]': 238851442.9568
+      '[Net Sales Revenue]': 3208497878.968256
+    - Product[LT1.7 - Segment]: Alcoholic Beverages
+      '[Unit Cases]': 525838.8955
+      '[Net Sales Revenue]': 40431587.38999992
+    - Product[LT1.7 - Segment]: .nan
+      '[Unit Cases]': 440367.196
+      '[Net Sales Revenue]': 6900060.440000046
+>>>>>>> origin/nexus-test-pipeline
 - id: 15
   question: Give me the Unit Cases and Net Sales Revenue for Mexico by Category in
     2026.
@@ -1639,6 +2451,7 @@
     status: ok
     data:
     - Product[LT1.5 - Category]: Colas
+<<<<<<< HEAD
       '[Unit Cases]': 1183964078.2418
       '[Net Sales Revenue]': 96026786725.40295
     - Product[LT1.5 - Category]: Packaged Water
@@ -1674,6 +2487,43 @@
     - Product[LT1.5 - Category]: .nan
       '[Unit Cases]': 502496.4026
       '[Net Sales Revenue]': 89189386.70839986
+=======
+      '[Unit Cases]': 1186508086.9322
+      '[Net Sales Revenue]': 96252934969.32469
+    - Product[LT1.5 - Category]: Packaged Water
+      '[Unit Cases]': 613093234.9845
+      '[Net Sales Revenue]': 18408068062.887596
+    - Product[LT1.5 - Category]: Juices & Juice Drinks
+      '[Unit Cases]': 107405424.3861
+      '[Net Sales Revenue]': 10608686808.024492
+    - Product[LT1.5 - Category]: Flavors
+      '[Unit Cases]': 126774476.8947
+      '[Net Sales Revenue]': 8955710358.032087
+    - Product[LT1.5 - Category]: Dairy Beverages
+      '[Unit Cases]': 50223968.3845
+      '[Net Sales Revenue]': 8567620747.319616
+    - Product[LT1.5 - Category]: Core Flavors
+      '[Unit Cases]': 73810660.7381
+      '[Net Sales Revenue]': 5601381358.752527
+    - Product[LT1.5 - Category]: Active Hydration
+      '[Unit Cases]': 31620861.1238
+      '[Net Sales Revenue]': 4139903799.2070303
+    - Product[LT1.5 - Category]: Tea
+      '[Unit Cases]': 22938820.5661
+      '[Net Sales Revenue]': 3147375236.273823
+    - Product[LT1.5 - Category]: Unassigned
+      '[Unit Cases]': 3952.5952
+      '[Net Sales Revenue]': 894950673.8140006
+    - Product[LT1.5 - Category]: ARTD
+      '[Unit Cases]': 1855455.1693
+      '[Net Sales Revenue]': 370101092.3226015
+    - Product[LT1.5 - Category]: Plant Based Beverages
+      '[Unit Cases]': 1977875.4401
+      '[Net Sales Revenue]': 283776095.4899007
+    - Product[LT1.5 - Category]: .nan
+      '[Unit Cases]': 503599.1895
+      '[Net Sales Revenue]': 89237321.60840002
+>>>>>>> origin/nexus-test-pipeline
     - Product[LT1.5 - Category]: Coffee
       '[Unit Cases]': 81115.9575
       '[Net Sales Revenue]': 36064885.6984
@@ -1759,6 +2609,7 @@
     status: ok
     data:
     - Product[LT1.5 - Category]: Colas
+<<<<<<< HEAD
       '[Unit Cases]': 782332570.884
       '[Net Sales Revenue]': 14153913664.451397
     - Product[LT1.5 - Category]: Core Flavors
@@ -1788,6 +2639,37 @@
     - Product[LT1.5 - Category]: .nan
       '[Unit Cases]': 440367.196
       '[Net Sales Revenue]': 6900060.440000061
+=======
+      '[Unit Cases]': 782332666.8331
+      '[Net Sales Revenue]': 14153913664.451374
+    - Product[LT1.5 - Category]: Core Flavors
+      '[Unit Cases]': 171708536.1183
+      '[Net Sales Revenue]': 2783890511.7283373
+    - Product[LT1.5 - Category]: Juices & Juice Drinks
+      '[Unit Cases]': 45786909.399
+      '[Net Sales Revenue]': 1235575466.4706156
+    - Product[LT1.5 - Category]: Packaged Water
+      '[Unit Cases]': 94390995.156
+      '[Net Sales Revenue]': 1101320891.2399654
+    - Product[LT1.5 - Category]: Tea
+      '[Unit Cases]': 87403319.3197
+      '[Net Sales Revenue]': 544107274.8427829
+    - Product[LT1.5 - Category]: Flavors
+      '[Unit Cases]': 41629384.3114
+      '[Net Sales Revenue]': 443168416.58224237
+    - Product[LT1.5 - Category]: Active Hydration
+      '[Unit Cases]': 7887544.4016
+      '[Net Sales Revenue]': 224324637.25458306
+    - Product[LT1.5 - Category]: Plant Based Beverages
+      '[Unit Cases]': 3382674.6805
+      '[Net Sales Revenue]': 103169609.15999901
+    - Product[LT1.5 - Category]: ARTD
+      '[Unit Cases]': 525838.8955
+      '[Net Sales Revenue]': 40431587.389999665
+    - Product[LT1.5 - Category]: .nan
+      '[Unit Cases]': 440367.196
+      '[Net Sales Revenue]': 6900060.440000046
+>>>>>>> origin/nexus-test-pipeline
 - id: 18
   question: Give me the Unit Cases and Net Sales Revenue for Mexico by Brand in 2026.
   dax_query: |
@@ -1809,6 +2691,7 @@
     status: ok
     data:
     - Product[LT1.2 - Brand Group]: Coca-Cola Less Sugar
+<<<<<<< HEAD
       '[Unit Cases]': 907424959.949
       '[Net Sales Revenue]': 60926276333.053314
     - Product[LT1.2 - Brand Group]: Coca-Cola
@@ -1913,6 +2796,112 @@
     - Product[LT1.2 - Brand Group]: Ciel Zero
       '[Unit Cases]': 2870402.0394
       '[Net Sales Revenue]': 178990011.1406966
+=======
+      '[Unit Cases]': 909286589.775
+      '[Net Sales Revenue]': 61064983797.7731
+    - Product[LT1.2 - Brand Group]: Coca-Cola
+      '[Unit Cases]': 195958490.5667
+      '[Net Sales Revenue]': 26136953302.108948
+    - Product[LT1.2 - Brand Group]: Ciel
+      '[Unit Cases]': 440613793.7878
+      '[Net Sales Revenue]': 10183318068.518728
+    - Product[LT1.2 - Brand Group]: Santa Clara
+      '[Unit Cases]': 50080041.383
+      '[Net Sales Revenue]': 8537848574.767586
+    - Product[LT1.2 - Brand Group]: Coca-Cola Zero
+      '[Unit Cases]': 60675065.1116
+      '[Net Sales Revenue]': 6286723897.872634
+    - Product[LT1.2 - Brand Group]: Topo Chico
+      '[Unit Cases]': 37022848.2082
+      '[Net Sales Revenue]': 5211660161.403352
+    - Product[LT1.2 - Brand Group]: Del Valle
+      '[Unit Cases]': 30196265.3412
+      '[Net Sales Revenue]': 4695537464.576772
+    - Product[LT1.2 - Brand Group]: Powerade
+      '[Unit Cases]': 29963698.8184
+      '[Net Sales Revenue]': 3944234761.788486
+    - Product[LT1.2 - Brand Group]: Del Valle Frut
+      '[Unit Cases]': 50498671.8916
+      '[Net Sales Revenue]': 3313084189.13345
+    - Product[LT1.2 - Brand Group]: Fresca
+      '[Unit Cases]': 40583554.4004
+      '[Net Sales Revenue]': 2904625307.5221047
+    - Product[LT1.2 - Brand Group]: Fuze Tea Black Tea
+      '[Unit Cases]': 20575402.3333
+      '[Net Sales Revenue]': 2813327360.329159
+    - Product[LT1.2 - Brand Group]: Coca-Cola Low-Cal
+      '[Unit Cases]': 20587941.9774
+      '[Net Sales Revenue]': 2764275578.201763
+    - Product[LT1.2 - Brand Group]: Sidral Mundet
+      '[Unit Cases]': 42214227.1374
+      '[Net Sales Revenue]': 2750129761.511322
+    - Product[LT1.2 - Brand Group]: Fanta
+      '[Unit Cases]': 34661820.0004
+      '[Net Sales Revenue]': 2619618408.812441
+    - Product[LT1.2 - Brand Group]: Sprite
+      '[Unit Cases]': 31635020.7084
+      '[Net Sales Revenue]': 2398959508.9081326
+    - Product[LT1.2 - Brand Group]: Cristal Purified Water
+      '[Unit Cases]': 122320408.2141
+      '[Net Sales Revenue]': 1746079626.9645002
+    - Product[LT1.2 - Brand Group]: Joya
+      '[Unit Cases]': 11483625.0884
+      '[Net Sales Revenue]': 1036409928.0799994
+    - Product[LT1.2 - Brand Group]: Unassigned
+      '[Unit Cases]': 3952.5952
+      '[Net Sales Revenue]': 894950673.8140001
+    - Product[LT1.2 - Brand Group]: Ciel (Carb)
+      '[Unit Cases]': 7246248.9407
+      '[Net Sales Revenue]': 794770240.9345111
+    - Product[LT1.2 - Brand Group]: Valle Frut
+      '[Unit Cases]': 8580494.1365
+      '[Net Sales Revenue]': 693025776.1637911
+    - Product[LT1.2 - Brand Group]: Delaware Punch
+      '[Unit Cases]': 8411889.6517
+      '[Net Sales Revenue]': 668739314.78308
+    - Product[LT1.2 - Brand Group]: Sprite Zero
+      '[Unit Cases]': 4823323.2744
+      '[Net Sales Revenue]': 380321312.29289883
+    - Product[LT1.2 - Brand Group]: Del Valle Fizz
+      '[Unit Cases]': 4514006.6278
+      '[Net Sales Revenue]': 346268257.7552409
+    - Product[LT1.2 - Brand Group]: Frutsi
+      '[Unit Cases]': 3293707.3359
+      '[Net Sales Revenue]': 319436161.6702001
+    - Product[LT1.2 - Brand Group]: Fuze Tea Green Tea
+      '[Unit Cases]': 2154969.4272
+      '[Net Sales Revenue]': 303275553.3267057
+    - Product[LT1.2 - Brand Group]: Del Valle Pulpy
+      '[Unit Cases]': 1616716.4425
+      '[Net Sales Revenue]': 294068817.4716976
+    - Product[LT1.2 - Brand Group]: Cristal Mineral Water
+      '[Unit Cases]': 2845174.9284
+      '[Net Sales Revenue]': 277966812.4437987
+    - Product[LT1.2 - Brand Group]: Ameyal
+      '[Unit Cases]': 6387083.5799
+      '[Net Sales Revenue]': 250837922.6760044
+    - Product[LT1.2 - Brand Group]: Escuis
+      '[Unit Cases]': 3430763.4975
+      '[Net Sales Revenue]': 245847734.7612972
+    - Product[LT1.2 - Brand Group]: Senzao
+      '[Unit Cases]': 2889295.7958
+      '[Net Sales Revenue]': 225129376.5000009
+    - Product[LT1.2 - Brand Group]: Victoria
+      '[Unit Cases]': 3258023.7617
+      '[Net Sales Revenue]': 203534724.05100128
+    - Product[LT1.2 - Brand Group]: Fanta Zero
+      '[Unit Cases]': 2690496.7549
+      '[Net Sales Revenue]': 202482128.73909974
+    - Product[LT1.2 - Brand Group]: FlashLyte
+      '[Unit Cases]': 1600051.5509
+      '[Net Sales Revenue]': 192290058.83870226
+    - Product[LT1.2 - Brand Group]: Bacardi & Coke
+      '[Unit Cases]': 993033.3205
+      '[Net Sales Revenue]': 186893864.84100053
+    - Product[LT1.2 - Brand Group]: Ciel Zero
+      '[Unit Cases]': 2883297.2108
+      '[Net Sales Revenue]': 179836710.2006965
+>>>>>>> origin/nexus-test-pipeline
     - Product[LT1.2 - Brand Group]: Yoli
       '[Unit Cases]': 2400934.0214
       '[Net Sales Revenue]': 177619513.17899922
@@ -1921,6 +2910,7 @@
       '[Net Sales Revenue]': 158189526.02899998
     - Product[LT1.2 - Brand Group]: Sidral
       '[Unit Cases]': 1782375.9564
+<<<<<<< HEAD
       '[Net Sales Revenue]': 157907253.65829942
     - Product[LT1.2 - Brand Group]: Cristal Flavors
       '[Unit Cases]': 1934341.0107
@@ -1943,11 +2933,36 @@
     - Product[LT1.2 - Brand Group]: Topo Chico Drinks Mexicanos
       '[Unit Cases]': 656385.7432
       '[Net Sales Revenue]': 131704266.52580018
+=======
+      '[Net Sales Revenue]': 157907253.6582996
+    - Product[LT1.2 - Brand Group]: Cristal Flavors
+      '[Unit Cases]': 1934341.0107
+      '[Net Sales Revenue]': 145258571.23249972
+    - Product[LT1.2 - Brand Group]: Plant Based (Seeds)
+      '[Unit Cases]': 933651.4709
+      '[Net Sales Revenue]': 145050736.35580036
+    - Product[LT1.2 - Brand Group]: Fresca Zero
+      '[Unit Cases]': 1984810.1417
+      '[Net Sales Revenue]': 142391547.55960068
+    - Product[LT1.2 - Brand Group]: Del Valle Reserva Antiox
+      '[Unit Cases]': 997962.0806
+      '[Net Sales Revenue]': 142302282.5504995
+    - Product[LT1.2 - Brand Group]: Del Valle-KO
+      '[Unit Cases]': 838886.6745
+      '[Net Sales Revenue]': 141135929.36
+    - Product[LT1.2 - Brand Group]: Plant Based (Fruit)
+      '[Unit Cases]': 1044223.9692
+      '[Net Sales Revenue]': 138725359.13410026
+    - Product[LT1.2 - Brand Group]: Topo Chico Drinks Mexicanos
+      '[Unit Cases]': 656652.2105
+      '[Net Sales Revenue]': 131768938.11580016
+>>>>>>> origin/nexus-test-pipeline
     - Product[LT1.2 - Brand Group]: CRISTAL
       '[Unit Cases]': 1483635.0687
       '[Net Sales Revenue]': 126184298.36679956
     - Product[LT1.2 - Brand Group]: Agua de Taxco
       '[Unit Cases]': 1148106.2754
+<<<<<<< HEAD
       '[Net Sales Revenue]': 121822276.88399988
     - Product[LT1.2 - Brand Group]: .nan
       '[Unit Cases]': 502496.4026
@@ -1973,20 +2988,55 @@
     - Product[LT1.2 - Brand Group]: Del Valle Junior
       '[Unit Cases]': 203467.4274
       '[Net Sales Revenue]': 25765688.100000013
+=======
+      '[Net Sales Revenue]': 121822276.88399982
+    - Product[LT1.2 - Brand Group]: .nan
+      '[Unit Cases]': 503599.1895
+      '[Net Sales Revenue]': 89237321.60839999
+    - Product[LT1.2 - Brand Group]: Del Valle 100%
+      '[Unit Cases]': 455633.0948
+      '[Net Sales Revenue]': 73500315.15400001
+    - Product[LT1.2 - Brand Group]: Bevi
+      '[Unit Cases]': 225042.959
+      '[Net Sales Revenue]': 65837058.25039997
+    - Product[LT1.2 - Brand Group]: Florida 7
+      '[Unit Cases]': 719414.5321
+      '[Net Sales Revenue]': 60578627.07350002
+    - Product[LT1.2 - Brand Group]: Prisco
+      '[Unit Cases]': 435174.12
+      '[Net Sales Revenue]': 54987923.52599998
+    - Product[LT1.2 - Brand Group]: Jack Daniels & Coke
+      '[Unit Cases]': 196391.9098
+      '[Net Sales Revenue]': 49617130.19300004
+    - Product[LT1.2 - Brand Group]: Glaceau Vitamine Water
+      '[Unit Cases]': 190559.1158
+      '[Net Sales Revenue]': 46259460.967500046
+    - Product[LT1.2 - Brand Group]: Del Valle Junior
+      '[Unit Cases]': 203467.4274
+      '[Net Sales Revenue]': 25765688.1
+>>>>>>> origin/nexus-test-pipeline
     - Product[LT1.2 - Brand Group]: Seagrams
       '[Unit Cases]': 90054.4724
       '[Net Sales Revenue]': 23507727.392800026
     - Product[LT1.2 - Brand Group]: Ameyal-KO
       '[Unit Cases]': 655315.1432
+<<<<<<< HEAD
       '[Net Sales Revenue]': 20042176.50300002
     - Product[LT1.2 - Brand Group]: Ciel Exprim
       '[Unit Cases]': 170444.2624
       '[Net Sales Revenue]': 11226004.775000002
+=======
+      '[Net Sales Revenue]': 20042176.50300003
+    - Product[LT1.2 - Brand Group]: Ciel Exprim
+      '[Unit Cases]': 170445.1426
+      '[Net Sales Revenue]': 11226062.235000012
+>>>>>>> origin/nexus-test-pipeline
     - Product[LT1.2 - Brand Group]: Del Valle Frutal
       '[Unit Cases]': 75227.3364
       '[Net Sales Revenue]': 9568582.970000003
     - Product[LT1.2 - Brand Group]: Del Valle Reserva
       '[Unit Cases]': 49178.1931
+<<<<<<< HEAD
       '[Net Sales Revenue]': 7873885.8599999985
     - Product[LT1.2 - Brand Group]: Sangria Mundet
       '[Unit Cases]': 66285.8502
@@ -2003,9 +3053,27 @@
     - Product[LT1.2 - Brand Group]: Topo Chico Hard Seltzer
       '[Unit Cases]': 9376.2279
       '[Net Sales Revenue]': 1820964.7428000027
+=======
+      '[Net Sales Revenue]': 7873885.859999999
+    - Product[LT1.2 - Brand Group]: Sangria Mundet
+      '[Unit Cases]': 66285.8502
+      '[Net Sales Revenue]': 7033540.496999999
+    - Product[LT1.2 - Brand Group]: Shandy
+      '[Unit Cases]': 133064.3504
+      '[Net Sales Revenue]': 6148250.477799998
+    - Product[LT1.2 - Brand Group]: Cristal (Carb)
+      '[Unit Cases]': 41727.1559
+      '[Net Sales Revenue]': 3891262.8730000025
+    - Product[LT1.2 - Brand Group]: Powerade Zero
+      '[Unit Cases]': 57108.7291
+      '[Net Sales Revenue]': 3378567.04
+    - Product[LT1.2 - Brand Group]: Topo Chico Hard Seltzer
+      '[Unit Cases]': 9377.7285
+      '[Net Sales Revenue]': 1821349.342800002
+>>>>>>> origin/nexus-test-pipeline
     - Product[LT1.2 - Brand Group]: Del Valle & Nada
-      '[Unit Cases]': 51.3417
-      '[Net Sales Revenue]': 4658.141799999999
+      '[Unit Cases]': 51.2365
+      '[Net Sales Revenue]': 4647.911799999999
     - Product[LT1.2 - Brand Group]: Powerade Fit
       '[Unit Cases]': 2.642
       '[Net Sales Revenue]': 516.25
@@ -2149,7 +3217,7 @@
       '[Net Sales Revenue]': 1742845492.0
     - Product[LT1.2 - Brand Group]: Minute Maid Nectar
       '[Unit Cases]': 36519.12
-      '[Net Sales Revenue]': -46864153.384588
+      '[Net Sales Revenue]': -46864153.384587996
     - Product[LT1.2 - Brand Group]: Coca-Cola Functional
       '[Unit Cases]': 22662.2713
       '[Net Sales Revenue]': 1030261375.0
@@ -2204,6 +3272,7 @@
     status: ok
     data:
     - Product[LT1.2 - Brand Group]: Coca-Cola Less Sugar
+<<<<<<< HEAD
       '[Unit Cases]': 365357801.3363
       '[Net Sales Revenue]': 5521442053.9489565
     - Product[LT1.2 - Brand Group]: Coca-Cola Zero
@@ -2317,15 +3386,137 @@
     - Product[LT1.2 - Brand Group]: Mais
       '[Unit Cases]': 480416.6816
       '[Net Sales Revenue]': 13429680.669999981
+=======
+      '[Unit Cases]': 365357819.6532
+      '[Net Sales Revenue]': 5521442053.948944
+    - Product[LT1.2 - Brand Group]: Coca-Cola Zero
+      '[Unit Cases]': 215272179.0398
+      '[Net Sales Revenue]': 4330958793.747541
+    - Product[LT1.2 - Brand Group]: Coca-Cola
+      '[Unit Cases]': 200813145.7685
+      '[Net Sales Revenue]': 4269290905.663863
+    - Product[LT1.2 - Brand Group]: Fanta
+      '[Unit Cases]': 100193156.7711
+      '[Net Sales Revenue]': 1548460815.511388
+    - Product[LT1.2 - Brand Group]: Matte Leao
+      '[Unit Cases]': 70954673.7713
+      '[Net Sales Revenue]': 296957683.6899936
+    - Product[LT1.2 - Brand Group]: Crystal
+      '[Unit Cases]': 53873509.227
+      '[Net Sales Revenue]': 563945266.7599996
+    - Product[LT1.2 - Brand Group]: Sprite
+      '[Unit Cases]': 40599445.7646
+      '[Net Sales Revenue]': 669372740.8269548
+    - Product[LT1.2 - Brand Group]: Crystal (Carb)
+      '[Unit Cases]': 37493243.7209
+      '[Net Sales Revenue]': 495001095.6599959
+    - Product[LT1.2 - Brand Group]: Kuat
+      '[Unit Cases]': 23358633.5874
+      '[Net Sales Revenue]': 243861518.66244262
+    - Product[LT1.2 - Brand Group]: Del Valle Frut
+      '[Unit Cases]': 17978483.1728
+      '[Net Sales Revenue]': 263326259.03979957
+    - Product[LT1.2 - Brand Group]: Sprite Zero
+      '[Unit Cases]': 17752570.5377
+      '[Net Sales Revenue]': 268873302.9595984
+    - Product[LT1.2 - Brand Group]: Del Valle
+      '[Unit Cases]': 14708150.6784
+      '[Net Sales Revenue]': 490517439.4500369
+    - Product[LT1.2 - Brand Group]: Del Valle Kapo
+      '[Unit Cases]': 8866259.8367
+      '[Net Sales Revenue]': 326531376.53078383
+    - Product[LT1.2 - Brand Group]: Powerade
+      '[Unit Cases]': 7243173.8458
+      '[Net Sales Revenue]': 205709287.93258852
+    - Product[LT1.2 - Brand Group]: Charrua
+      '[Unit Cases]': 6030840.5194
+      '[Net Sales Revenue]': 48825755.46999997
+    - Product[LT1.2 - Brand Group]: Schweppes
+      '[Unit Cases]': 5949699.982
+      '[Net Sales Revenue]': 149522001.38889682
+    - Product[LT1.2 - Brand Group]: Tuchaua
+      '[Unit Cases]': 5066569.0094
+      '[Net Sales Revenue]': 57062533.90499993
+    - Product[LT1.2 - Brand Group]: Leao Fuze
+      '[Unit Cases]': 4335607.4346
+      '[Net Sales Revenue]': 67330157.05060014
+    - Product[LT1.2 - Brand Group]: Ice Tea Leao
+      '[Unit Cases]': 4051514.4362
+      '[Net Sales Revenue]': 74201362.1522013
+    - Product[LT1.2 - Brand Group]: Schweppes Zero
+      '[Unit Cases]': 3963224.7952
+      '[Net Sales Revenue]': 93515581.81559935
+    - Product[LT1.2 - Brand Group]: Leao
+      '[Unit Cases]': 3358722.8512
+      '[Net Sales Revenue]': 32350101.829999775
+    - Product[LT1.2 - Brand Group]: Fanta Zero
+      '[Unit Cases]': 3268370.2211
+      '[Net Sales Revenue]': 54793172.556199335
+    - Product[LT1.2 - Brand Group]: Plant Based (Fruit)
+      '[Unit Cases]': 2756158.0206
+      '[Net Sales Revenue]': 80879040.76999897
+    - Product[LT1.2 - Brand Group]: Guarana Jesus
+      '[Unit Cases]': 2593852.6675
+      '[Net Sales Revenue]': 52438516.206799954
+    - Product[LT1.2 - Brand Group]: Del Valle Mais
+      '[Unit Cases]': 2574145.8462
+      '[Net Sales Revenue]': 87349860.72999981
+    - Product[LT1.2 - Brand Group]: Kuat Zero
+      '[Unit Cases]': 2286485.5888
+      '[Net Sales Revenue]': 18572012.337999966
+    - Product[LT1.2 - Brand Group]: Guarapan
+      '[Unit Cases]': 2234240.4177
+      '[Net Sales Revenue]': 20807778.26999998
+    - Product[LT1.2 - Brand Group]: Cha Leao
+      '[Unit Cases]': 1478468.7352
+      '[Net Sales Revenue]': 20697595.319999997
+    - Product[LT1.2 - Brand Group]: Crystal Sparkling
+      '[Unit Cases]': 1444438.7574
+      '[Net Sales Revenue]': 24246155.490001358
+    - Product[LT1.2 - Brand Group]: Belagua
+      '[Unit Cases]': 1222393.1272
+      '[Net Sales Revenue]': 11960343.290000001
+    - Product[LT1.2 - Brand Group]: Leao Ice Tea
+      '[Unit Cases]': 1165466.8994
+      '[Net Sales Revenue]': 27187379.93000012
+    - Product[LT1.2 - Brand Group]: Coca-Cola Functional
+      '[Unit Cases]': 777400.9562
+      '[Net Sales Revenue]': 28044451.679400176
+    - Product[LT1.2 - Brand Group]: Del Valle 100%
+      '[Unit Cases]': 713158.6283
+      '[Net Sales Revenue]': 36224875.88000003
+    - Product[LT1.2 - Brand Group]: Powerade Zero
+      '[Unit Cases]': 644370.5558
+      '[Net Sales Revenue]': 18615349.32200007
+    - Product[LT1.2 - Brand Group]: Plant Based (Seeds)
+      '[Unit Cases]': 626516.6599
+      '[Net Sales Revenue]': 22290568.39000008
+    - Product[LT1.2 - Brand Group]: Leao Cold Brew
+      '[Unit Cases]': 582160.2613
+      '[Net Sales Revenue]': 6394734.9
+    - Product[LT1.2 - Brand Group]: Leao Functional
+      '[Unit Cases]': 510444.9838
+      '[Net Sales Revenue]': 7557166.669999999
+    - Product[LT1.2 - Brand Group]: Mais
+      '[Unit Cases]': 480416.6816
+      '[Net Sales Revenue]': 13429680.669999985
+>>>>>>> origin/nexus-test-pipeline
     - Product[LT1.2 - Brand Group]: Del Valle No Sugar
       '[Unit Cases]': 466294.555
       '[Net Sales Revenue]': 18195974.170000046
     - Product[LT1.2 - Brand Group]: .nan
       '[Unit Cases]': 440367.196
+<<<<<<< HEAD
       '[Net Sales Revenue]': 6900060.4400000535
     - Product[LT1.2 - Brand Group]: Cha Leao Kids
       '[Unit Cases]': 377719.7526
       '[Net Sales Revenue]': 4535089.270000001
+=======
+      '[Net Sales Revenue]': 6900060.440000046
+    - Product[LT1.2 - Brand Group]: Cha Leao Kids
+      '[Unit Cases]': 377719.7526
+      '[Net Sales Revenue]': 4535089.270000003
+>>>>>>> origin/nexus-test-pipeline
     - Product[LT1.2 - Brand Group]: Schweppes Mixed
       '[Unit Cases]': 326927.6682
       '[Net Sales Revenue]': 21869420.069999926
@@ -2337,6 +3528,7 @@
       '[Net Sales Revenue]': 3455889.950000001
     - Product[LT1.2 - Brand Group]: Cha Leao Vitaminico
       '[Unit Cases]': 146088.2979
+<<<<<<< HEAD
       '[Net Sales Revenue]': 2433705.1100000013
     - Product[LT1.2 - Brand Group]: Absolut Vodka & Sprite
       '[Unit Cases]': 131039.5833
@@ -2347,15 +3539,34 @@
     - Product[LT1.2 - Brand Group]: Matte Leao Toasted
       '[Unit Cases]': 97680.836
       '[Net Sales Revenue]': 137031.39
+=======
+      '[Net Sales Revenue]': 2433705.1100000003
+    - Product[LT1.2 - Brand Group]: Absolut Vodka & Sprite
+      '[Unit Cases]': 131039.5833
+      '[Net Sales Revenue]': 11670041.45999993
+    - Product[LT1.2 - Brand Group]: Coca-Cola Low-Cal
+      '[Unit Cases]': 112121.4154
+      '[Net Sales Revenue]': 4177459.4099999936
+    - Product[LT1.2 - Brand Group]: Matte Leao Toasted
+      '[Unit Cases]': 97680.836
+      '[Net Sales Revenue]': 137031.39000000004
+>>>>>>> origin/nexus-test-pipeline
     - Product[LT1.2 - Brand Group]: Cha Leao Ice Tea
       '[Unit Cases]': 78213.0586
       '[Net Sales Revenue]': 869377.5800000002
     - Product[LT1.2 - Brand Group]: Jack Daniels & Coke
       '[Unit Cases]': 67871.644
+<<<<<<< HEAD
       '[Net Sales Revenue]': 6892125.859999972
     - Product[LT1.2 - Brand Group]: Glaceau Smartwater
       '[Unit Cases]': 59197.7064
       '[Net Sales Revenue]': 1872886.749999999
+=======
+      '[Net Sales Revenue]': 6892125.859999978
+    - Product[LT1.2 - Brand Group]: Glaceau Smartwater
+      '[Unit Cases]': 59197.7064
+      '[Net Sales Revenue]': 1872886.7499999995
+>>>>>>> origin/nexus-test-pipeline
     - Product[LT1.2 - Brand Group]: Guarana Jesus Zero
       '[Unit Cases]': 58762.5212
       '[Net Sales Revenue]': 1600301.73
@@ -2402,7 +3613,11 @@
       '[Unit Cases]': 16112400.1481
     - Period[Month 445]: 2026 Jul
       Period[Month 445 Code]: '202607'
+<<<<<<< HEAD
       '[Unit Cases]': 4099175.9881
+=======
+      '[Unit Cases]': 4525039.5937
+>>>>>>> origin/nexus-test-pipeline
 - id: 22
   question: Compare Chedraui sales by bottler, Q1 2025 vs Q1 2026, in volume for Powerade.
   dax_query: |
@@ -2579,6 +3794,7 @@
     status: ok
     data:
     - Product[LT1.5 - Category]: Colas
+<<<<<<< HEAD
       '[Q1 2026 Net Sales Revenue]': 15653698898.450584
       '[Q1 2025 Net Sales Revenue]': 13872200248.759613
       '[Q1 2026 vs PY]': 1781498649.690958
@@ -2628,6 +3844,57 @@
       '[Q1 2025 Net Sales Revenue]': 16267762.890000049
       '[Q1 2026 vs PY]': -4302586.600000024
       '[Q1 2026 % vs PY]': -0.2644854507096894
+=======
+      '[Q1 2026 Net Sales Revenue]': 15653698898.450588
+      '[Q1 2025 Net Sales Revenue]': 13872200248.759638
+      '[Q1 2026 vs PY]': 1781498649.691042
+      '[Q1 2026 % vs PY]': 0.12842221260829506
+    - Product[LT1.5 - Category]: Packaged Water
+      '[Q1 2026 Net Sales Revenue]': 2627266364.669981
+      '[Q1 2025 Net Sales Revenue]': 1986698656.970033
+      '[Q1 2026 vs PY]': 640567707.6999362
+      '[Q1 2026 % vs PY]': 0.3224282180151464
+    - Product[LT1.5 - Category]: Flavors
+      '[Q1 2026 Net Sales Revenue]': 1308087063.36
+      '[Q1 2025 Net Sales Revenue]': 1202674269.1500256
+      '[Q1 2026 vs PY]': 105412794.2099874
+      '[Q1 2026 % vs PY]': 0.08764866507411659
+    - Product[LT1.5 - Category]: Juices & Juice Drinks
+      '[Q1 2026 Net Sales Revenue]': 1278984988.4699879
+      '[Q1 2025 Net Sales Revenue]': 1120487715.4601562
+      '[Q1 2026 vs PY]': 158497273.0098133
+      '[Q1 2026 % vs PY]': 0.14145382481477706
+    - Product[LT1.5 - Category]: Core Flavors
+      '[Q1 2026 Net Sales Revenue]': 973424952.1800046
+      '[Q1 2025 Net Sales Revenue]': 958373514.929999
+      '[Q1 2026 vs PY]': 15051437.250016332
+      '[Q1 2026 % vs PY]': 0.01570518906828918
+    - Product[LT1.5 - Category]: Active Hydration
+      '[Q1 2026 Net Sales Revenue]': 601996813.2500005
+      '[Q1 2025 Net Sales Revenue]': 593370289.3399541
+      '[Q1 2026 vs PY]': 8626523.910057783
+      '[Q1 2026 % vs PY]': 0.014538179725267025
+    - Product[LT1.5 - Category]: Tea
+      '[Q1 2026 Net Sales Revenue]': 517852526.40000767
+      '[Q1 2025 Net Sales Revenue]': 380923743.9800182
+      '[Q1 2026 vs PY]': 136928782.42000026
+      '[Q1 2026 % vs PY]': 0.3594650755800271
+    - Product[LT1.5 - Category]: Dairy Beverages
+      '[Q1 2026 Net Sales Revenue]': 454401499.3900027
+      '[Q1 2025 Net Sales Revenue]': 363157940.870008
+      '[Q1 2026 vs PY]': 91243558.51999503
+      '[Q1 2026 % vs PY]': 0.2512503466161453
+    - Product[LT1.5 - Category]: Plant Based Beverages
+      '[Q1 2026 Net Sales Revenue]': 20573459.200000398
+      '[Q1 2025 Net Sales Revenue]': 21784966.440000094
+      '[Q1 2026 vs PY]': -1211507.239999719
+      '[Q1 2026 % vs PY]': -0.05561207740835576
+    - Product[LT1.5 - Category]: ARTD
+      '[Q1 2026 Net Sales Revenue]': 11965176.290000034
+      '[Q1 2025 Net Sales Revenue]': 16267762.890000053
+      '[Q1 2026 vs PY]': -4302586.600000026
+      '[Q1 2026 % vs PY]': -0.26448545070968943
+>>>>>>> origin/nexus-test-pipeline
     - Product[LT1.5 - Category]: Unassigned
       '[Q1 2026 Net Sales Revenue]': 5576441.339999998
       '[Q1 2025 Net Sales Revenue]': 3196380.799999999
@@ -2676,6 +3943,7 @@
     status: ok
     data:
     - Channel[LT1.2 - Channel Group]: Off Premise
+<<<<<<< HEAD
       '[Q1 2026]': 19172659920.85096
       '[Q1 2025]': 16635638351.678867
       '[Delta vs PY]': 2537021569.1709957
@@ -2687,6 +3955,19 @@
       '[Q1 2026]': 448424428.3199983
       '[Q1 2025]': 404077748.369998
       '[Delta vs PY]': 44346679.949998915
+=======
+      '[Q1 2026]': 19172659920.850956
+      '[Q1 2025]': 16635638351.678865
+      '[Delta vs PY]': 2537021569.1709766
+    - Channel[LT1.2 - Channel Group]: On Premise
+      '[Q1 2026]': 3832743833.829912
+      '[Q1 2025]': 3479419389.539783
+      '[Delta vs PY]': 353324444.28996754
+    - Channel[LT1.2 - Channel Group]: D2C
+      '[Q1 2026]': 448424428.31999826
+      '[Q1 2025]': 404077748.3699979
+      '[Delta vs PY]': 44346679.949998856
+>>>>>>> origin/nexus-test-pipeline
 - id: 27
   question: Table of Unit Case sales by Mexican bottler, high to low, for the Traditional
     channel of Powerade in 2026.
@@ -2712,7 +3993,7 @@
     data:
     - Ship From[L1.3 - Bottler]: MX Arca Continental
       Period[Year 445 Code]: '2026'
-      '[Unit Cases]': 6235917.7325
+      '[Unit Cases]': 6277142.8467
     - Ship From[L1.3 - Bottler]: MX Coca-Cola Femsa
       Period[Year 445 Code]: '2026'
       '[Unit Cases]': 5985480.2048
@@ -2832,7 +4113,11 @@
       '[Net Sales Revenue]': 9007812815.985214
     - Period[Month 445]: 2025 Jun
       Period[Month 445 Code]: '202506'
+<<<<<<< HEAD
       '[Net Sales Revenue]': 10173403768.146627
+=======
+      '[Net Sales Revenue]': 10173403768.146667
+>>>>>>> origin/nexus-test-pipeline
 - id: 31
   question: Compare Unit Case sales Q1 2025 vs Q1 2026 for Femsa in Mexico, client
     Oxxo, brand Fanta.
@@ -2950,9 +4235,15 @@
     status: ok
     data:
     - '[Q1 2026 Net Sales Revenue]': 15369254.081000045
+<<<<<<< HEAD
       '[Q1 2025 Net Sales Revenue]': 14016510.938999973
       '[Absolute Change]': 1352743.1420000717
       '[Percent Change]': 0.09651068999176944
+=======
+      '[Q1 2025 Net Sales Revenue]': 14016510.938999977
+      '[Absolute Change]': 1352743.142000068
+      '[Percent Change]': 0.09651068999176915
+>>>>>>> origin/nexus-test-pipeline
 - id: 33
   question: Compare volume of SSDs vs Stills drinks for Arca Continental Mexico in
     June 2025.
@@ -3057,22 +4348,29 @@
       '[Net Sales Revenue]': 877976736.2100031
     - Period[Month 445]: 2026 Feb
       Period[Month 445 Code]: '202602'
-      '[Net Sales Revenue]': 954915922.0100029
+      '[Net Sales Revenue]': 954915922.0100027
     - Period[Month 445]: 2026 Mar
       Period[Month 445 Code]: '202603'
       '[Net Sales Revenue]': 1494674371.700003
     - Period[Month 445]: 2026 Apr
       Period[Month 445 Code]: '202604'
-      '[Net Sales Revenue]': 1099760252.1800053
+      '[Net Sales Revenue]': 1099760252.180005
     - Period[Month 445]: 2026 May
       Period[Month 445 Code]: '202605'
-      '[Net Sales Revenue]': 1250741939.2100053
+      '[Net Sales Revenue]': 1250741939.2100055
     - Period[Month 445]: 2026 Jun
       Period[Month 445 Code]: '202606'
+<<<<<<< HEAD
       '[Net Sales Revenue]': 1676969085.09001
     - Period[Month 445]: 2026 Jul
       Period[Month 445 Code]: '202607'
       '[Net Sales Revenue]': 444982647.29000026
+=======
+      '[Net Sales Revenue]': 1676969085.0900092
+    - Period[Month 445]: 2026 Jul
+      Period[Month 445 Code]: '202607'
+      '[Net Sales Revenue]': 498101934.6700008
+>>>>>>> origin/nexus-test-pipeline
 - id: 36
   question: Calculate the channel mix variation in Mexico for the YTD 2025 vs PY
   dax_query: "EVALUATE\nSUMMARIZECOLUMNS(\n    'Channel'[LT1.2 - Channel Group],\n\
