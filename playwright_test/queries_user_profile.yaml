@@ -1,0 +1,186 @@
+- id: 1
+  question: Give me the Unit Cases and Net Sales Revenue for Mexico, Colombia and Brazil in 2026.
+  dax_query: |
+    EVALUATE
+    ADDCOLUMNS(
+        FILTER(
+            ALL('Ship From'[L1.5 - Country]),
+            'Ship From'[L1.5 - Country] IN { "Colombia", "Mexico", "Brazil" }
+        ),
+        "Unit Cases YTD",
+        CALCULATE(
+            [Unit Cases AC YTD],
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026")),
+            KEEPFILTERS(FILTER(ALL('Period'[Month 445]), 'Period'[Month 445] <> "")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        ),
+        "Net Sales Revenue YTD",
+        CALCULATE(
+            [Bottler Net Revenue AC (LC) YTD],
+            KEEPFILTERS(FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View")),
+            KEEPFILTERS(FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026")),
+            KEEPFILTERS(FILTER(ALL('Period'[Month 445]), 'Period'[Month 445] <> "")),
+            KEEPFILTERS(FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals")),
+            KEEPFILTERS(FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y")),
+            KEEPFILTERS(FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"))
+        )
+    )
+    ORDER BY 'Ship From'[L1.5 - Country] ASC
+
+- id: 2
+  question: Within FEMSA's Walmart business in Mexico, rank categories by volume from Jan to May 2026 — highest to lowest.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Product'[LT1.5 - Category],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Coca-Cola Femsa" }),
+        FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] IN { "Wal-Mart Inc." }),
+        FILTER(ALL('Period'[Month 445 Code]), 'Period'[Month 445 Code] >= "202601" && 'Period'[Month 445 Code] <= "202605"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC]
+    )
+    ORDER BY [Unit Cases] DESC
+
+- id: 3
+  question: Give me the Unit Cases and Net Sales Revenue for Mexico by Bottler in 2026.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Ship From'[L1.3 - Bottler],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+
+- id: 4
+  question: How much did FEMSA Mexico sell in volume in 2026 by month across Walmart, Chedraui and Oxxo?
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Period'[Month 445],
+        'Period'[Month 445 Code],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Coca-Cola Femsa" }),
+        FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] IN { "Wal-Mart Inc.", "Chedraui", "Oxxo" }),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Unit Cases", [Unit Cases AC]
+    )
+    ORDER BY 'Period'[Month 445 Code] ASC
+
+- id: 5
+  question: Give me a bar chart of Unit Cases by Product Category for MX Coca-Cola Femsa's sales to Walmart in Mexico, from January to May 2026, ranked from highest to lowest.
+  dax_query: |
+    EVALUATE
+    VAR BaseTable =
+        SUMMARIZECOLUMNS(
+            'Product'[LT1.5 - Category],
+            FILTER(ALL('Period'[Month 445 Code]), 'Period'[Month 445 Code] >= "202601" && 'Period'[Month 445 Code] <= "202605"),
+            FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+            FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Coca-Cola Femsa" }),
+            FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+            FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+            FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+            FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+            FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+            "Unit Cases", [Unit Cases AC]
+        )
+
+    VAR Ranked =
+        ADDCOLUMNS(
+            BaseTable,
+            "Rank", RANKX(BaseTable, [Unit Cases], , ASC, DENSE)
+        )
+
+    VAR Bottom10 =
+        FILTER(Ranked, [Rank] <= 10)
+
+    RETURN
+    Bottom10
+    ORDER BY [Unit Cases] ASC
+- id: 6
+  question: Give me the 2026 revenue in Brazil by channel, filtered ONLY for Non-KO products (where Non-KO Product = 'Y').
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Channel'[LT1.3 - Channel Macro Group],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Brazil"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] = "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Bottler Net Revenue AC (LC)", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Bottler Net Revenue AC (LC)] DESC
+- id: 7
+  question: Give me the Net Sales Revenue for Mexico in 2026 using the Financial View as the Reporting View.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "445 Financial View"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Bottler Net Revenue AC (LC)", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Bottler Net Revenue AC (LC)] DESC
+
+- id: 8
+  question: Give me the 2026 non-primary sales in Brazil, broken down by channel.
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        'Channel'[LT1.3 - Channel Macro Group],
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Brazil"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] <> "Y"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
+
+- id: 9
+  question: Please provide 2026 Unit Cases and Net Sales Revenue for Mexico, strictly for GV brands
+  dax_query: |
+    EVALUATE
+    SUMMARIZECOLUMNS(
+        FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
+        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
+        FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
+        FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
+        FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
+        FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] = "GV Brands"),
+        "Unit Cases AC", [Unit Cases AC],
+        "Net Sales Revenue", [Bottler Net Revenue AC (LC)]
+    )
+    ORDER BY [Net Sales Revenue] DESC
