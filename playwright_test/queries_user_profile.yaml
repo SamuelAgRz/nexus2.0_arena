@@ -70,24 +70,25 @@
     ORDER BY [Net Sales Revenue] DESC
 
 - id: 4
-  question: How much did FEMSA Mexico sell in volume in 2026 by month across Walmart, Chedraui and Oxxo?
+  question: How much did FEMSA Mexico sell in volume in 2026 by month across Walmart, Chedraui and Oxxo, broken down by customer?
   dax_query: |
     EVALUATE
     SUMMARIZECOLUMNS(
         'Period'[Month 445],
         'Period'[Month 445 Code],
+        'Ship To'[LT1.2 - Customer],
+        FILTER(ALL('Period'[Month 445 Code]), 'Period'[Month 445 Code] >= "202601" && 'Period'[Month 445 Code] <= "202612"),
         FILTER(ALL('Ship From'[L1.5 - Country]), 'Ship From'[L1.5 - Country] = "Mexico"),
         FILTER(ALL('Ship From'[L1.3 - Bottler]), 'Ship From'[L1.3 - Bottler] IN { "MX Coca-Cola Femsa" }),
         FILTER(ALL('Ship To'[LT1.2 - Customer]), 'Ship To'[LT1.2 - Customer] IN { "Wal-Mart Inc.", "Chedraui", "Oxxo" }),
-        FILTER(ALL('Period'[Year 445 Code]), 'Period'[Year 445 Code] = "2026"),
         FILTER(ALL('Reporting View'[Reporting View]), 'Reporting View'[Reporting View] = "Operational View"),
-        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
         FILTER(ALL('Sales Type'[Primary Sales Indicator]), 'Sales Type'[Primary Sales Indicator] = "Y"),
+        FILTER(ALL('Transaction Type'[Transaction Type]), 'Transaction Type'[Transaction Type] = "Actuals"),
         FILTER(ALL('Product'[Non-KO Product]), 'Product'[Non-KO Product] <> "Y"),
         FILTER(ALL('Product'[LT1.7 - Segment]), 'Product'[LT1.7 - Segment] <> "GV Brands"),
         "Unit Cases", [Unit Cases AC]
     )
-    ORDER BY 'Period'[Month 445 Code] ASC
+    ORDER BY 'Period'[Month 445 Code] ASC, 'Ship To'[LT1.2 - Customer] ASC
 
 - id: 5
   question: Give me a bar chart of Unit Cases by Product Category for MX Coca-Cola Femsa's sales to Walmart in Mexico, from January to May 2026, ranked from highest to lowest.
